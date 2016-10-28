@@ -1,4 +1,4 @@
-package src.gui;
+package pucrs.myflight.gui;
 
 import java.awt.BasicStroke;
 import java.awt.Color;

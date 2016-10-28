@@ -1,3 +1,10 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package pucrs.myflight.gui;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
@@ -81,7 +88,7 @@ public class JanelaConsulta extends javax.swing.JFrame {
     }
 
     private void consulta(ActionEvent evt) {
-
+    	
         // Para obter um ponto clicado no mapa, usar como segue:
     	GeoPosition pos = gerenciador.getPosicao();     
 

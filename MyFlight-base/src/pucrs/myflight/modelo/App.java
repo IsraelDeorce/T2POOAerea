@@ -1,5 +1,6 @@
 package pucrs.myflight.modelo;
 
+import java.io.IOException;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -11,16 +12,13 @@ public class App {
 
 	public static void main(String[] args) {
 		
-		System.out.println("Total cias: "+CiaAerea.getTotalCias());
-		CiaAerea gol = new CiaAerea("G3", "Gol Linhas Aéreas SA");
-		System.out.println("Total cias: "+CiaAerea.getTotalCias());
-		CiaAerea latam = new CiaAerea("JJ", "LATAM Linhas Aéreas");
-		System.out.println("Total cias: "+CiaAerea.getTotalCias());
+		//System.out.println("Total cias: "+CiaAerea.getTotalCias());
+		//CiaAerea gol = new CiaAerea("G3", "Gol Linhas Aéreas SA");
+		//System.out.println("Total cias: "+CiaAerea.getTotalCias());
+		//CiaAerea latam = new CiaAerea("JJ", "LATAM Linhas Aéreas");
+		//System.out.println("Total cias: "+CiaAerea.getTotalCias());		
 		
-		GerenciadorCias gerCias = new GerenciadorCias();
-		gerCias.adicionar(gol);
-		gerCias.adicionar(latam);
-		
+		/*
 		//Geo locPoa = new Geo(-29.9939, -51.1711);
 		Aeroporto poa = new Aeroporto("POA", "Salgado Filho Intl Apt",
 				new Geo(-29.9939, -51.1711));
@@ -115,11 +113,55 @@ public class App {
 			System.out.println(v.getRota().getDestino().getNome());
 			System.out.println(v.getDatahora());
 		}
+		*/
+		
+		GerenciadorCias gerCias = new GerenciadorCias();
+		//gerCias.adicionar(gol);
+		//gerCias.adicionar(latam);
+		/**/
+		try {
+			gerCias.carregaDados();
+		} catch (IOException e) {
+			System.out.println("Impossível ler airlines.dat!");
+			System.out.println("Msg: "+e);
+			System.exit(1);
+		}/**/
+		
+		try {
+			gerCias.gravaJSON();
+		} catch (IOException e) {
+			System.out.println("Impossível grava airlines.json!");
+			System.out.println("Msg: "+e);
+			System.exit(1);
+		}
+		
+		/*
+		try {
+			gerCias.carregaSerial();
+		} catch (IOException | ClassNotFoundException e) {
+			System.out.println("Impossível ler airlines.ser!");
+			System.out.println("Msg: "+e);
+			System.exit(1);
+		}
+				
+		try {
+			gerCias.gravaSerial();
+			System.out.println("Gravei airlines.ser!");
+		} catch (IOException e) {
+			System.out.println("Impossível gravar airlines.ser!");
+			System.out.println("Msg: "+e);
+			System.exit(1);			
+		}*/
+		
+		GerenciadorAeroportos gerAero = new GerenciadorAeroportos();
+		GerenciadorRotas gerRotas = new GerenciadorRotas();
 		
 		// Teste GUI: abre janela
+		/**/
 		JanelaConsulta janela = new JanelaConsulta();
 		janela.setGerAeroportos(gerAero);
 		janela.setGerRotas(gerRotas);
 		janela.setVisible(true);
+		/**/
 	}
 }

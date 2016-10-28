@@ -1,6 +1,11 @@
 package pucrs.myflight.modelo;
 
-public class CiaAerea {
+import java.io.Serializable;
+
+public class CiaAerea implements Serializable {
+
+	private static final long serialVersionUID = 6732261645516576922L;
+	
 	private String codigo;
 	private String nome;
 	private static int totalCias = 0;
