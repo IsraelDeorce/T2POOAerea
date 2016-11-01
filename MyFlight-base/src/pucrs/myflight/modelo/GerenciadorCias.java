@@ -31,7 +31,7 @@ public class GerenciadorCias {
 		Path path2 = Paths.get("airlines.dat");
 		try (BufferedReader br = Files.newBufferedReader(path2, Charset.defaultCharset())) {
 			String linha = br.readLine();
-			System.out.println("Cabeçalho: " + linha);
+			System.out.println("Cabe�alho: " + linha);
 			while ((linha = br.readLine()) != null) {
 				Scanner sc = new Scanner(linha).useDelimiter(";"); // separador
 																	// é ;
