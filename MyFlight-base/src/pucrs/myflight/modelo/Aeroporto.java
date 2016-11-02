@@ -4,16 +4,16 @@ public class Aeroporto {
 	private String codigo;
 	private String nome;
 	private Geo loc;
-	private Pais pais;
+	private String pais;
 	
-	public Aeroporto(String codigo, String nome, Geo loc, Pais pais) {
+	public Aeroporto(String codigo, String nome, Geo loc, String pais) {
 		this.codigo = codigo;
 		this.nome = nome;
 		this.loc = loc;
 		this.pais = pais;
 	}
 	
-	public String getCodigo() {
+	public String getCodigo(){ 
 		return codigo;
 	}
 	
@@ -25,7 +25,7 @@ public class Aeroporto {
 		return loc;
 	}
 	
-	public Pais getPais(){
+	public String getPais(){
 		return pais;
 	}
 }
