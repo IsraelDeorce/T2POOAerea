@@ -21,8 +21,7 @@ public class GerenciadorPaises {
 	public void carregaDados() throws IOException {
 		Path path2 = Paths.get("countries.dat");
 		try (BufferedReader br = Files.newBufferedReader(path2, Charset.forName("utf8"))) {
-			String linha = br.readLine();
-			System.out.println("Cabeçalho: " + linha);
+			String linha = br.readLine();			
 			while ((linha = br.readLine()) != null) {
 				Scanner scan = new Scanner(linha).useDelimiter(";");
 				String codigo, nome;

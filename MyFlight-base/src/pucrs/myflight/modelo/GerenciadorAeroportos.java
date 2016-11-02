@@ -48,9 +48,12 @@ public class GerenciadorAeroportos {
 		}
 	}
 		
-	public ArrayList<String> buscarCodigo(String codigo) {
-		
-		return aeroportosPais.get(codigo);
-		 
+	public ArrayList<Aeroporto> buscarPais(String pais) {
+		ArrayList<Aeroporto> lista = new ArrayList<Aeroporto>(); 
+		for(Aeroporto a : aeroportos){
+			if(a.getPais().equals(pais))
+				lista.add(a);
+		}		
+		return lista;		 
 	}
 }

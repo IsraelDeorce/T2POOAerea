@@ -22,7 +22,7 @@ public class GerenciadorAeronaves {
 	
 	public void carregaDados() throws IOException {
 		Path path = Paths.get("equipment.dat");
-		try (BufferedReader br = Files.newBufferedReader(path, Charset.defaultCharset())) {
+		try (BufferedReader br = Files.newBufferedReader(path, Charset.forName("utf8"))) {
 			String linha = br.readLine();
 			System.out.println("Cabeçalho: " + linha);
 			while ((linha = br.readLine()) != null) {

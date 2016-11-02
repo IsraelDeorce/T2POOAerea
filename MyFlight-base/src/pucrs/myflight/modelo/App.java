@@ -12,23 +12,6 @@ public class App {
 
 	public static void main(String[] args) {
 						
-		GerenciadorCias gerCias = new GerenciadorCias();
-		try {
-			gerCias.carregaDados();
-		} catch (IOException e) {
-			System.out.println("Impossível ler airlines.dat!");
-			System.out.println("Msg: "+e);
-			System.exit(1);
-		}
-		
-		try {
-			gerCias.gravaJSON();
-		} catch (IOException e) {
-			System.out.println("Impossível gravar airlines.json!");
-			System.out.println("Msg: "+e);
-			System.exit(1);
-		}
-		
 		/*
 		try {
 			gerCias.carregaSerial();
@@ -47,11 +30,7 @@ public class App {
 			System.exit(1);			
 		}*/
 		
-		GerenciadorAeroportos gerAero = new GerenciadorAeroportos();
-		GerenciadorRotas gerRotas = new GerenciadorRotas();
 		GerenciadorPaises gerPaises = new GerenciadorPaises();
-		GerenciadorAeronaves gerAeron = new GerenciadorAeronaves();
-		
 		try{ 
 			gerPaises.carregaDados();
 		}
@@ -59,10 +38,19 @@ public class App {
 		System.out.println("Impossível ler countries.dat!");
 		System.out.println("Msg: "+e);
 		System.exit(1);
+		}	
+		
+		GerenciadorAeronaves gerAeron = new GerenciadorAeronaves();
+		try{
+			gerAeron.carregaDados();
+		}catch (IOException e){
+			System.out.println("Impossível ler equipment.dat!");
+			System.out.println("Msg: "+e);
+			System.exit(1);			
+
 		}
 		
-		System.out.println(gerPaises.getPais("BR"));
-		
+		GerenciadorAeroportos gerAero = new GerenciadorAeroportos();
 		try{ 
 			gerAero.carregaDados();
 		}
@@ -72,8 +60,28 @@ public class App {
 		System.exit(1);
 		}
 		
-		System.out.println(gerPaises.getPais("BR"));
-		System.out.println(gerAero.buscarCodigo("US"));
+		GerenciadorCias gerCias = new GerenciadorCias();
+		try {
+			gerCias.carregaDados();
+		} catch (IOException e) {
+			System.out.println("Impossível ler airlines.dat!");
+			System.out.println("Msg: "+e);
+			System.exit(1);
+		}
+		/*
+		try {
+			gerCias.gravaJSON();
+		} catch (IOException e) {
+			System.out.println("Impossível gravar airlines.json!");
+			System.out.println("Msg: "+e);
+			System.exit(1);
+		}
+		*/
+		
+		GerenciadorRotas gerRotas = new GerenciadorRotas();
+		
+		
+		
 		
 				
 		// Teste GUI: abre janela
@@ -87,14 +95,6 @@ public class App {
 		*/
 
 		
-		try{
-			gerAeron.carregaDados();
-		}catch (IOException e){
-			System.out.println("Impossível ler equipment.dat!");
-			System.out.println("Msg: "+e);
-			System.exit(1);			
-
-		}
 		
 		
 	}
