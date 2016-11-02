@@ -12,7 +12,16 @@ public class App {
 
 	public static void main(String[] args) {
 						
+
 		/*
+		try {
+			gerCias.gravaJSON();
+		} catch (IOException e) {
+			System.out.println("Impossível gravar airlines.json!");
+			System.out.println("Msg: "+e);
+			System.exit(1);
+		}
+		
 		try {
 			gerCias.carregaSerial();
 		} catch (IOException | ClassNotFoundException e) {
