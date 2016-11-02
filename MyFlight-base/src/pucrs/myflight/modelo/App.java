@@ -73,14 +73,19 @@ public class App {
 		}
 		
 		System.out.println(gerPaises.getPais("BR"));
+		System.out.println(gerAero.buscarCodigo("US"));
+		
 				
 		// Teste GUI: abre janela
-		
+		/*
 		JanelaConsulta janela = new JanelaConsulta();
 		janela.setGerAeroportos(gerAero);
+		
 		janela.setGerRotas(gerRotas);
 		janela.setVisible(true);
-		
+
+		*/
+
 		
 		try{
 			gerAeron.carregaDados();
@@ -88,6 +93,7 @@ public class App {
 			System.out.println("Impossível ler equipment.dat!");
 			System.out.println("Msg: "+e);
 			System.exit(1);			
+
 		}
 		
 		

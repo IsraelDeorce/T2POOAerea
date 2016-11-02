@@ -28,4 +28,11 @@ public class Aeroporto {
 	public String getPais(){
 		return pais;
 	}
+
+	@Override
+	public String toString() {
+		return nome + " [" + codigo + "] Localização " + loc + " " + pais;
+	}
+	
+	
 }
