@@ -16,5 +16,11 @@ public class Pais {
 	public String getCodigo() {
 		return codigo;
 	}
+
+	@Override
+	public String toString() {
+		return nome + " [" + codigo + "]\n";
+	}
+	
 	
 }
