@@ -2,11 +2,11 @@ package pucrs.myflight.modelo;
 
 public class Rota {
 	private CiaAerea cia;
-	private Aeroporto origem;
-	private Aeroporto destino;
+	private String origem;
+	private String destino;
 	private Aeronave aeronave;
 	
-	public Rota(CiaAerea cia, Aeroporto origem, Aeroporto destino, Aeronave aeronave) {
+	public Rota (CiaAerea cia, String origem, String destino, Aeronave aeronave){
 		this.cia = cia;
 		this.origem = origem;
 		this.destino = destino;
@@ -17,19 +17,19 @@ public class Rota {
 	public String toString()
 	{
 		return cia.getCodigo()+": "
-				+origem.getCodigo()+" -> "+destino.getCodigo()
-				+" ["+aeronave.getCodigo()+"]";
+				+origem + " -> " + destino
+				+" [" +aeronave.getCodigo()+ "]";
 	}
 	
 	public CiaAerea getCia() {
 		return cia;
 	}
 	
-	public Aeroporto getDestino() {
+	public String getDestino() {
 		return destino;
 	}
 	
-	public Aeroporto getOrigem() {
+	public String getOrigem() {
 		return origem;
 	}
 	
