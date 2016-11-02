@@ -11,8 +11,6 @@ import pucrs.myflight.gui.JanelaConsulta;
 public class App {
 
 	public static void main(String[] args) {
-						
-
 		/*
 		try {
 			gerCias.gravaJSON();
@@ -76,22 +74,9 @@ public class App {
 			System.out.println("Impossível ler airlines.dat!");
 			System.out.println("Msg: "+e);
 			System.exit(1);
-		}
-		/*
-		try {
-			gerCias.gravaJSON();
-		} catch (IOException e) {
-			System.out.println("Impossível gravar airlines.json!");
-			System.out.println("Msg: "+e);
-			System.exit(1);
-		}
-		*/
+		}		
 		
-		GerenciadorRotas gerRotas = new GerenciadorRotas();
-		
-		
-		
-		
+		GerenciadorRotas gerRotas = new GerenciadorRotas();		
 				
 		// Teste GUI: abre janela
 		/*
@@ -100,11 +85,6 @@ public class App {
 		
 		janela.setGerRotas(gerRotas);
 		janela.setVisible(true);
-
-		*/
-
-		
-		
-		
+		*/		
 	}
 }
