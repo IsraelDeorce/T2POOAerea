@@ -71,12 +71,16 @@ public class App {
 		}
 		
 		System.out.println(gerPaises.getPais("BR"));
+		System.out.println(gerAero.buscarCodigo("US"));
+		
 				
 		// Teste GUI: abre janela
-		
+		/*
 		JanelaConsulta janela = new JanelaConsulta();
 		janela.setGerAeroportos(gerAero);
+		
 		janela.setGerRotas(gerRotas);
 		janela.setVisible(true);
+		*/
 		}
 }

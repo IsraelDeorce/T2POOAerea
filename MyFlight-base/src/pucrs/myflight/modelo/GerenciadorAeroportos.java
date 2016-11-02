@@ -7,18 +7,15 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Map;
+import java.util.List;
 import java.util.Scanner;
-import java.util.TreeMap;
 
 public class GerenciadorAeroportos {
 
-	private Map<String, Aeroporto> aeroportosCodigo;
-	private Map<String, Aeroporto> aeroportosPais;
+	private List<Aeroporto> aeroportos;	
 	
 	public GerenciadorAeroportos() {
-		aeroportosCodigo = new TreeMap<String, Aeroporto>();
-		aeroportosPais = new TreeMap<String, Aeroporto>();		
+		aeroportos = new ArrayList<Aeroporto>();		
 	}
 	
 	public void carregaDados() throws IOException {
@@ -28,7 +25,7 @@ public class GerenciadorAeroportos {
 			while ((linha = br.readLine()) != null){
 				Scanner scan = new Scanner(linha).useDelimiter(";");				
 				String codigo, nome, pais;
-				Double longitude, latitude; //Adicionado valor null para inicializar Aeroporto aux
+				Double longitude=null, latitude = null; //Adicionado valor null para inicializar Aeroporto aux
 				codigo = scan.next();
 				try{
 					latitude = Double.parseDouble(scan.next());					
@@ -43,20 +40,17 @@ public class GerenciadorAeroportos {
 				nome = scan.next();
 				pais = scan.next();
 				
-				/*
 				Aeroporto aux = new Aeroporto(codigo, nome, new Geo(latitude,longitude), pais);
-				aeroportosCodigo.put(aux.getCodigo(), aux);
-				aeroportosPais.put(aux.getPais(), aux);
-				*/
-		}
+				aeroportos.add(aux);				
+			}
 			
-		System.out.println("Total de aeroporto: " + aeroportosCodigo.size());
+		System.out.println("Total de aeroporto: " + aeroportos.size());		
 		}
 	}
 		
-	public Aeroporto buscarCodigo(String codigo) {
-		if(aeroportosCodigo.get(codigo)!=null)
-			return aeroportosCodigo.get(codigo);
-		return null; 
+	public ArrayList<String> buscarCodigo(String codigo) {
+		
+		return aeroportosPais.get(codigo);
+		 
 	}
 }
