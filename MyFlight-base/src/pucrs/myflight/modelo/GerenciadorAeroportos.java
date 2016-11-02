@@ -23,28 +23,31 @@ public class GerenciadorAeroportos {
 	
 	public void carregaDados() throws IOException {
 		Path path = Paths.get("airports.dat");
-		try (BufferedReader br = Files.newBufferedReader(path, Charset.defaultCharset())) {
+		try (BufferedReader br = Files.newBufferedReader(path, Charset.forName("utf8"))) {
 			String linha = br.readLine();				
-			while ((linha = br.readLine()) != null) {
+			while ((linha = br.readLine()) != null){
 				Scanner scan = new Scanner(linha).useDelimiter(";");				
 				String codigo, nome, pais;
-				Double longitude = null, latitude=null; //Adionado valor null para inicializar Aeroporto aux
+				Double longitude, latitude; //Adicionado valor null para inicializar Aeroporto aux
 				codigo = scan.next();
 				try{
-					latitude = Double.parseDouble(scan.next());
+					latitude = Double.parseDouble(scan.next());					
 				} catch (NumberFormatException e) {
 				    e.printStackTrace();
 				}
 				try{
-					longitude = Double.parseDouble(scan.next());
+					longitude = Double.parseDouble(scan.next());					
 				} catch (NumberFormatException e) {
 				    e.printStackTrace();
 				}
 				nome = scan.next();
-				pais =scan.next();
+				pais = scan.next();
+				
+				/*
 				Aeroporto aux = new Aeroporto(codigo, nome, new Geo(latitude,longitude), pais);
 				aeroportosCodigo.put(aux.getCodigo(), aux);
 				aeroportosPais.put(aux.getPais(), aux);
+				*/
 		}
 			
 		System.out.println("Total de aeroporto: " + aeroportosCodigo.size());
