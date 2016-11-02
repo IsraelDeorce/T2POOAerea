@@ -27,7 +27,7 @@ public class GerenciadorCias {
 
 	public void carregaDados() throws IOException {
 		Path path2 = Paths.get("airlines.dat");
-		try (BufferedReader br = Files.newBufferedReader(path2, Charset.defaultCharset())) {
+		try (BufferedReader br = Files.newBufferedReader(path2, Charset.forName("utf8"))) {
 			String linha = br.readLine();
 			System.out.println("Cabeçalho: " + linha);
 			while ((linha = br.readLine()) != null) {
