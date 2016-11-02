@@ -1,4 +1,4 @@
-# iata code; latitude; longitude; airport name
+# iata code; latitude; longitude; airport name; country code
 AAA;-17.3542;-145.4961;Anaa Airport;PF
 AAC;31.0733;33.8358;El Arish International Airport;EG
 AAE;36.8222;7.8094;Annaba Airport;DZ
@@ -49,7 +49,7 @@ ADA;36.9825;35.2831;Adana Airport;TR
 ADB;38.2892;27.1550;Adnan Menderes International Airport;TR
 ADD;8.9750;38.7994;Addis Ababa Bole International Airport;ET
 ADE;12.8289;45.0297;Aden International Airport;YE
-ADF;37.7308;38.4689;Adıyaman Airport;TR
+ADF;37.7308;38.4689;AdÄ±yaman Airport;TR
 ADH;58.6000;125.4000;Aldan Airport;RU
 ADJ;31.9727;35.9916;Amman-Marka International Airport;JO
 ADK;51.8780;-176.6460;Adak Airport;US
@@ -67,7 +67,7 @@ AEH;13.8472;20.8488;Abeche Airport;TD
 AEO;16.7167;-9.6333;Aioun el Atrouss Airport;MR
 AEP;-34.5589;-58.4164;Jorge Newbery Airpark;AR
 AER;43.4450;39.9483;Sochi International Airport;RU
-AES;62.5625;6.1197;Ålesund Airport;NO
+AES;62.5625;6.1197;Ã…lesund Airport;NO
 AET;66.5518;-152.6222;Allakaket Airport;US
 AEX;31.3274;-92.5486;Alexandria International Airport;US
 AEY;65.6586;-18.0722;Akureyri Airport;IS
@@ -82,16 +82,16 @@ AGA;30.3250;-9.4131;Al Massira Airport;MA
 AGB;48.4252;10.9318;Augsburg Airport;DE
 AGC;40.3544;-79.9302;Allegheny County Airport;US
 AGF;44.1747;0.5906;Agen-La Garenne Airport;FR
-AGH;56.2911;12.8550;Ängelholm-Helsingborg Airport;SE
+AGH;56.2911;12.8550;Ã„ngelholm-Helsingborg Airport;SE
 AGL;-9.3330;149.1500;Wanigela Airport;PG
 AGM;65.6122;-37.6183;Tasiilaq Heliport;GL
 AGN;57.5036;-134.5851;Angoon Seaplane Base;US
-AGP;36.6750;-4.4992;Málaga Airport;ES
+AGP;36.6750;-4.4992;MÃ¡laga Airport;ES
 AGQ;38.6020;21.3512;Agrinion Air Base;GR
 AGR;27.1500;77.9500;Agra Airport;IN
 AGS;33.3367;-81.9645;Augusta Regional At Bush Field;US
 AGT;-25.4558;-54.8437;Guarani International Airport;PY
-AGU;21.7047;-102.3175;Jesús Terán Paredo International Airport;MX
+AGU;21.7047;-102.3175;JesÃºs TerÃ¡n Paredo International Airport;MX
 AGV;9.5500;-69.2333;Oswaldo Guevara Mujica Airport;VE
 AGX;10.8237;72.1760;Agatti Airport;IN
 AGZ;-29.2792;18.8175;Aggeneys Airport;ZA
@@ -107,12 +107,12 @@ AID;40.1087;-85.6130;Anderson Municipal Darlington Field;US
 AIF;-22.6394;-50.4525;Marcelo Pires Halzhausen Airport;BR
 AIM;10.2000;169.9833;Ailuk Airport;MH
 AIN;70.6380;-159.9948;Wainwright Airport;US
-AIR;-10.2500;-59.3833;Aripuanã Airport;BR
+AIR;-10.2500;-59.3833;AripuanÃ£ Airport;BR
 AIT;-18.8309;-159.7642;Aitutaki Airport;CK
 AIU;-19.9678;-158.1192;Enua Airport;CK
-AJA;41.9239;8.8025;Ajaccio-Napoléon Bonaparte Airport;FR
+AJA;41.9239;8.8025;Ajaccio-NapolÃ©on Bonaparte Airport;FR
 AJF;29.7852;40.0996;Al-Jawf Domestic Airport;SA
-AJI;39.6627;43.0232;Ağrı Airport;TR
+AJI;39.6627;43.0232;AÄŸrÄ± Airport;TR
 AJL;23.7333;92.8000;Lengpui Airport;IN
 AJN;-12.1317;44.4303;Ouani Airport;KM
 AJR;65.5903;19.2819;Arvidsjaur Airport;SE
@@ -159,7 +159,7 @@ AMA;35.2194;-101.7059;Rick Husband Amarillo International Airport;US
 AMD;23.0712;72.6264;Sardar Vallabhbhai Patel International Airport;IN
 AMH;6.0394;37.5905;Arba Minch Airport;ET
 AMI;-8.5620;116.0994;Selaparang Airport;ID
-AMJ;-16.1833;-40.6667;Cirilo Queiróz Airport;BR
+AMJ;-16.1833;-40.6667;Cirilo QueirÃ³z Airport;BR
 AMM;31.7226;35.9932;Queen Alia International Airport;JO
 AMQ;-3.7070;128.0897;Pattimura Airport;ID
 AMS;52.3081;4.7642;Amsterdam Airport Schiphol;NL
@@ -171,7 +171,7 @@ ANC;61.1744;-149.9964;Ted Stevens Anchorage International Airport;US
 AND;34.4950;-82.7097;Anderson Regional Airport;US
 ANE;47.5603;-0.3122;Angers-Loire Airport;FR
 ANF;-23.4444;-70.4450;Cerro Moreno Airport;CL
-ANG;45.7294;0.2192;Angoulême-Brie-Champniers Airport;FR
+ANG;45.7294;0.2192;AngoulÃªme-Brie-Champniers Airport;FR
 ANI;61.5816;-159.5430;Aniak Airport;US
 ANJ;46.4792;-84.3684;Zanaga Airport;CG
 ANK;39.9575;32.6744;Etimesgut Air Base;TR
@@ -183,7 +183,7 @@ ANS;-13.7042;-73.3481;Andahuaylas Airport;PE
 ANU;17.1367;-61.7928;V.C. Bird International Airport;AG
 ANV;62.6467;-160.1907;Anvik Airport;US
 ANW;42.5800;-99.9933;Ainsworth Municipal Airport;US
-ANX;69.2925;16.1442;Andøya Airport;NO
+ANX;69.2925;16.1442;AndÃ¸ya Airport;NO
 AOC;50.9818;12.5064;Altenburg-Nobitz Airport;DE
 AOE;39.8117;30.5286;Anadolu Airport;TR
 AOG;41.1053;122.8539;Anshan Air Base;CN
@@ -206,7 +206,7 @@ APK;-15.5736;-146.4153;Apataki Airport;PF
 APL;-15.1000;39.2833;Nampula Airport;MZ
 APN;45.0781;-83.5603;Alpena County Regional Airport;US
 APO;7.0330;-77.2000;Antonio Roldan Betancourt Airport;CO
-APS;-16.3619;-48.9275;Anápolis Airport;BR
+APS;-16.3619;-48.9275;AnÃ¡polis Airport;BR
 APU;-23.6117;-51.3844;Apucarana Airport;BR
 APV;34.5753;-117.1862;Apple Valley Airport;US
 APW;-13.8297;-171.9972;Faleolo International Airport;WS
@@ -215,7 +215,7 @@ AQA;-21.8039;-48.1397;Araraquara Airport;BR
 AQG;30.5822;117.0503;Anqing Tianzhushan Airport;CN
 AQI;28.3352;46.1249;Al Qaisumah/Hafr Al Batin Airport;SA
 AQJ;29.6116;35.0181;Aqaba King Hussein International Airport;JO
-AQP;-16.3403;-71.5728;Rodríguez Ballón International Airport;PE
+AQP;-16.3403;-71.5728;RodrÃ­guez BallÃ³n International Airport;PE
 ARA;30.0378;-91.8839;Acadiana Regional Airport;US
 ARC;68.1147;-145.5794;Arctic Village Airport;US
 ARH;64.6000;40.7183;Talagi Airport;RU
@@ -223,10 +223,10 @@ ARI;-18.3486;-70.3386;Chacalluta Airport;CL
 ARK;-3.3678;36.6333;Arusha Airport;TZ
 ARM;-30.5300;151.6175;Armidale Airport;AU
 ARN;59.6519;17.9186;Stockholm-Arlanda Airport;SE
-ARS;-15.8989;-52.2403;Aragarças Airport;BR
+ARS;-15.8989;-52.2403;AragarÃ§as Airport;BR
 ARS;-15.8989;-52.2403;Usina Santa Cruz Airport;BR
 ART;43.9919;-76.0217;Watertown International Airport;US
-ARU;-21.1436;-50.4258;Araçatuba Airport;BR
+ARU;-21.1436;-50.4258;AraÃ§atuba Airport;BR
 ARV;45.9279;-89.7309;Lakeland-Noble F. Lee Memorial field;US
 ARW;46.1765;21.2620;Arad International Airport;RO
 ARY;-37.3119;142.9906;Ararat Airport;AU
@@ -250,7 +250,7 @@ ATA;-9.3436;-77.5958;Comandante FAP German Arias Graziani Airport;PE
 ATB;17.7097;34.0574;Atbara Airport;SD
 ATC;24.6700;-75.7500;Arthur's Town Airport;BS
 ATD;-8.8733;161.0114;Uru Harbour Airport;SB
-ATF;-1.2119;-78.5747;Chachoán Airport;EC
+ATF;-1.2119;-78.5747;ChachoÃ¡n Airport;EC
 ATH;37.9367;23.9445;Eleftherios Venizelos International Airport;GR
 ATK;70.4673;-157.4357;Atqasuk Edward Burnell Sr Memorial Airport;US
 ATL;33.6367;-84.4281;Hartsfield Jackson Atlanta International Airport;US
@@ -276,7 +276,7 @@ AUS;30.1950;-97.6700;Austin Bergstrom International Airport;US
 AUS;30.1950;-97.6700;Austin Robert Mueller Municipal;US
 AUU;-13.3539;141.7208;Aurukun Airport;AU
 AUW;44.9285;-89.6266;Wausau Downtown Airport;US
-AUX;-7.2281;-48.2403;Araguaína Airport;BR
+AUX;-7.2281;-48.2403;AraguaÃ­na Airport;BR
 AUY;-20.2492;169.7714;Aneityum Airport;VU
 AVA;26.2606;105.8731;Anshun Huangguoshu Airport;CN
 AVB;45.9250;12.4292;Aviano Air Base;IT
@@ -312,7 +312,7 @@ AZI;24.4283;54.4581;Bateen Airport;AE
 AZN;40.7267;72.2933;Andizhan Airport;UZ
 AZO;42.2349;-85.5521;Kalamazoo Battle Creek International Airport;US
 AZR;27.8392;-0.1853;Touat Cheikh Sidi Mohamed Belkebir Airport;DZ
-AZS;19.1986;-69.4298;Samaná El Catey International Airport;DO
+AZS;19.1986;-69.4298;SamanÃ¡ El Catey International Airport;DO
 BAB;39.1362;-121.4365;Beale Air Force Base;US
 BAD;32.5018;-93.6627;Barksdale Air Force Base;US
 BAF;42.1575;-72.7158;Barnes Municipal Airport;US
@@ -338,15 +338,15 @@ BBN;3.7339;115.4786;Bario Airport;MY
 BBO;10.3833;44.9500;Berbera Airport;SO
 BBQ;17.6275;-61.8269;Codrington Airport;AG
 BBS;51.3239;-0.8475;Blackbushe Airport;GB
-BBT;4.2261;15.7856;Berbérati Airport;CF
-BBU;44.5035;26.1036;Băneasa International Airport;RO
+BBT;4.2261;15.7856;BerbÃ©rati Airport;CF
+BBU;44.5035;26.1036;BÄƒneasa International Airport;RO
 BBW;41.4367;-99.6417;Broken Bow Municipal Airport;US
 BCA;20.3647;-74.5067;Gustavo Rizo Airport;CU
 BCD;10.6425;122.9296;Bacolod-Silay City International Airport;PH
 BCH;-8.4854;126.3993;Cakung Airport;TL
 BCI;-23.5650;145.3094;Barcaldine Airport;AU
 BCL;10.7687;-83.5856;Barra del Colorado Airport;CR
-BCM;46.5219;26.9103;Bacău Airport;RO
+BCM;46.5219;26.9103;BacÄƒu Airport;RO
 BCN;41.2971;2.0785;Barcelona International Airport;ES
 BCR;-8.8333;-67.3117;Novo Campo Airport;BR
 BCT;26.3784;-80.1076;Boca Raton Airport;US
@@ -359,19 +359,19 @@ BDE;48.7284;-94.6122;Baudette International Airport;US
 BDH;26.5314;54.8275;Bandar Lengeh Airport;IR
 BDJ;-3.4397;114.7528;Syamsudin Noor Airport;ID
 BDL;41.9389;-72.6832;Bradley International Airport;US
-BDM;40.3156;27.9828;Bandırma Airport;TR
+BDM;40.3156;27.9828;BandÄ±rma Airport;TR
 BDO;-6.9019;107.5761;Husein Sastranegara International Airport;ID
 BDP;26.5703;88.0758;Bhadrapur Airport;NP
 BDQ;22.3294;73.2194;Vadodara Airport;IN
 BDR;41.1607;-73.1245;Igor I Sikorsky Memorial Airport;US
-BDS;40.6606;17.9481;Brindisi – Salento Airport;IT
+BDS;40.6606;17.9481;Brindisi â€“ Salento Airport;IT
 BDT;4.2500;20.9667;Gbadolite Airport;CD
 BDU;69.0558;18.5403;Bardufoss Airport;NO
 BEB;57.4811;-7.3628;Benbecula Airport;GB
 BED;42.4700;-71.2900;Laurence G Hanscom Field;US
 BEG;44.8194;20.3125;Belgrade Nikola Tesla Airport;RS
 BEJ;2.1533;117.4311;Barau(Kalimaru) Airport;ID
-BEL;-1.3847;-48.4789;Val de Cans/Júlio Cezar Ribeiro International Airport;BR
+BEL;-1.3847;-48.4789;Val de Cans/JÃºlio Cezar Ribeiro International Airport;BR
 BEN;32.0975;20.2708;Benina International Airport;LY
 BEP;15.1628;76.8828;Bellary Airport;IN
 BES;48.4472;-4.4217;Brest Bretagne Airport;FR
@@ -391,17 +391,17 @@ BFM;30.6267;-88.0681;Mobile Downtown Airport;US
 BFN;-29.0938;26.3040;Bram Fischer International Airport;ZA
 BFO;-21.0086;31.5794;Buffalo Range Airport;ZW
 BFP;40.7725;-80.3915;Beaver County Airport;US
-BFQ;7.5830;-78.2000;Bahia Piña Airport;PA
+BFQ;7.5830;-78.2000;Bahia PiÃ±a Airport;PA
 BFS;54.6575;-6.2158;Belfast International Airport;GB
 BFV;15.2267;103.2511;Buri Ram Airport;TH
 BFX;5.5347;10.3558;Bafoussam Airport;CM
 BGA;7.1269;-73.1850;Palonegro Airport;CO
-BGC;41.8567;-6.7075;Bragança Airport;PT
+BGC;41.8567;-6.7075;BraganÃ§a Airport;PT
 BGF;4.3977;18.5198;Bangui M'Poko International Airport;CF
-BGG;38.8600;40.5939;Bingöl Çeltiksuyu Airport;TR
+BGG;38.8600;40.5939;BingÃ¶l Ã‡eltiksuyu Airport;TR
 BGI;13.0746;-59.4921;Sir Grantley Adams International Airport;BB
 BGM;42.2087;-75.9731;Greater Binghamton/Edwin A Link field;US
-BGN;51.2000;6.1333;Brüggen Air Base;DE
+BGN;51.2000;6.1333;BrÃ¼ggen Air Base;DE
 BGO;60.2936;5.2181;Bergen Airport Flesland;NO
 BGR;44.8074;-68.8281;Bangor International Airport;US
 BGU;4.7833;22.7833;Bangassou Airport;CF
@@ -446,14 +446,14 @@ BIY;-32.8950;27.2850;Bisho Airport;ZA
 BJA;36.7119;5.0694;Soummam Airport;DZ
 BJB;37.4892;57.3064;Bojnord Airport;IR
 BJC;39.9083;-105.1167;Rocky Mountain Metropolitan Airport;US
-BJF;70.6003;29.6925;Båtsfjord Airport;NO
+BJF;70.6003;29.6925;BÃ¥tsfjord Airport;NO
 BJI;47.5094;-94.9337;Bemidji Regional Airport;US
 BJL;13.3425;-16.6578;Banjul International Airport;GM
 BJM;-3.3178;29.3172;Bujumbura International Airport;BI
 BJR;11.6063;37.3197;Bahir Dar Airport;ET
 BJT;6.4833;79.9833;Bentota River Waterdrome;LK
 BJV;37.2472;27.6814;Milas Bodrum International Airport;TR
-BJX;20.9933;-101.4810;Del Bajío International Airport;MX
+BJX;20.9933;-101.4810;Del BajÃ­o International Airport;MX
 BJY;44.9236;20.2790;Batajnica Air Base;RS
 BJZ;38.8912;-6.8213;Badajoz Airport;ES
 BKA;55.6172;38.0600;Bykovo Airport;RU
@@ -496,7 +496,7 @@ BMO;24.2690;97.2462;Banmaw Airport;MM
 BMU;-8.5408;118.6906;Muhammad Salahuddin Airport;ID
 BMV;12.6661;108.1145;Buon Ma Thuot Airport;VN
 BMW;21.3750;0.9239;Bordj Badji Mokhtar Airport;DZ
-BMY;-19.7206;163.6611;Île Art - Waala Airport;NC
+BMY;-19.7206;163.6611;ÃŽle Art - Waala Airport;NC
 BNA;36.1245;-86.6782;Nashville International Airport;US
 BNB;-0.2860;20.8840;Boende Airport;CD
 BNC;0.5750;29.4739;Beni Airport;CD
@@ -505,7 +505,7 @@ BNE;-27.3858;153.1183;Brisbane International Airport;AU
 BNI;6.2331;5.5992;Benin Airport;NG
 BNJ;50.7319;7.0967;Bonn-Hangelar Airport;DE
 BNK;-28.8333;153.5617;Ballina Byron Gateway Airport;AU
-BNN;65.4611;12.2175;Brønnøysund Airport;NO
+BNN;65.4611;12.2175;BrÃ¸nnÃ¸ysund Airport;NO
 BNO;43.5919;-118.9554;Burns Municipal Airport;US
 BNP;32.9667;70.5333;Bannu Airport;PK
 BNS;8.6167;-70.2167;Barinas Airport;VE
@@ -514,14 +514,14 @@ BNY;-11.3022;159.7981;Bellona/Anua Airport;SB
 BOA;-5.8540;13.0640;Boma Airport;CD
 BOB;-16.4436;-151.7525;Bora Bora Airport;PF
 BOC;9.3408;-82.2508;Bocas Del Toro International Airport;PA
-BOD;44.8286;-0.7153;Bordeaux-Mérignac Airport;FR
+BOD;44.8286;-0.7153;Bordeaux-MÃ©rignac Airport;FR
 BOG;4.7031;-74.1383;El Dorado International Airport;CO
 BOH;50.7800;-1.8425;Bournemouth Airport;GB
 BOI;43.5644;-116.2228;Boise Air Terminal/Gowen field;US
 BOJ;42.5703;27.5153;Burgas Airport;BG
 BOM;19.0908;72.8667;Chhatrapati Shivaji International Airport;IN
 BON;12.1311;-68.2769;Flamingo International Airport;BQ
-BOO;67.2692;14.3653;Bodø Airport;NO
+BOO;67.2692;14.3653;BodÃ¸ Airport;NO
 BOP;5.9667;15.6333;Bouar Airport;CF
 BOS;42.3643;-71.0052;General Edward Lawrence Logan International Airport;US
 BOT;-7.2330;141.0830;Bosset Airport;PG
@@ -530,7 +530,7 @@ BOX;-16.0753;136.3022;Borroloola Airport;AU
 BOY;11.1675;-4.3211;Bobo Dioulasso Airport;BF
 BPE;21.1812;94.9287;Qinhuangdao Beidaihe Airport;CN
 BPF;-8.5830;158.1170;Batuna Aerodrome;SB
-BPG;-15.8603;-52.3889;Barra do Garças Airport;BR
+BPG;-15.8603;-52.3889;Barra do GarÃ§as Airport;BR
 BPH;8.1885;126.3270;Bislig Airport;PH
 BPI;42.5851;-110.1112;Miley Memorial Field;US
 BPL;44.9038;82.0708;Alashankou Bole (Bortala) airport;CN
@@ -554,13 +554,13 @@ BRB;-2.7958;-57.0556;Barreirinhas Airport;BR
 BRC;-41.1511;-71.1578;San Carlos De Bariloche Airport;AR
 BRD;46.3983;-94.1381;Brainerd Lakes Regional Airport;US
 BRE;53.0474;8.7867;Bremen Airport;DE
-BRI;41.1392;16.7658;Bari Karol Wojtyła Airport;IT
+BRI;41.1392;16.7658;Bari Karol WojtyÅ‚a Airport;IT
 BRK;-30.0403;145.9528;Bourke Airport;AU
 BRL;40.7832;-91.1255;Southeast Iowa Regional Airport;US
 BRM;10.0456;-69.3564;Barquisimeto International Airport;VE
 BRN;46.9122;7.4992;Bern Belp Airport;CH
 BRO;25.9068;-97.4259;Brownsville South Padre Island International Airport;US
-BRQ;49.1514;16.6939;Brno-Tuřany Airport;CZ
+BRQ;49.1514;16.6939;Brno-TuÅ™any Airport;CZ
 BRR;57.0170;-7.4330;Barra Airport;GB
 BRS;51.3827;-2.7191;Bristol International Airport;GB
 BRT;-11.7664;130.6167;Bathurst Island Airport;AU
@@ -570,7 +570,7 @@ BRW;71.2854;-156.7660;Wiley Post Will Rogers Memorial Airport;US
 BRX;18.2517;-71.1219;Maria Montez International Airport;DO
 BSA;11.2753;49.1494;Bosaso Airport;SO
 BSB;-15.8692;-47.9208;Presidente Juscelino Kubistschek International Airport;BR
-BSC;6.2031;-77.3947;José Celestino Mutis Airport;CO
+BSC;6.2031;-77.3947;JosÃ© Celestino Mutis Airport;CO
 BSD;25.1500;99.1500;Baoshan Yunduan Airport;CN
 BSG;1.9022;9.8028;Bata Airport;GQ
 BSJ;-37.8883;147.5683;Bairnsdale Airport;AU
@@ -590,7 +590,7 @@ BTK;56.3700;101.6983;Bratsk Airport;RU
 BTL;42.3075;-85.2517;W K Kellogg Airport;US
 BTM;45.9548;-112.4975;Bert Mooney Airport;US
 BTR;30.5331;-91.1496;Baton Rouge Metropolitan Apt;US
-BTS;48.1700;17.2128;M. R. Štefánik Airport;SK
+BTS;48.1700;17.2128;M. R. Å tefÃ¡nik Airport;SK
 BTT;66.9139;-151.5290;Bettles Airport;US
 BTU;3.1241;113.0197;Bintulu Airport;MY
 BTV;44.4718;-73.1532;Burlington International Airport;US
@@ -602,7 +602,7 @@ BUF;42.9405;-78.7322;Buffalo Niagara International Airport;US
 BUG;-12.6099;13.4037;Benguela Airport;AO
 BUJ;35.3314;4.2044;Bou Saada Airport;DZ
 BUL;-7.2170;146.6330;Bulolo Airport;PG
-BUN;3.8197;-76.9897;Gerardo Tobar López Airport;CO
+BUN;3.8197;-76.9897;Gerardo Tobar LÃ³pez Airport;CO
 BUO;9.5170;45.5670;Burao Airport;SO
 BUQ;-20.0183;28.6247;Joshua Mqabuko Nkomo International Airport;ZW
 BUR;34.2006;-118.3587;Bob Hope Airport;US
@@ -611,12 +611,12 @@ BUW;-5.4869;122.5690;Betoambari Airport;ID
 BUX;1.5658;30.2206;Bunia Airport;CD
 BUY;-33.3783;115.6767;Bunbury Airport;AU
 BUZ;28.9494;50.8303;Bushehr Airport;IR
-BVA;49.4544;2.1128;Paris Beauvais Tillé Airport;FR
+BVA;49.4544;2.1128;Paris Beauvais TillÃ© Airport;FR
 BVB;2.8414;-60.6922;Atlas Brasil Cantanhede Airport;BR
 BVC;16.1364;-22.8886;Rabil Airport;CV
 BVE;45.1494;1.4744;Brive Souillac Airport;FR
-BVG;70.8714;29.0342;Berlevåg Airport;NO
-BVH;-12.7014;-60.0931;Brigadeiro Camarão Airport;BR
+BVG;70.8714;29.0342;BerlevÃ¥g Airport;NO
+BVH;-12.7014;-60.0931;Brigadeiro CamarÃ£o Airport;BR
 BVI;-25.8989;139.3486;Birdsville Airport;AU
 BVM;-15.8708;-38.8719;Belmonte Airport;BR
 BVS;-1.6383;-50.4408;Breves Airport;BR
@@ -644,23 +644,23 @@ BYC;-21.9494;-63.6481;Yacuiba Airport;BO
 BYF;49.9700;2.6928;Albert-Bray Airport;FR
 BYH;35.9643;-89.9440;Arkansas International Airport;US
 BYI;42.5433;-113.7717;Burley Municipal Airport;US
-BYK;7.7525;-5.0678;Bouaké Airport;CI
+BYK;7.7525;-5.0678;BouakÃ© Airport;CI
 BYM;20.3972;-76.6175;Carlos Manuel de Cespedes Airport;CU
 BYN;46.1633;100.7041;Bayankhongor Airport;MN
 BYO;-21.2294;-56.4561;Bonito Airport;BR
-BYR;57.2772;11.0001;Læsø Airport;DK
+BYR;57.2772;11.0001;LÃ¦sÃ¸ Airport;DK
 BYU;49.9844;11.6386;Bayreuth Airport;DE
 BZB;-18.7167;36.3333;Bazaruto Island Airport;MZ
 BZC;-22.7656;-41.9650;Umberto Modiano Airport;BR
 BZD;-34.6250;143.5769;Balranald Airport;AU
 BZE;17.5361;-88.3083;Philip S. W. Goldson International Airport;BZ
 BZG;53.0968;17.9777;Bydgoszcz Ignacy Jan Paderewski Airport;PL
-BZI;39.6156;27.9328;Balıkesir Merkez Airport;TR
+BZI;39.6156;27.9328;BalÄ±kesir Merkez Airport;TR
 BZK;53.2133;34.1783;Bryansk Airport;RU
 BZL;22.7989;90.3012;Barisal Airport;BD
 BZN;45.7775;-111.1530;Gallatin Field;US
 BZO;46.4603;11.3267;Bolzano Airport;IT
-BZR;43.3233;3.3533;Béziers-Vias Airport;FR
+BZR;43.3233;3.3533;BÃ©ziers-Vias Airport;FR
 BZV;-4.2556;15.2483;Maya-Maya Airport;CG
 BZY;47.8383;27.7817;Balti International Airport;MD
 BZZ;51.7495;-1.5822;RAF Brize Norton;GB
@@ -668,7 +668,7 @@ CAB;-5.5970;12.1884;Cabinda Airport;AO
 CAC;-25.0022;-53.5019;Cascavel Airport;BR
 CAE;33.9387;-81.1195;Columbia Metropolitan Airport;US
 CAG;39.2472;9.0564;Cagliari Elmas Airport;IT
-CAH;9.1877;105.1750;Cà Mau Airport;VN
+CAH;9.1877;105.1750;CÃ  Mau Airport;VN
 CAI;30.1114;31.4139;Cairo International Airport;EG
 CAJ;6.2500;-62.8333;Canaima Airport;VE
 CAK;40.9160;-81.4421;Akron Canton Regional Airport;US
@@ -687,7 +687,7 @@ CAZ;-31.5383;145.7933;Cobar Airport;AU
 CBB;-17.4211;-66.1769;Jorge Wilsterman International Airport;BO
 CBD;9.1532;92.8194;Car Nicobar Air Force Station;IN
 CBG;52.2050;0.1750;Cambridge Airport;GB
-CBH;31.6500;-2.2500;Béchar Boudghene Ben Ali Lotfi Airport;DZ
+CBH;31.6500;-2.2500;BÃ©char Boudghene Ben Ali Lotfi Airport;DZ
 CBJ;17.6500;-71.6500;Cabo Rojo Airport;DO
 CBL;8.1333;-63.5350;Aeropuerto ""General Tomas de Heres"". Ciudad Bolivar;VE
 CBO;7.1608;124.2125;Awang Airport;PH
@@ -696,7 +696,7 @@ CBR;-35.3067;149.1950;Canberra International Airport;AU
 CBS;10.3301;-71.3225;Oro Negro Airport;VE
 CBT;-12.4792;13.4869;Catumbela Airport;AO
 CBU;51.8908;14.5336;Cottbus-Drewitz Airport;DE
-CBW;-24.0069;-52.3561;Campo Mourão Airport;BR
+CBW;-24.0069;-52.3561;Campo MourÃ£o Airport;BR
 CBX;-33.0650;147.2083;Condobolin Airport;AU
 CCC;22.4611;-78.3286;Jardines Del Rey Airport;CU
 CCF;43.2158;2.3086;Carcassonne Airport;FR
@@ -704,10 +704,10 @@ CCH;-46.5475;-71.6961;Chile Chico Airport;CL
 CCJ;11.1381;75.9504;Calicut International Airport;IN
 CCK;-12.1883;96.8300;Cocos (Keeling) Islands Airport;CC
 CCL;-26.7750;150.6167;Chinchilla Airport;AU
-CCM;-28.7239;-49.4208;Diomício Freitas Airport;BR
+CCM;-28.7239;-49.4208;DiomÃ­cio Freitas Airport;BR
 CCN;34.5267;65.2717;Chakcharan Airport;AF
 CCP;-36.7728;-73.0631;Carriel Sur Airport;CL
-CCS;10.6012;-66.9912;Simón Bolívar International Airport;VE
+CCS;10.6012;-66.9912;SimÃ³n BolÃ­var International Airport;VE
 CCU;22.6531;88.4492;Netaji Subhash Chandra Bose International Airport;IN
 CCV;-16.2650;167.9244;Craig Cove Airport;VU
 CCZ;25.4171;-77.8808;Chub Cay Airport;BS
@@ -716,7 +716,7 @@ CDC;37.7010;-113.0988;Cedar City Regional Airport;US
 CDG;49.0097;2.5478;Charles de Gaulle International Airport;FR
 CDH;33.6233;-92.7633;Harrell Field;US
 CDI;-20.8361;-41.1869;Cachoeiro do Itapemirim Airport;BR
-CDJ;-8.3483;-49.3025;Conceição do Araguaia Airport;BR
+CDJ;-8.3483;-49.3025;ConceiÃ§Ã£o do Araguaia Airport;BR
 CDR;42.8376;-103.0953;Chadron Municipal Airport;US
 CDS;34.4337;-100.2879;Childress Municipal Airport;US
 CDU;-34.0419;150.6861;Camden Airport;AU
@@ -731,7 +731,7 @@ CEG;53.1781;-2.9778;Hawarden Airport;GB
 CEI;19.9522;99.8831;Chiang Rai International Airport;TH
 CEK;55.3050;61.5050;Chelyabinsk Balandino Airport;RU
 CEM;65.5739;-144.7809;Central Airport;US
-CEN;27.3930;-109.8334;Ciudad Obregón International Airport;MX
+CEN;27.3930;-109.8334;Ciudad ObregÃ³n International Airport;MX
 CEQ;43.5464;6.9542;Cannes-Mandelieu Airport;FR
 CER;49.6508;-1.4753;Cherbourg-Maupertus Airport;FR
 CES;-32.7875;151.3417;Cessnock Airport;AU
@@ -739,7 +739,7 @@ CET;47.0819;-0.8772;Cholet Le Pontreau Airport;FR
 CEW;30.7788;-86.5221;Bob Sikes Airport;US
 CEZ;37.3030;-108.6281;Cortez Municipal Airport;US
 CFB;-22.9217;-42.0743;Cabo Frio Airport;BR
-CFC;-26.8063;-50.9399;Caçador Airport;BR
+CFC;-26.8063;-50.9399;CaÃ§ador Airport;BR
 CFE;45.7858;3.1625;Clermont-Ferrand Auvergne Airport;FR
 CFF;66.7031;-119.7072;Cafunfo Airport;AO
 CFG;22.1500;-80.4142;Jaime Gonzalez Airport;CU
@@ -770,19 +770,19 @@ CHM;-9.1447;-78.5208;Teniente FAP Jaime A De Montreuil Morales Airport;PE
 CHN;36.7178;127.4961;Jeon Ju Airport;KR
 CHO;38.1386;-78.4529;Charlottesville Albemarle Airport;US
 CHQ;35.5314;24.1511;Chania International Airport;GR
-CHR;46.8603;1.7211;Châteauroux-Déols ""Marcel Dassault"" Airport;FR
+CHR;46.8603;1.7211;ChÃ¢teauroux-DÃ©ols ""Marcel Dassault"" Airport;FR
 CHS;32.8986;-80.0405;Charleston Air Force Base-International Airport;US
 CHT;-43.8100;-176.4572;Chatham Islands-Tuuta Airport;NZ
 CHU;61.5791;-159.2156;Chuathbaluk Airport;US
-CHX;9.4589;-82.5153;Cap Manuel Niño International Airport;PA
+CHX;9.4589;-82.5153;Cap Manuel NiÃ±o International Airport;PA
 CHY;-6.7119;156.3961;Choiseul Bay Airport;SB
-CIA;41.7994;12.5972;Ciampino–G. B. Pastine International Airport;IT
+CIA;41.7994;12.5972;Ciampinoâ€“G. B. Pastine International Airport;IT
 CIC;39.7954;-121.8584;Chico Municipal Airport;US
 CID;41.8847;-91.7108;The Eastern Iowa Airport;US
 CIF;42.2350;118.9083;Chifeng Airport;CN
 CIG;40.4950;-107.5214;Craig Moffat Airport;US
 CIH;36.2475;113.1258;Changzhi Airport;CN
-CIJ;-11.0428;-68.7833;Capitán Aníbal Arab Airport;BO
+CIJ;-11.0428;-68.7833;CapitÃ¡n AnÃ­bal Arab Airport;BO
 CIK;66.6450;-143.7399;Chalkyitsik Airport;US
 CIN;37.5939;-83.3172;Arthur N Neu Airport;US
 CIP;-13.5667;32.5911;Chipata Airport;ZM
@@ -799,7 +799,7 @@ CJC;-22.4947;-68.9019;El Loa Airport;CL
 CJJ;36.7166;127.4991;Cheongju International Airport;KR
 CJL;35.8861;71.7999;Chitral Airport;PK
 CJM;10.7118;99.3609;Chumphon Airport;TH
-CJS;31.6364;-106.4288;Abraham González International Airport;MX
+CJS;31.6364;-106.4288;Abraham GonzÃ¡lez International Airport;MX
 CJT;16.1767;-92.0506;Comitan Airport;MX
 CJU;33.5122;126.4928;Jeju International Airport;KR
 CKB;39.2966;-80.2281;North Central West Virginia Airport;US
@@ -808,12 +808,12 @@ CKD;61.8679;-158.1349;Crooked Creek Airport;US
 CKG;29.7167;106.6400;Chongqing Jiangbei International Airport;CN
 CKH;70.6250;147.8967;Chokurdakh Airport;RU
 CKL;55.8800;38.0633;Chkalovskiy Airport;RU
-CKO;-23.1522;-50.6022;Cornélio Procópio Airport;BR
-CKS;-6.1175;-50.0036;Carajás Airport;BR
+CKO;-23.1522;-50.6022;CornÃ©lio ProcÃ³pio Airport;BR
+CKS;-6.1175;-50.0036;CarajÃ¡s Airport;BR
 CKT;36.4881;61.0700;Sarakhs Airport;IR
 CKX;64.0713;-141.9523;Chicken Airport;US
 CKY;9.5769;-13.6120;Conakry International Airport;GN
-CKZ;40.1361;26.4247;Çanakkale Airport;TR
+CKZ;40.1361;26.4247;Ã‡anakkale Airport;TR
 CLA;23.4377;91.1895;Comilla Airport;BD
 CLD;33.1283;-117.2800;Mc Clellan-Palomar Airport;US
 CLE;41.4117;-81.8498;Cleveland Hopkins International Airport;US
@@ -827,15 +827,15 @@ CLP;58.8337;-158.5294;Clarks Point Airport;US
 CLQ;19.2770;-103.5776;Licenciado Miguel de la Madrid Airport;MX
 CLT;35.2140;-80.9431;Charlotte Douglas International Airport;US
 CLU;39.2617;-85.8967;Columbus Municipal Airport;US
-CLV;-17.7247;-48.6100;Nelson Ribeiro Guimarães Airport;BR
+CLV;-17.7247;-48.6100;Nelson Ribeiro GuimarÃ£es Airport;BR
 CLY;42.5203;8.7931;Calvi-Sainte-Catherine Airport;FR
 CLZ;8.9283;-67.4133;Calabozo Airport;VE
 CMA;-28.0300;145.6222;Cunnamulla Airport;AU
 CMB;7.1802;79.8853;Bandaranaike International Colombo Airport;LK
 CMD;-34.6233;148.0283;Cootamundra Airport;AU
 CME;18.6522;-91.8011;Ciudad del Carmen International Airport;MX
-CMF;45.6392;5.8800;Chambéry-Savoie Airport;FR
-CMG;-19.0119;-57.6714;Corumbá International Airport;BR
+CMF;45.6392;5.8800;ChambÃ©ry-Savoie Airport;FR
+CMG;-19.0119;-57.6714;CorumbÃ¡ International Airport;BR
 CMH;39.9980;-82.8919;Port Columbus International Airport;US
 CMI;40.0393;-88.2781;University of Illinois Willard Airport;US
 CMK;-14.3069;35.1325;Club Makokola Airport;MW
@@ -848,16 +848,16 @@ CMW;21.4203;-77.8475;Ignacio Agramonte International Airport;CU
 CMX;47.1683;-88.4883;Houghton County Memorial Airport;US
 CNB;-30.9833;148.3742;Coonamble Airport;AU
 CNC;-10.0500;143.0667;Coconut Island Airport;AU
-CND;44.3621;28.4885;Mihail Kogălniceanu International Airport;RO
+CND;44.3621;28.4885;Mihail KogÄƒlniceanu International Airport;RO
 CNF;-19.6244;-43.9719;Tancredo Neves International Airport;BR
-CNG;45.6583;-0.3175;Cognac-Châteaubernard (BA 709) Air Base;FR
+CNG;45.6583;-0.3175;Cognac-ChÃ¢teaubernard (BA 709) Air Base;FR
 CNJ;-20.6731;140.5008;Cloncurry Airport;AU
 CNK;39.5493;-97.6523;Blosser Municipal Airport;US
 CNL;57.5035;10.2294;Sindal Airport;DK
 CNM;32.3383;-104.2633;Cavern City Air Terminal;US
 CNP;70.7433;-22.6606;Neerlerit Inaat Airport;GL
 CNQ;-27.4456;-58.7619;Corrientes Airport;AR
-CNR;-26.3222;-70.6111;Chañaral Airport;CL
+CNR;-26.3222;-70.6111;ChaÃ±aral Airport;CL
 CNS;-16.8867;145.7550;Cairns International Airport;AU
 CNU;37.6683;-95.4850;Chanute Martin Johnson Airport;US
 CNW;31.6378;-97.0740;TSTC Waco Airport;US
@@ -878,17 +878,17 @@ COR;-31.3100;-64.2083;Ingeniero Ambrosio Taravella Airport;AR
 COS;38.8058;-104.7002;City of Colorado Springs Municipal Airport;US
 COT;28.4567;-99.2183;Cotulla-La Salle County Airport;US
 COU;38.8183;-92.2200;Columbia Regional Airport;US
-COZ;18.9000;-70.7167;Constanza - Expedición 14 de Junio National Airport;DO
+COZ;18.9000;-70.7167;Constanza - ExpediciÃ³n 14 de Junio National Airport;DO
 CPA;4.3676;-7.7001;Cape Palmas Airport;LR
 CPC;-40.0819;-71.1458;Aviador C. Campos Airport;AR
 CPD;-29.0400;134.7194;Coober Pedy Airport;AU
-CPE;19.6681;-90.5003;Ingeniero Alberto Acuña Ongay International Airport;MX
+CPE;19.6681;-90.5003;Ingeniero Alberto AcuÃ±a Ongay International Airport;MX
 CPH;55.6179;12.6560;Copenhagen Kastrup Airport;DK
 CPO;-27.2967;-70.4136;Desierto de Atacama Airport;CL
 CPQ;-22.8586;-47.1075;Amarais Airport;BR
 CPR;42.9079;-106.4643;Casper-Natrona County International Airport;US
 CPT;-33.9681;18.6046;Cape Town International Airport;ZA
-CPV;-7.2692;-35.8950;Presidente João Suassuna Airport;BR
+CPV;-7.2692;-35.8950;Presidente JoÃ£o Suassuna Airport;BR
 CPX;18.3133;-65.3043;Benjamin Rivera Noriega Airport;PR
 CQD;32.2972;50.8422;Shahrekord Airport;IR
 CQF;50.9608;1.9514;Calais-Dunkerque Airport;FR
@@ -924,7 +924,7 @@ CTA;37.4664;15.0642;Catania-Fontanarossa Airport;IT
 CTB;48.6083;-112.3761;Cut Bank International Airport;US
 CTC;-28.5864;-65.7533;Catamarca Airport;AR
 CTE;9.4500;-78.9670;Carti Airport;PA
-CTG;10.4425;-75.5128;Rafael Nuñez International Airport;CO
+CTG;10.4425;-75.5128;Rafael NuÃ±ez International Airport;CO
 CTL;-26.4133;146.2617;Charleville Airport;AU
 CTM;18.5046;-88.3267;Chetumal International Airport;MX
 CTN;-15.4461;145.1831;Cooktown Airport;AU
@@ -940,9 +940,9 @@ CUF;44.5483;7.6222;Cuneo International Airport;IT
 CUG;-33.2783;148.7633;Cudal Airport;AU
 CUK;17.7347;-88.0325;Caye Caulker Airport;BZ
 CUL;24.7651;-107.4752;Bachigualato Federal International Airport;MX
-CUM;10.4539;-64.1297;Cumaná (Antonio José de Sucre) Airport;VE
-CUN;21.0375;-86.8770;Cancún International Airport;MX
-CUP;10.6667;-63.2500;General Francisco Bermúdez Airport;VE
+CUM;10.4539;-64.1297;CumanÃ¡ (Antonio JosÃ© de Sucre) Airport;VE
+CUN;21.0375;-86.8770;CancÃºn International Airport;MX
+CUP;10.6667;-63.2500;General Francisco BermÃºdez Airport;VE
 CUQ;-13.7625;143.1125;Coen Airport;AU
 CUR;12.1889;-68.9597;Hato International Airport;CW
 CUT;-38.9333;-69.2500;Cutral-Co Airport;AR
@@ -975,7 +975,7 @@ CYB;19.6870;-79.8828;Gerrard Smith International Airport;KY
 CYC;17.7008;-88.0411;Caye Chapel Airport;BZ
 CYF;60.1492;-164.2856;Chefornak Airport;US
 CYI;23.4667;120.3833;Chiayi Airport;TW
-CYO;21.6161;-81.5456;Vilo Acuña International Airport;CU
+CYO;21.6161;-81.5456;Vilo AcuÃ±a International Airport;CU
 CYP;12.0770;124.5478;Calbayog Airport;PH
 CYR;-34.4514;-57.7669;Laguna de Los Patos International Airport;UY
 CYS;41.1557;-104.8118;Cheyenne Regional Jerry Olson Field;US
@@ -984,16 +984,16 @@ CYW;20.5460;-100.8866;Captain Rogelio Castillo National Airport;MX
 CYX;68.7433;161.3367;Cherskiy Airport;RU
 CYZ;15.9319;121.7556;Cauayan Airport;PH
 CZA;20.6413;-88.4462;Chichen Itza International Airport;MX
-CZE;11.4167;-69.6667;José Leonardo Chirinos Airport;VE
+CZE;11.4167;-69.6667;JosÃ© Leonardo Chirinos Airport;VE
 CZF;61.7809;-166.0395;Cape Romanzof LRRS Airport;US
 CZH;18.3670;-88.4000;Corozal Municipal Airport;BZ
-CZJ;9.5700;-79.3600;Corazón de Jesús Airport;PA
+CZJ;9.5700;-79.3600;CorazÃ³n de JesÃºs Airport;PA
 CZL;36.2853;6.6192;Mohamed Boudiaf International Airport;DZ
 CZM;20.5222;-86.9297;Cozumel International Airport;MX
 CZN;62.0712;-142.0484;Chisana Airport;US
 CZS;-7.5994;-72.7694;Cruzeiro do Sul Airport;BR
 CZU;9.3333;-75.2833;Las Brujas Airport;CO
-CZW;50.8850;19.2047;Częstochowa-Rudniki;PL
+CZW;50.8850;19.2047;CzÄ™stochowa-Rudniki;PL
 CZX;31.9197;119.7786;Changzhou Benniu Airport;CN
 DAB;29.1798;-81.0581;Daytona Beach International Airport;US
 DAC;23.8433;90.3978;Dhaka / Hazrat Shahjalal International Airport;BD
@@ -1065,7 +1065,7 @@ DJE;33.8756;10.7772;Djerba Zarzis International Airport;TN
 DJG;24.2931;9.4519;Djanet Inedbirene Airport;DZ
 DJJ;-2.5719;140.5114;Sentani Airport;ID
 DKA;13.0078;7.6605;Katsina Airport;NG
-DKR;14.7439;-17.4794;Léopold Sédar Senghor International Airport;SN
+DKR;14.7439;-17.4794;LÃ©opold SÃ©dar Senghor International Airport;SN
 DKS;73.5167;80.3817;Dikson Airport;RU
 DLA;4.0117;9.7083;Douala International Airport;CM
 DLC;38.9600;121.5300;Zhoushuizi Airport;CN
@@ -1096,7 +1096,7 @@ DNQ;-35.5597;144.9472;Deniliquin Airport;AU
 DNR;48.5878;-2.0800;Dinard-Pleurtuit-Saint-Malo Airport;FR
 DNV;40.1992;-87.5959;Vermilion Regional Airport;US
 DNX;12.5333;35.0583;Galegu Airport;SD
-DNZ;37.7878;29.7050;Çardak Airport;TR
+DNZ;37.7878;29.7050;Ã‡ardak Airport;TR
 DOB;-5.7722;134.2125;Rar Gwamar Airport;ID
 DOD;-6.1704;35.7494;Dodoma Airport;TZ
 DOG;19.1526;30.4302;Dongola Airport;SD
@@ -1137,7 +1137,7 @@ DUD;-45.9281;170.1983;Dunedin Airport;NZ
 DUG;31.4727;-109.6021;Bisbee Douglas International Airport;US
 DUJ;41.1783;-78.8983;DuBois Regional Airport;US
 DUR;-29.9656;30.9493;King Shaka International Airport;ZA
-DUS;51.2809;6.7573;Düsseldorf International Airport;DE
+DUS;51.2809;6.7573;DÃ¼sseldorf International Airport;DE
 DUT;53.9000;-166.5435;Unalaska Airport;US
 DVD;-22.1111;43.2706;Andavadoaka Airport;MG
 DVK;64.5113;-110.2895;Diavik Airport;CA
@@ -1171,7 +1171,7 @@ EBJ;55.5264;8.5525;Esbjerg Airport;DK
 EBL;36.2376;43.9632;Erbil International Airport;IQ
 EBM;31.7167;9.2667;El Borma Airport;TN
 EBO;4.6000;168.7500;Ebon Airport;MH
-EBU;45.5342;4.2972;Saint-Étienne-Bouthéon Airport;FR
+EBU;45.5342;4.2972;Saint-Ã‰tienne-BouthÃ©on Airport;FR
 ECA;-50.2803;-72.0532;Iosco County Airport;US
 ECG;36.2606;-76.1746;Elizabeth City Regional Airport & Coast Guard Air Station;US
 ECH;-36.1567;144.7617;Echuca Airport;AU
@@ -1183,7 +1183,7 @@ EDF;61.2531;-149.7939;Elmendorf Air Force Base;US
 EDI;55.9500;-3.3725;Edinburgh Airport;GB
 EDL;0.4045;35.2389;Eldoret International Airport;KE
 EDM;46.7025;-1.3817;La Roche-sur-Yon Airport;FR
-EDO;39.5614;27.0247;Balıkesir Körfez Airport;TR
+EDO;39.5614;27.0247;BalÄ±kesir KÃ¶rfez Airport;TR
 EDR;-14.8967;141.6094;Pormpuraaw Airport;AU
 EDW;34.9054;-117.8837;Edwards Air Force Base;US
 EED;34.7667;-114.6233;Needles Airport;US
@@ -1191,12 +1191,12 @@ EEK;60.2184;-162.0235;Eek Airport;US
 EFD;29.6073;-95.1587;Ellington Airport;US
 EFG;-9.1500;147.6500;Efogi Airport;PG
 EFL;38.1200;20.5006;Kefallinia Airport;GR
-EGC;44.8244;0.5206;Bergerac-Roumanière Airport;FR
+EGC;44.8244;0.5206;Bergerac-RoumaniÃ¨re Airport;FR
 EGE;39.6425;-106.9176;Eagle County Regional Airport;US
 EGM;-8.5667;157.8667;Sege Airport;SB
 EGN;13.4835;22.4725;Geneina Airport;SD
 EGO;50.6433;36.5917;Belgorod International Airport;RU
-EGS;65.2833;-14.4014;Egilsstaðir Airport;IS
+EGS;65.2833;-14.4014;EgilsstaÃ°ir Airport;IS
 EGV;45.9323;-89.2683;Eagle River Union Airport;US
 EGX;58.1855;-157.3754;Egegik Airport;US
 EHL;-41.9667;-71.5167;El Bolson Airport;AR
@@ -1206,7 +1206,7 @@ EIK;46.6700;38.1800;Yeysk Airport;RU
 EIL;64.6657;-147.1015;Eielson Air Force Base;US
 EIN;51.4500;5.3744;Eindhoven Airport;NL
 EIS;18.4458;-64.5411;Terrance B. Lettsome International Airport;VG
-EJA;7.0244;-73.8069;Yariguíes Airport;CO
+EJA;7.0244;-73.8069;YariguÃ­es Airport;CO
 EJH;26.1986;36.4761;Al Wajh Domestic Airport;SA
 EJT;6.1333;171.9167;Enejit Airport;MH
 EKA;40.8056;-124.1156;Murray Field;US
@@ -1247,7 +1247,7 @@ ENI;11.2020;119.4170;El Nido Airport;PH
 ENK;54.3989;-7.6517;St Angelo Airport;GB
 ENL;38.5151;-89.0911;Centralia Municipal Airport;US
 ENN;64.5473;-149.0740;Nenana Municipal Airport;US
-ENO;-34.5631;-58.7903;Encarnación Airport;PY
+ENO;-34.5631;-58.7903;EncarnaciÃ³n Airport;PY
 ENS;52.2758;6.8892;Twente Airfield;NL
 ENT;11.3400;162.3283;Eniwetok Airport;MH
 ENU;5.4672;7.5589;Akanu Ibiam International Airport;NG
@@ -1258,9 +1258,9 @@ EOI;59.1914;-2.7739;Eday Airport;GB
 EOR;6.7333;-61.5833;El Dorado Airport;VE
 EOZ;7.0597;-69.4967;Elorza Airport;VE
 EPH;47.3075;-119.5158;Ephrata Municipal Airport;US
-EPL;48.3250;6.0667;Épinal-Mirecourt Airport;FR
+EPL;48.3250;6.0667;Ã‰pinal-Mirecourt Airport;FR
 EPR;-33.6858;121.8211;Esperance Airport;AU
-EPU;58.4190;24.4728;Pärnu Airport;EE
+EPU;58.4190;24.4728;PÃ¤rnu Airport;EE
 EQS;-42.9333;-71.1442;Brigadier Antonio Parodi Airport;AR
 ERC;39.7131;39.5206;Erzincan Airport;TR
 ERF;50.9797;10.9581;Erfurt Airport;DE
@@ -1268,19 +1268,19 @@ ERH;31.9482;-4.4007;Moulay Ali Cherif Airport;MA
 ERI;42.0819;-80.1761;Erie International Tom Ridge Field;US
 ERL;43.6600;112.0000;Erenhot Saiwusu International Airport;CN
 ERM;-27.6619;-52.2683;Erechim Airport;BR
-ERN;-6.6667;-69.9167;Eirunepé Airport;BR
+ERN;-6.6667;-69.9167;EirunepÃ© Airport;BR
 ERS;-22.6075;17.0792;Eros Airport;NA
 ERZ;39.9561;41.1694;Erzurum International Airport;TR
-ESB;40.1281;32.9950;Esenboğa International Airport;TR
+ESB;40.1281;32.9950;EsenboÄŸa International Airport;TR
 ESC;45.7227;-87.0937;Delta County Airport;US
 ESD;48.7082;-122.9105;Orcas Island Airport;US
 ESE;31.7947;-116.6008;Ensenada Airport;MX
 ESF;31.3947;-92.2958;Esler Regional Airport;US
 ESH;50.8356;-0.2972;Shoreham Airport;GB
-ESK;39.7822;30.5828;Eskişehir Air Base;TR
+ESK;39.7822;30.5828;EskiÅŸehir Air Base;TR
 ESL;46.3733;44.3317;Elista Airport;RU
 ESM;0.9786;-79.6267;General Rivadeneira Airport;EC
-ESR;-26.3133;-69.7658;Ricardo García Posada Airport;CL
+ESR;-26.3133;-69.7658;Ricardo GarcÃ­a Posada Airport;CL
 ESS;-37.7281;144.9019;Essen Mulheim Airport;DE
 ESU;31.3972;-9.6819;Mogador Airport;MA
 ETH;29.5594;34.9592;Eilat Airport;IL
@@ -1294,7 +1294,7 @@ EVE;68.4889;16.6783;Harstad-Narvik Airpt;NO
 EVG;62.0478;14.4242;Sveg Airport;SE
 EVN;40.1473;44.3959;Zvartnots International Airport;AM
 EVV;38.0370;-87.5324;Evansville Regional Airport;US
-EVX;49.0286;1.2200;Évreux-Fauville (BA 105) Air Base;FR
+EVX;49.0286;1.2200;Ã‰vreux-Fauville (BA 105) Air Base;FR
 EWB;41.6825;-70.9617;New Bedford Regional Airport;US
 EWN;35.0731;-77.0431;Coastal Carolina Regional Airport;US
 EWR;40.6925;-74.1687;Newark Liberty International Airport;US
@@ -1304,7 +1304,7 @@ EYK;63.6800;66.6800;Beloyarskiy Airport;RU
 EYP;5.3191;-72.3841;El Yopal Airport;CO
 EYW;24.5562;-81.7595;Key West International Airport;US
 EZE;-34.8222;-58.5358;Ministro Pistarini International Airport;AR
-EZS;38.6050;39.2939;Elazığ Airport;TR
+EZS;38.6050;39.2939;ElazÄ±ÄŸ Airport;TR
 EZV;63.5600;65.0300;Berezovo Airport;RU
 FAA;10.0060;-10.7599;Faranah Airport;GN
 FAB;51.2758;-0.7764;Farnborough Airport;GB
@@ -1321,25 +1321,25 @@ FAV;-16.0542;-145.6570;Fakarava Airport;PF
 FAY;34.9911;-78.8803;Fayetteville Regional Grannis Field;US
 FBA;-2.5315;-66.0714;Fonte Boa Airport;BR
 FBD;37.1219;70.5186;Fayzabad Airport;AF
-FBE;-26.0589;-53.0633;Francisco Beltrão Airport;BR
+FBE;-26.0589;-53.0633;Francisco BeltrÃ£o Airport;BR
 FBK;64.8365;-147.6168;Ladd AAF Airfield;US
 FBM;-11.5913;27.5309;Lubumbashi International Airport;CD
 FBS;48.5436;-123.0061;Friday Harbor Seaplane Base;US
 FCA;48.3105;-114.2560;Glacier Park International Airport;US
 FCN;53.7683;8.6642;Nordholz Naval Airbase;DE
-FCO;41.8003;12.2389;Leonardo da Vinci–Fiumicino Airport;IT
+FCO;41.8003;12.2389;Leonardo da Vinciâ€“Fiumicino Airport;IT
 FCS;38.6784;-104.7566;Butts AAF (Fort Carson) Air Field;US
-FDE;61.3911;5.7569;Førde Airport;NO
-FDF;14.5922;-60.9964;Martinique Aimé Césaire International Airport;MQ
+FDE;61.3911;5.7569;FÃ¸rde Airport;NO
+FDF;14.5922;-60.9964;Martinique AimÃ© CÃ©saire International Airport;MQ
 FDH;47.6713;9.5115;Friedrichshafen Airport;DE
 FDK;39.4178;-77.3744;Frederick Municipal Airport;US
 FDY;41.0120;-83.6686;Findlay Airport;US
-FEC;-12.2025;-38.9061;João Durval Carneiro Airport;BR
+FEC;-12.2025;-38.9061;JoÃ£o Durval Carneiro Airport;BR
 FEG;40.3583;71.7450;Fergana International Airport;UZ
-FEL;48.2057;11.2670;Fürstenfeldbruck Airport;DE
+FEL;48.2057;11.2670;FÃ¼rstenfeldbruck Airport;DE
 FEN;-3.8500;-32.4167;Fernando de Noronha Airport;BR
 FEP;42.2462;-89.5820;Albertus Airport;US
-FEZ;33.9272;-4.9792;Saïss Airport;MA
+FEZ;33.9272;-4.9792;SaÃ¯ss Airport;MA
 FFD;51.6833;-1.7833;RAF Fairford;GB
 FGD;22.6667;-12.7333;Fderik Airport;MR
 FGU;-15.8231;-140.8833;Fangatau Airport;PF
@@ -1357,7 +1357,7 @@ FLA;1.5889;-75.5639;Gustavo Artunduaga Paredes Airport;CO
 FLB;-6.8458;-43.0775;Cangapara Airport;BR
 FLG;35.1386;-111.6711;Flagstaff Pulliam Airport;US
 FLL;26.0727;-80.1527;Fort Lauderdale Hollywood International Airport;US
-FLN;-27.6703;-48.5522;Hercílio Luz International Airport;BR
+FLN;-27.6703;-48.5522;HercÃ­lio Luz International Airport;BR
 FLO;34.1854;-79.7239;Florence Regional Airport;US
 FLR;43.8097;11.2039;Peretola Airport;IT
 FLS;-40.0903;147.9933;Flinders Island Airport;AU
@@ -1368,13 +1368,13 @@ FMH;41.6583;-70.5217;Cape Cod Coast Guard Air Station;US
 FMI;-5.8755;29.2494;Kalemie Airport;CD
 FMM;47.9888;10.2395;Memmingen Allgau Airport;DE
 FMN;36.7420;-108.2298;Four Corners Regional Airport;US
-FMO;52.1346;7.6848;Münster Osnabrück Airport;DE
+FMO;52.1346;7.6848;MÃ¼nster OsnabrÃ¼ck Airport;DE
 FMY;26.5867;-81.8633;Page Field;US
 FNA;8.6165;-13.1956;Lungi International Airport;SL
 FNB;53.6037;13.3101;Neubrandenburg Airport;DE
 FNC;32.6942;-16.7781;Madeira Airport;PT
 FNE;-8.5500;147.0830;Fane Airport;PG
-FNI;43.7575;4.4164;Nîmes-Arles-Camargue Airport;FR
+FNI;43.7575;4.4164;NÃ®mes-Arles-Camargue Airport;FR
 FNJ;39.2436;125.6758;Pyongyang Sunan International Airport;KP
 FNL;40.4518;-105.0113;Fort Collins Loveland Municipal Airport;US
 FNT;42.9654;-83.7436;Bishop International Airport;US
@@ -1395,8 +1395,8 @@ FRC;-20.5897;-47.3819;Franca Airport;BR
 FRD;48.5220;-123.0244;Friday Harbor Airport;US
 FRE;-8.1075;159.5772;Fera/Maringe Airport;SB
 FRG;40.7288;-73.4134;Republic Airport;US
-FRL;44.1964;12.0706;Forlì Airport;IT
-FRO;61.5836;5.0247;Florø Airport;NO
+FRL;44.1964;12.0706;ForlÃ¬ Airport;IT
+FRO;61.5836;5.0247;FlorÃ¸ Airport;NO
 FRS;16.9233;-89.8700;Mundo Maya International Airport;GT
 FRU;43.0617;74.4783;Manas International Airport;KG
 FRW;-21.1608;27.4821;Francistown Airport;BW
@@ -1411,7 +1411,7 @@ FSZ;34.7961;138.1894;Mt. Fuji Shizuoka Airport;JP
 FTA;-19.5164;170.2319;Futuna Airport;VU
 FTE;-50.2803;-72.0531;El Calafate Airport;AR
 FTK;37.9071;-85.9720;Godman Army Air Field;US
-FTU;-25.0381;46.9561;Tôlanaro Airport;MG
+FTU;-25.0381;46.9561;TÃ´lanaro Airport;MG
 FTW;32.8198;-97.3624;Fort Worth Meacham International Airport;US
 FTY;33.7792;-84.5222;Fulton County Airport Brown Field;US
 FUE;28.4527;-13.8638;Fuerteventura Airport;ES
@@ -1430,7 +1430,7 @@ FYU;66.5715;-145.2504;Fort Yukon Airport;US
 FYV;36.0053;-94.1700;Drake Field;US
 FZO;51.5194;-2.5908;Bristol Filton Airport;GB
 GAD;33.9726;-86.0890;Northeast Alabama Regional Airport;US
-GAE;33.8833;10.1167;Gabès Matmata International Airport;TN
+GAE;33.8833;10.1167;GabÃ¨s Matmata International Airport;TN
 GAF;34.4156;8.8136;Gafsa Ksar International Airport;TN
 GAH;-25.6153;151.6228;Gayndah Airport;AU
 GAJ;38.4119;140.3711;Yamagata Airport;JP
@@ -1458,22 +1458,22 @@ GCW;35.9903;-113.8164;Grand Canyon West Airport;US
 GDE;5.9351;43.5786;Gode Airport;ET
 GDG;53.4667;125.8133;Magdagachi Airport;RU
 GDL;20.5214;-103.3108;Don Miguel Hidalgo Y Costilla International Airport;MX
-GDN;54.3776;18.4662;Gdańsk Lech Wałęsa Airport;PL
+GDN;54.3776;18.4662;GdaÅ„sk Lech WaÅ‚Ä™sa Airport;PL
 GDO;7.2333;-70.8000;Guasdalito Airport;VE
 GDQ;12.5199;37.4340;Gonder Airport;ET
 GDT;21.4445;-71.1423;JAGS McCartney International Airport;TC
 GDV;47.1386;-104.8072;Dawson Community Airport;US
 GDX;59.9100;150.7183;Sokol Airport;RU
 GDZ;44.5703;38.0122;Gelendzhik Airport;RU
-GEA;-22.2631;166.4681;Nouméa Magenta Airport;NC
-GEC;35.2333;33.7328;Geçitkale Air Base;CY
+GEA;-22.2631;166.4681;NoumÃ©a Magenta Airport;NC
+GEC;35.2333;33.7328;GeÃ§itkale Air Base;CY
 GEG;47.6198;-117.5337;Spokane International Airport;US
-GEL;-28.2817;-54.1683;Santo Ângelo Airport;BR
+GEL;-28.2817;-54.1683;Santo Ã‚ngelo Airport;BR
 GEO;6.4989;-58.2544;Cheddi Jagan International Airport;GY
 GER;21.8383;-82.7792;Rafael Cabrera Airport;CU
 GES;6.1075;125.2328;General Santos International Airport;PH
 GET;-28.7975;114.7061;Geraldton Airport;AU
-GEV;67.1331;20.8122;Gällivare Airport;SE
+GEV;67.1331;20.8122;GÃ¤llivare Airport;SE
 GEY;44.5168;-108.0828;South Big Horn County Airport;US
 GFA;47.5046;-111.1873;Malmstrom Air Force Base;US
 GFF;-34.2517;146.0667;Griffith Airport;AU
@@ -1486,16 +1486,16 @@ GGM;0.2664;34.7833;Kakamega Airport;KE
 GGS;-48.7836;-70.1608;Gobernador Gregores Airport;AR
 GGT;23.5626;-75.8780;Exuma International Airport;BS
 GGW;48.2125;-106.6147;Wokal Field Glasgow International Airport;US
-GHA;32.3817;3.7994;Noumérat - Moufdi Zakaria Airport;DZ
+GHA;32.3817;3.7994;NoumÃ©rat - Moufdi Zakaria Airport;DZ
 GHB;25.2847;-76.3310;Governor's Harbour Airport;BS
 GHC;25.7383;-77.8401;Great Harbour Cay Airport;BS
-GHE;8.0670;-78.3670;Garachiné Airport;PA
+GHE;8.0670;-78.3670;GarachinÃ© Airport;PA
 GHF;49.6483;9.9667;Giebelstadt Airport;DE
 GHT;25.1369;10.1450;Ghat Airport;LY
 GHU;-33.0108;-58.6125;Gualeguaychu Airport;AR
 GIB;36.1500;-5.3500;Gibraltar Airport;GI
 GIC;-9.2333;142.2183;Boigu Airport;AU
-GIG;-22.8100;-43.2506;Rio Galeão – Tom Jobim International Airport;BR
+GIG;-22.8100;-43.2506;Rio GaleÃ£o â€“ Tom Jobim International Airport;BR
 GII;11.4011;-9.1868;Siguiri Airport;GN
 GIL;35.9244;74.3403;Gilgit Airport;PK
 GIR;4.2761;-74.7958;Santiago Vila Airport;CO
@@ -1504,7 +1504,7 @@ GIU;7.9558;80.7281;Sigiriya Air Force Base;LK
 GIZ;16.9011;42.5858;Jizan Regional Airport;SA
 GJA;16.4454;-85.9066;La Laguna Airport;HN
 GJL;36.7944;5.8736;Jijel Ferhat Abbas Airport;DZ
-GJM;-10.7881;-65.2811;Guajará-Mirim Airport;BR
+GJM;-10.7881;-65.2811;GuajarÃ¡-Mirim Airport;BR
 GJT;39.1224;-108.5267;Grand Junction Regional Airport;US
 GKA;-6.0844;145.3966;Goroka Airport;PG
 GKE;50.9608;6.0425;Geilenkirchen Airport;DE
@@ -1535,7 +1535,7 @@ GMR;-23.0833;-134.8833;Totegegie Airport;PF
 GMU;34.8481;-82.3500;Greenville Downtown Airport;US
 GMZ;28.0296;-17.2146;La Goemra Airport;ES
 GNA;53.6017;24.0550;Hrodna Airport;BY
-GNB;45.3631;5.3328;Grenoble-Isère Airport;FR
+GNB;45.3631;5.3328;Grenoble-IsÃ¨re Airport;FR
 GND;12.0039;-61.7861;Point Salines International Airport;GD
 GNI;22.6744;121.4583;Lyudao Airport;TW
 GNM;-14.2064;-42.7506;Guanambi Airport;BR
@@ -1544,7 +1544,7 @@ GNS;1.1664;97.7047;Binaka Airport;ID
 GNT;35.1653;-107.9006;Grants-Milan Municipal Airport;US
 GNU;59.1174;-161.5774;Goodnews Airport;US
 GNV;29.6900;-82.2719;Gainesville Regional Airport;US
-GNY;37.0919;38.8462;Şanlıurfa GAP Airport;TR
+GNY;37.0919;38.8462;ÅžanlÄ±urfa GAP Airport;TR
 GOA;44.4131;8.8378;Genoa Cristoforo Colombo Airport;IT
 GOH;64.1909;-51.6781;Godthaab / Nuuk Airport;GL
 GOI;15.3797;73.8278;Dabolim Airport;IN
@@ -1575,11 +1575,11 @@ GRP;-11.7433;-49.1250;Gurupi Airport;BR
 GRQ;53.1250;6.5833;Eelde Airport;NL
 GRR;42.8808;-85.5228;Gerald R. Ford International Airport;US
 GRS;42.7597;11.0719;Grosseto Air Base;IT
-GRU;-23.4356;-46.4731;Guarulhos - Governador André Franco Montoro International Airport;BR
+GRU;-23.4356;-46.4731;Guarulhos - Governador AndrÃ© Franco Montoro International Airport;BR
 GRV;43.3330;45.7000;Grozny North Airport;RU
 GRW;39.0922;-28.0298;Graciosa Airport;PT
 GRX;37.1887;-3.7774;Federico Garcia Lorca Airport;ES
-GRY;66.5547;-18.0175;Grímsey Airport;IS
+GRY;66.5547;-18.0175;GrÃ­msey Airport;IS
 GRZ;46.9931;15.4392;Graz Airport;AT
 GSB;35.3393;-77.9607;Seymour Johnson Air Force Base;US
 GSE;57.7756;11.8706;Gothenburg City Airport;SE
@@ -1601,13 +1601,13 @@ GUA;14.5817;-90.5267;La Aurora Airport;GT
 GUC;38.5339;-106.9330;Gunnison Crested Butte Regional Airport;US
 GUH;-30.9611;150.2506;Gunnedah Airport;AU
 GUI;10.5800;-62.3183;Guiria Airport;VE
-GUJ;-22.7911;-45.2039;Guaratinguetá Airport;BR
+GUJ;-22.7911;-45.2039;GuaratinguetÃ¡ Airport;BR
 GUL;-34.8089;149.7278;Goulburn Airport;AU
 GUM;13.4839;144.7972;Antonio B Won Pat International;US
 GUP;35.5111;-108.7893;Gallup Municipal Airport;US
 GUQ;9.0167;-69.7333;Guanare Airport;VE
 GUR;-10.3104;150.3341;Gurney Airport;PG
-GUT;51.9237;8.3075;Gütersloh Air Base;DE
+GUT;51.9237;8.3075;GÃ¼tersloh Air Base;DE
 GUW;47.1219;51.8214;Atyrau Airport;KZ
 GUY;36.6853;-101.5078;Guymon Municipal Airport;US
 GUZ;-20.6500;-40.4917;Guarapari Airport;BR
@@ -1616,23 +1616,23 @@ GVE;38.1567;-78.1650;Gordonsville Municipal Airport;US
 GVN;48.5800;140.1800;Maygatka Airport.;RU
 GVR;-18.8947;-41.9817;Coronel Altino Machado de Oliveira Airport;BR
 GVT;33.0678;-96.0653;Majors Airport;US
-GVX;60.5933;16.9514;Gävle Sandviken Airport;SE
+GVX;60.5933;16.9514;GÃ¤vle Sandviken Airport;SE
 GWD;25.2333;62.3295;Gwadar International Airport;PK
 GWE;-19.4417;29.8583;Thornhill Air Base;ZW
 GWL;26.2933;78.2278;Gwalior Airport;IN
-GWO;33.4950;-90.0850;Greenwood–Leflore Airport;US
+GWO;33.4950;-90.0850;Greenwoodâ€“Leflore Airport;US
 GWT;54.9116;8.3424;Westerland Sylt Airport;DE
 GWY;53.3002;-8.9412;Galway Airport;IE
 GXF;15.9636;48.7850;Sayun International Airport;YE
 GXG;-7.7667;15.3000;Negage Airport;AO
 GXH;34.8106;102.6447;Gannan Xiahe Airport;CN
 GXQ;-45.5928;-72.1019;Teniente Vidal Airport;CL
-GYA;-10.8217;-65.3458;Capitán de Av. Emilio Beltrán Airport;BO
+GYA;-10.8217;-65.3458;CapitÃ¡n de Av. Emilio BeltrÃ¡n Airport;BO
 GYD;40.4675;50.0467;Heydar Aliyev International Airport;AZ
-GYE;-2.1581;-79.8839;José Joaquín de Olmedo International Airport;EC
+GYE;-2.1581;-79.8839;JosÃ© JoaquÃ­n de Olmedo International Airport;EC
 GYI;-1.6772;29.2589;Gisenyi Airport;RW
 GYL;-16.6369;128.4500;Argyle Airport;AU
-GYM;27.9693;-110.9178;General José María Yáñez International Airport;MX
+GYM;27.9693;-110.9178;General JosÃ© MarÃ­a YÃ¡Ã±ez International Airport;MX
 GYN;-16.6297;-49.2267;Santa Genoveva Airport;BR
 GYP;-26.2833;152.7000;Gympie Airport;AU
 GYR;33.4237;-112.3745;Phoenix Goodyear Airport;US
@@ -1640,7 +1640,7 @@ GYS;32.3911;105.7017;Guangyuan Airport;CN
 GYY;41.6163;-87.4128;Gary Chicago International Airport;US
 GZA;31.2464;34.2761;Yasser Arafat International Airport;PS
 GZO;-8.0970;156.8630;Nusatupe Airport;SB
-GZP;36.2992;32.3006;Gazipaşa Airport;TR
+GZP;36.2992;32.3006;GazipaÅŸa Airport;TR
 GZT;36.9489;37.4792;Gaziantep International Airport;TR
 HAA;70.4867;22.1397;Hasvik Airport;NO
 HAC;33.1150;139.7856;Hachijojima Airport;JP
@@ -1654,7 +1654,7 @@ HAN;21.2217;105.8056;Noi Bai International Airport;VN
 HAQ;6.7464;73.1686;Hanimaadhoo Airport;MV
 HAS;27.4398;41.6863;Ha'il Airport;SA
 HAU;59.3432;5.2125;Haugesund Airport;NO
-HAV;22.9892;-82.4092;José Martí International Airport;CU
+HAV;22.9892;-82.4092;JosÃ© MartÃ­ International Airport;CU
 HAW;51.8331;-4.9611;Haverfordwest Airport;GB
 HBA;-42.8367;147.5100;Hobart International Airport;AU
 HBE;30.9181;29.6958;Borg El Arab International Airport;EG
@@ -1674,7 +1674,7 @@ HDS;-24.3546;31.0504;Hoedspruit Air Force Base Airport;ZA
 HDY;6.9328;100.3950;Hat Yai International Airport;TH
 HEA;34.2161;62.2264;Herat Airport;AF
 HEH;20.7433;96.7930;Heho Airport;MM
-HEI;54.1550;8.9033;Heide-Büsum Airport;DE
+HEI;54.1550;8.9033;Heide-BÃ¼sum Airport;DE
 HEK;50.2500;127.3000;Heihe Airport;CN
 HEL;60.3172;24.9633;Helsinki Vantaa Airport;FI
 HEM;60.2539;25.0442;Helsinki Malmi Airport;FI
@@ -1685,13 +1685,13 @@ HEZ;31.6133;-91.2967;Hardy-Anders Field / Natchez-Adams County Airport;US
 HFA;32.8094;35.0431;Haifa International Airport;IL
 HFD;41.7367;-72.6333;Hartford Brainard Airport;US
 HFE;31.7833;117.3000;Hefei Luogang International Airport;CN
-HFN;64.2956;-15.2272;Hornafjörður Airport;IS
+HFN;64.2956;-15.2272;HornafjÃ¶rÃ°ur Airport;IS
 HFS;60.0211;13.5789;Hagfors Airport;SE
 HFT;70.6797;23.6686;Hammerfest Airport;NO
 HGA;9.4878;44.0875;Egal International Airport;SO
 HGD;-20.8164;144.2242;Hughenden Airport;AU
 HGH;30.2283;120.4317;Hangzhou Xiaoshan International Airport;CN
-HGL;54.1853;7.9158;Helgoland-Düne Airport;DE
+HGL;54.1853;7.9158;Helgoland-DÃ¼ne Airport;DE
 HGN;19.3017;97.9750;Mae Hong Son Airport;TH
 HGR;39.7085;-77.7265;Hagerstown Regional Richard A Henson Field;US
 HGU;-5.8333;144.3000;Mount Hagen Kagamuga Airport;PG
@@ -1762,7 +1762,7 @@ HOQ;50.2888;11.8549;Hof-Plauen Airport;DE
 HOR;38.5200;-28.7164;Horta Airport;PT
 HOT;34.4781;-93.0961;Memorial Field;US
 HOU;29.6454;-95.2789;William P Hobby Airport;US
-HOV;62.1800;6.0743;Ørsta–Volda Airport;NO
+HOV;62.1800;6.0743;Ã˜rstaâ€“Volda Airport;NO
 HPA;-19.7781;-174.3467;Lifuka Island Airport;TO
 HPB;61.5239;-166.1466;Hooper Bay Airport;US
 HPH;20.8207;106.7245;Cat Bi International Airport;VN
@@ -1807,8 +1807,8 @@ HUS;66.0391;-154.2647;Hughes Airport;US
 HUT;38.0654;-97.8606;Hutchinson Municipal Airport;US
 HUU;-9.9000;-76.2167;Alferez Fap David Figueroa Fernandini Airport;PE
 HUV;61.7683;17.0806;Hudiksvall Airport;SE
-HUW;-7.5336;-63.0505;Humaitá Airport;BR
-HUX;15.7753;-96.2626;Bahías de Huatulco International Airport;MX
+HUW;-7.5336;-63.0505;HumaitÃ¡ Airport;BR
+HUX;15.7753;-96.2626;BahÃ­as de Huatulco International Airport;MX
 HUY;53.5744;-0.3508;Humberside Airport;GB
 HVA;-14.6297;47.7638;Analalava Airport;MG
 HVB;-25.3250;152.8900;Hervey Bay Airport;AU
@@ -1828,23 +1828,23 @@ HYS;38.8422;-99.2732;Hays Regional Airport;US
 HZB;50.6167;2.6400;Merville-Calonne Airport;FR
 HZG;33.0636;107.0081;Hanzhong Chenggu Airport;CN
 HZH;26.3350;109.1500;Liping Airport;CN
-HZK;65.9525;-17.4258;Húsavík Airport;IS
+HZK;65.9525;-17.4258;HÃºsavÃ­k Airport;IS
 IAA;67.4417;86.6233;Igarka Airport;RU
 IAB;37.6229;-97.2733;Mc Connell Air Force Base;US
 IAD;38.9445;-77.4558;Washington Dulles International Airport;US
 IAG;43.1073;-78.9462;Niagara Falls International Airport;US
 IAH;29.9844;-95.3414;George Bush Intercontinental Houston Airport;US
-IAM;28.0514;9.6428;In Aménas Airport;DZ
+IAM;28.0514;9.6428;In AmÃ©nas Airport;DZ
 IAN;66.9760;-160.4365;Bob Baker Memorial Airport;US
 IAO;9.8591;126.0140;Siargao Airport;PH
 IAR;57.5600;40.1567;Tunoshna Airport;RU
-IAS;47.1788;27.6200;Iaşi Airport;RO
+IAS;47.1788;27.6200;IaÅŸi Airport;RO
 IBA;7.3608;3.9781;Ibadan Airport;NG
 IBE;4.4214;-75.1325;Perales Airport;CO
 IBL;-21.7058;35.4514;Indigo Bay Lodge Airport;MZ
 IBR;36.1817;140.4147;Hyakuri Airport;JP
 IBZ;38.8729;1.3731;Ibiza Airport;ES
-ICA;4.3333;-61.7333;Icabarú Airport;VE
+ICA;4.3333;-61.7333;IcabarÃº Airport;VE
 ICI;-17.7433;-179.3422;Cicia Airport;FJ
 ICK;5.9628;-57.0333;Nieuw Nickerie Airport;SR
 ICN;37.4625;126.4392;Incheon International Airport;KR
@@ -1854,22 +1854,22 @@ IDA;43.5145;-112.0702;Idaho Falls Regional Airport;US
 IDB;61.8697;12.6894;Idre Airport;SE
 IDO;-11.5731;-50.6678;Santa Izabel do Morro Airport;BR
 IDR;22.7228;75.8064;Devi Ahilyabai Holkar Airport;IN
-IEG;52.1385;15.7986;Zielona Góra-Babimost Airport;PL
+IEG;52.1385;15.7986;Zielona GÃ³ra-Babimost Airport;PL
 IEJ;26.7226;127.7866;Ie Jima Airport;JP
 IEV;50.4017;30.4517;Kiev Zhuliany International Airport;UA
-IFJ;66.0581;-23.1353;Ísafjörður Airport;IS
+IFJ;66.0581;-23.1353;Ã�safjÃ¶rÃ°ur Airport;IS
 IFL;-17.5611;146.0106;Innisfail Airport;AU
 IFN;32.7508;51.8628;Esfahan Shahid Beheshti International Airport;IR
 IFO;48.8850;24.6867;Ivano-Frankivsk International Airport;UA
 IFP;35.1611;-114.5595;Laughlin Bullhead International Airport;US
 IGA;20.9750;-73.6669;Inagua Airport;BS
-IGD;39.9744;43.8800;Iğdır Airport;TR
+IGD;39.9744;43.8800;IÄŸdÄ±r Airport;TR
 IGG;59.3240;-155.9018;Igiugig Airport;US
 IGH;-18.6656;146.1475;Ingham Airport;AU
-IGL;38.5119;27.0108;Çiğli Airport;TR
+IGL;38.5119;27.0108;Ã‡iÄŸli Airport;TR
 IGM;35.2594;-113.9381;Kingman Airport;US
 IGN;8.1500;124.2083;Iligan Airport;PH
-IGR;-25.7372;-54.4733;Cataratas Del Iguazú International Airport;AR
+IGR;-25.7372;-54.4733;Cataratas Del IguazÃº International Airport;AR
 IGS;48.7157;11.5340;Ingolstadt Manching Airport;DE
 IGU;-25.6003;-54.4850;Cataratas International Airport;BR
 IHR;27.2360;60.7196;Iran Shahr Airport;IR
@@ -1892,11 +1892,11 @@ ILI;59.7544;-154.9110;Iliamna Airport;US
 ILM;34.2706;-77.9025;Wilmington International Airport;US
 ILN;39.4279;-83.7921;Wilmington Airpark;US
 ILO;10.7300;122.5449;Iloilo International Airport;PH
-ILP;-22.5889;167.4558;Île des Pins Airport;NC
+ILP;-22.5889;167.4558;ÃŽle des Pins Airport;NC
 ILQ;-17.6908;-71.3408;Ilo Airport;PE
 ILR;8.4400;4.4939;Ilorin International Airport;NG
 ILY;55.6819;-6.2567;Islay Airport;GB
-ILZ;49.2333;18.6136;Žilina Airport;SK
+ILZ;49.2333;18.6136;Å½ilina Airport;SK
 IMF;24.7636;93.9031;Imphal Airport;IN
 IMK;29.9711;81.8189;Simikot Airport;NP
 IML;40.5105;-101.6201;Imperial Municipal Airport;US
@@ -1932,7 +1932,7 @@ IPI;0.8619;-77.6717;San Luis Airport;CO
 IPL;32.8342;-115.5787;Imperial County Airport;US
 IPN;-19.4706;-42.4878;Usiminas Airport;BR
 IPT;41.2418;-76.9211;Williamsport Regional Airport;US
-IPU;-14.1333;-39.7333;Ipiaú Airport;BR
+IPU;-14.1333;-39.7333;IpiaÃº Airport;BR
 IQA;33.7856;42.4412;Al Asad Air Base;IQ
 IQM;38.1494;85.5328;Qiemo Airport;CN
 IQN;35.7997;107.6028;Qingyang Airport;CN
@@ -1941,7 +1941,7 @@ IQT;-3.7847;-73.3088;Coronel FAP Francisco Secada Vignetta International Airport
 IRA;-10.4490;161.8970;Ngorangora Airport;SB
 IRC;65.8279;-144.0762;Circle City /New/ Airport;US
 IRD;24.1526;89.0494;Ishurdi Airport;BD
-IRE;-11.3394;-41.8522;Irecê Airport;BR
+IRE;-11.3394;-41.8522;IrecÃª Airport;BR
 IRG;-12.7883;143.3047;Lockhart River Airport;AU
 IRI;-7.6686;35.7521;Iringa Airport;TZ
 IRJ;-29.3892;-66.8025;Capitan V A Almonacid Airport;AR
@@ -1954,7 +1954,7 @@ IRZ;-0.3803;-64.9960;Tapuruquara Airport;BR
 ISA;-20.6633;139.4883;Mount Isa Airport;AU
 ISB;33.6172;73.1000;Benazir Bhutto International Airport;PK
 ISC;49.9133;-6.2917;St. Mary's Airport;GB
-ISE;37.8650;30.3819;Süleyman Demirel International Airport;TR
+ISE;37.8650;30.3819;SÃ¼leyman Demirel International Airport;TR
 ISG;24.3434;124.1850;Isa Giron Heliport;CO
 ISG;24.3434;124.1850;Ishigaki Airport;JP
 ISI;-24.2583;144.4250;Isisford Airport;AU
@@ -1963,7 +1963,7 @@ ISM;28.2898;-81.4370;Kissimmee Gateway Airport;US
 ISN;48.1783;-103.6417;Sloulin Field International Airport;US
 ISO;35.3314;-77.6088;Kinston Regional Jetport At Stallings Field;US
 ISP;40.7953;-73.1002;Long Island Mac Arthur Airport;US
-IST;40.9761;28.8139;Atatürk International Airport;TR
+IST;40.9761;28.8139;AtatÃ¼rk International Airport;TR
 ISU;35.5609;45.3147;Sulaymaniyah International Airport;IQ
 ITA;-3.1261;-58.4811;Itacoatiara Airport;BR
 ITB;-4.2419;-56.0003;Itaituba Airport;BR
@@ -2036,12 +2036,12 @@ JDF;-21.7925;-43.3850;Francisco de Assis Airport;BR
 JDH;26.2667;73.0500;Jodhpur Airport;IN
 JDN;47.3287;-106.9527;Jordan Airport;US
 JDO;-7.2181;-39.2714;Orlando Bezerra de Menezes Airport;BR
-JDR;-21.0863;-44.2263;Prefeito Octávio de Almeida Neves Airport;BR
+JDR;-21.0863;-44.2263;Prefeito OctÃ¡vio de Almeida Neves Airport;BR
 JDZ;29.3386;117.1758;Jingdezhen Airport;CN
 JED;21.6811;39.1555;King Abdulaziz International Airport;SA
 JEG;68.7218;-52.7847;Aasiaat Airport;GL
 JEJ;7.5830;168.9170;Jeh Airport;MH
-JEQ;-13.8767;-40.0714;Jequié Airport;BR
+JEQ;-13.8767;-40.0714;JequiÃ© Airport;BR
 JER;49.2079;-2.1955;Jersey Airport;JE
 JFK;40.6397;-73.7789;John F Kennedy International Airport;US
 JFR;61.9922;-49.6625;Paamiut Airport;GL
@@ -2055,7 +2055,7 @@ JHG;21.9750;100.7600;Xishuangbanna Gasa Airport;CN
 JHM;20.9636;-156.6730;Kapalua Airport;US
 JHS;66.9513;-53.7293;Sisimiut Airport;GL
 JHW;42.1533;-79.2581;Chautauqua County-Jamestown Airport;US
-JIA;-11.5000;-58.8833;Juína Airport;BR
+JIA;-11.5000;-58.8833;JuÃ­na Airport;BR
 JIB;11.5473;43.1593;Djibouti-Ambouli Airport;DJ
 JIC;31.5000;102.5000;Jinchuan Airport;CN
 JIJ;9.3330;42.7170;Wilwal International Airport;ET
@@ -2069,7 +2069,7 @@ JJI;-7.1667;-76.7283;Juanjui Airport;PE
 JJM;0.0831;37.6497;Mulika Lodge Airport;KE
 JJN;24.7964;118.5897;Quanzhou Jinjiang International Airport;CN
 JJU;60.7158;-46.0294;Qaqortoq Heliport;GL
-JKG;57.7583;14.0692;Jönköping Airport;SE
+JKG;57.7583;14.0692;JÃ¶nkÃ¶ping Airport;SE
 JKH;38.3408;26.1389;Chios Island National Airport;GR
 JKL;36.9600;26.9600;Kalymnos Airport;GR
 JKR;26.7107;85.9245;Janakpur Airport;NP
@@ -2080,7 +2080,7 @@ JMK;37.4373;25.3473;Mikonos Airport;GR
 JMO;28.7822;83.7225;Jomsom Airport;NP
 JMS;46.9297;-98.6782;Jamestown Regional Airport;US
 JMU;46.8400;130.4617;Jiamusi Airport;CN
-JNA;-15.4742;-44.3858;Januária Airport;BR
+JNA;-15.4742;-44.3858;JanuÃ¡ria Airport;BR
 JNB;-26.1337;28.2423;OR Tambo International Airport;ZA
 JNG;35.2928;116.3464;Jining Qufu Airport;CN
 JNN;60.1400;-45.2317;Nanortalik Heliport;GL
@@ -2097,9 +2097,9 @@ JOM;-9.3500;34.8000;Njombe Airport;TZ
 JOS;9.6397;8.8692;Yakubu Gowon Airport;NG
 JOT;41.5178;-88.1756;Joliet Regional Airport;US
 JPA;-7.1189;-34.9508;Presidente Castro Pinto International Airport;BR
-JPR;-10.8703;-61.8461;Ji-Paraná Airport;BR
+JPR;-10.8703;-61.8461;Ji-ParanÃ¡ Airport;BR
 JQA;70.7342;-52.6962;Qaarsut Airport;GL
-JQE;7.5178;-78.1572;Jaqué Airport;PA
+JQE;7.5178;-78.1572;JaquÃ© Airport;PA
 JRB;40.7012;-74.0090;Downtown-Manhattan/Wall St Heliport;US
 JRF;21.3074;-158.0703;Kalaeloa Airport;US
 JRH;26.7315;94.1755;Jorhat Airport;IN
@@ -2113,10 +2113,10 @@ JST;40.3161;-78.8339;John Murtha Johnstown Cambria County Airport;US
 JSU;65.4125;-52.9394;Maniitsoq Airport;GL
 JSY;37.4236;24.9500;Syros Airport;GR
 JTC;-22.1577;-49.0683;Bauru - Arealva Airport;BR
-JTI;-17.8294;-51.7747;Jataí Airport;BR
+JTI;-17.8294;-51.7747;JataÃ­ Airport;BR
 JTR;36.3992;25.4792;Santorini Airport;GR
 JTY;36.5799;26.3758;Astypalaia Airport;GR
-JUA;-11.3333;-57.4666;Inácio Luís do Nascimento Airport;BR
+JUA;-11.3333;-57.4666;InÃ¡cio LuÃ­s do Nascimento Airport;BR
 JUB;4.8720;31.6011;Juba International Airport;SS
 JUH;30.7403;117.6867;Jiuhuashan Airport;CN
 JUI;53.6811;7.0564;Juist Airport;DE
@@ -2163,17 +2163,17 @@ KCG;56.3178;-158.5909;Chignik Fisheries Airport;US
 KCH;1.4847;110.3378;Kuching International Airport;MY
 KCK;57.7725;108.0589;Kirensk Airport;RU
 KCL;56.3112;-158.5359;Chignik Lagoon Airport;US
-KCM;37.5397;36.9536;Kahramanmaraş Airport;TR
+KCM;37.5397;36.9536;KahramanmaraÅŸ Airport;TR
 KCO;40.7350;30.0833;Cengiz Topel Airport;TR
 KCQ;56.3115;-158.3732;Chignik Lake Airport;US
 KCT;5.9939;80.3206;Koggala Airport;LK
 KCU;1.7500;31.7500;Masindi Airport;UG
-KCZ;33.5444;133.6713;Kōchi Ryōma Airport;JP
+KCZ;33.5444;133.6713;KÅ�chi RyÅ�ma Airport;JP
 KDC;11.1500;2.9500;Kandi Airport;BJ
 KDD;27.7926;66.6430;Khuzdar Airport;PK
 KDH;31.5136;65.8611;Kandahar Airport;AF
 KDI;-4.0842;122.4131;Wolter Monginsidi Airport;ID
-KDL;58.9908;22.8308;Kärdla Airport;EE
+KDL;58.9908;22.8308;KÃ¤rdla Airport;EE
 KDM;0.4883;72.9961;Kaadedhdhoo Airport;MV
 KDO;1.8583;73.5197;Kadhdhoo Airport;MV
 KDR;-6.1830;149.5330;Kandrian Airport;PG
@@ -2181,7 +2181,7 @@ KDU;35.3500;75.5333;Skardu Airport;PK
 KDV;-19.0581;178.1569;Vunisea Airport;FJ
 KDZ;7.2000;80.4333;Polgolla Reservoir Seaplane Base;LK
 KEB;59.3521;-151.9252;Nanwalek Airport;US
-KED;16.1500;-13.5167;Kaédi Airport;MR
+KED;16.1500;-13.5167;KaÃ©di Airport;MR
 KEF;63.9850;-22.6056;Keflavik International Airport;IS
 KEH;47.7548;-122.2593;Kenmore Air Harbor Inc Seaplane Base;US
 KEJ;55.2700;86.1083;Kemerovo Airport;RU
@@ -2201,7 +2201,7 @@ KGC;-35.7158;137.5214;Kingscote Airport;AU
 KGD;54.8900;20.5950;Khrabrovo Airport;RU
 KGE;-7.3330;157.5830;Kaghau Airport;SB
 KGF;49.6708;73.3344;Sary-Arka Airport;KZ
-KGG;12.5667;-12.2167;Kédougou Airport;SN
+KGG;12.5667;-12.2167;KÃ©dougou Airport;SN
 KGI;-30.7900;121.4617;Kalgoorlie Boulder Airport;AU
 KGJ;-9.9547;33.8958;Karonga Airport;MW
 KGK;59.7266;-157.2595;Koliganek Airport;US
@@ -2240,7 +2240,7 @@ KIO;5.6500;169.2000;Kili Airport;MH
 KIR;52.1809;-9.5238;Kerry Airport;IE
 KIS;-0.0853;34.7300;Kisumu Airport;KE
 KIT;36.2917;23.0250;Kithira Airport;GR
-KIV;46.9283;28.9333;Chişinău International Airport;MD
+KIV;46.9283;28.9333;ChiÅŸinÄƒu International Airport;MD
 KIW;-12.9000;28.1500;Southdowns Airport;ZM
 KIX;34.4273;135.2441;Kansai International Airport;JP
 KJA;56.1717;92.4933;Yemelyanovo Airport;RU
@@ -2253,9 +2253,9 @@ KKD;-8.8830;147.7170;Kokoda Airport;PG
 KKE;-35.2628;173.9119;Kerikeri Airport;NZ
 KKH;59.9608;-162.8812;Kongiganak Airport;US
 KKI;60.9079;-161.4351;Akiachak Airport;US
-KKJ;33.8456;131.0350;Kitakyūshū Airport;JP
+KKJ;33.8456;131.0350;KitakyÅ«shÅ« Airport;JP
 KKM;14.8746;100.6634;Sa Pran Nak Airport;TH
-KKN;69.7251;29.8877;Kirkenes Airport (Høybuktmoen);NO
+KKN;69.7251;29.8877;Kirkenes Airport (HÃ¸ybuktmoen);NO
 KKQ;65.7195;82.4699;Krasnoselkup Airport;RU
 KKR;-15.6667;-146.8833;Kaukura Airport;PF
 KKU;58.8112;-158.5588;Ekuk Airport;US
@@ -2290,13 +2290,13 @@ KMU;-0.3458;42.4672;Kisimayu Airport;SO
 KMV;23.1888;94.0511;Kalay Airport;MM
 KMW;57.7986;41.0188;Kostroma Sokerkino Airport;RU
 KMX;18.3011;42.8009;King Khaled Air Base;SA
-KNA;-32.9497;-71.4786;Viña del mar Airport;CL
+KNA;-32.9497;-71.4786;ViÃ±a del mar Airport;CL
 KND;-2.9192;25.9154;Kindu Airport;CD
 KNF;52.6484;0.5504;RAF Marham;GB
 KNG;-3.6445;133.6956;Kaimana Airport;ID
 KNH;24.4319;118.3594;Kinmen Airport;TW
 KNK;59.4331;-154.8037;Kokhanok Airport;US
-KNQ;-21.0533;164.8378;Koné Airport;NC
+KNQ;-21.0533;164.8378;KonÃ© Airport;NC
 KNR;27.8219;52.3522;Jam Airport;IR
 KNS;-39.8775;143.8833;King Island Airport;AU
 KNU;26.4403;80.3647;Kanpur Airport;IN
@@ -2329,10 +2329,10 @@ KQA;54.1325;-165.7853;Akutan Seaplane Base;US
 KQT;37.8622;68.8628;Qurghonteppa International Airport;TJ
 KRB;-17.4558;140.8303;Karumba Airport;AU
 KRC;-1.7000;101.2670;Departi Parbo Airport;ID
-KRF;63.0486;17.7694;Kramfors Sollefteå Airport;SE
+KRF;63.0486;17.7694;Kramfors SollefteÃ¥ Airport;SE
 KRG;-1.4375;31.1736;Karasabai Airport;GY
 KRI;-7.4170;144.2330;Kikori Airport;PG
-KRK;50.0777;19.7848;John Paul II International Airport Kraków-Balice Airport;PL
+KRK;50.0777;19.7848;John Paul II International Airport KrakÃ³w-Balice Airport;PL
 KRL;41.6978;86.1289;Korla Airport;CN
 KRN;67.8214;20.3356;Kiruna Airport;SE
 KRO;55.4750;65.4167;Kurgan Airport;RU
@@ -2343,7 +2343,7 @@ KRT;15.5904;32.5532;Khartoum International Airport;SD
 KRW;40.0633;53.0072;Turkmenbashi Airport;TM
 KRY;45.6170;84.8830;Karamay Airport;CN
 KSA;5.3570;162.9584;Kosrae International Airport;FM
-KSC;48.6631;21.2411;Košice Airport;SK
+KSC;48.6631;21.2411;KoÅ¡ice Airport;SK
 KSD;59.4447;13.3375;Karlstad Airport;SE
 KSE;0.1831;30.1014;Kasese Airport;UG
 KSF;51.4084;9.3776;Kassel-Calden Airport;DE
@@ -2371,7 +2371,7 @@ KTP;17.9886;-76.8238;Tinson Pen Airport;JM
 KTQ;62.1661;30.0756;Kitee Airport;FI
 KTR;-14.5217;132.3783;Tindal Airport;AU
 KTS;65.3333;-166.4833;Brevig Mission Airport;US
-KTT;67.6986;24.8481;Kittilä Airport;FI
+KTT;67.6986;24.8481;KittilÃ¤ Airport;FI
 KTU;25.1597;75.8489;Kota Airport;IN
 KTW;50.4743;19.0800;Katowice International Airport;PL
 KUA;3.7753;103.2081;Kuantan Airport;MY
@@ -2390,7 +2390,7 @@ KUU;31.8769;77.1554;Kullu Manali Airport;IN
 KUV;35.9039;126.6158;Kunsan Air Base;KR
 KUZ;65.8500;-37.0700;Kuummiut Heliport;GL
 KVA;40.9139;24.6197;Alexander the Great International Airport;GR
-KVB;58.4561;13.9728;Skövde Airport;SE
+KVB;58.4561;13.9728;SkÃ¶vde Airport;SE
 KVC;55.1163;-162.2662;King Cove Airport;US
 KVD;40.7350;46.3183;Ganja Airport;AZ
 KVG;-2.5812;150.8180;Kavieng Airport;PG
@@ -2431,14 +2431,14 @@ KZS;36.1278;29.5667;Kastelorizo Airport;GR
 LAD;-8.8577;13.2283;Quatro de Fevereiro Airport;AO
 LAE;-6.5719;146.7326;Nadzab Airport;PG
 LAF;40.4123;-86.9369;Purdue University Airport;US
-LAI;48.7550;-3.4744;Lannion-Côte de Granit Airport;FR
+LAI;48.7550;-3.4744;Lannion-CÃ´te de Granit Airport;FR
 LAJ;-27.7828;-50.2806;Lages Airport;BR
 LAK;68.2233;-135.0058;Aklavik/Freddie Carmichael Airport;CA
 LAL;27.9889;-82.0186;Lakeland Linder Regional Airport;US
 LAM;33.7900;-118.0520;Los Alamos Airport;US
 LAN;42.7783;-84.5867;Capital City Airport;US
 LAO;18.1778;120.5313;Laoag International Airport;PH
-LAP;24.0727;-110.3625;Manuel Márquez de León International Airport;MX
+LAP;24.0727;-110.3625;Manuel MÃ¡rquez de LeÃ³n International Airport;MX
 LAQ;32.7942;21.9639;La Abraq Airport;LY
 LAR;41.3119;-105.6750;Laramie Regional Airport;US
 LAS;36.0804;-115.1523;McCarran International Airport;US
@@ -2448,16 +2448,16 @@ LAX;33.9425;-118.4081;Los Angeles International Airport;US
 LAZ;-13.2611;-43.4072;Bom Jesus da Lapa Airport;BR
 LBA;53.8659;-1.6606;Leeds Bradford Airport;GB
 LBB;33.6633;-101.8233;Lubbock Preston Smith International Airport;US
-LBC;53.8054;10.7192;Lübeck Blankensee Airport;DE
+LBC;53.8054;10.7192;LÃ¼beck Blankensee Airport;DE
 LBD;40.2150;69.6967;Khudzhand Airport;TJ
 LBE;40.2761;-79.4047;Arnold Palmer Regional Airport;US
 LBF;41.1262;-100.6837;North Platte Regional Airport Lee Bird Field;US
 LBG;48.9694;2.4414;Paris-Le Bourget Airport;FR
-LBI;43.9133;2.1167;Albi-Le Séquestre Airport;FR
+LBI;43.9133;2.1167;Albi-Le SÃ©questre Airport;FR
 LBJ;-8.4867;119.8891;Komodo (Mutiara II) Airport;ID
 LBL;37.0442;-100.9599;Liberal Mid-America Regional Airport;US
 LBP;3.1833;115.4500;Long Banga Airport;MY
-LBR;-7.2500;-64.7833;Lábrea Airport;BR
+LBR;-7.2500;-64.7833;LÃ¡brea Airport;BR
 LBS;-16.4667;179.3399;Labasa Airport;FJ
 LBU;5.3003;115.2444;Labuan Airport;MY
 LBV;0.4584;9.4123;Libreville Leon M'ba International Airport;GA
@@ -2466,21 +2466,21 @@ LCA;34.8789;33.6303;Larnaca International Airport;CY
 LCC;40.2386;18.1331;Lecce Galatina Air Base;IT
 LCD;-23.1600;29.7017;Louis Trichardt Airport;ZA
 LCE;15.7417;-86.8561;Goloson International Airport;HN
-LCG;43.3021;-8.3773;A Coruña Airport;ES
+LCG;43.3021;-8.3773;A CoruÃ±a Airport;ES
 LCH;30.1261;-93.2234;Lake Charles Regional Airport;US
 LCI;43.5736;-71.4189;Laconia Municipal Airport;US
-LCJ;51.7219;19.3981;Łódź Władysław Reymont Airport;PL
+LCJ;51.7219;19.3981;Å�Ã³dÅº WÅ‚adysÅ‚aw Reymont Airport;PL
 LCK;39.8138;-82.9278;Rickenbacker International Airport;US
 LCL;22.3350;-83.6433;La Coloma Airport;CU
 LCQ;30.1820;-82.5769;Lake City Gateway Airport;US
 LCR;-1.0000;-73.0000;La Chorrera Airport;CO
 LCX;25.6758;116.7464;Longyan Guanzhishan Airport;CN
 LCY;51.5053;0.0544;London City Airport;GB
-LDB;-23.3297;-51.1361;Governador José Richa Airport;BR
-LDE;43.1856;-0.0028;Tarbes-Lourdes-Pyrénées Airport;FR
+LDB;-23.3297;-51.1361;Governador JosÃ© Richa Airport;BR
+LDE;43.1856;-0.0028;Tarbes-Lourdes-PyrÃ©nÃ©es Airport;FR
 LDG;64.9000;45.7667;Leshukonskoye Airport;RU
 LDH;-31.5386;159.0764;Lord Howe Island Airport;AU
-LDK;58.4653;13.1744;Lidköping-Hovby Airport;SE
+LDK;58.4653;13.1744;LidkÃ¶ping-Hovby Airport;SE
 LDN;27.2531;86.6700;Lamidanda Airport;NP
 LDS;47.7149;128.8143;Lindu Airport;CN
 LDU;5.0331;118.3211;Lahad Datu Airport;MY
@@ -2488,17 +2488,17 @@ LDV;48.5303;-4.1517;Landivisiau Air Base;FR
 LDY;55.0428;-7.1608;City of Derry Airport;GB
 LEA;-22.2350;114.0883;Learmonth Airport;AU
 LEB;43.6261;-72.3042;Lebanon Municipal Airport;US
-LEC;-12.4822;-41.2769;Coronel Horácio de Mattos Airport;BR
+LEC;-12.4822;-41.2769;Coronel HorÃ¡cio de Mattos Airport;BR
 LED;59.8000;30.2650;Pulkovo Airport;RU
 LEH;49.5339;0.0881;Le Havre Octeville Airport;FR
-LEI;36.8439;-2.3701;Almería International Airport;ES
+LEI;36.8439;-2.3701;AlmerÃ­a International Airport;ES
 LEJ;51.4240;12.2364;Leipzig Halle Airport;DE
 LEK;11.3261;-12.2868;Tata Airport;GN
 LEN;42.5886;-5.6562;Leon Airport;ES
 LEP;-21.4714;-42.7325;Leopoldina Airport;BR
 LEQ;50.1028;-5.6706;Land's End Airport;GB
 LER;-27.8433;120.7033;Leinster Airport;AU
-LET;-4.1931;-69.9428;Alfredo Vásquez Cobo International Airport;CO
+LET;-4.1931;-69.9428;Alfredo VÃ¡squez Cobo International Airport;CO
 LEV;-17.7111;178.7586;Levuka Airfield;FJ
 LEX;38.0365;-84.6059;Blue Grass Airport;US
 LEY;52.4603;5.5272;Lelystad Airport;NL
@@ -2508,11 +2508,11 @@ LFK;31.2339;-95.7500;Angelina County Airport;US
 LFM;27.3728;53.1889;Lamerd Airport;IR
 LFR;8.2500;-72.2817;La Fria Airport;VE
 LFT;30.2052;-91.9876;Lafayette Regional Airport;US
-LFW;6.1658;1.2542;Lomé-Tokoin Airport;TG
+LFW;6.1658;1.2542;LomÃ©-Tokoin Airport;TG
 LGA;40.7773;-73.8727;La Guardia Airport;US
 LGB;33.8177;-118.1516;Long Beach /Daugherty Field/ Airport;US
 LGC;33.0089;-85.0726;Lagrange Callaway Airport;US
-LGG;50.6364;5.4428;Liège Airport;BE
+LGG;50.6364;5.4428;LiÃ¨ge Airport;BE
 LGH;-30.5983;138.4250;Leigh Creek Airport;AU
 LGI;23.1790;-75.0936;Deadman's Cay Airport;BS
 LGK;6.3261;99.7247;Langkawi International Airport;MY
@@ -2520,7 +2520,7 @@ LGL;3.4210;115.1540;Long Lellang Airport;MY
 LGP;13.1675;123.7300;Legazpi City International Airport;PH
 LGQ;0.0922;-76.8694;Nueva Loja Airport;EC
 LGR;-47.2436;-72.5847;Cochrane Airport;CL
-LGS;-35.4797;-69.5850;Comodoro D.R. Salomón Airport;AR
+LGS;-35.4797;-69.5850;Comodoro D.R. SalomÃ³n Airport;AR
 LGU;41.7878;-111.8528;Logan-Cache Airport;US
 LGW;51.1481;-0.1903;London Gatwick Airport;GB
 LHA;48.3693;7.8277;Lahr Airport;DE
@@ -2535,7 +2535,7 @@ LIG;45.8608;1.1803;Limoges Airport;FR
 LIH;21.9760;-159.3390;Lihue Airport;US
 LIK;9.8167;169.3167;Likiep Airport;MH
 LIL;50.5633;3.0869;Lille-Lesquin Airport;FR
-LIM;-12.0219;-77.1143;Jorge Chávez International Airport;PE
+LIM;-12.0219;-77.1143;Jorge ChÃ¡vez International Airport;PE
 LIN;45.4494;9.2783;Milano Linate Airport;IT
 LIO;9.9581;-83.0219;Limon International Airport;CR
 LIP;-21.6622;-49.7306;Lins Airport;BR
@@ -2546,7 +2546,7 @@ LIW;19.6934;97.2158;Loikaw Airport;MM
 LIZ;46.9504;-67.8859;Loring International Airport;US
 LJA;-3.4631;23.6156;Lodja Airport;CD
 LJG;26.6792;100.2458;Lijiang Airport;CN
-LJU;46.2245;14.4560;Ljubljana Jože Pučnik Airport;SI
+LJU;46.2245;14.4560;Ljubljana JoÅ¾e PuÄ�nik Airport;SI
 LKB;-18.1992;-178.8169;Lakeba Island Airport;FJ
 LKE;47.6290;-122.3387;Kenmore Air Harbor Seaplane Base;US
 LKG;4.2000;34.3500;Lokichoggio Airport;KE
@@ -2556,7 +2556,7 @@ LKN;68.1525;13.6094;Leknes Airport;NO
 LKO;26.7617;80.8853;Chaudhary Charan Singh International Airport;IN
 LKY;-3.3763;35.8183;Lake Manyara Airport;TZ
 LKZ;52.4093;0.5610;RAF Lakenheath;GB
-LLA;65.5433;22.1236;Luleå Airport;SE
+LLA;65.5433;22.1236;LuleÃ¥ Airport;SE
 LLB;25.1333;107.9500;Libo  Airpt;CN
 LLF;26.7008;111.9575;Lingling Airport;CN
 LLI;11.9750;38.9800;Lalibella Airport;ET
@@ -2602,7 +2602,7 @@ LPA;27.9319;-15.3866;Gran Canaria Airport;ES
 LPB;-16.5136;-68.1828;El Alto International Airport;BO
 LPD;-1.3286;-69.5797;La Pedrera Airport;CO
 LPG;-34.9672;-57.8947;La Plata Airport;AR
-LPI;58.4064;15.6797;Linköping City Airport;SE
+LPI;58.4064;15.6797;LinkÃ¶ping City Airport;SE
 LPK;52.7033;39.5383;Lipetsk Airport;RU
 LPL;53.3336;-2.8497;Liverpool John Lennon Airport;GB
 LPM;-16.4540;167.8230;Lamap Airport;VU
@@ -2611,7 +2611,7 @@ LPQ;19.9000;102.1500;Luang Phabang International Airport;LA
 LPS;48.4839;-122.9377;Lopez Island Airport;US
 LPT;18.2722;99.5042;Lampang Airport;TH
 LPU;0.5830;115.6000;Long Apung Airport;ID
-LPX;56.5175;21.0969;Liepāja International Airport;LV
+LPX;56.5175;21.0969;LiepÄ�ja International Airport;LV
 LPY;45.0797;3.7633;Le Puy-Loudes Airport;FR
 LQM;-0.1823;-74.7708;Caucaya Airport;CO
 LQN;34.9875;63.1183;Qala-I-Naw Airport;AF
@@ -2619,7 +2619,7 @@ LRA;39.6486;22.4486;Larisa Airport;GR
 LRD;27.5437;-99.4615;Laredo International Airport;US
 LRE;-23.4372;144.2772;Longreach Airport;AU
 LRF;34.9165;-92.1463;Little Rock Air Force Base;US
-LRH;46.1792;-1.1953;La Rochelle-Île de Ré Airport;FR
+LRH;46.1792;-1.1953;La Rochelle-ÃŽle de RÃ© Airport;FR
 LRL;9.7775;1.0956;Niamtougou International Airport;TG
 LRM;18.4507;-68.9118;Casa De Campo International Airport;DO
 LRR;27.6731;54.3872;Lar Airport;IR
@@ -2634,13 +2634,13 @@ LSH;22.9792;97.7537;Lashio Airport;MM
 LSI;59.8789;-1.2956;Sumburgh Airport;GB
 LSK;60.7167;114.8167;Lusk Municipal Airport;US
 LSP;11.7808;-70.1515;Josefa Camejo International Airport;VE
-LSQ;-37.3992;-72.4250;María Dolores Airport;CL
+LSQ;-37.3992;-72.4250;MarÃ­a Dolores Airport;CL
 LSS;15.8644;-61.5806;Terre-de-Haut Airport;GP
 LST;-41.5456;147.2142;Launceston Airport;AU
 LSV;36.2362;-115.0343;Nellis Air Force Base;US
 LSW;5.2267;96.9503;Malikus Saleh Airport;ID
 LSY;-28.8300;153.2600;Lismore Airport;AU
-LSZ;44.5659;14.3932;Lošinj Island Airport;HR
+LSZ;44.5659;14.3932;LoÅ¡inj Island Airport;HR
 LTA;-23.8167;30.3267;Tzaneen Airport;ZA
 LTB;-38.2067;146.4700;Latrobe Airport;AU
 LTD;30.1517;9.7153;Ghadames East Airport;LY
@@ -2649,9 +2649,9 @@ LTK;35.4097;35.9461;Bassel Al-Assad International Airport;SY
 LTN;51.8747;-0.3683;London Luton Airport;GB
 LTN;51.8747;-0.3683;Luton;GB
 LTO;25.9806;-111.3494;Loreto International Airport;MX
-LTQ;50.5147;1.6275;Le Touquet-Côte d'Opale Airport;FR
+LTQ;50.5147;1.6275;Le Touquet-CÃ´te d'Opale Airport;FR
 LTS;34.6503;-99.2667;Altus Air Force Base;US
-LTT;43.2064;6.4825;La Môle Airport;FR
+LTT;43.2064;6.4825;La MÃ´le Airport;FR
 LTU;18.4000;76.4500;Murod Kond Airport;IN
 LTX;-0.9069;-78.6158;Cotopaxi International Airport;EC
 LUA;27.6878;86.7314;Lukla Airport;NP
@@ -2701,16 +2701,16 @@ LYI;35.0461;118.4117;Shubuling Airport;CN
 LYN;45.7294;4.9389;Lyon-Bron Airport;FR
 LYP;31.3653;72.9955;Faisalabad International Airport;PK
 LYR;78.2461;15.4656;Svalbard Airport;NO
-LYS;45.7256;5.0811;Lyon Saint-Exupéry Airport;FR
-LZC;18.0017;-102.2205;Lázaro Cárdenas Airport;MX
+LYS;45.7256;5.0811;Lyon Saint-ExupÃ©ry Airport;FR
+LZC;18.0017;-102.2205;LÃ¡zaro CÃ¡rdenas Airport;MX
 LZH;24.2075;109.3911;Liuzhou Bailian Airport;CN
 LZN;26.1598;119.9585;Matsu Nangan Airport;TW
 LZO;28.8830;105.3500;Luzhou Airport;CN
 LZU;34.0808;-84.0738;Gwinnett County Briscoe Field;US
 LZY;29.6200;94.3900;Nyingchi Airport;CN
 MAA;12.9947;80.1755;Chennai International Airport;IN
-MAB;-5.3675;-49.1378;João Correa da Rocha Airport;BR
-MAD;40.4722;-3.5609;Adolfo Suárez Madrid–Barajas Airport;ES
+MAB;-5.3675;-49.1378;JoÃ£o Correa da Rocha Airport;BR
+MAD;40.4722;-3.5609;Adolfo SuÃ¡rez Madridâ€“Barajas Airport;ES
 MAF;31.9425;-102.2020;Midland International Airport;US
 MAG;-5.2092;145.7875;Madang Airport;PG
 MAH;39.8626;4.2186;Menorca Airport;ES
@@ -2741,7 +2741,7 @@ MBT;12.3653;123.6181;Moises R. Espinosa Airport;PH
 MBU;-9.7475;159.8394;Babanakira Airport;SB
 MBW;-37.9772;145.1011;Melbourne Moorabbin Airport;AU
 MBX;46.4799;15.6861;Maribor Airport;SI
-MBZ;-3.3567;-57.7117;Maués Airport;BR
+MBZ;-3.3567;-57.7117;MauÃ©s Airport;BR
 MCA;8.4844;-9.5368;Macenta Airport;GN
 MCB;31.1786;-90.4719;Mc Comb/Pike County Airport/John E Lewis Field;US
 MCE;37.2847;-120.5139;Merced Regional Macready Field;US
@@ -2762,11 +2762,11 @@ MCX;42.8150;47.6533;Uytash Airport;RU
 MCY;-26.6028;153.0917;Sunshine Coast Airport;AU
 MCZ;-9.5172;-35.7836;Zumbi dos Palmares Airport;BR
 MDC;1.5458;124.9250;Sam Ratulangi Airport;ID
-MDE;6.1644;-75.4231;Jose Maria Córdova International Airport;CO
+MDE;6.1644;-75.4231;Jose Maria CÃ³rdova International Airport;CO
 MDG;44.5278;129.5667;Mudanjiang Hailang International Airport;CN
 MDK;0.0225;18.2888;Mbandaka Airport;CD
 MDL;21.7018;95.9736;Mandalay International Airport;MM
-MDQ;-37.9342;-57.5733;Ástor Piazzola International Airport;AR
+MDQ;-37.9342;-57.5733;Ã�stor Piazzola International Airport;AR
 MDS;21.8330;-71.8170;Middle Caicos Airport;TC
 MDT;40.1935;-76.7633;Harrisburg International Airport;US
 MDU;-6.1477;143.6572;Mendi Airport;PG
@@ -2774,11 +2774,11 @@ MDW;41.7860;-87.7524;Chicago Midway International Airport;US
 MDX;-29.2261;-53.0844;Mercedes Airport;AR
 MDY;28.2035;-177.3821;Henderson Field;UM
 MDZ;-32.8317;-68.7928;El Plumerillo Airport;AR
-MEA;-22.3408;-41.7633;Macaé Airport;BR
+MEA;-22.3408;-41.7633;MacaÃ© Airport;BR
 MEB;-37.7297;144.9006;Melbourne Essendon Airport;AU
 MEC;-0.9461;-80.6789;Eloy Alfaro International Airport;EC
 MED;24.5524;39.7056;Prince Mohammad Bin Abdulaziz Airport;SA
-MEE;-21.4817;168.0378;Maré Airport;NC
+MEE;-21.4817;168.0378;MarÃ© Airport;NC
 MEG;-9.5167;16.3167;Malanje Airport;AO
 MEH;71.0297;27.8267;Mehamn Airport;NO
 MEI;32.3326;-88.7518;Key Field;US
@@ -2803,9 +2803,9 @@ MFU;-13.2667;31.9333;Mfuwe Airport;ZM
 MGA;12.1406;-86.1711;Augusto C. Sandino (Managua) International Airport;NI
 MGB;-37.7450;140.7850;Mount Gambier Airport;AU
 MGE;33.9150;-84.5167;Dobbins Air Reserve Base;US
-MGF;-23.4794;-52.0122;Regional de Maringá - Sílvio Nane Junior Airport;BR
+MGF;-23.4794;-52.0122;Regional de MaringÃ¡ - SÃ­lvio Nane Junior Airport;BR
 MGH;-30.8500;30.3500;Margate Airport;ZA
-MGL;51.2304;6.5045;Mönchengladbach Airport;DE
+MGL;51.2304;6.5045;MÃ¶nchengladbach Airport;DE
 MGM;32.3006;-86.3939;Montgomery Regional (Dannelly Field) Airport;US
 MGN;9.2847;-74.8461;Baracoa Airport;CO
 MGQ;2.0133;45.3050;Aden Adde International Airport;SO
@@ -2828,7 +2828,7 @@ MHZ;52.3619;0.4864;RAF Mildenhall;GB
 MIA;25.7933;-80.2906;Miami International Airport;US
 MID;20.9370;-89.6577;Licenciado Manuel Crescencio Rejon Int Airport;MX
 MIG;31.4281;104.7411;Mianyang Airport;CN
-MII;-22.1950;-49.9264;Frank Miloye Milenkowichi–Marília State Airport;BR
+MII;-22.1950;-49.9264;Frank Miloye Milenkowichiâ€“MarÃ­lia State Airport;BR
 MIJ;6.0833;171.7500;Mili Island Airport;MH
 MIK;61.6864;27.2000;Mikkeli Airport;FI
 MIM;-36.9106;149.9017;Merimbula Airport;AU
@@ -2840,7 +2840,7 @@ MJA;-21.4170;44.3170;Manja Airport;MG
 MJB;10.2833;170.8833;Mejit Atoll Airport;MH
 MJD;27.3352;68.1431;Moenjodaro Airport;PK
 MJE;7.8333;168.1667;Majkin Airport;MH
-MJF;65.7836;13.2153;Mosjøen Airport (Kjærstad);NO
+MJF;65.7836;13.2153;MosjÃ¸en Airport (KjÃ¦rstad);NO
 MJI;32.8944;13.2778;Mitiga Airport;LY
 MJK;-25.8939;113.5772;Shark Bay Airport;AU
 MJL;-1.8500;11.0667;Mouilla Ville Airport;GA
@@ -2867,7 +2867,7 @@ MKY;-21.1717;149.1800;Mackay Airport;AU
 MKZ;2.2631;102.2525;Malacca Airport;MY
 MLA;35.8575;14.4775;Malta International Airport;MT
 MLB;28.1027;-80.6295;Melbourne International Airport;US
-MLE;4.1917;73.5292;Malé International Airport;MV
+MLE;4.1917;73.5292;MalÃ© International Airport;MV
 MLG;-7.9266;112.7145;Abdul Rachman Saleh Airport;ID
 MLH;47.6100;7.5292;EuroAirport Basel Mulhouse Freiburg;CH
 MLI;41.4485;-90.5075;Quad City International Airport;US
@@ -2879,7 +2879,7 @@ MLP;7.6186;124.0544;Malabang Airport;PH
 MLS;46.4281;-105.8856;Frank Wiley Field;US
 MLU;32.5117;-92.0383;Monroe Regional Airport;US
 MLW;6.2843;-10.7668;Spriggs Payne Airport;LR
-MLX;38.4322;38.0831;Malatya Erhaç Airport;TR
+MLX;38.4322;38.0831;Malatya ErhaÃ§ Airport;TR
 MLX;38.4322;38.0831;Malatya Tulga Airport;TR
 MLY;64.9976;-150.6441;Manley Hot Springs Airport;US
 MLZ;-32.3425;-54.2219;Cerro Largo International Airport;UY
@@ -2895,7 +2895,7 @@ MMO;15.1558;-23.2136;Maio Airport;CV
 MMT;33.9208;-80.8011;Mc Entire Joint National Guard Base;US
 MMU;40.7992;-74.4150;Morristown Municipal Airport;US
 MMV;-9.0802;147.6028;Mal Airport;PG
-MMX;55.5483;13.3533;Malmö Sturup Airport;SE
+MMX;55.5483;13.3533;MalmÃ¶ Sturup Airport;SE
 MMY;24.7833;125.2944;Miyako Airport;JP
 MMZ;35.9386;64.7692;Maimana Airport;AF
 MNA;4.0069;126.6731;Melangguane Airport;ID
@@ -2912,11 +2912,11 @@ MNR;-15.2250;23.1528;Mongu Airport;ZM
 MNS;-11.1333;28.8667;Mansa Airport;ZM
 MNT;65.1437;-149.3700;Minto Airport;US
 MNU;16.4405;97.6572;Mawlamyine Airport;MM
-MNX;-5.8167;-61.2833;Manicoré Airport;BR
+MNX;-5.8167;-61.2833;ManicorÃ© Airport;BR
 MNY;-7.3500;155.5000;Mono Airport;SB
 MOA;20.6542;-74.9219;Orestes Acosta Airport;CU
 MOB;30.6912;-88.2428;Mobile Regional Airport;US
-MOC;-16.7044;-43.8203;Mário Ribeiro Airport;BR
+MOC;-16.7044;-43.8203;MÃ¡rio Ribeiro Airport;BR
 MOD;37.6167;-120.9500;Modesto City Co-Harry Sham Field;US
 MOE;23.0919;96.6531;Momeik Airport;MM
 MOF;-8.6378;122.2375;Maumere(Wai Oti) Airport;ID
@@ -2934,7 +2934,7 @@ MPA;-17.6342;24.1767;Katima Mulilo Airport;NA
 MPH;11.9245;121.9541;Godofredo P. Ramos Airport;PH
 MPI;9.1670;-77.9670;Mamitupo Airport;PA
 MPK;34.7589;126.3811;Mokpo Heliport;KR
-MPL;43.5833;3.9614;Montpellier-Méditerranée Airport;FR
+MPL;43.5833;3.9614;Montpellier-MÃ©diterranÃ©e Airport;FR
 MPM;-25.9319;32.5764;Maputo Airport;MZ
 MPN;-51.8233;-58.4467;Mount Pleasant Airport;FK
 MPP;8.9330;-77.7330;Mulatupo Airport;PA
@@ -2942,7 +2942,7 @@ MPV;44.2035;-72.5623;Edward F Knapp State Airport;US
 MPW;47.0764;37.4511;Mariupol International Airport;UA
 MQB;40.5203;-90.6522;Macomb Municipal Airport;US
 MQF;53.3933;58.7567;Magnitogorsk International Airport;RU
-MQH;-13.5500;-48.2000;Minaçu Airport;BR
+MQH;-13.5500;-48.2000;MinaÃ§u Airport;BR
 MQJ;66.4558;143.2531;Khonuu Moma Airport;RU
 MQL;-34.2308;142.0842;Mildura Airport;AU
 MQM;37.2328;40.6406;Mardin Airport;TR
@@ -2980,7 +2980,7 @@ MSN;43.1399;-89.3375;Dane County Regional Truax Field;US
 MSO;46.9163;-114.0906;Missoula International Airport;US
 MSP;44.8820;-93.2218;Minneapolis-St Paul International/Wold-Chamberlain Airport;US
 MSQ;53.8825;28.0325;Minsk National Airport;BY
-MSR;38.7447;41.6539;Muş Airport;TR
+MSR;38.7447;41.6539;MuÅŸ Airport;TR
 MSS;44.9358;-74.8456;Massena International Richards Field;US
 MST;50.9158;5.7769;Maastricht Aachen Airport;NL
 MSU;-29.4437;27.5575;Moshoeshoe I International Airport;LS
@@ -2994,17 +2994,17 @@ MTM;55.1310;-131.5781;Metlakatla Seaplane Base;US
 MTQ;-26.4917;147.9417;Mitchell Airport;AU
 MTR;8.8236;-75.8258;Los Garzones Airport;CO
 MTS;-26.5239;31.3111;Matsapha Airport;SZ
-MTT;18.1033;-94.5806;Minatitlán/Coatzacoalcos National Airport;MX
+MTT;18.1033;-94.5806;MinatitlÃ¡n/Coatzacoalcos National Airport;MX
 MTV;-13.6660;167.7120;Mota Lava Airport;VU
 MTY;25.7759;-100.1065;General Mariano Escobedo International Airport;MX
 MUA;-8.3270;157.2630;Munda Airport;SB
 MUB;-19.9725;23.4281;Maun Airport;BW
-MUC;48.3538;11.7861;Flughafen München-Riem;DE
+MUC;48.3538;11.7861;Flughafen MÃ¼nchen-Riem;DE
 MUC;48.3538;11.7861;Munich International Airport;DE
 MUE;20.0013;-155.6681;Waimea Kohala Airport;US
 MUH;31.3253;27.2217;Mersa Matruh Airport;EG
 MUK;-20.1361;-157.3453;Mauke Airport;CK
-MUN;9.7511;-63.1525;Maturín Airport;VE
+MUN;9.7511;-63.1525;MaturÃ­n Airport;VE
 MUO;43.0435;-115.8726;Mountain Home Air Force Base;US
 MUR;4.1775;114.3219;Marudi Airport;MY
 MUW;35.2169;0.1483;Ghriss Airport;DZ
@@ -3030,12 +3030,12 @@ MWX;34.9914;126.3828;Muan International Airport;KR
 MWZ;-2.4441;32.9319;Mwanza Airport;TZ
 MXH;-6.3633;143.2381;Moro Airport;PG
 MXJ;9.6394;6.4708;Minna Airport;NG
-MXL;32.6307;-115.2419;General Rodolfo Sánchez Taboada International Airport;MX
+MXL;32.6307;-115.2419;General Rodolfo SÃ¡nchez Taboada International Airport;MX
 MXM;-21.7539;43.3755;Morombe Airport;MG
 MXN;48.6008;-3.8167;Morlaix-Ploujean Airport;FR
 MXP;45.6300;8.7231;Malpensa International Airport;IT
 MXT;-18.0500;44.0330;Maintirano Airport;MG
-MXV;49.6583;103.6917;Mörön Airport;MN
+MXV;49.6583;103.6917;MÃ¶rÃ¶n Airport;MN
 MXX;60.9586;14.5106;Mora Airport;SE
 MXZ;24.3500;116.1330;Meixian Airport;CN
 MYA;-35.9042;150.1394;Moruya Airport;AU
@@ -3055,7 +3055,7 @@ MYU;60.3714;-166.2706;Mekoryuk Airport;US
 MYV;39.0983;-121.5700;Yuba County Airport;US
 MYW;-10.3361;40.1820;Mtwara Airport;TZ
 MYY;4.3253;113.9883;Miri Airport;MY
-MZB;-11.3500;40.3500;Mocímboa da Praia Airport;MZ
+MZB;-11.3500;40.3500;MocÃ­mboa da Praia Airport;MZ
 MZG;23.5722;119.6222;Makung Airport;TW
 MZH;40.8325;35.5164;Amasya Merzifon Airport;TR
 MZI;14.5086;-4.0842;Mopti Airport;ML
@@ -3081,9 +3081,9 @@ NAO;30.7540;106.0620;Nanchong Airport;CN
 NAP;40.8844;14.2908;Naples International Airport;IT
 NAQ;77.4887;-69.3887;Qaanaaq Airport;GL
 NAS;25.0390;-77.4662;Lynden Pindling International Airport;BS
-NAT;-5.9083;-35.2492;Governador Aluízio Alves International Airport;BR
+NAT;-5.9083;-35.2492;Governador AluÃ­zio Alves International Airport;BR
 NAU;-14.1768;-141.2673;Napuka Island Airport;PF
-NAV;38.7764;34.5264;Nevşehir Kapadokya Airport;TR
+NAV;38.7764;34.5264;NevÅŸehir Kapadokya Airport;TR
 NAW;6.5233;101.7447;Narathiwat Airport;TH
 NAY;39.9608;116.2567;Beijing Nanyuan Airport;CN
 NAZ;-10.7833;162.3000;Nana Airport;SB
@@ -3096,7 +3096,7 @@ NBS;42.0881;127.5489;Changbaishan Airport;CN
 NBW;19.9067;-75.2067;Leeward Point Field;CU
 NBX;-3.3682;135.4964;Nabire Airport;ID
 NCA;21.9176;-71.9396;North Caicos Airport;TC
-NCE;43.6653;7.2150;Nice-Côte d'Azur Airport;FR
+NCE;43.6653;7.2150;Nice-CÃ´te d'Azur Airport;FR
 NCL;55.0375;-1.6917;Newcastle Airport;GB
 NCS;-27.7729;29.9764;Newcastle Airport;ZA
 NCU;42.4883;59.6233;Nukus Airport;UZ
@@ -3119,7 +3119,7 @@ NEW;30.0424;-90.0283;Lakefront Airport;US
 NFL;39.4166;-118.7010;Fallon Naval Air Station;US
 NGA;-34.2500;148.2483;Young Airport;AU
 NGB;29.8233;121.4633;Ningbo Lishe International Airport;CN
-NGE;7.3592;13.5600;N'Gaoundéré Airport;CM
+NGE;7.3592;13.5600;N'GaoundÃ©rÃ© Airport;CM
 NGF;21.4517;-157.7700;Kaneohe Bay MCAS (Marion E. Carl Field) Airport;US
 NGI;-18.1156;179.3397;Ngau Airport;FJ
 NGK;51.8125;143.1667;Nogliki Airport;RU
@@ -3144,11 +3144,11 @@ NKC;18.0956;-15.9500;Nouakchott International Airport;MR
 NKG;31.7400;118.8600;Nanjing Lukou Airport;CN
 NKI;55.8500;-133.1830;Naukiti Bay Seaplane Base;US
 NKM;35.2555;136.9244;Nagoya Airport;JP
-NKT;34.9009;-76.8807;Şırnak Şerafettin Elçi Airport;TR
+NKT;34.9009;-76.8807;ÅžÄ±rnak Åžerafettin ElÃ§i Airport;TR
 NKW;-7.3133;72.4100;Diego Garcia Naval Support Facility;IO
 NKX;32.8684;-117.1425;Miramar Marine Corps Air Station - Mitscher Field;US
 NLA;-12.9956;28.6656;Simon Mwansa Kapwepwe International Airport;ZM
-NLD;27.4434;-99.5699;Quetzalcóatl International Airport;MX
+NLD;27.4434;-99.5699;QuetzalcÃ³atl International Airport;MX
 NLF;-9.5833;143.7667;Darnley Island Airport;AU
 NLG;56.0075;-161.1604;Nelson Lagoon Airport;US
 NLK;-29.0417;167.9383;Norfolk Island International Airport;NF
@@ -3186,14 +3186,14 @@ NQX;24.5817;-81.6928;Naval Air Station Key West/Boca Chica Field;US
 NQY;50.4406;-4.9954;Newquay Cornwall Airport;GB
 NRA;-34.7028;146.5083;Narrandera Airport;AU
 NRD;53.7068;7.2302;Norderney Airport;DE
-NRK;58.5861;16.2464;Norrköping Airport;SE
+NRK;58.5861;16.2464;NorrkÃ¶ping Airport;SE
 NRL;59.3683;-2.4333;North Ronaldsay Airport;GB
 NRN;51.6024;6.1422;Weeze Airport;DE
-NRR;18.2500;-65.6333;José Aponte de la Torre Airport;PR
+NRR;18.2500;-65.6333;JosÃ© Aponte de la Torre Airport;PR
 NRT;35.7647;140.3864;Narita International Airport;JP
 NSB;25.7000;-76.2667;Bimini North Seaplane Base;BS
 NSH;36.6633;51.4647;Noshahr Airport;IR
-NSI;3.7172;11.5525;Yaoundé Nsimalen International Airport;CM
+NSI;3.7172;11.5525;YaoundÃ© Nsimalen International Airport;CM
 NSK;69.3100;87.3333;Alykel Airport;RU
 NSK;69.3100;87.3333;Norilsk-Alykel Airport;RU
 NSN;-41.2983;173.2211;Nelson Airport;NZ
@@ -3224,11 +3224,11 @@ NUX;66.0700;76.5200;Novy Urengoy Airport;RU
 NVA;2.9506;-75.2939;Benito Salas Airport;CO
 NVI;40.1150;65.1592;Navoi Airport;UZ
 NVK;68.4369;17.3867;Narvik Framnes Airport;NO
-NVP;-5.1175;-60.3644;Novo Aripuanã Airport;BR
+NVP;-5.1175;-60.3644;Novo AripuanÃ£ Airport;BR
 NVR;58.6267;31.3833;Novgorod Airport;RU
 NVS;47.0036;3.1108;Nevers-Fourchambault Airport;FR
 NVT;-26.8786;-48.6508;Ministro Victor Konder International Airport;BR
-NWA;-12.1333;44.4333;Mohéli Bandar Es Eslam Airport;KM
+NWA;-12.1333;44.4333;MohÃ©li Bandar Es Eslam Airport;KM
 NWI;52.6758;1.2828;Norwich International Airport;GB
 NYA;62.1406;65.3936;Nyagan Airport;RU
 NYI;7.3628;-2.3294;Sunyani Airport;GH
@@ -3238,7 +3238,7 @@ NYN;-31.5531;147.2031;Nyngan Airport;AU
 NYO;58.7886;16.9036;Stockholm Skavsta Airport;SE
 NYT;19.6191;96.1999;Naypyidaw Airport;MM
 NYU;21.1803;94.9322;Bagan Airport;MM
-NZE;7.8060;-8.7018;Nzérékoré Airport;GN
+NZE;7.8060;-8.7018;NzÃ©rÃ©korÃ© Airport;GN
 NZH;49.6000;117.4333;Manzhouli Airport;CN
 NZY;32.6992;-117.2153;North Island Naval Air Station-Halsey Field;US
 OAG;-33.3833;149.1317;Orange Airport;AU
@@ -3247,20 +3247,20 @@ OAJ;34.8292;-77.6121;Albert J Ellis Airport;US
 OAK;37.7213;-122.2207;Metropolitan Oakland International Airport;US
 OAL;-11.4339;-61.4825;Cacoal Airport;BR
 OAM;-44.9700;171.0817;Oamaru Airport;NZ
-OAX;16.9986;-96.7260;Xoxocotlán International Airport;MX
+OAX;16.9986;-96.7260;XoxocotlÃ¡n International Airport;MX
 OBF;48.0831;11.2833;Oberpfaffenhofen Airport;DE
-OBI;-1.9000;-55.5333;Tiriós Airport;BR
-OBI;-1.9000;-55.5333;Óbidos Airport;BR
+OBI;-1.9000;-55.5333;TiriÃ³s Airport;BR
+OBI;-1.9000;-55.5333;Ã“bidos Airport;BR
 OBL;51.2656;4.7547;Oostmalle Air Base;BE
 OBN;56.4635;-5.3997;Oban Airport;GB
 OBO;42.7334;143.2172;Tokachi-Obihiro Airport;JP
-OBS;44.5394;4.3717;Aubenas-Ardèche Méridional Airport;FR
+OBS;44.5394;4.3717;Aubenas-ArdÃ¨che MÃ©ridional Airport;FR
 OBU;66.9123;-156.8973;Kobuk Airport;US
 OBX;-7.5830;141.3170;Obo Airport;PG
 OBY;70.4850;-21.9806;Ittoqqortoormiit Heliport;GL
 OCC;-0.4606;-76.9881;Francisco De Orellana Airport;EC
 OCV;8.3151;-73.3583;Aguas Claras Airport;CO
-ODB;37.8420;-4.8489;Córdoba Airport;ES
+ODB;37.8420;-4.8489;CÃ³rdoba Airport;ES
 ODE;55.4767;10.3309;Odense Airport;DK
 ODH;51.2336;-0.9414;RAF Odiham;GB
 ODN;3.9670;115.0500;Long Seridan Airport;MY
@@ -3269,7 +3269,7 @@ ODS;46.4269;30.6781;Odessa International Airport;UA
 ODW;48.2515;-122.6737;AJ Eisenberg Airport;US
 ODY;20.6667;102.0000;Oudomsay Airport;LA
 OEL;52.9833;36.1000;Oryol Yuzhny Airport;RU
-OER;63.4078;18.9925;Örnsköldsvik Airport;SE
+OER;63.4078;18.9925;Ã–rnskÃ¶ldsvik Airport;SE
 OFF;41.1183;-95.9125;Offutt Air Force Base;US
 OFK;41.9856;-97.4353;Karl Stefan Memorial Airport;US
 OGD;41.1961;-112.0122;Ogden Hinckley Airport;US
@@ -3288,7 +3288,7 @@ OHE;53.5000;122.4000;[Duplicate] Gu-Lian Airport;CN
 OHH;53.6200;142.9500;Okha Airport;RU
 OHO;59.4170;143.0500;Okhotsk Airport;RU
 OHT;33.5750;71.4417;Kohat Airport;PK
-OIA;-6.7613;-51.0490;Ourilândia do Norte Airport;BR
+OIA;-6.7613;-51.0490;OurilÃ¢ndia do Norte Airport;BR
 OIM;34.7847;139.3614;Oshima Airport;JP
 OIR;42.0717;139.4328;Okushiri Airport;JP
 OIT;33.4794;131.7373;Oita Airport;JP
@@ -3304,7 +3304,7 @@ OKO;35.7532;139.3468;Yokota Air Base;JP
 OKR;-9.7533;143.4050;Yorke Island Airport;AU
 OKS;41.4000;-102.3500;Garden County Airport;US
 OKY;-27.4111;151.7350;Oakey Airport;AU
-OLA;63.6992;9.6039;Ørland Airport;NO
+OLA;63.6992;9.6039;Ã˜rland Airport;NO
 OLB;40.8986;9.5178;Olbia Costa Smeralda Airport;IT
 OLC;-3.4709;-68.9585;Senadora Eunice Micheles Airport;BR
 OLF;48.0944;-105.5917;L M Clayton Airport;US
@@ -3335,13 +3335,13 @@ ONX;9.3556;-79.8675;Enrique Adolfo Jimenez Airport;PA
 OOK;60.5414;-165.0872;Toksook Bay Airport;US
 OOL;-28.1650;153.5050;Gold Coast Airport;AU
 OOM;-36.3025;148.9750;Cooma Snowy Mountains Airport;AU
-OPO;41.2356;-8.6781;Francisco de Sá Carneiro Airport;PT
-OPS;-11.8733;-55.5733;Presidente João Batista Figueiredo Airport;BR
+OPO;41.2356;-8.6781;Francisco de SÃ¡ Carneiro Airport;PT
+OPS;-11.8733;-55.5733;Presidente JoÃ£o Batista Figueiredo Airport;BR
 OPU;-8.0500;142.9330;Balimo Airport;PG
-ORA;-23.1500;-64.3233;Orán Airport;AR
-ORB;59.2281;15.0400;Örebro Airport;SE
+ORA;-23.1500;-64.3233;OrÃ¡n Airport;AR
+ORB;59.2281;15.0400;Ã–rebro Airport;SE
 ORD;41.9786;-87.9048;Chicago O'Hare International Airport;US
-ORE;47.9878;1.7606;Orléans-Bricy (BA 123) Air Base;FR
+ORE;47.9878;1.7606;OrlÃ©ans-Bricy (BA 123) Air Base;FR
 ORF;36.8946;-76.2012;Norfolk International Airport;US
 ORG;5.8111;-55.1936;Zorg en Hoop Airport;SR
 ORH;42.2667;-71.8750;Worcester Regional Airport;US
@@ -3353,10 +3353,10 @@ ORT;62.9613;-141.9292;Northway Airport;US
 ORU;-17.9626;-67.0762;Juan Mendoza Airport;BO
 ORV;66.8175;-161.0223;Robert (Bob) Curtis Memorial Airport;US
 ORW;25.3000;64.5833;Ormara Airport;PK
-ORX;-1.7667;-55.8667;Oriximiná Airport;BR
+ORX;-1.7667;-55.8667;OriximinÃ¡ Airport;BR
 ORY;48.7233;2.3794;Paris-Orly Airport;FR
 ORZ;18.0670;-88.5670;Orange Walk Airport;BZ
-OSD;63.1944;14.5003;Åre Östersund Airport;SE
+OSD;63.1944;14.5003;Ã…re Ã–stersund Airport;SE
 OSH;43.9844;-88.5571;Wittman Regional Airport;US
 OSI;45.4627;18.8102;Osijek Airport;HR
 OSK;57.3519;16.4983;Oskarshamn Airport;SE
@@ -3364,16 +3364,16 @@ OSL;60.2028;11.0839;Oslo Gardermoen Airport;NO
 OSM;36.3058;43.1474;Mosul Airport;IQ
 OSN;37.0883;127.0300;Osan Air Base;KR
 OSP;54.4789;17.1075;Redzikowo Air Base;PL
-OSR;49.6961;18.1108;Ostrava Leos Janáček Airport;CZ
+OSR;49.6961;18.1108;Ostrava Leos JanÃ¡Ä�ek Airport;CZ
 OSS;40.6083;72.7933;Osh Airport;KG
 OST;51.1989;2.8622;Ostend-Bruges International Airport;BE
 OSW;51.0717;58.5967;Orsk Airport;RU
-OSY;64.4722;11.5786;Namsos Høknesøra Airport;NO
+OSY;64.4722;11.5786;Namsos HÃ¸knesÃ¸ra Airport;NO
 OSZ;54.2500;16.2500;Koszalin Zegrze Pomorskie;PL
 OTD;8.6170;-79.0330;Contadora Airport;PA
 OTH;43.4171;-124.2460;Southwest Oregon Regional Airport;US
 OTM;41.1066;-92.4479;Ottumwa Regional Airport;US
-OTP;44.5710;26.0851;Henri Coandă International Airport;RO
+OTP;44.5710;26.0851;Henri CoandÄƒ International Airport;RO
 OTR;8.6016;-82.9686;Coto 47 Airport;CR
 OTZ;66.8847;-162.5985;Ralph Wien Memorial Airport;US
 OUA;12.3536;-1.5119;Ouagadougou Airport;BF
@@ -3419,9 +3419,9 @@ PAP;18.5792;-72.2956;Toussaint Louverture International Airport;HT
 PAS;37.0133;25.1267;Paros Airport;GR
 PAT;25.5936;85.0919;Lok Nayak Jayaprakash Airport;IN
 PAV;-9.4019;-38.2539;Paulo Afonso Airport;BR
-PAZ;20.6021;-97.4606;El Tajín National Airport;MX
-PBB;-2.8939;-41.7325;Paranaíba Airport;BR
-PBC;19.1581;-98.3715;Hermanos Serdán International Airport;MX
+PAZ;20.6021;-97.4606;El TajÃ­n National Airport;MX
+PBB;-2.8939;-41.7325;ParanaÃ­ba Airport;BR
+PBC;19.1581;-98.3715;Hermanos SerdÃ¡n International Airport;MX
 PBD;21.6504;69.6586;Porbandar Airport;IN
 PBF;34.1731;-91.9356;Grider Field;US
 PBG;44.6509;-73.4681;Plattsburgh International Airport;US
@@ -3447,7 +3447,7 @@ PDF;-17.3500;-39.2167;Prado Airport;BR
 PDG;-0.7883;100.2864;Minangkabau Airport;ID
 PDG;-0.7883;100.2864;Tabing Airport;ID
 PDK;33.8756;-84.3020;DeKalb Peachtree Airport;US
-PDL;37.7419;-25.6978;João Paulo II Airport;PT
+PDL;37.7419;-25.6978;JoÃ£o Paulo II Airport;PT
 PDP;-34.8583;-55.0917;Capitan Corbeta CA Curbelo International Airport;UY
 PDS;28.6283;-100.5361;Piedras Negras International Airport;MX
 PDT;45.6951;-118.8414;Eastern Oregon Regional At Pendleton Airport;US
@@ -3456,15 +3456,15 @@ PDX;45.5887;-122.5975;Portland International Airport;US
 PEC;57.9552;-136.2363;Pelican Seaplane Base;US
 PED;50.0133;15.7386;Pardubice Airport;CZ
 PEE;57.9167;56.0267;Bolshoye Savino Airport;RU
-PEG;43.0983;12.5111;Perugia San Francesco d'Assisi – Umbria International Airport;IT
+PEG;43.0983;12.5111;Perugia San Francesco d'Assisi â€“ Umbria International Airport;IT
 PEH;-35.8411;-61.8575;Comodoro Pedro Zanni Airport;AR
-PEI;4.8128;-75.7394;Matecaña International Airport;CO
+PEI;4.8128;-75.7394;MatecaÃ±a International Airport;CO
 PEK;40.0733;116.5950;Beijing Capital International Airport;CN
 PEM;-12.6222;-69.2222;Padre Aldamiz International Airport;PE
 PEN;5.2972;100.2767;Penang International Airport;MY
 PER;-31.9400;115.9667;Perth International Airport;AU
 PES;61.8850;34.1567;Petrozavodsk Airport;RU
-PET;-31.7161;-52.3311;João Simões Lopes Neto International Airport;BR
+PET;-31.7161;-52.3311;JoÃ£o SimÃµes Lopes Neto International Airport;BR
 PEU;15.2622;-83.7812;Puerto Lempira Airport;HN
 PEW;33.9939;71.5146;Peshawar International Airport;PK
 PEX;65.1217;57.1300;Pechora Airport;RU
@@ -3476,15 +3476,15 @@ PFQ;39.6503;47.9142;Parsabade Moghan Airport;IR
 PFR;-4.3167;20.6000;Ilebo Airport;CD
 PGA;36.9261;-111.4484;Page Municipal Airport;US
 PGD;26.9196;-81.9906;Charlotte County Airport;US
-PGF;42.7408;2.8697;Perpignan-Rivesaltes (Llabanère) Airport;FR
+PGF;42.7408;2.8697;Perpignan-Rivesaltes (LlabanÃ¨re) Airport;FR
 PGH;29.0321;78.4725;Pantnagar Airport;IN
 PGK;-2.1630;106.1400;Pangkal Pinang (Depati Amir) Airport;ID
 PGM;59.3483;-151.8315;Port Graham Airport;US
 PGU;27.4811;52.6000;Persian Gulf International Airport;IR
 PGV;35.6352;-77.3853;Pitt Greenville Airport;US
-PGX;45.1975;0.8153;Périgueux-Bassillac Airport;FR
+PGX;45.1975;0.8153;PÃ©rigueux-Bassillac Airport;FR
 PGZ;-25.1872;-50.1439;Ponta Grossa Airport - Comandante Antonio Amilton Beraldo;BR
-PHB;-2.8937;-41.7320;Prefeito Doutor João Silva Filho Airport;BR
+PHB;-2.8937;-41.7320;Prefeito Doutor JoÃ£o Silva Filho Airport;BR
 PHC;5.0156;6.9495;Port Harcourt International Airport;NG
 PHE;-20.3792;118.6253;Port Hedland International Airport;AU
 PHF;37.1319;-76.4930;Newport News Williamsburg International Airport;US
@@ -3505,12 +3505,12 @@ PIF;22.6917;120.4583;Pingtung North Airport;TW
 PIH;42.9098;-112.5959;Pocatello Regional Airport;US
 PIK;55.5094;-4.5944;Glasgow Prestwick Airport;GB
 PIN;-2.6658;-56.7822;Parintins Airport;BR
-PIO;-13.7448;-76.2204;Capitán FAP Renán Elías Olivera International Airport;PE
+PIO;-13.7448;-76.2204;CapitÃ¡n FAP RenÃ¡n ElÃ­as Olivera International Airport;PE
 PIP;57.5804;-157.5720;Pilot Point Airport;US
 PIR;44.3827;-100.2860;Pierre Regional Airport;US
 PIS;46.5875;0.3067;Poitiers-Biard Airport;FR
 PIT;40.4915;-80.2329;Pittsburgh International Airport;US
-PIU;-5.2022;-80.6142;Capitán FAP Guillermo Concha Iberico International Airport;PE
+PIU;-5.2022;-80.6142;CapitÃ¡n FAP Guillermo Concha Iberico International Airport;PE
 PIW;55.5889;-97.1642;Pikwitonei Airport;CA
 PIX;38.5543;-28.4413;Pico Airport;PT
 PIZ;69.7329;-163.0053;Point Lay LRRS Airport;US
@@ -3551,14 +3551,14 @@ PMA;-5.2548;39.8094;Pemba Airport;TZ
 PMC;-41.4319;-73.0928;El Tepual Airport;CL
 PMD;34.6294;-118.0846;Palmdale Regional/USAF Plant 42 Airport;US
 PMF;44.8222;10.2953;Parma Airport;IT
-PMG;-22.5497;-55.7025;Ponta Porã Airport;BR
+PMG;-22.5497;-55.7025;Ponta PorÃ£ Airport;BR
 PMI;39.5517;2.7388;Palma De Mallorca Airport;ES
 PMK;-18.7553;146.5814;Palm Island Airport;AU
 PML;56.0060;-160.5608;Port Moller Airport;US
-PMO;38.1819;13.0994;Falcone–Borsellino Airport;IT
+PMO;38.1819;13.0994;Falconeâ€“Borsellino Airport;IT
 PMR;-40.3206;175.6169;Palmerston North Airport;NZ
 PMS;34.5500;38.3000;Palmyra Airport;SY
-PMV;10.9158;-63.9650;Del Caribe Santiago Mariño International Airport;VE
+PMV;10.9158;-63.9650;Del Caribe Santiago MariÃ±o International Airport;VE
 PMW;-10.2944;-48.3628;Brigadeiro Lysias Rodrigues Airport;BR
 PMY;-42.7500;-65.1000;El Tehuelche Airport;AR
 PMZ;8.9510;-83.4686;Palmar Sur Airport;CR
@@ -3567,7 +3567,7 @@ PNB;-10.7167;-48.3997;Porto Nacional Airport;BR
 PNC;36.7320;-97.0998;Ponca City Regional Airport;US
 PND;16.1000;-88.8000;Punta Gorda Airport;BZ
 PNE;40.0819;-75.0106;Northeast Philadelphia Airport;US
-PNG;-25.5400;-48.5306;Paranaguá Airport;BR
+PNG;-25.5400;-48.5306;ParanaguÃ¡ Airport;BR
 PNH;11.5483;104.8533;Phnom Penh International Airport;KH
 PNI;6.9851;158.2090;Pohnpei International Airport;FM
 PNK;-0.1478;109.4039;Supadio Airport;ID
@@ -3588,7 +3588,7 @@ POI;-19.5414;-65.7211;Capitan Nicolas Rojas Airport;BO
 POJ;-18.6717;-46.4908;Patos de Minas Airport;BR
 POL;-12.9833;40.5167;Pemba Airport;MZ
 POM;-9.4415;147.2205;Port Moresby Jacksons International Airport;PG
-POO;-21.8372;-46.5656;Poços de Caldas - Embaixador Walther Moreira Salles Airport;BR
+POO;-21.8372;-46.5656;PoÃ§os de Caldas - Embaixador Walther Moreira Salles Airport;BR
 POP;19.7578;-70.5699;Gregorio Luperon International Airport;DO
 POR;61.4614;21.7978;Pori Airport;FI
 POS;10.5953;-61.3372;Piarco International Airport;TT
@@ -3596,14 +3596,14 @@ POT;18.1967;-76.5361;Ken Jones Airport;JM
 POU;41.6266;-73.8842;Dutchess County Airport;US
 POW;45.4734;13.6150;Portoroz Airport;SI
 POX;49.0967;2.0408;Pontoise - Cormeilles-en-Vexin Airport;FR
-POZ;52.4210;16.8263;Poznań-Ławica Airport;PL
+POZ;52.4210;16.8263;PoznaÅ„-Å�awica Airport;PL
 PPB;-22.1778;-51.4183;Presidente Prudente Airport;BR
-PPE;31.3519;-113.5257;Mar de Cortés International Airport;MX
+PPE;31.3519;-113.5257;Mar de CortÃ©s International Airport;MX
 PPG;-14.3310;-170.7094;Pago Pago International Airport;AS
 PPI;-33.2389;137.9950;Port Pirie Airport;AU
 PPK;54.7744;69.1850;Petropavlosk South Airport;KZ
 PPL;27.5170;86.6000;Phaplu Airport;NP
-PPN;2.4544;-76.6089;Guillermo León Valencia Airport;CO
+PPN;2.4544;-76.6089;Guillermo LeÃ³n Valencia Airport;CO
 PPP;-20.4950;148.5514;Proserpine Whitsunday Coast Airport;AU
 PPQ;-40.9047;174.9892;Paraparaumu Airport;NZ
 PPS;9.7421;118.7587;Puerto Princesa Airport;PH
@@ -3619,18 +3619,18 @@ PQS;61.9346;-162.8996;Pilot Station Airport;US
 PRA;-31.7792;-60.4672;General Urquiza Airport;AR
 PRB;35.6729;-120.6271;Paso Robles Municipal Airport;US
 PRC;34.6545;-112.4196;Ernest A. Love Field;US
-PRG;50.1008;14.2600;Václav Havel Airport Prague;CZ
+PRG;50.1008;14.2600;VÃ¡clav Havel Airport Prague;CZ
 PRH;18.1286;100.1667;Phrae Airport;TH
 PRI;-4.3192;55.6916;Praslin Airport;SC
 PRI;-4.3192;55.6916;[Duplicate] Praslin Island Airport;SC
 PRI;-4.3192;55.6916;[Duplicate] Praslin Island Airport;SC
-PRM;37.1499;-8.5840;Portimão Airport;PT
+PRM;37.1499;-8.5840;PortimÃ£o Airport;PT
 PRM;37.1499;-8.5840;Proma Heliport;CO
-PRN;42.5728;21.0358;Priština International Airport;XK
+PRN;42.5728;21.0358;PriÅ¡tina International Airport;XK
 PRQ;-26.7565;-60.4931;Termal Airport;AR
 PRS;-9.6417;161.4253;Parasi Airport;SB
 PRU;18.8239;95.2697;Pyay Airport;MM
-PRV;49.4259;17.4048;Přerov Air Base;CZ
+PRV;49.4259;17.4048;PÅ™erov Air Base;CZ
 PSA;43.6827;10.3955;Pisa International Airport;IT
 PSC;46.2646;-119.1190;Tri Cities Airport;US
 PSD;31.2794;32.2400;Port Said Airport;EG
@@ -3645,9 +3645,9 @@ PSP;33.8296;-116.5067;Palm Springs International Airport;US
 PSR;42.4372;14.1872;Pescara International Airport;IT
 PSS;-27.3858;-55.9706;Libertador Gral D Jose De San Martin Airport;AR
 PSU;0.8356;112.9371;Pangsuma Airport;ID
-PSW;-20.7328;-46.6592;Municipal José Figueiredo Airport;BR
+PSW;-20.7328;-46.6592;Municipal JosÃ© Figueiredo Airport;BR
 PSX;28.7275;-96.2510;Palacios Municipal Airport;US
-PSZ;-18.9806;-57.8228;Capitán Av. Salvador Ogaya G. airport;BO
+PSZ;-18.9806;-57.8228;CapitÃ¡n Av. Salvador Ogaya G. airport;BO
 PTA;60.2043;-154.3189;Port Alsworth Airport;US
 PTF;-17.7779;177.1967;Malolo Lailai Island Airport;FJ
 PTG;-23.8453;29.4585;Polokwane International Airport;ZA
@@ -3655,7 +3655,7 @@ PTH;56.9591;-158.6334;Port Heiden Airport;US
 PTJ;-38.3183;141.4717;Portland Airport;AU
 PTK;42.6655;-83.4201;Oakland County International Airport;US
 PTO;-26.2172;-52.6936;Pato Branco Airport;BR
-PTP;16.2642;-61.5258;Pointe-à-Pitre Le Raizet;GP
+PTP;16.2642;-61.5258;Pointe-Ã -Pitre Le Raizet;GP
 PTQ;-1.7389;-52.2444;Porto de Moz Airport;BR
 PTU;59.0114;-161.8197;Platinum Airport;US
 PTY;9.0714;-79.3833;Tocumen International Airport;PA
@@ -3664,11 +3664,11 @@ PUB;38.2900;-104.4967;Pueblo Memorial Airport;US
 PUC;39.6139;-110.7514;Carbon County Regional/Buck Davis Field;US
 PUD;-47.7336;-65.9164;Puerto Deseado Airport;AR
 PUE;8.6670;-77.4170;Puerto Obaldia Airport;PA
-PUF;43.3800;-0.4186;Pau Pyrénées Airport;FR
+PUF;43.3800;-0.4186;Pau PyrÃ©nÃ©es Airport;FR
 PUG;-32.5403;137.7167;Port Augusta Airport;AU
 PUJ;18.5674;-68.3634;Punta Cana International Airport;DO
 PUM;-3.6670;119.8000;Pomala Airport;ID
-PUQ;-53.0036;-70.8539;Pdte. carlos Ibañez del Campo Airport;CL
+PUQ;-53.0036;-70.8539;Pdte. carlos IbaÃ±ez del Campo Airport;CL
 PUS;35.1806;128.9381;Gimhae International Airport;KR
 PUU;0.5050;-76.5008;Tres De Mayo Airport;CO
 PUV;-20.2892;164.0994;Poum Airport;NC
@@ -3681,10 +3681,10 @@ PVD;41.7240;-71.4282;Theodore Francis Green State Airport;US
 PVE;9.5653;-78.9533;El Porvenir Airport;PA
 PVG;31.1417;121.7900;Shanghai Pudong International Airport;CN
 PVH;-8.7136;-63.9028;Governador Jorge Teixeira de Oliveira Airport;BR
-PVI;-23.0911;-52.4839;Paranavaí Airport;BR
+PVI;-23.0911;-52.4839;ParanavaÃ­ Airport;BR
 PVK;38.9261;20.7667;Aktion National Airport;GR
 PVO;-1.0417;-80.4722;Reales Tamarindos Airport;EC
-PVR;20.6800;-105.2542;Licenciado Gustavo Díaz Ordaz International Airport;MX
+PVR;20.6800;-105.2542;Licenciado Gustavo DÃ­az Ordaz International Airport;MX
 PVS;64.3783;-173.2467;Provideniya Bay Airport;RU
 PVU;40.2192;-111.7234;Provo Municipal Airport;US
 PWA;35.5342;-97.6471;Wiley Post Airport;US
@@ -3695,7 +3695,7 @@ PWQ;52.1950;77.0739;Pavlodar Airport;KZ
 PXM;15.8769;-97.0891;Puerto Escondido International Airport;MX
 PXO;33.0708;-16.3497;Porto Santo Airport;PT
 PXU;14.0025;108.0242;Pleiku Airport;VN
-PYC;8.6170;-79.7330;Playón Chico Airport;PA
+PYC;8.6170;-79.7330;PlayÃ³n Chico Airport;PA
 PYH;5.6000;-67.6000;Cacique Aramare Airport;VE
 PYJ;66.4000;112.0333;Polyarny Airport;RU
 PYR;37.9253;21.2914;Andravida Airport;GR
@@ -3706,10 +3706,10 @@ PZH;31.3583;69.4639;Zhob Airport;PK
 PZI;26.5423;101.7985;Bao'anying Airport;CN
 PZO;8.2883;-62.7603;General Manuel Carlos Piar International Airport;VE
 PZU;19.4336;37.2341;Port Sudan New International Airport;SD
-PZY;48.6250;17.8286;Piešťany Airport;SK
+PZY;48.6250;17.8286;PieÅ¡Å¥any Airport;SK
 QAK;-21.2642;-43.7628;Major Brigadeiro Doorgal Borges Airport;BR
 QAM;49.8731;2.3869;Amiens-Glisy Airport;FR
-QAQ;42.3806;13.3103;L'Aquila–Preturo Airport;IT
+QAQ;42.3806;13.3103;L'Aquilaâ€“Preturo Airport;IT
 QAR;52.0597;5.8722;Deelen Air Base;NL
 QBC;52.3875;-126.5958;Bella Coola Airport;CA
 QBX;-3.6781;-40.3364;Sobral Airport;BR
@@ -3724,15 +3724,15 @@ QFN;60.0036;-44.6536;Narsaq Kujalleq Heliport;GL
 QFO;52.0908;0.1319;Duxford Airport;GB
 QFR;41.6467;13.2989;Frosinone Air Base;IT
 QFX;60.9908;-45.4219;Igaliku Heliport;GL
-QGA;-24.0792;-54.1875;Guaíra Airport;BR
-QGC;-22.5761;-48.7758;Lençóis Paulista Airport;BR
+QGA;-24.0792;-54.1875;GuaÃ­ra Airport;BR
+QGC;-22.5761;-48.7758;LenÃ§Ã³is Paulista Airport;BR
 QGP;-8.8558;-36.5297;Garanhuns Airport;BR
 QGQ;67.9406;-53.6228;Attu Heliport;GL
 QGU;35.3943;136.8695;Gifu Airport;JP
-QGY;47.6246;17.8138;Győr-Pér International Airport;HU
+QGY;47.6246;17.8138;GyÅ‘r-PÃ©r International Airport;HU
 QHB;-22.7100;-47.6189;Piracicaba Airport;BR
-QHP;-23.0389;-45.5161;Base de Aviação de Taubaté Airport;BR
-QIE;43.5225;4.9242;Istres Le Tubé/Istres Air Base (BA 125) Airport;FR
+QHP;-23.0389;-45.5161;Base de AviaÃ§Ã£o de TaubatÃ© Airport;BR
+QIE;43.5225;4.9242;Istres Le TubÃ©/Istres Air Base (BA 125) Airport;FR
 QIG;-6.3475;-39.2983;Iguatu Airport;BR
 QIT;-15.2433;-40.2756;Itapetinga Airport;BR
 QJB;27.0390;49.4051;Jubail Airport;SA
@@ -3745,25 +3745,25 @@ QLT;41.5456;12.9092;Latina Air Base;IT
 QLU;51.4230;16.1962;Lublin Radwiec Airport;PL
 QLY;41.6667;12.4667;Pratica Di Mare Air Base;IT
 QMK;68.2483;-52.8800;Niaqornaarsuk Heliport;GL
-QNX;46.2958;4.7958;Mâcon-Charnay Airport;FR
-QOE;50.8283;6.6582;Nörvenich Air Base;DE
-QOJ;-28.5025;-56.0322;São Borja Airport;BR
+QNX;46.2958;4.7958;MÃ¢con-Charnay Airport;FR
+QOE;50.8283;6.6582;NÃ¶rvenich Air Base;DE
+QOJ;-28.5025;-56.0322;SÃ£o Borja Airport;BR
 QOQ;60.5378;-46.0247;Saarloq Heliport;GL
 QOW;5.4271;7.2060;Sam Mbakwe International Airport;NG
 QPA;45.3953;11.8483;Padova Airport;IT
 QPG;1.3606;103.9094;Paya Lebar Air Base;SG
-QPM;50.5291;18.0852;Opole-Polska Nowa Wieś Airport;PL
+QPM;50.5291;18.0852;Opole-Polska Nowa WieÅ› Airport;PL
 QPS;-21.9850;-47.3350;Campo Fontenelle Airport;BR
 QPW;68.3067;-53.4717;Kangaatsiaq Heliport;GL
 QPZ;44.9138;9.7205;Piacenza San Damiano Air Base;IT
 QRA;-26.2414;28.1517;Rand Airport;ZA
 QRC;-34.1667;-70.7833;De La Independencia Airport;CL
 QRM;-32.2194;148.2314;Narromine Airport;AU
-QRO;20.6174;-100.1857;Querétaro Intercontinental Airport;MX
+QRO;20.6174;-100.1857;QuerÃ©taro Intercontinental Airport;MX
 QRW;5.5961;5.8178;Warri Airport;NG
 QRY;68.1500;-53.4500;Ikerassaarsuk Heliport;GL
 QSA;41.5209;2.1050;Sabadell Airport;ES
-QSC;-21.8750;-47.9028;São Carlos Airport;BR
+QSC;-21.8750;-47.9028;SÃ£o Carlos Airport;BR
 QSF;36.1781;5.3245;Ain Arnat Airport;DZ
 QSR;40.6211;14.9133;Salerno Costa d'Amalfi Airport;IT
 QUB;26.5675;12.8231;Ubari Airport;LY
@@ -3773,8 +3773,8 @@ QUS;12.1833;6.7000;Gusau Airport;NG
 QUT;36.5132;139.8656;Utsunomiya Airport;JP
 QUV;60.1519;-44.2881;Aappilattoq (Kujalleq) Heliport;GL
 QUW;60.5969;-45.3839;Ammassivik Heliport;GL
-QVB;-26.2317;-51.0689;União da Vitória Airport;BR
-QVP;-23.0925;-48.9836;Avaré-Arandu Airport;BR
+QVB;-26.2317;-51.0689;UniÃ£o da VitÃ³ria Airport;BR
+QVP;-23.0925;-48.9836;AvarÃ©-Arandu Airport;BR
 QYR;48.3217;4.0167;Troyes-Barberey Airport;FR
 RAB;-4.3405;152.3797;Tokua Airport;PG
 RAE;30.9066;41.1383;Arar Domestic Airport;SA
@@ -3788,12 +3788,12 @@ RAP;44.0453;-103.0575;Rapid City Regional Airport;US
 RAR;-21.2006;-159.7906;Rarotonga International Airport;CK
 RAS;37.3233;49.6178;Sardar-e-Jangal Airport;IR
 RAT;62.1583;77.3300;Raduzhny Airport;RU
-RBA;34.0475;-6.7483;Rabat-Salé Airport;MA
+RBA;34.0475;-6.7483;Rabat-SalÃ© Airport;MA
 RBB;-4.4083;-59.5972;Borba Airport;BR
 RBL;40.1506;-122.2523;Red Bluff Municipal Airport;US
 RBM;48.9010;12.5182;Straubing Airport;DE
 RBQ;-14.4275;-67.4981;Rurenabaque Airport;BO
-RBR;-9.8689;-67.8981;Plácido de Castro Airport;BR
+RBR;-9.8689;-67.8981;PlÃ¡cido de Castro Airport;BR
 RBV;-8.1500;157.6370;Ramata Airport;SB
 RBX;6.8400;29.6500;Rumbek Airport;SS
 RBY;64.7272;-155.4699;Ruby Airport;US
@@ -3808,7 +3808,7 @@ RCO;45.8894;-0.9825;Rochefort-Saint-Agnant (BA 721) Airport;FR
 RCQ;-29.2117;-59.6917;Reconquista Airport;AR
 RCU;-33.0867;-64.2617;Area De Material Airport;AR
 RCY;23.6844;-74.8361;Rum Cay Airport;BS
-RDC;-8.0302;-49.9800;Redenção Airport;BR
+RDC;-8.0302;-49.9800;RedenÃ§Ã£o Airport;BR
 RDD;40.5090;-122.2934;Redding Municipal Airport;US
 RDG;40.3785;-75.9652;Reading Regional Carl A Spaatz Field;US
 RDM;44.2541;-121.1500;Roberts Field;US
@@ -3818,7 +3818,7 @@ RDU;35.8777;-78.7875;Raleigh Durham International Airport;US
 RDV;61.7881;-157.3503;Red Devil Airport;US
 RDZ;44.4075;2.4833;Rodez-Marcillac Airport;FR
 REA;-18.4633;-136.4431;Reao Airport;PF
-REB;53.3086;12.7536;Rechlin-Lärz Airport;DE
+REB;53.3086;12.7536;Rechlin-LÃ¤rz Airport;DE
 REC;-8.1225;-34.9203;Guararapes - Gilberto Freyre International Airport;BR
 REG;38.0731;15.6544;Reggio Calabria Airport;IT
 REL;-43.2106;-65.2703;Almirante Marco Andres Zar Airport;AR
@@ -3826,7 +3826,7 @@ REN;51.7969;55.4583;Orenburg Central Airport;RU
 REO;42.5777;-117.8854;Rome State Airport;US
 REP;13.4197;103.8128;Siem Reap International Airport;KH
 RES;-27.4500;-59.0561;Resistencia International Airport;AR
-RET;67.5278;12.1033;Røst Airport;NO
+RET;67.5278;12.1033;RÃ¸st Airport;NO
 REU;41.1474;1.1672;Reus Air Base;ES
 REX;26.0083;-98.2283;General Lucio Blanco International Airport;MX
 REZ;-22.4785;-44.4803;Resende Airport;BR
@@ -3835,16 +3835,16 @@ RFP;-16.7231;-151.4669;Raiatea Airport;PF
 RGA;-53.7775;-67.7500;Hermes Quijada International Airport;AR
 RGI;-14.9553;-147.6578;Rangiroa Airport;PF
 RGK;51.9700;85.8369;Gorno-Altaysk Airport;RU
-RGL;-51.6089;-69.3128;Piloto Civil N. Fernández Airport;AR
+RGL;-51.6089;-69.3128;Piloto Civil N. FernÃ¡ndez Airport;AR
 RGN;16.9069;96.1343;Yangon International Airport;MM
 RGS;42.3500;-3.6200;Burgos Airport;ES
 RGT;-0.3517;102.3344;Japura Airport;ID
-RHD;-27.4500;-64.8830;Termas de Río Hondo international Airport;AR
+RHD;-27.4500;-64.8830;Termas de RÃ­o Hondo international Airport;AR
 RHE;49.3103;4.0508;Reims-Champagne (BA 112) Air Base;FR
 RHI;45.6312;-89.4675;Rhinelander Oneida County Airport;US
 RHO;36.4053;28.0861;Diagoras Airport;GR
 RIA;-29.7108;-53.6922;Santa Maria Airport;BR
-RIB;-11.0170;-66.1170;Capitán Av. Selin Zeitun Lopez Airport;BO
+RIB;-11.0170;-66.1170;CapitÃ¡n Av. Selin Zeitun Lopez Airport;BO
 RIC;37.5052;-77.3197;Richmond International Airport;US
 RIG;-32.0819;-52.1631;Rio Grande Airport;BR
 RIJ;-6.0500;-77.1500;Juan Simons Vela Airport;PE
@@ -3856,7 +3856,7 @@ RIY;14.6622;49.3750;Mukalla International Airport;YE
 RJA;17.1083;81.8211;Rajahmundry Airport;IN
 RJH;24.4387;88.6163;Shah Mokhdum Airport;BD
 RJK;45.2169;14.5703;Rijeka Airport;HR
-RJL;42.4605;-2.3205;Logroño-Agoncillo Airport;ES
+RJL;42.4605;-2.3205;LogroÃ±o-Agoncillo Airport;ES
 RJN;30.2975;56.0508;Rafsanjan Airport;IR
 RKA;-15.4833;-145.4600;Aratika Nord Airport;PF
 RKD;44.0601;-69.0992;Knox County Regional Airport;US
@@ -3891,7 +3891,7 @@ RNO;39.4991;-119.7681;Reno Tahoe International Airport;US
 RNP;11.1572;166.8872;Rongelap Island Airport;MH
 RNS;48.0719;-1.7322;Rennes-Saint-Jacques Airport;FR
 RNT;47.4933;-122.2150;Renton Municipal Airport;US
-ROA;37.3255;-79.9754;Roanoke–Blacksburg Regional Airport;US
+ROA;37.3255;-79.9754;Roanokeâ€“Blacksburg Regional Airport;US
 ROB;6.2404;-10.3599;Roberts International Airport;LR
 ROC;43.1189;-77.6724;Greater Rochester International Airport;US
 ROI;16.1167;103.7739;Roi Et Airport;TH
@@ -3909,7 +3909,7 @@ RPR;21.1803;81.7403;Raipur Airport;IN
 RRG;-19.7578;63.3619;Sir Charles Gaetan Duval Airport;MU
 RRK;22.2611;84.8097;Rourkela Airport;IN
 RRR;-16.0510;-142.4770;Raroia Airport;PF
-RRS;62.5790;11.3450;Røros Airport;NO
+RRS;62.5790;11.3450;RÃ¸ros Airport;NO
 RSA;-36.5914;-64.2786;Santa Rosa Airport;AR
 RSD;24.8917;-76.1777;Rock Sound Airport;BS
 RSH;61.7749;-161.3194;Russian Mission Airport;US
@@ -3951,7 +3951,7 @@ RXS;11.5977;122.7529;Roxas Airport;PH
 RYG;59.3788;10.7855;Moss-Rygge Airport;NO
 RYK;28.3856;70.2798;Shaikh Zaid Airport;PK
 RZA;-50.0222;-68.5781;Santa Cruz Airport;AR
-RZE;50.1100;22.0190;Rzeszów-Jasionka Airport;PL
+RZE;50.1100;22.0190;RzeszÃ³w-Jasionka Airport;PL
 RZR;36.9092;50.6800;Ramsar Airport;IR
 RZS;33.6403;73.8569;Sawan Airport;ID
 RZS;33.6403;73.8569;Sawan Airport;PK
@@ -3961,22 +3961,22 @@ SAD;32.8533;-109.6350;Safford Regional Airport;US
 SAE;70.8117;-51.6333;Sangir Airport;ID
 SAF;35.6171;-106.0894;Santa Fe Municipal Airport;US
 SAH;15.4792;44.2197;Sana'a International Airport;YE
-SAK;65.7317;-19.5728;Sauðárkrókur Airport;IS
+SAK;65.7317;-19.5728;SauÃ°Ã¡rkrÃ³kur Airport;IS
 SAL;13.4409;-89.0558;El Salvador International Airport;SV
 SAN;32.7336;-117.1897;San Diego International Airport;US
-SAP;15.4526;-87.9236;Ramón Villeda Morales International Airport;HN
+SAP;15.4526;-87.9236;RamÃ³n Villeda Morales International Airport;HN
 SAQ;25.0538;-78.0490;San Andros Airport;BS
 SAR;38.1489;-89.6987;Sparta Community Hunter Field;US
 SAT;29.5337;-98.4698;San Antonio International Airport;US
 SAV;32.1277;-81.2021;Savannah Hilton Head International Airport;US
-SAW;40.8983;29.3092;Sabiha Gökçen International Airport;TR
+SAW;40.8983;29.3092;Sabiha GÃ¶kÃ§en International Airport;TR
 SAX;8.0170;-78.2000;Sambu Airport;PA
 SAY;43.2597;11.2558;Siena-Ampugnano Airport;IT
 SBA;34.4250;-119.8400;Santa Barbara Municipal Airport;US
 SBD;34.0956;-117.2344;San Bernardino International Airport;US
 SBH;17.9044;-62.8436;Gustaf III Airport;BL
 SBI;12.5727;-13.3585;Sambailo Airport;GN
-SBJ;-18.7203;-39.8325;São Mateus Airport;BR
+SBJ;-18.7203;-39.8325;SÃ£o Mateus Airport;BR
 SBK;48.5375;-2.8567;Saint-Brieuc-Armor Airport;FR
 SBL;-13.7625;-65.4347;Santa Ana Del Yacuma Airport;BO
 SBN;41.7086;-86.3172;South Bend Regional Airport;US
@@ -3992,9 +3992,9 @@ SCE;40.8493;-77.8487;University Park Airport;US
 SCH;42.8533;-73.9322;Schenectady County Airport;US
 SCI;7.8013;-72.2028;Paramillo Airport;VE
 SCK;37.8942;-121.2383;Stockton Metropolitan Airport;US
-SCL;-33.3944;-70.7938;Comodoro Arturo Merino Benítez International Airport;CL
+SCL;-33.3944;-70.7938;Comodoro Arturo Merino BenÃ­tez International Airport;CL
 SCM;61.8453;-165.5713;Scammon Bay Airport;US
-SCN;49.2146;7.1095;Saarbrücken Airport;DE
+SCN;49.2146;7.1095;SaarbrÃ¼cken Airport;DE
 SCO;43.8600;51.0919;Aktau Airport;KZ
 SCQ;42.8963;-8.4151;Santiago de Compostela Airport;ES
 SCS;60.4328;-1.2961;Scatsta Airport;GB
@@ -4003,20 +4003,20 @@ SCU;19.9700;-75.8356;Antonio Maceo International Airport;CU
 SCV;47.6950;26.3517;Suceava Stefan cel Mare Airport;RO
 SCW;61.6467;50.8450;Syktyvkar Airport;RU
 SCX;16.2126;-95.2016;Salina Cruz Naval Air Station;MX
-SCY;-0.9103;-89.6175;San Cristóbal Airport;EC
+SCY;-0.9103;-89.6175;San CristÃ³bal Airport;EC
 SCZ;-10.7203;165.7950;Santa Cruz/Graciosa Bay/Luova Airport;SB
 SDB;-32.9688;18.1653;Langebaanweg Airport;ZA
 SDD;-14.9243;13.5716;Lubango Airport;AO
-SDE;-27.7556;-64.2997;Vicecomodoro Angel D. La Paz Aragonés Airport;AR
+SDE;-27.7556;-64.2997;Vicecomodoro Angel D. La Paz AragonÃ©s Airport;AR
 SDF;38.1744;-85.7360;Louisville International Standiford Field;US
 SDG;35.2508;47.0111;Sanandaj Airport;IR
 SDJ;38.1397;140.9169;Sendai Airport;JP
 SDK;5.9017;118.0486;Sandakan Airport;MY
-SDL;62.5294;17.4428;Sundsvall-Härnösand Airport;SE
+SDL;62.5294;17.4428;Sundsvall-HÃ¤rnÃ¶sand Airport;SE
 SDM;32.5723;-116.9802;Brown Field Municipal Airport;US
 SDN;61.8300;6.1058;Sandane Airport (Anda);NO
 SDP;55.3137;-160.5214;Sand Point Airport;US
-SDQ;18.4298;-69.6690;Las Américas International Airport;DO
+SDQ;18.4298;-69.6690;Las AmÃ©ricas International Airport;DO
 SDR;43.4271;-3.8200;Santander Airport;ES
 SDT;34.8078;72.3589;Saidu Sharif Airport;PK
 SDU;-22.9103;-43.1628;Santos Dumont Airport;BR
@@ -4026,26 +4026,26 @@ SEA;47.4490;-122.3093;Seattle Tacoma International Airport;US
 SEB;27.0097;14.4306;Sabha Airport;LY
 SEN;51.5714;0.6956;Southend Airport;GB
 SEU;-2.4581;34.8225;Seronera Airport;TZ
-SEY;15.1797;-12.2073;Sélibaby Airport;MR
+SEY;15.1797;-12.2073;SÃ©libaby Airport;MR
 SEZ;-4.6743;55.5218;Seychelles International Airport;SC
 SFA;34.7206;10.6886;Sfax Thyna International Airport;TN
 SFB;28.7776;-81.2375;Orlando Sanford International Airport;US
 SFD;7.8833;-67.4333;San Fernando De Apure Airport;VE
 SFE;16.5958;120.3014;San Fernando Airport;PH
 SFF;47.6828;-117.3226;Felts Field;US
-SFG;18.0500;-63.1170;L'Espérance Airport;MF
+SFG;18.0500;-63.1170;L'EspÃ©rance Airport;MF
 SFH;30.9314;-114.8089;San Felipe International Airport;MX
 SFJ;67.0170;-50.6893;Kangerlussuaq Airport;GL
 SFK;-0.7000;-48.5194;Satipo Airport;PE
 SFK;-0.7000;-48.5194;Soure Airport;BR
-SFL;14.8850;-24.4800;São Filipe Airport;CV
+SFL;14.8850;-24.4800;SÃ£o Filipe Airport;CV
 SFN;-31.7117;-60.8067;Sauce Viejo Airport;AR
 SFO;37.6189;-122.3749;San Francisco International Airport;US
-SFQ;37.0950;38.8494;Şanlıurfa Airport;TR
+SFQ;37.0950;38.8494;ÅžanlÄ±urfa Airport;TR
 SFS;14.7944;120.2714;Subic Bay International Airport;PH
-SFT;64.6247;21.0769;Skellefteå Airport;SE
+SFT;64.6247;21.0769;SkellefteÃ¥ Airport;SE
 SGC;61.3433;73.4033;Surgut Airport;RU
-SGD;54.9644;9.7917;Sønderborg Airport;DK
+SGD;54.9644;9.7917;SÃ¸nderborg Airport;DK
 SGE;50.7077;8.0830;Siegerland Airport;DE
 SGF;37.2443;-93.3886;Springfield Branson National Airport;US
 SGG;65.9039;-36.3744;Simanggang Airport;MY
@@ -4079,8 +4079,8 @@ SHW;17.4669;47.1214;Sharurah Airport;SA
 SHX;62.6923;-159.5692;Shageluk Airport;US
 SHY;-3.6000;33.5000;Shinyanga Airport;TZ
 SIA;34.3767;109.1200;Xi'an Xiguan Airport;CN
-SIC;8.2610;-79.0770;San José Island Airport;PA
-SID;16.7414;-22.9494;Amílcar Cabral International Airport;CV
+SIC;8.2610;-79.0770;San JosÃ© Island Airport;PA
+SID;16.7414;-22.9494;AmÃ­lcar Cabral International Airport;CV
 SIF;27.1595;84.9801;Simara Airport;NP
 SIG;18.4568;-66.0981;Fernando Luis Ribas Dominicci Airport;PR
 SIN;1.3592;103.9894;Singapore Changi Airport;SG
@@ -4097,15 +4097,15 @@ SJE;2.5786;-72.6394;Jorge E. Gonzalez Torres Airport;CO
 SJI;12.3597;121.0450;San Jose Airport;PH
 SJJ;43.8246;18.3315;Sarajevo International Airport;BA
 SJK;-23.2278;-45.8694;Professor Urbano Ernesto Stumpf Airport;BR
-SJL;-0.1481;-66.9850;São Gabriel da Cachoeira Airport;BR
+SJL;-0.1481;-66.9850;SÃ£o Gabriel da Cachoeira Airport;BR
 SJN;34.5186;-109.3788;St Johns Industrial Air Park;US
 SJO;9.9939;-84.2089;Juan Santamaria International Airport;CR
 SJP;-20.8161;-49.4047;Prof. Eribelto Manoel Reino State Airport;BR
 SJT;31.3577;-100.4963;San Angelo Regional Mathis Field;US
 SJU;18.4393;-66.0018;Luis Munoz Marin International Airport;PR
 SJW;38.2783;114.6983;Shijiazhuang Daguocun International Airport;CN
-SJY;62.6936;22.8319;Seinäjoki Airport;FI
-SJZ;38.6655;-28.1758;São Jorge Airport;PT
+SJY;62.6936;22.8319;SeinÃ¤joki Airport;FI
+SJZ;38.6655;-28.1758;SÃ£o Jorge Airport;PT
 SKA;47.6151;-117.6558;Fairchild Air Force Base;US
 SKB;17.3111;-62.7186;Robert L. Bradshaw International Airport;KN
 SKC;-8.0330;141.7170;Suki Airport;PG
@@ -4126,7 +4126,7 @@ SKX;54.1667;45.1667;Saransk Airport;RU
 SKZ;27.7220;68.7914;Sukkur Airport;PK
 SLA;-24.8600;-65.4767;Martin Miguel De Guemes International Airport;AR
 SLC;40.7884;-111.9778;Salt Lake City International Airport;US
-SLD;48.6381;19.1342;Sliač Airport;SK
+SLD;48.6381;19.1342;SliaÄ� Airport;SK
 SLE;44.9095;-123.0025;Salem Municipal Airport/McNary Field;US
 SLH;-13.8517;167.5369;Sola Airport;VU
 SLI;-12.1667;26.3667;Solwesi Airport;ZM
@@ -4153,16 +4153,16 @@ SML;23.5814;-75.2705;Stella Maris Airport;BS
 SMN;45.1238;-113.8813;Lemhi County Airport;US
 SMO;34.0158;-118.4512;Santa Monica Municipal Airport;US
 SMQ;-2.4992;112.9750;Sampit(Hasan) Airport;ID
-SMR;11.1197;-74.2308;Simón Bolívar International Airport;CO
+SMR;11.1197;-74.2308;SimÃ³n BolÃ­var International Airport;CO
 SMS;-17.0833;49.8167;Sainte Marie Airport;MG
 SMV;46.5344;9.8839;Samedan Airport;CH
 SMX;34.8989;-120.4574;Santa Maria Pub/Capt G Allan Hancock Field;US
 SNA;33.6756;-117.8682;John Wayne Airport-Orange County Airport;US
 SNB;-11.4197;130.6472;Snake Bay Airport;AU
 SNC;-2.2078;-80.9858;General Ulpiano Paez Airport;EC
-SNE;16.5881;-24.2839;Preguiça Airport;CV
+SNE;16.5881;-24.2839;PreguiÃ§a Airport;CV
 SNF;10.2833;-68.7333;Sub Teniente Nestor Arias Airport;VE
-SNG;-16.3836;-60.9628;Capitán Av. Juan Cochamanidis S. Airport;BO
+SNG;-16.3836;-60.9628;CapitÃ¡n Av. Juan Cochamanidis S. Airport;BO
 SNH;-28.6200;151.9900;Stanthorpe Airport;AU
 SNN;52.7020;-8.9248;Shannon Airport;IE
 SNO;17.1953;104.1186;Sakon Nakhon Airport;TH
@@ -4174,15 +4174,15 @@ SNV;4.5547;-61.1447;Santa Elena de Uairen Airport;VE
 SNW;18.4576;94.2978;Thandwe Airport;MM
 SNY;41.1013;-102.9853;Sidney Municipal-Lloyd W Carr Field;US
 SNZ;-22.9283;-43.7217;Santa Cruz Airport;BR
-SOB;46.6863;17.1590;Sármellék International Airport;HU
+SOB;46.6863;17.1590;SÃ¡rmellÃ©k International Airport;HU
 SOC;-7.5181;110.7550;Adi Sumarmo Wiryokusumo Airport;ID
 SOD;-23.4825;-47.4858;Sorocaba Airport;BR
 SOF;42.6950;23.4083;Sofia Airport;BG
 SOG;61.1561;7.1378;Sogndal Airport;NO
-SOJ;69.7901;20.9549;Sørkjosen Airport;NO
-SOM;8.9451;-64.1511;San Tomé Airport;VE
+SOJ;69.7901;20.9549;SÃ¸rkjosen Airport;NO
+SOM;8.9451;-64.1511;San TomÃ© Airport;VE
 SON;-15.5058;167.2214;Santo Pekoa International Airport;VU
-SOO;61.2614;17.0983;Söderhamn Airport;SE
+SOO;61.2614;17.0983;SÃ¶derhamn Airport;SE
 SOP;35.2374;-79.3912;Moore County Airport;US
 SOQ;-0.9256;131.1217;Dominique Edward Osok Airport;ID
 SOT;67.3967;26.6181;Sodankyla Airport;FI
@@ -4205,7 +4205,7 @@ SPU;43.5389;16.2980;Split Airport;HR
 SQG;0.0636;111.4734;Sintang(Susilo) Airport;ID
 SQH;21.2146;104.0352;Na-San Airport;VN
 SQO;64.9608;17.6967;Storuman Airport;SE
-SQQ;55.8939;23.3950;Šiauliai International Airport;LT
+SQQ;55.8939;23.3950;Å iauliai International Airport;LT
 SQS;17.1859;-89.0097;Matthew Spain Airport;BZ
 SQZ;53.3078;-0.5508;RAF Scampton;GB
 SRA;-27.9067;-54.5204;Santa Rosa Airport;BR
@@ -4213,7 +4213,7 @@ SRE;-19.0108;-65.2928;Juana Azurduy De Padilla Airport;BO
 SRG;-6.9764;110.3772;Achmad Yani Airport;ID
 SRH;9.1511;18.3794;Sarh Airport;TD
 SRI;-0.5000;117.1500;Temindung Airport;ID
-SRJ;-14.8670;-66.7500;Capitán Av. German Quiroga G. Airport;BO
+SRJ;-14.8670;-66.7500;CapitÃ¡n Av. German Quiroga G. Airport;BO
 SRK;77.7833;-70.7667;Siorapaluk;GL
 SRM;56.3183;43.7950;Sandringham Airport;AU
 SRN;-42.1575;145.2897;Strahan Airport;AU
@@ -4224,21 +4224,21 @@ SRV;61.7897;-156.5885;Stony River 2 Airport;US
 SRX;31.0617;16.5917;Gardabya Airport;LY
 SRY;36.6358;53.1936;Dasht-e Naz Airport;IR
 SRZ;-17.8006;-63.1772;El Trompillo Airport;BO
-SSA;-12.9086;-38.3225;Deputado Luiz Eduardo Magalhães International Airport;BR
+SSA;-12.9086;-38.3225;Deputado Luiz Eduardo MagalhÃ£es International Airport;BR
 SSB;17.7472;-64.7049;Christiansted Harbor Seaplane Base;VI
 SSC;33.9728;-80.4706;Shaw Air Force Base;US
 SSE;17.6280;75.9348;Solapur Airport;IN
 SSG;3.7553;8.7087;Malabo Airport;GQ
 SSH;27.9786;34.3933;Sharm El Sheikh International Airport;EG
 SSI;31.1518;-81.3913;Malcolm McKinnon Airport;US
-SSJ;65.9597;12.4722;Sandnessjøen Airport (Stokka);NO
+SSJ;65.9597;12.4722;SandnessjÃ¸en Airport (Stokka);NO
 SSN;37.4456;127.1131;Seoul Air Base;KR
-SSO;-22.0911;-45.0467;São Lourenço Airport;BR
+SSO;-22.0911;-45.0467;SÃ£o LourenÃ§o Airport;BR
 SSR;-15.4708;168.1522;Sara Airport;VU
 SST;-36.5500;-56.6833;Santa Teresita Airport;AR
 SSX;41.2700;36.3000;Samsun Samair Airport;TR
 SSY;-6.2699;14.2470;Mbanza Congo Airport;AO
-SSZ;-23.9275;-46.2992;Base Aérea de Santos Airport;BR
+SSZ;-23.9275;-46.2992;Base AÃ©rea de Santos Airport;BR
 STA;55.9901;8.3539;Stauning Airport;DK
 STC;45.5466;-94.0599;St Cloud Regional Airport;US
 STD;7.5683;-72.0283;Mayor Buenaventura Vivas International Airport;VE
@@ -4273,10 +4273,10 @@ SVA;63.6864;-170.4926;Savoonga Airport;US
 SVB;-14.2786;50.1747;Sambava Airport;MG
 SVC;32.6365;-108.1564;Grant County Airport;US
 SVD;13.1444;-61.2108;E. T. Joshua Airport;VC
-SVF;8.0167;2.4500;Savé Airport;BJ
+SVF;8.0167;2.4500;SavÃ© Airport;BJ
 SVG;58.8768;5.6378;Stavanger Airport Sola;NO
 SVI;2.1500;-74.7667;Eduardo Falla Solano Airport;CO
-SVJ;68.2433;14.6692;Svolvær Helle Airport;NO
+SVJ;68.2433;14.6692;SvolvÃ¦r Helle Airport;NO
 SVK;16.7330;-88.3330;Silver Creek Airport;BZ
 SVL;61.9428;28.9450;Savonlinna Airport;FI
 SVN;32.0100;-81.1457;Hunter Army Air Field;US
@@ -4299,17 +4299,17 @@ SWX;-18.3667;21.8167;Shakawe Airport;BW
 SWY;4.2167;100.7000;Sitiawan Airport;MY
 SXB;48.5419;7.6344;Strasbourg Airport;FR
 SXE;-38.0983;147.1500;West Sale Airport;AU
-SXF;52.3785;13.5206;Berlin-Schönefeld International Airport;DE
+SXF;52.3785;13.5206;Berlin-SchÃ¶nefeld International Airport;DE
 SXI;25.9083;54.5417;Sirri Island Airport;IR
 SXK;-7.9886;131.3061;Saumlaki/Olilit Airport;ID
 SXL;54.2802;-8.5992;Sligo Airport;IE
 SXM;18.0408;-63.1095;Princess Juliana International Airport;SX
 SXN;-20.5500;26.1000;Sua Pan Airport;BW
-SXO;-12.1569;-52.2719;São Félix do Araguaia Airport;BR
+SXO;-12.1569;-52.2719;SÃ£o FÃ©lix do Araguaia Airport;BR
 SXP;62.5206;-164.8478;Sheldon Point Airport;US
 SXR;33.9833;74.7833;Sheikh ul Alam Airport;IN
 SXV;11.7833;78.0656;Salem Airport;IN
-SXX;-6.6400;-51.9894;São Félix do Xingu Airport;BR
+SXX;-6.6400;-51.9894;SÃ£o FÃ©lix do Xingu Airport;BR
 SXZ;37.9781;41.8392;Siirt Airport;TR
 SYA;52.7123;174.1137;Eareckson Air Station;US
 SYB;58.1667;-152.5000;Seal Bay Seaplane Base;US
@@ -4329,7 +4329,7 @@ SZA;-6.1411;12.3718;Soyo Airport;AO
 SZB;3.1311;101.5481;Sultan Abdul Aziz Shah International Airport;MY
 SZD;53.3943;-1.3885;Sheffield City Heliport;GB
 SZE;11.7889;40.9902;Semera Airport;ET
-SZF;41.2656;36.5486;Samsun Çarşamba Airport;TR
+SZF;41.2656;36.5486;Samsun Ã‡arÅŸamba Airport;TR
 SZG;47.7944;13.0033;Salzburg Airport;AT
 SZI;47.4865;84.8874;Zaysan Airport;KZ
 SZJ;21.6333;-82.9500;Siguanea Airport;CU
@@ -4338,7 +4338,7 @@ SZT;16.6904;-92.5303;San Cristobal de las Casas Airport;MX
 SZW;53.4269;11.7833;Schwerin Parchim Airport;DE
 SZX;22.6383;113.8117;Shenzhen Bao'an International Airport;CN
 SZY;53.4819;20.9377;Szczytno-Szymany International Airport;PL
-SZZ;53.5847;14.9022;Szczecin-Goleniów ""Solidarność"" Airport;PL
+SZZ;53.5847;14.9022;Szczecin-GoleniÃ³w ""SolidarnoÅ›Ä‡"" Airport;PL
 TAB;11.1497;-60.8322;Tobago-Crown Point Airport;TT
 TAC;11.2276;125.0278;Daniel Z. Romualdez Airport;PH
 TAE;35.8939;128.6589;Daegu Airport;KR
@@ -4355,7 +4355,7 @@ TAR;40.5183;17.4006;Taranto-Grottaglie ""Marcello Arlotta"" Airport;IT
 TAS;41.2573;69.2817;Tashkent International Airport;UZ
 TAT;49.0736;20.2411;Poprad-Tatry Airport;SK
 TAY;58.3075;26.6906;Tartu Airport;EE
-TAZ;41.7611;59.8267;Daşoguz Airport;TM
+TAZ;41.7611;59.8267;DaÅŸoguz Airport;TM
 TBB;13.0391;109.3345;Dong Tac Airport;VN
 TBG;-5.2786;141.2258;Tabubil Airport;PG
 TBH;12.3106;122.0747;Tugdan Airport;PH
@@ -4373,7 +4373,7 @@ TBZ;38.1339;46.2350;Tabriz International Airport;IR
 TCA;-19.6350;134.1833;Tennant Creek Airport;AU
 TCB;26.7453;-77.3913;Treasure Cay Airport;BS
 TCC;35.1828;-103.6032;Tucumcari Municipal Airport;US
-TCD;-2.8670;-69.7330;Tarapacá Airport;CO
+TCD;-2.8670;-69.7330;TarapacÃ¡ Airport;CO
 TCE;45.0629;28.7144;Tulcea Airport;RO
 TCG;46.6725;83.3408;Tacheng Airport;CN
 TCH;-2.8500;11.0170;Tchibanga Airport;GA
@@ -4391,22 +4391,22 @@ TCZ;25.0300;98.4800;Tengchong Tuofeng Airport;CN
 TDD;-14.8183;-64.9133;Teniente Av. Jorge Henrich Arauz Airport;BO
 TDG;9.0667;126.1667;Tandag Airport;PH
 TDK;45.1222;78.4433;Taldykorgan Airport;KZ
-TDL;-37.2367;-59.2300;Héroes De Malvinas Airport;AR
+TDL;-37.2367;-59.2300;HÃ©roes De Malvinas Airport;AR
 TDX;12.2681;102.3167;Trat Airport;TH
 TEB;40.8501;-74.0608;Teterboro Airport;US
-TEC;-24.3158;-50.6517;Telêmaco Borba Airport;BR
+TEC;-24.3158;-50.6517;TelÃªmaco Borba Airport;BR
 TED;57.0688;8.7052;Thisted Airport;DK
-TEE;35.4325;8.1256;Cheikh Larbi Tébessi Airport;DZ
+TEE;35.4325;8.1256;Cheikh Larbi TÃ©bessi Airport;DZ
 TEF;-21.7164;122.2275;Telfer Airport;AU
 TEM;-34.4228;147.5106;Temora Airport;AU
 TEN;27.8840;109.3100;Tongren Fenghuang Airport;CN
-TEQ;41.1322;27.9161;Tekirdağ Çorlu Airport;TR
+TEQ;41.1322;27.9161;TekirdaÄŸ Ã‡orlu Airport;TR
 TER;38.7646;-27.0908;Lajes Field;PT
 TET;-16.1000;33.6333;Chingozi Airport;MZ
 TEU;-45.5331;167.6500;Manapouri Airport;NZ
 TEX;37.9564;-107.9142;Telluride Regional Airport;US
 TEZ;26.7091;92.7847;Tezpur Airport;IN
-TFF;-3.3803;-64.7308;Tefé Airport;BR
+TFF;-3.3803;-64.7308;TefÃ© Airport;BR
 TFI;-9.0670;149.3170;Tufi Airport;PG
 TFL;-17.8908;-41.5150;Juscelino Kubitscheck Airport;BR
 TFN;28.4827;-16.3415;Tenerife Norte Airport;ES
@@ -4419,20 +4419,20 @@ TGH;-16.8911;168.5514;Tongoa Airport;VU
 TGI;-9.3000;-76.0167;Tingo Maria Airport;PE
 TGJ;-21.0961;167.8039;Tiga Airport;NC
 TGK;47.1981;38.8489;Taganrog Yuzhny Airport;RU
-TGM;46.4677;24.4125;Transilvania Târgu Mureş International Airport;RO
+TGM;46.4677;24.4125;Transilvania TÃ¢rgu MureÅŸ International Airport;RO
 TGO;43.5567;122.1997;Tongliao Airport;CN
 TGP;61.5900;89.9733;Podkamennaya Tunguska Airport;RU
 TGR;33.0600;6.0872;Touggourt Sidi Madhi Airport;DZ
 TGT;-5.1000;39.0667;Tanga Airport;TZ
-TGU;14.0614;-87.2172;Toncontín International Airport;HN
+TGU;14.0614;-87.2172;ToncontÃ­n International Airport;HN
 TGZ;16.5618;-93.0261;Angel Albino Corzo International Airport;MX
 THD;19.8075;105.7764;Bai Thuong Airport;VN
-THE;-5.0606;-42.8244;Senador Petrônio Portela Airport;BR
+THE;-5.0606;-42.8244;Senador PetrÃ´nio Portela Airport;BR
 THF;52.4736;13.4016;Berlin-Tempelhof International Airport;DE
 THG;-24.4939;150.5761;Thangool Airport;AU
 THK;17.3969;104.8067;Thakhek Airport;LA
 THL;20.4828;99.9343;Tachileik Airport;MM
-THN;58.3181;12.3450;Trollhättan-Vänersborg Airport;SE
+THN;58.3181;12.3450;TrollhÃ¤ttan-VÃ¤nersborg Airport;SE
 THO;66.2183;-15.3347;Thorshofn Airport;IS
 THQ;34.5830;105.7500;Tianshui Maijishan Airport;CN
 THR;35.6889;51.3147;Mehrabad International Airport;IR
@@ -4442,10 +4442,10 @@ THX;65.7997;87.9298;Turukhansk Airport;RU
 THZ;14.8667;5.2667;Tahoua Airport;NE
 TIA;41.4147;19.7206;Tirana International Airport Mother Teresa;AL
 TID;35.3414;1.4669;Bou Chekif Airport;DZ
-TIF;21.4833;40.5444;Ta’if Regional Airport;SA
+TIF;21.4833;40.5444;Taâ€™if Regional Airport;SA
 TIH;-15.1194;-148.2350;Tikehau Airport;PF
 TII;32.6000;65.8640;Tarin Kowt Airport;AF
-TIJ;32.5414;-116.9717;General Abelardo L. Rodríguez International Airport;MX
+TIJ;32.5414;-116.9717;General Abelardo L. RodrÃ­guez International Airport;MX
 TIK;35.4147;-97.3867;Tinker Air Force Base;US
 TIM;-4.5314;136.8883;Moses Kilangin Airport;ID
 TIN;27.7004;-8.1671;Tindouf Airport;DZ
@@ -4487,8 +4487,8 @@ TLE;-23.3894;43.7256;Toliara Airport;MG
 TLH;30.3965;-84.3503;Tallahassee Regional Airport;US
 TLJ;62.9012;-155.9935;Tatalina LRRS Airport;US
 TLL;59.4133;24.8325;Lennart Meri Tallinn Airport;EE
-TLM;35.0125;-1.4486;Zenata – Messali El Hadj Airport;DZ
-TLN;43.0972;6.1461;Toulon-Hyères Airport;FR
+TLM;35.0125;-1.4486;Zenata â€“ Messali El Hadj Airport;DZ
+TLN;43.0972;6.1461;Toulon-HyÃ¨res Airport;FR
 TLQ;30.9358;46.0901;Turpan Jiaohe Airport;CN
 TLS;43.6350;1.3678;Toulouse-Blagnac Airport;FR
 TLT;61.0968;-160.9695;Tuluksak Airport;US
@@ -4504,8 +4504,8 @@ TML;9.5667;0.8667;Tamale Airport;GH
 TMM;-18.1158;49.3933;Toamasina Airport;MG
 TMO;7.2500;-61.4333;Tumeremo Airport;VE
 TMP;61.4153;23.5878;Tampere-Pirkkala Airport;FI
-TMR;22.8111;5.4508;Aguenar – Hadj Bey Akhamok Airport;DZ
-TMS;0.3792;6.7169;São Tomé International Airport;ST
+TMR;22.8111;5.4508;Aguenar â€“ Hadj Bey Akhamok Airport;DZ
+TMS;0.3792;6.7169;SÃ£o TomÃ© International Airport;ST
 TMT;-1.4896;-56.3968;Trombetas Airport;BR
 TMU;9.7330;-85.0000;Tambor Airport;CR
 TMW;-31.0833;150.8467;Tamworth Airport;AU
@@ -4532,12 +4532,12 @@ TOE;33.9397;8.1106;Tozeur Nefta International Airport;TN
 TOF;56.3833;85.2117;Bogashevo Airport;RU
 TOG;59.0536;-160.3969;Togiak Airport;US
 TOH;-13.3280;166.6380;Torres Airstrip;VU
-TOJ;40.4967;-3.4459;Torrejón Airport;ES
+TOJ;40.4967;-3.4459;TorrejÃ³n Airport;ES
 TOL;41.5868;-83.8078;Toledo Express Airport;US
 TOM;16.7305;-3.0076;Timbuktu Airport;ML
 TOP;39.0687;-95.6225;Philip Billard Municipal Airport;US
 TOQ;-22.1389;-70.0667;Barriles Airport;CL
-TOS;69.6814;18.9178;Tromsø Airport;NO
+TOS;69.6814;18.9178;TromsÃ¸ Airport;NO
 TOU;-20.7900;165.2594;Touho Airport;NC
 TOW;-24.6847;-53.6961;Toledo Airport;BR
 TOY;36.6483;137.1875;Toyama Airport;JP
@@ -4557,9 +4557,9 @@ TQL;64.9225;77.7850;Tarko-Sale Airport;RU
 TQR;42.1167;15.4833;San Domino Island Heliport;IT
 TRA;24.6539;124.6753;Tarama Airport;JP
 TRC;25.5683;-103.4100;Francisco Sarabia International Airport;MX
-TRD;63.4575;10.9242;Trondheim Airport Værnes;NO
+TRD;63.4575;10.9242;Trondheim Airport VÃ¦rnes;NO
 TRE;56.4992;-6.8692;Tiree Airport;GB
-TRF;59.1866;10.2586;Sandefjord Airport,NO
+TRF;59.1866;10.2586;Sandefjord Airport;NO
 TRG;-37.6739;176.1958;Tauranga Airport;NZ
 TRH;65.7667;87.8833;Trona Airport;US
 TRI;36.4751;-82.4073;Tri Cities Regional Tn Va Airport;US
@@ -4567,9 +4567,9 @@ TRK;3.3267;117.5694;Juwata Airport;ID
 TRM;33.6267;-116.1597;Jacqueline Cochran Regional Airport;US
 TRN;45.2025;7.6494;Turin Airport;IT
 TRO;-31.8911;152.5083;Taree Airport;AU
-TRQ;-8.1572;-70.7800;Tarauacá Airport;BR
+TRQ;-8.1572;-70.7800;TarauacÃ¡ Airport;BR
 TRR;8.5397;81.1825;China Bay Airport;LK
-TRS;45.8275;13.4722;Trieste–Friuli Venezia Giulia Airport;IT
+TRS;45.8275;13.4722;Triesteâ€“Friuli Venezia Giulia Airport;IT
 TRU;-8.0848;-79.1095;Capitan FAP Carlos Martinez De Pinillos International Airport;PE
 TRV;8.4797;76.9197;Trivandrum International Airport;IN
 TRW;1.3783;173.1500;Bonriki International Airport;KI
@@ -4581,12 +4581,12 @@ TSH;-6.4000;20.7833;Tshikapa Airport;CD
 TSJ;34.2848;129.3305;Tsushima Airport;JP
 TSL;22.0383;-98.8065;Tamuin Airport;MX
 TSN;39.1250;117.3489;Tianjin Binhai International Airport;CN
-TSR;45.8098;21.3379;Timişoara Traian Vuia Airport;RO
+TSR;45.8098;21.3379;TimiÅŸoara Traian Vuia Airport;RO
 TSS;40.7426;-73.9721;East 34th Street Heliport;US
 TST;7.5086;99.6158;Trang Airport;TH
 TSV;-19.2542;146.7642;Townsville Airport;AU
 TTA;28.4461;-11.1583;Tan Tan Airport;MA
-TTB;39.9197;9.6842;Tortolì Airport;IT
+TTB;39.9197;9.6842;TortolÃ¬ Airport;IT
 TTD;45.5494;-122.4013;Portland Troutdale Airport;US
 TTE;0.8308;127.3800;Sultan Khairun Babullah Airport;ID
 TTG;-22.6283;-63.8183;General Enrique Mosconi Airport;AR
@@ -4609,14 +4609,14 @@ TUL;36.1984;-95.8881;Tulsa International Airport;US
 TUN;36.8511;10.2269;Tunis Carthage International Airport;TN
 TUO;-38.7397;176.0844;Taupo Airport;NZ
 TUP;34.2681;-88.7699;Tupelo Regional Airport;US
-TUR;-3.7767;-49.7192;Tucuruí Airport;BR
+TUR;-3.7767;-49.7192;TucuruÃ­ Airport;BR
 TUS;32.1161;-110.9410;Tucson International Airport;US
 TUU;28.3731;36.6213;Tabuk Airport;SA
 TVA;-17.8500;44.9170;Morafenobe Airport;MG
 TVC;44.7400;-85.5817;Cherry Capital Airport;US
 TVF;48.0650;-96.1840;Thief River Falls Regional Airport;US
 TVL;38.8939;-119.9953;Lake Tahoe Airport;US
-TVS;39.7178;118.0026;Tangshan Sannühe Airport;CN
+TVS;39.7178;118.0026;Tangshan SannÃ¼he Airport;CN
 TVU;-16.6906;-179.8769;Matei Airport;FJ
 TVY;14.1015;98.2035;Dawei Airport;MM
 TWA;59.0756;-160.2730;Twin Hills Airport;US
@@ -4635,20 +4635,20 @@ TYS;35.8109;-83.9940;McGhee Tyson Airport;US
 TZA;17.5000;-88.1830;Belize City Municipal Airport;BZ
 TZL;44.4587;18.7248;Tuzla International Airport;BA
 TZX;40.9958;39.7853;Trabzon International Airport;TR
-UAB;36.9989;35.4331;İncirlik Air Base;TR
+UAB;36.9989;35.4331;Ä°ncirlik Air Base;TR
 UAH;-8.9361;-139.5522;Ua Huka Airport;PF
 UAI;-9.3039;125.2868;Suai Airport;TL
 UAK;61.1607;-45.4257;Narsarsuaq Airport;GL
 UAP;-9.3517;-140.0778;Ua Pou Airport;PF
 UAQ;-31.5683;-68.4183;Domingo Faustino Sarmiento Airport;AR
 UAS;0.5330;37.5330;Samburu South Airport;KE
-UBA;-19.7642;-47.9656;Mário de Almeida Franco Airport;BR
+UBA;-19.7642;-47.9656;MÃ¡rio de Almeida Franco Airport;BR
 UBB;-9.9500;142.1833;Mabuiag Island Airport;AU
 UBJ;33.9300;131.2789;Yamaguchi Ube Airport;JP
 UBP;15.2514;104.8703;Ubon Ratchathani Airport;TH
 UCA;43.1451;-75.3839;Oneida County Airport;US
 UCT;63.5667;53.8033;Ukhta Airport;RU
-UDI;-18.8831;-48.2247;Ten. Cel. Aviador César Bombonato Airport;BR
+UDI;-18.8831;-48.2247;Ten. Cel. Aviador CÃ©sar Bombonato Airport;BR
 UDJ;48.6350;22.2650;Uzhhorod International Airport;UA
 UDN;45.9347;12.9422;Udine-Campoformido Air Base;IT
 UDR;24.6176;73.8944;Maharana Pratap Airport;IN
@@ -4660,7 +4660,7 @@ UGB;57.4254;-157.7399;Ugashik Bay Airport;US
 UGC;41.5833;60.6450;Urgench Airport;UZ
 UGI;57.8833;-153.5000;San Juan /Uganik/ Seaplane Base;US
 UHE;49.0294;17.4397;Kunovice Airport;CZ
-UIB;5.6908;-76.6411;El Caraño Airport;CO
+UIB;5.6908;-76.6411;El CaraÃ±o Airport;CO
 UIH;13.9492;109.0461;Phu Cat Airport;VN
 UII;16.1131;-86.8803;Utila Airport;HN
 UIK;58.1333;102.5533;Ust-Ilimsk Airport;RU
@@ -4678,10 +4678,10 @@ UKK;50.0361;82.4942;Ust-Kamennogorsk Airport;KZ
 UKS;44.6917;33.5767;Belbek Airport;UA
 UKX;56.8578;105.7289;Ust-Kut Airport;RU
 ULA;-49.3094;-67.8011;Capitan D Daniel Vazquez Airport;AR
-ULB;-16.3330;168.2830;Uléi Airport;VU
+ULB;-16.3330;168.2830;UlÃ©i Airport;VU
 ULD;-28.3195;31.4171;Prince Mangosuthu Buthelezi Airport;ZA
 ULG;48.9761;89.9347;Ulgii Mongolei Airport;MN
-ULG;48.9761;89.9347;Ölgii Airport;MN
+ULG;48.9761;89.9347;Ã–lgii Airport;MN
 ULH;26.7554;37.9138;Majeed Bin Abdulaziz Airport;SA
 ULK;54.2683;48.2267;Lensk Airport;RU
 ULN;47.8426;106.7671;Chinggis Khaan International Airport;MN
@@ -4692,11 +4692,11 @@ ULV;54.4010;48.8027;Ulyanovsk Baratayevka Airport;RU
 ULY;54.4017;48.8050;Ulyanovsk East Airport;RU
 ULZ;47.7147;96.8472;Donoi Airport;MN
 UMD;70.6797;-52.1172;Uummannaq Heliport;GL
-UME;63.7931;20.2800;Umeå Airport;SE
+UME;63.7931;20.2800;UmeÃ¥ Airport;SE
 UMR;-31.1400;136.8167;Woomera Airfield;AU
 UMU;-23.7992;-53.3139;Umuarama Airport;BR
 UMY;50.8583;34.7625;Sumy Airport;UA
-UNA;-15.3552;-38.9990;Hotel Transamérica Airport;BR
+UNA;-15.3552;-38.9990;Hotel TransamÃ©rica Airport;BR
 UND;36.6625;68.9111;Konduz Airport;AF
 UNG;-6.1170;141.2830;Kiunga Airport;PG
 UNI;12.5986;-61.4147;Union Island International Airport;VC
@@ -4708,7 +4708,7 @@ UPK;72.1567;-55.5333;Upernavik Kujalleq Heliport;GL
 UPN;19.3965;-102.0389;Licenciado y General Ignacio Lopez Rayon Airport;MX
 URA;51.1508;51.5431;Uralsk Airport;KZ
 URB;-20.7758;-51.5619;Urubupunga Airport;BR
-URC;43.9050;87.4767;Ürümqi Diwopu International Airport;CN
+URC;43.9050;87.4767;ÃœrÃ¼mqi Diwopu International Airport;CN
 URE;58.2300;22.5094;Kuressaare Airport;EE
 URG;-29.7833;-57.0369;Rubem Berta Airport;BR
 URJ;60.1167;64.8333;Uray Airport;RU
@@ -4720,7 +4720,7 @@ USH;-54.8433;-68.2956;Malvinas Argentinas Airport;AR
 USK;66.0000;57.3667;Usinsk Airport;RU
 USM;9.5492;100.0625;Samui Airport;TH
 USN;35.5933;129.3522;Ulsan Airport;KR
-USQ;38.6811;29.4714;Uşak Airport;TR
+USQ;38.6811;29.4714;UÅŸak Airport;TR
 UST;29.9593;-81.3397;Northeast Florida Regional Airport;US
 USU;12.1206;120.0961;Francisco B. Reyes Airport;PH
 UTC;52.1281;5.2811;Soesterberg Air Base;NL
@@ -4737,7 +4737,7 @@ UTW;-31.9167;26.8833;Queenstown Airport;ZA
 UUA;54.6170;52.8170;Bugulma Airport;RU
 UUD;51.8083;107.4417;Ulan-Ude Airport (Mukhino);RU
 UUS;46.8883;142.7167;Yuzhno-Sakhalinsk Airport;RU
-UVE;-20.6406;166.5728;Ouvéa Airport;NC
+UVE;-20.6406;166.5728;OuvÃ©a Airport;NC
 UVF;13.7333;-60.9528;Hewanorra International Airport;LC
 UVL;25.4736;30.5908;El Kharga Airport;EG
 UYL;12.0535;24.9561;Nyala Airport;SD
@@ -4752,7 +4752,7 @@ VAK;61.5408;-165.6009;Chevak Airport;US
 VAN;38.4686;43.3308;Van Ferit Melen Airport;TR
 VAO;-7.5850;158.7300;Suavanao Airport;SB
 VAR;43.2319;27.8253;Varna Airport;BG
-VAS;39.8153;36.9028;Sivas Nuri Demirağ Airport;TR
+VAS;39.8153;36.9028;Sivas Nuri DemiraÄŸ Airport;TR
 VAV;-18.5856;-173.9697;Vava'u International Airport;TO
 VAW;70.3554;31.0449;Vardoe Airport;NO
 VBG;34.7291;-120.5768;Vandenberg Air Force Base;US
@@ -4769,12 +4769,12 @@ VCT;28.8517;-96.9183;Victoria Regional Airport;US
 VCV;34.5975;-117.3830;Southern California Logistics Airport;US
 VDA;29.9361;34.9411;Ovda International Airport;IL
 VDB;61.0156;9.2881;Leirin Airport;NO
-VDC;-14.8631;-40.8625;Vitória da Conquista Airport;BR
+VDC;-14.8631;-40.8625;VitÃ³ria da Conquista Airport;BR
 VDE;27.8148;-17.8871;Hierro Airport;ES
 VDH;17.5150;106.5906;Dong Hoi Airport;VN
 VDM;-40.8689;-62.9978;Gobernador Castello Airport;AR
 VDP;9.2167;-66.0167;Valle de La Pascua Airport;VE
-VDS;70.0653;29.8447;Vadsø Airport;NO
+VDS;70.0653;29.8447;VadsÃ¸ Airport;NO
 VDY;22.5333;72.9000;Vijayanagar Aerodrome (JSW);IN
 VDZ;61.1339;-146.2483;Valdez Pioneer Field;US
 VEE;67.0087;-146.3664;Venetie Airport;US
@@ -4786,13 +4786,13 @@ VGA;16.5275;80.7967;Vijayawada Airport;IN
 VGD;59.2817;39.9467;Vologda Airport;RU
 VGO;42.2291;-8.6275;Vigo Airport;ES
 VGT;36.2106;-115.1944;North Las Vegas Airport;US
-VGZ;2.1667;-75.6667;Villa Garzón Airport;CO
+VGZ;2.1667;-75.6667;Villa GarzÃ³n Airport;CO
 VHC;-9.6890;20.4308;Saurimo Airport;AO
 VHM;64.5981;16.8397;Vilhelmina Airport;SE
 VHY;46.1717;3.4042;Vichy-Charmeil Airport;FR
 VIC;45.5717;11.5269;Vicenza Airport;IT
 VIE;48.1103;16.5697;Vienna International Airport;AT
-VIG;8.6419;-71.6853;Juan Pablo Pérez Alfonso Airport;VE
+VIG;8.6419;-71.6853;Juan Pablo PÃ©rez Alfonso Airport;VE
 VII;18.7304;105.6758;Vinh Airport;VN
 VIJ;18.4481;-64.4286;Virgin Gorda Airport;VG
 VIL;23.7217;-15.9333;Dakhla Airport;EH
@@ -4808,11 +4808,11 @@ VLD;30.7825;-83.2767;Valdosta Regional Airport;US
 VLG;-37.2347;-57.0233;Villa Gesell Airport;AR
 VLI;-17.6993;168.3198;Bauerfield International Airport;VU
 VLL;41.7060;-4.8519;Valladolid Airport;ES
-VLM;-21.2536;-63.4058;Teniente Coronel Rafael Pabón Airport;BO
+VLM;-21.2536;-63.4058;Teniente Coronel Rafael PabÃ³n Airport;BO
 VLN;10.1500;-67.9230;Arturo Michelena International Airport;VE
 VLR;-28.6000;-70.7667;Vallenar Airport;CL
 VLS;-16.7961;168.1769;Valesdir Airport;VU
-VLV;9.3500;-70.6167;Dr. Antonio Nicolás Briceño Airport;VE
+VLV;9.3500;-70.6167;Dr. Antonio NicolÃ¡s BriceÃ±o Airport;VE
 VLY;53.2481;-4.5353;Anglesey Airport;GB
 VME;-33.7251;-65.3781;Villa Reynolds Airport;AR
 VMU;-7.4830;144.8000;Baimuru Airport;PG
@@ -4829,7 +4829,7 @@ VOT;-20.4233;-49.9881;Votuporanga Airport;BR
 VOZ;51.8150;39.2300;Voronezh International Airport;RU
 VPE;-17.0435;15.6838;Ngjiva Pereira Airport;AO
 VPG;-3.8599;39.7870;Vipingo Estate Airport;KE
-VPN;65.7206;-14.8506;Vopnafjörður Airport;IS
+VPN;65.7206;-14.8506;VopnafjÃ¶rÃ°ur Airport;IS
 VPS;30.4833;-86.5253;Eglin Air Force Base;US
 VPY;-19.1485;33.4295;Chimoio Airport;MZ
 VQQ;30.2187;-81.8767;Cecil Airport;US
@@ -4841,26 +4841,26 @@ VRC;13.5772;124.2164;Virac Airport;PH
 VRK;62.1711;27.8686;Varkaus Airport;FI
 VRN;45.3964;10.8881;Verona Villafranca Airport;IT
 VRU;-26.9667;24.7333;Vryburg Airport;ZA
-VRY;67.6894;12.6819;Værøy Heliport;NO
-VSA;17.9970;-92.8148;Carlos Rovirosa Pérez International Airport;MX
+VRY;67.6894;12.6819;VÃ¦rÃ¸y Heliport;NO
+VSA;17.9970;-92.8148;Carlos Rovirosa PÃ©rez International Airport;MX
 VSE;40.7255;-7.8890;Viseu Airport;PT
 VSG;48.4181;39.3761;Luhansk International Airport;UA
-VST;59.5894;16.6336;Stockholm Västerås Airport;SE
+VST;59.5894;16.6336;Stockholm VÃ¤sterÃ¥s Airport;SE
 VTB;55.1264;30.3517;Vitebsk Vostochny Airport;BY
 VTE;17.9883;102.5633;Wattay International Airport;LA
 VTG;10.3741;107.0915;Vung Tau Airport;VN
 VTN;42.8578;-100.5475;Miller Field;US
 VTU;20.9878;-76.9358;Hermanos Ameijeiras Airport;CU
 VTZ;17.7211;83.2247;Vishakhapatnam Airport;IN
-VUP;10.4350;-73.2494;Alfonso López Pumarejo Airport;CO
+VUP;10.4350;-73.2494;Alfonso LÃ³pez Pumarejo Airport;CO
 VUS;60.7670;46.3170;Velikiy Ustyug Airport;RU
 VVC;4.1681;-73.6133;Vanguardia Airport;CO
 VVI;-17.6447;-63.1353;Viru Viru International Airport;BO
 VVO;43.3983;132.1467;Vladivostok International Airport;RU
 VVZ;26.7236;8.6178;Illizi Takhamalt Airport;DZ
 VXC;-13.2833;35.2500;Lichinga Airport;MZ
-VXE;16.8339;-25.0567;São Pedro Airport;CV
-VXO;56.9303;14.7289;Växjö Kronoberg Airport;SE
+VXE;16.8339;-25.0567;SÃ£o Pedro Airport;CV
+VXO;56.9303;14.7289;VÃ¤xjÃ¶ Kronoberg Airport;SE
 VYS;41.3519;-89.1531;Illinois Valley Regional Airport-Walter A Duncan Field;US
 WAA;65.6226;-168.0949;Wales Airport;US
 WAE;20.5042;45.1989;Wadi Al Dawasir Airport;SA
@@ -4877,7 +4877,7 @@ WBG;54.4567;9.5164;Schleswig Airport;DE
 WBM;-5.6433;143.8954;Wapenamanda Airport;PG
 WBQ;66.3622;-147.4065;Beaver Airport;US
 WCA;-42.4850;-73.7722;Gamboa Airport;CL
-WCH;-42.9222;-72.6950;Chaitén Airport;CL
+WCH;-42.9222;-72.6950;ChaitÃ©n Airport;CL
 WDH;-22.4800;17.4708;Hosea Kutako International Airport;NA
 WDR;33.9828;-83.6673;Barrow County Airport;US
 WEF;36.6467;119.1186;Weifang Airport;CN
@@ -4926,17 +4926,17 @@ WNS;26.2194;68.3901;Shaheed Benazirabad Airport;PK
 WNZ;27.9122;120.8519;Wenzhou Yongqiang Airport;CN
 WOE;51.4497;4.3433;Woensdrecht Air Base;NL
 WOL;-34.5617;150.7883;Wollongong Airport;AU
-WPA;-45.4000;-72.6667;Cabo 1° Juan Román Airport;CL
+WPA;-45.4000;-72.6667;Cabo 1Â° Juan RomÃ¡n Airport;CL
 WPC;49.5206;-113.9917;Pincher Creek Airport;CA
 WPM;-8.7830;142.8670;Wipim Airport;PG
 WPR;-53.2500;-70.3333;Capitan Fuentes Martinez Airport Airport;CL
-WPU;-54.9281;-67.6328;Guardiamarina Zañartu Airport;CL
+WPU;-54.9281;-67.6328;Guardiamarina ZaÃ±artu Airport;CL
 WRB;32.6400;-83.5917;Robins Air Force Base;US
 WRE;-35.7703;174.3650;Whangarei Airport;NZ
 WRG;56.4861;-132.3700;Wrangell Airport;US
 WRI;40.0154;-74.5936;Mc Guire Air Force Base;US
 WRL;43.9657;-107.9508;Worland Municipal Airport;US
-WRO;51.1027;16.8858;Copernicus Wrocław Airport;PL
+WRO;51.1027;16.8858;Copernicus WrocÅ‚aw Airport;PL
 WRY;59.3500;-2.9330;Westray Airport;GB
 WSN;58.7021;-157.0026;South Naknek Nr 2 Airport;US
 WST;41.3496;-71.8034;Westerly State Airport;US
@@ -4968,14 +4968,14 @@ WYN;-15.5117;128.1533;Wyndham Airport;AU
 WYS;44.6883;-111.1175;Yellowstone Airport;US
 XAC;44.5819;-1.1147;Arcachon-La Teste-de-Buch Airport;FR
 XAP;-27.1336;-52.6611;Serafin Enoss Bertaso Airport;BR
-XAS;44.0728;4.1431;Alès-Deaux Airport;FR
+XAS;44.0728;4.1431;AlÃ¨s-Deaux Airport;FR
 XBE;53.9664;-91.0264;Bearskin Lake Airport;CA
 XBJ;32.8981;59.2661;Birjand Airport;IR
 XBQ;47.6797;1.2058;Blois-Le Breuil Airport;FR
-XCB;50.2192;3.1522;Cambrai-Épinoy (BA 103) Air Base;FR
+XCB;50.2192;3.1522;Cambrai-Ã‰pinoy (BA 103) Air Base;FR
 XCH;-10.4500;105.6900;Christmas Island Airport;CX
-XCR;48.7733;4.2061;Châlons-Vatry Air Base;FR
-XCZ;49.7850;4.6428;Charleville-Mézières Airport;FR
+XCR;48.7733;4.2061;ChÃ¢lons-Vatry Air Base;FR
+XCZ;49.7850;4.6428;Charleville-MÃ©ziÃ¨res Airport;FR
 XEQ;60.1936;-44.8114;Tasiuasaq Heliport;GL
 XFN;32.1506;112.2908;Xiangyang Liuji Airport;CN
 XFW;53.5354;9.8355;Hamburg-Finkenwerder Airport;DE
@@ -4991,7 +4991,7 @@ XKS;53.5247;-88.6428;Kasabonika Airport;CA
 XLB;58.6175;-101.4689;Lac Brochet Airport;CA
 XLS;16.0497;-16.4611;Saint Louis Airport;SN
 XLW;53.1427;8.6235;Lemwerder Airport;DE
-XMF;47.4867;6.7914;Montbéliard-Courcelles Airport;FR
+XMF;47.4867;6.7914;MontbÃ©liard-Courcelles Airport;FR
 XMH;-14.4375;-146.0708;Manihi Airport;PF
 XMN;24.5433;118.1250;Xiamen Gaoqi International Airport;CN
 XMS;-2.2989;-78.1208;Coronel E Carvajal Airport;EC
@@ -5021,11 +5021,11 @@ YAC;51.7272;-91.8244;Cat Lake Airport;CA
 YAD;53.5717;-76.1964;Moose Lake Airport;CA
 YAG;48.6542;-93.4397;Fort Frances Municipal Airport;CA
 YAH;53.7544;-73.6739;La Grande-4 Airport;CA
-YAI;-36.5828;-72.0317;Gral. Bernardo O´Higgins Airport;CL
+YAI;-36.5828;-72.0317;Gral. Bernardo OÂ´Higgins Airport;CL
 YAJ;48.8000;-123.2000;Lyall Harbour Seaplane Base;CA
 YAK;59.5033;-139.6602;Yakutat Airport;US
 YAM;46.4850;-84.5094;Sault Ste Marie Airport;CA
-YAO;3.8321;11.5216;Yaoundé Airport;CM
+YAO;3.8321;11.5216;YaoundÃ© Airport;CM
 YAP;9.4989;138.0825;Yap International Airport;FM
 YAT;52.9275;-82.4319;Attawapiskat Airport;CA
 YAV;48.8670;-123.3000;Mayne Island Seaplane Base;CA
@@ -5072,7 +5072,7 @@ YDQ;55.7423;-120.1830;Dawson Creek Airport;CA
 YDV;51.7833;-96.7000;Bloodvein River Airport;CA
 YEC;36.6317;128.3551;Yecheon Airport;KR
 YEG;53.3097;-113.5797;Edmonton International Airport;CA
-YEI;40.2552;29.5626;Bursa Yenişehir Airport;TR
+YEI;40.2552;29.5626;Bursa YeniÅŸehir Airport;TR
 YEK;61.0942;-94.0708;Arviat Airport;CA
 YEL;46.3514;-82.5614;Elliot Lake Municipal Airport;CA
 YEM;45.8428;-81.8581;Manitoulin East Municipal Airport;CA
@@ -5086,7 +5086,7 @@ YFA;52.2033;-81.6958;Fort Albany Airport;CA
 YFB;63.7564;-68.5558;Iqaluit Airport;CA
 YFC;45.8681;-66.5356;Fredericton Airport;CA
 YFH;51.5614;-87.9069;Fort Hope Airport;CA
-YFJ;64.1900;-114.0800;Wekweètì Airport;CA
+YFJ;64.1900;-114.0800;WekweÃ¨tÃ¬ Airport;CA
 YFO;54.6781;-101.6817;Flin Flon Airport;CA
 YFR;61.1808;-113.6897;Fort Resolution Airport;CA
 YFS;61.7602;-121.2365;Fort Simpson Airport;CA
@@ -5096,13 +5096,13 @@ YGG;48.8500;-123.5000;Ganges Seaplane Base;CA
 YGH;66.2408;-128.6508;Fort Good Hope Airport;CA
 YGJ;35.4923;133.2365;Miho Yonago Airport;JP
 YGK;44.2253;-76.5969;Kingston Norman Rogers Airport;CA
-YGL;53.6253;-77.7042;La Grande Rivière Airport;CA
+YGL;53.6253;-77.7042;La Grande RiviÃ¨re Airport;CA
 YGM;50.6281;-97.0433;Gimli Industrial Park Airport;CA
 YGN;50.8500;-126.8500;Greenway Sound Seaplane Base;CA
 YGO;54.5589;-94.4914;Gods Lake Narrows Airport;CA
-YGP;48.7753;-64.4786;Gaspé (Michel-Pouliot) Airport;CA
+YGP;48.7753;-64.4786;GaspÃ© (Michel-Pouliot) Airport;CA
 YGQ;49.7783;-86.9394;Geraldton Greenstone Regional Airport;CA
-YGR;47.4247;-61.7781;Îles-de-la-Madeleine Airport;CA
+YGR;47.4247;-61.7781;ÃŽles-de-la-Madeleine Airport;CA
 YGT;69.3647;-81.8161;Igloolik Airport;CA
 YGV;50.2819;-63.6114;Havre St Pierre Airport;CA
 YGW;55.2819;-77.7653;Kuujjuarapik Airport;CA
@@ -5119,7 +5119,7 @@ YHO;55.4500;-60.2330;Hopedale Airport;CA
 YHP;52.1133;-94.2555;Poplar Hill Airport;CA
 YHR;50.4689;-59.6367;Chevery Airport;CA
 YHS;49.4833;-123.7667;Sechelt-Gibsons Airport;CA
-YHU;45.5175;-73.4169;Montréal / Saint-Hubert Airport;CA
+YHU;45.5175;-73.4169;MontrÃ©al / Saint-Hubert Airport;CA
 YHY;60.8397;-115.7764;Hay River / Merlyn Carter Airport;CA
 YHZ;44.8808;-63.5086;Halifax / Stanfield International Airport;CA
 YIB;48.7739;-91.6386;Atikokan Municipal Airport;CA
@@ -5149,7 +5149,7 @@ YKZ;43.8622;-79.3700;Buttonville Municipal Airport;CA
 YLB;54.7703;-112.0317;Lac La Biche Airport;CA
 YLC;62.8500;-69.8833;Kimmirut Airport;CA
 YLD;47.8200;-83.3467;Chapleau Airport;CA
-YLE;63.1500;-117.2670;Whatì Airport;CA
+YLE;63.1500;-117.2670;WhatÃ¬ Airport;CA
 YLH;52.1950;-87.9333;Lansdowne House Airport;CA
 YLI;64.0547;24.7253;Ylivieska Airfield;FI
 YLJ;54.1244;-108.5233;Meadow Lake Airport;CA
@@ -5244,12 +5244,12 @@ YRB;74.7169;-94.9694;Resolute Bay Airport;CA
 YRC;50.1239;-124.8395;Refuge Cove Seaplane Base;CA
 YRF;53.6830;-57.0330;Cartwright Airport;CA
 YRG;54.1794;-58.4569;Rigolet Airport;CA
-YRI;47.7644;-69.5847;Rivière-du-Loup Airport;CA
+YRI;47.7644;-69.5847;RiviÃ¨re-du-Loup Airport;CA
 YRJ;48.5200;-72.2656;Roberval Airport;CA
 YRL;51.0669;-93.7931;Red Lake Airport;CA
 YRM;52.4297;-114.9044;Rocky Mountain House Airport;CA
 YRO;45.4603;-75.6461;Ottawa / Rockcliffe Airport;CA
-YRQ;46.3528;-72.6794;Trois-Rivières Airport;CA
+YRQ;46.3528;-72.6794;Trois-RiviÃ¨res Airport;CA
 YRS;54.1672;-93.5572;Red Sucker Lake Airport;CA
 YRT;62.8114;-92.1158;Rankin Inlet Airport;CA
 YSB;46.6250;-80.7989;Sudbury Airport;CA
@@ -5306,7 +5306,7 @@ YWA;45.9522;-77.3192;Petawawa Airport;CA
 YWB;61.5886;-71.9294;Kangiqsujuaq (Wakeham Bay) Airport;CA
 YWG;49.9100;-97.2399;Winnipeg / James Armstrong Richardson International Airport;CA
 YWH;48.4228;-123.3875;Victoria Harbour Seaplane Base;CA
-YWJ;65.2106;-123.4358;Déline Airport;CA
+YWJ;65.2106;-123.4358;DÃ©line Airport;CA
 YWK;52.9219;-66.8644;Wabush Airport;CA
 YWL;52.1831;-122.0542;Williams Lake Airport;CA
 YWM;52.5669;-55.7847;Williams Harbour Airport;CA
@@ -5356,7 +5356,7 @@ YZR;42.9994;-82.3089;Chris Hadfield Airport;CA
 YZS;64.1933;-83.3594;Coral Harbour Airport;CA
 YZT;50.6806;-127.3667;Port Hardy Airport;CA
 YZU;54.1439;-115.7867;Whitecourt Airport;CA
-YZV;50.2233;-66.2656;Sept-Îles Airport;CA
+YZV;50.2233;-66.2656;Sept-ÃŽles Airport;CA
 YZX;44.9844;-64.9169;CFB Greenwood;CA
 YZY;38.8019;100.6750;Zhangye Ganzhou Airport;CN
 YZZ;49.0500;-117.6100;Trail Airport;CA
@@ -5378,7 +5378,7 @@ ZBR;25.4444;60.3836;Konarak Airport;IR
 ZBY;19.2333;101.7333;Sayaboury Airport;LA
 ZCL;22.8974;-102.6858;General Leobardo C. Ruiz International Airport;MX
 ZCN;52.5911;10.0219;Celle Airport;DE
-ZCO;-38.7669;-72.6372;La Araucanía Airport;CL
+ZCO;-38.7669;-72.6372;La AraucanÃ­a Airport;CL
 ZDY;24.5031;52.3358;Delma Airport;AE
 ZEL;52.1847;-128.1564;Bella Bella (Campbell Island) Airport;CA
 ZEM;52.2264;-78.5225;Eastmain River Airport;CA
@@ -5399,7 +5399,7 @@ ZJG;54.5194;-98.0464;Jenpeg Airport;CA
 ZKE;52.2825;-81.6778;Kashechewan Airport;CA
 ZKG;50.1830;-61.2830;Kegaska Airport;CA
 ZLO;19.1448;-104.5585;Playa De Oro International Airport;MX
-ZLT;50.8308;-58.9756;La Tabatière Airport;CA
+ZLT;50.8308;-58.9756;La TabatiÃ¨re Airport;CA
 ZMG;52.0737;11.6265;Magdeburg ""City"" Airport;DE
 ZMH;51.7361;-121.3328;South Cariboo Region / 108 Mile Airport;CA
 ZMT;54.0275;-132.1253;Masset Airport;CA
@@ -5407,19 +5407,19 @@ ZNA;49.1833;-123.9500;Nanaimo Harbour Water Airport;CA
 ZND;13.7839;8.9904;Zinder Airport;NE
 ZNE;-23.4183;119.8033;Newman Airport;AU
 ZNZ;-6.2188;39.2246;Abeid Amani Karume International Airport;TZ
-ZOS;-40.6072;-73.0567;Cañal Bajo Carlos - Hott Siebert Airport;CL
+ZOS;-40.6072;-73.0567;CaÃ±al Bajo Carlos - Hott Siebert Airport;CL
 ZPB;53.8906;-92.1953;Sachigo Lake Airport;CA
-ZPC;-39.2894;-71.9167;Pucón Airport;CL
+ZPC;-39.2894;-71.9167;PucÃ³n Airport;CL
 ZQN;-45.0211;168.7392;Queenstown International Airport;NZ
-ZQW;49.2095;7.4006;Zweibrücken Airport;DE
+ZQW;49.2095;7.4006;ZweibrÃ¼cken Airport;DE
 ZQZ;40.7386;114.9303;Zhangjiakou Ningyuan Airport;CN
-ZRH;47.4583;8.5481;Zürich Airport;CH
+ZRH;47.4583;8.5481;ZÃ¼rich Airport;CH
 ZRJ;52.9436;-91.3128;Round Lake (Weagamow Lake) Airport;CA
 ZSA;24.0631;-74.5237;San Salvador Airport;BS
 ZSE;-21.3216;55.4256;Pierrefonds Airport;RE
 ZSJ;53.0642;-93.3445;Sandy Lake Airport;CA
 ZTA;-20.7706;-138.5686;Tureia Airport;PF
-ZTB;50.6744;-59.3836;Tête-à-la-Baleine Airport;CA
+ZTB;50.6744;-59.3836;TÃªte-Ã -la-Baleine Airport;CA
 ZTH;37.7511;20.8842;Dionysios Solomos Airport;GR
 ZTM;55.8647;-92.0814;Shamattawa Airport;CA
 ZTU;41.5592;46.6668;Zaqatala International Airport;AZ
