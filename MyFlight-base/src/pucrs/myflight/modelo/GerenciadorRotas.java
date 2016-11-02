@@ -35,6 +35,9 @@ public class GerenciadorRotas {
 			String avioes = scan1.next();
 			Scanner scan2 = new Scanner(avioes);
 			
+			while(scan2.hasNext()){
+				
+			}
 			
 			
 			
