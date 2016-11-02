@@ -50,6 +50,8 @@ public class App {
 		GerenciadorAeroportos gerAero = new GerenciadorAeroportos();
 		GerenciadorRotas gerRotas = new GerenciadorRotas();
 		GerenciadorPaises gerPaises = new GerenciadorPaises();
+		GerenciadorAeronaves gerAeron = new GerenciadorAeronaves();
+		
 		try{ 
 			gerPaises.carregaDados();
 		}
@@ -81,6 +83,19 @@ public class App {
 		
 		janela.setGerRotas(gerRotas);
 		janela.setVisible(true);
+
 		*/
+
+		
+		try{
+			gerAeron.carregaDados();
+		}catch (IOException e){
+			System.out.println("Impossível ler equipment.dat!");
+			System.out.println("Msg: "+e);
+			System.exit(1);			
+
 		}
+		
+		
+	}
 }
