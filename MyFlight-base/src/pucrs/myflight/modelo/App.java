@@ -20,7 +20,7 @@ public class App {
 			System.out.println("Msg: "+e);
 			System.exit(1);
 		}
-		
+		/*
 		try {
 			gerCias.gravaJSON();
 		} catch (IOException e) {
@@ -29,7 +29,7 @@ public class App {
 			System.exit(1);
 		}
 		
-		/*
+		
 		try {
 			gerCias.carregaSerial();
 		} catch (IOException | ClassNotFoundException e) {
