@@ -43,6 +43,14 @@ public class GerenciadorAeronaves {
 		}
 		System.out.println("Total Aeronaves: " + aeronaves.size());
 	}
+	
+	public Aeronave buscarCodigo(String codigo){
+		Aeronave aero = aeronaves.get(codigo);		
+		if(aero!=null)
+			return aero;
+		return null; 
+	}
+	
 	/*
 	public void adicionar(Aeronave av) {
 		aeronaves.add(av);	
