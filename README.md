@@ -12,5 +12,5 @@ O Trabalho foi desenvolvido pelos alunos:
 Curso:
 Engenharia de Software, FACIN-PUCRS
 
-Acesse o nosso #Trello e acompanhe o desenvolvimento do projeto:
+Acesse o nosso Trello e acompanhe o desenvolvimento do projeto:
 #https://trello.com/b/bi1FgL6j/desenvolvimento
