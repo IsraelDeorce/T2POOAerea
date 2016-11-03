@@ -74,23 +74,30 @@ public class GerenciadorRotas {
 			Scanner scan1 = new Scanner(linha).useDelimiter(";");
 			String cia = scan1.next();
 			String origem = scan1.next();
-			String destino = scan1.next();
-			String codeshare = scan1.next();
+			String destino = scan1.next();			
 			String paradas = scan1.next();
-			String[] avioes = scan1.next().split(" ");
+			String equip = scan1.next();
+			ArrayList<String> avioes = new ArrayList<String>(); 
+			Scanner scan2 = new Scanner(equip);
+			while(scan2.hasNext())
+				avioes.add(scan2.next());
 			int i = 0;
-			for(String aircraft : avioes){
+			for(String a : avioes){
 				rotas.add(new Rota(
-						companhias.get(cia), 
-						aeroportos.get(origem), 
-						aeroportos.get(destino), 
-						aeronaves.get(aircraft)));			
-				System.out.println("Adicionei " + rotas.get(i));
-				i++;			
+				companhias.get(cia), 
+				aeroportos.get(origem), 
+				aeroportos.get(destino), 
+				aeronaves.get(a)));			
+				System.out.println("Adicionei " + i);
+				i++;
 			}
 		}
 		}
 	}
+			
 }
+		
+	
+
 	
 
