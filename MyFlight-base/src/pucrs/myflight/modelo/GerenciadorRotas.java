@@ -18,14 +18,16 @@ public class GerenciadorRotas {
 
 	private List<Rota> rotas;
 	private TreeMap<String,CiaAerea> companhias;
-	private TreeMap<String,Aeroporto> aeroportos;	
-	private TreeMap<String,Aeronave> aeronaves;	
+	//private List<Aeroporto> aeroportos;	
+	private TreeMap<String,Aeronave> aeronaves;
+		
 	
 	public GerenciadorRotas(){
 		rotas = new ArrayList<Rota>();
 		try{
-			carregaSerialCias();
-			carregaSerialAeroportos();
+			carregaSerialCias();			
+			carregaSerialAeronaves();
+			//carregaSerialAeroportos();
 		}
 		catch (IOException | ClassNotFoundException e) {
 			System.out.println("Impossível ler arquivo!");
@@ -47,13 +49,14 @@ public class GerenciadorRotas {
 				companhias = (TreeMap<String, CiaAerea>) outArq.readObject();
 		}
 	}
-	
+	/*
 	public void carregaSerialAeroportos() throws IOException, ClassNotFoundException {
 		Path arq = Paths.get("airports.ser");		
 		try (ObjectInputStream outArq = new ObjectInputStream(Files.newInputStream(arq))) {
-			aeroportos = (TreeMap<String, Aeroporto>) outArq.readObject();
+			aeroportos = (ArrayList<Aeroporto>) outArq.readObject();
 		}
 	}
+	*/
 	
 	public void carregaSerialAeronaves() throws IOException, ClassNotFoundException {
 		Path arq = Paths.get("equipment.ser");		
@@ -62,11 +65,11 @@ public class GerenciadorRotas {
 		}
 	}	
 	
-	public void carregaDados() throws IOException{
+	public void carregaDados(TreeMap<String,Aeroporto> aeroportos) throws IOException{
 		Path path = Paths.get("routes.dat");
 		try(BufferedReader br = Files.newBufferedReader(path, Charset.forName("utf8"))){
 		String linha = br.readLine();
-		linha = br.readLine();		
+		String linha2 = br.readLine();		
 		while((linha = br.readLine())!=null){
 			Scanner scan1 = new Scanner(linha).useDelimiter(";");
 			String cia = scan1.next();
@@ -74,21 +77,20 @@ public class GerenciadorRotas {
 			String destino = scan1.next();
 			String codeshare = scan1.next();
 			String paradas = scan1.next();
-			String avioes = scan1.next();
-			Scanner scan2 = new Scanner(avioes);
-			ArrayList<String> lista = new ArrayList<String>();
-			while(scan2.hasNext())
-				lista.add(scan2.next());
-			for(String aircraft : lista){
+			String[] avioes = scan1.next().split(" ");
+			int i = 0;
+			for(String aircraft : avioes){
 				rotas.add(new Rota(
 						companhias.get(cia), 
 						aeroportos.get(origem), 
 						aeroportos.get(destino), 
-						aeronaves.get(aircraft)));
-				System.out.println("Adicionei ");
+						aeronaves.get(aircraft)));			
+				System.out.println("Adicionei " + rotas.get(i));
+				i++;			
 			}
 		}
 		}
 	}
-	
 }
+	
+

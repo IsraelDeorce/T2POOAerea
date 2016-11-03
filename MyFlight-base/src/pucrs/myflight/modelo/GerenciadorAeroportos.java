@@ -16,26 +16,27 @@ import java.util.stream.Collectors;
 
 public class GerenciadorAeroportos {
 
-	private List<Aeroporto> aeroportos;
+	private List<Aeroporto> aeroportos;	
 	private TreeMap<String, Pais> paises;
 	
 	public GerenciadorAeroportos() {
-		aeroportos = new ArrayList<Aeroporto>();
+		aeroportos = new ArrayList<Aeroporto>();		
 		try{
-			carregaSerial();
+			carregaSerial();			
 		}
 		catch (IOException | ClassNotFoundException e) {
 			System.out.println("Impossível ler countries.ser!");
 			System.out.println("Msg: "+e);
 			System.exit(1);
 		}
+		
 	}
 	
 	public void gravaSerial() throws IOException {
 		Path arq = Paths.get("airports.ser");
 		try (ObjectOutputStream outArq = new ObjectOutputStream(Files.newOutputStream(arq))) {
 		  outArq.writeObject(aeroportos);
-			}		
+		}		
 	}
 	
 	public void carregaSerial() throws IOException, ClassNotFoundException {
@@ -82,6 +83,11 @@ public class GerenciadorAeroportos {
 				  .collect(Collectors.toList()); 
 		return aeroPais;		
 	}
-
-		
+	
+	public TreeMap<String,Aeroporto> mapaCodigos(){
+		TreeMap<String,Aeroporto> aux = new TreeMap<String, Aeroporto>();
+		for(Aeroporto a : aeroportos)
+			aux.put(a.getCodigo(),a);
+		return aux;
+	}	
 }

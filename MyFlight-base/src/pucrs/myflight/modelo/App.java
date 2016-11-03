@@ -87,7 +87,7 @@ public class App {
 		
 		GerenciadorRotas gerRoutes = new GerenciadorRotas();
 		try {
-			gerRoutes.carregaDados();
+			gerRoutes.carregaDados(gerAirports.mapaCodigos());
 		} catch (IOException e) {
 			System.out.println("Impossível ler routes.dat!");
 			System.out.println("Msg: "+e);
