@@ -3,6 +3,7 @@ package pucrs.myflight.modelo;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -33,6 +34,13 @@ public class GerenciadorPaises {
 			}
 		}
 		System.out.println("Total de países carregados na memória: " + paises.size());
+	}
+	
+	public void gravaSerial() throws IOException {
+		Path arq1 = Paths.get("countries.ser");
+		try (ObjectOutputStream oarq = new ObjectOutputStream(Files.newOutputStream(arq1))) {
+		  oarq.writeObject(paises);
+		}		
 	}
 	
 	public Pais getPais(String key){

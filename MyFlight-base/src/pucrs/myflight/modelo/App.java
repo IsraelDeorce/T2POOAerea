@@ -5,6 +5,9 @@ import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Predicate;
 
 import pucrs.myflight.gui.JanelaConsulta;
 
@@ -12,61 +15,57 @@ public class App {
 
 	public static void main(String[] args) {
 						
-
-		/*
-		try {
-			gerCias.gravaJSON();
-		} catch (IOException e) {
-			System.out.println("Impossível gravar airlines.json!");
-			System.out.println("Msg: "+e);
-			System.exit(1);
-		}
-		
-		try {
-			gerCias.carregaSerial();
-		} catch (IOException | ClassNotFoundException e) {
-			System.out.println("ImpossÃ­vel ler airlines.ser!");
-			System.out.println("Msg: "+e);
-			System.exit(1);
-		}
-				
-		try {
-			gerCias.gravaSerial();
-			System.out.println("Gravei airlines.ser!");
-		} catch (IOException e) {
-			System.out.println("ImpossÃ­vel gravar airlines.ser!");
-			System.out.println("Msg: "+e);
-			System.exit(1);			
-		}*/
-		
-		GerenciadorPaises gerPaises = new GerenciadorPaises();
+		GerenciadorPaises gerCountries = new GerenciadorPaises();
 		try{ 
-			gerPaises.carregaDados();
+			gerCountries.carregaDados();
 		}
 		catch (IOException e) {
 		System.out.println("Impossível ler countries.dat!");
 		System.out.println("Msg: "+e);
 		System.exit(1);
-		}	
+		}
+		try {
+			gerCountries.gravaSerial();
+			System.out.println("Gravei countries.ser!");
+		} catch (IOException e) {
+			System.out.println("Impossível gravar coountries.ser!");
+			System.out.println("Msg: "+e);
+			System.exit(1);			
+		}
 		
-		GerenciadorAeronaves gerAeron = new GerenciadorAeronaves();
+		GerenciadorAeronaves gerAircrafts = new GerenciadorAeronaves();
 		try{
-			gerAeron.carregaDados();
+			gerAircrafts.carregaDados();
 		}catch (IOException e){
 			System.out.println("Impossível ler equipment.dat!");
 			System.out.println("Msg: "+e);
-			System.exit(1);			
-
+			System.exit(1);
 		}
+		try {
+			gerAircrafts.gravaSerial();
+			System.out.println("Gravei equipment.ser!");
+		} catch (IOException e) {
+			System.out.println("Impossível gravar equipment.ser!");
+			System.out.println("Msg: "+e);
+			System.exit(1);			
+		}		
 		
-		GerenciadorAeroportos gerAero = new GerenciadorAeroportos();
+		GerenciadorAeroportos gerAirports = new GerenciadorAeroportos();
 		try{ 
-			gerAero.carregaDados();
+			gerAirports.carregaDados();
 		}
 		catch (IOException e) {
 		System.out.println("Impossível ler airports.dat!");
 		System.out.println("Msg: "+e);
 		System.exit(1);
+		}
+		try {
+			gerAirports.gravaSerial();
+			System.out.println("Gravei airports.ser!");
+		} catch (IOException e) {
+			System.out.println("Impossível gravar airports.ser!");
+			System.out.println("Msg: "+e);
+			System.exit(1);			
 		}
 		
 		GerenciadorCias gerCias = new GerenciadorCias();
@@ -76,21 +75,32 @@ public class App {
 			System.out.println("Impossível ler airlines.dat!");
 			System.out.println("Msg: "+e);
 			System.exit(1);
-		}
-		/*
+		}		
 		try {
-			gerCias.gravaJSON();
+			gerCias.gravaSerial();
+			System.out.println("Gravei airlines.ser!");
 		} catch (IOException e) {
-			System.out.println("Impossível gravar airlines.json!");
+			System.out.println("Impossível gravar airlines.ser!");
+			System.out.println("Msg: "+e);
+			System.exit(1);			
+		}
+		
+		GerenciadorRotas gerRoutes = new GerenciadorRotas();
+		try {
+			gerRoutes.carregaDados();
+		} catch (IOException e) {
+			System.out.println("Impossível ler routes.dat!");
 			System.out.println("Msg: "+e);
 			System.exit(1);
-		}
-		*/
-		
-		GerenciadorRotas gerRotas = new GerenciadorRotas();
-		
-		
-		
+		}		
+		try {
+			gerRoutes.gravaSerial();
+			System.out.println("Gravei routes.ser!");
+		} catch (IOException e) {
+			System.out.println("Impossível gravar routes.ser!");
+			System.out.println("Msg: "+e);
+			System.exit(1);			
+		}	
 		
 				
 		// Teste GUI: abre janela
@@ -102,9 +112,9 @@ public class App {
 		janela.setVisible(true);
 
 		*/
-
-		
-		
-		
 	}
+	
+	
+	
+	
 }

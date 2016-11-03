@@ -2,6 +2,7 @@ package pucrs.myflight.modelo;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -23,8 +24,7 @@ public class GerenciadorAeronaves {
 	public void carregaDados() throws IOException {
 		Path path = Paths.get("equipment.dat");
 		try (BufferedReader br = Files.newBufferedReader(path, Charset.forName("utf8"))) {
-			String linha = br.readLine();
-			System.out.println("CabeÁalho: " + linha);
+			String linha = br.readLine();			
 			while ((linha = br.readLine()) != null) {
 				Scanner scan = new Scanner(linha).useDelimiter(";");
 				String codigo, descricao;
@@ -44,46 +44,11 @@ public class GerenciadorAeronaves {
 		System.out.println("Total Aeronaves: " + aeronaves.size());
 	}
 	
-	public Aeronave buscarCodigo(String codigo){
-		Aeronave aero = aeronaves.get(codigo);		
-		if(aero!=null)
-			return aero;
-		return null; 
-	}
 	
-	/*
-	public void adicionar(Aeronave av) {
-		aeronaves.add(av);	
-	}
-	
-	public void ordenarAeronaves() {
-		Collections.sort(aeronaves);
-	}
-	
-	public void ordenarDescricao() {
-//		aeronaves.sort( (Aeronave a1, Aeronave a2)
-//				-> a1.getDescricao().compareTo(a2.getDescricao()) );
-		//aeronaves.sort(Comparator.comparing(a -> a.getDescricao()));
-		aeronaves.sort(Comparator.comparing(Aeronave::getDescricao));
-	}
-	
-	public void ordenarCodigo() {
-//		aeronaves.sort( (Aeronave a1, Aeronave a2)
-//				-> a1.getCodigo().compareTo(a2.getCodigo()));
-//		aeronaves.sort(Comparator.comparing(a -> a.getCodigo()));
-		aeronaves.sort(Comparator.comparing(Aeronave::getCodigo));
-	}
-	
-	public ArrayList<Aeronave> listarTodas() {
-		return new ArrayList<Aeronave>(aeronaves);
-	}
-	
-	public Aeronave buscarCodigo(String codigo) {
-		for(Aeronave av : aeronaves) {
-			if(codigo.equals(av.getCodigo()))
-				return av;					
-		}
-		return null; // n√£o achamos!
-	}
-	*/
+	public void gravaSerial() throws IOException {
+		Path arq = Paths.get("equipment.ser");
+		try (ObjectOutputStream outArq = new ObjectOutputStream(Files.newOutputStream(arq))) {
+		  outArq.writeObject(aeronaves);
+		}		
+	}	
 }

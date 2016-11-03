@@ -1,11 +1,15 @@
 package pucrs.myflight.modelo;
 
+import java.io.Serializable;
+
 import org.jxmapviewer.viewer.GeoPosition;
 
 // Geo herda de GeoPosition, que é a classe usada internamente
 // pelo desenhador do mapa (não faz sentido recriar tudo novamente...)
-public class Geo extends GeoPosition {
+public class Geo extends GeoPosition implements Serializable {
 	
+	private static final long serialVersionUID = -5680180253430827547L;
+
 	public Geo(double latitude, double longitude) {
 		super(latitude, longitude);		
 	}

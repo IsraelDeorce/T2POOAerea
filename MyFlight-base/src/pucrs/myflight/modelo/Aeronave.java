@@ -1,6 +1,10 @@
 package pucrs.myflight.modelo;
 
-public class Aeronave implements Imprimivel, Contavel, Comparable<Aeronave> {
+import java.io.Serializable;
+
+public class Aeronave implements Serializable {
+		
+	private static final long serialVersionUID = 7957040885809928366L;
 	private String codigo;
 	private String descricao;
 	private int capacidade;
@@ -25,19 +29,5 @@ public class Aeronave implements Imprimivel, Contavel, Comparable<Aeronave> {
 		return capacidade;
 	}
 
-	@Override
-	public void imprimir() {
-		System.out.println(codigo + " - " + descricao);
-		
-	}
-
-	@Override
-	public int getTotal() {
-		return totalAeronaves;
-	}
-
-	@Override
-	public int compareTo(Aeronave o) {
-		return descricao.compareTo(o.descricao);
-	}
+	
 }

@@ -1,12 +1,16 @@
 package pucrs.myflight.modelo;
 
-public class Rota {
+import java.io.Serializable;
+
+public class Rota implements Serializable {
+	
+	private static final long serialVersionUID = 7686714783256478043L;
 	private CiaAerea cia;
-	private String origem;
-	private String destino;
+	private Aeroporto origem;
+	private Aeroporto destino;
 	private Aeronave aeronave;
 	
-	public Rota (CiaAerea cia, String origem, String destino, Aeronave aeronave){
+	public Rota (CiaAerea cia, Aeroporto origem, Aeroporto destino, Aeronave aeronave){
 		this.cia = cia;
 		this.origem = origem;
 		this.destino = destino;
@@ -16,20 +20,20 @@ public class Rota {
 	@Override
 	public String toString()
 	{
-		return cia.getCodigo()+": "
-				+origem + " -> " + destino
-				+" [" +aeronave.getCodigo()+ "]";
+		return cia.getCodigo() + ": "
+				+ origem.getCodigo() + " -> " + destino.getCodigo()
+				+ " [" +aeronave.getCodigo()+ "]";
 	}
 	
 	public CiaAerea getCia() {
 		return cia;
 	}
 	
-	public String getDestino() {
+	public Aeroporto getDestino() {
 		return destino;
 	}
 	
-	public String getOrigem() {
+	public Aeroporto getOrigem() {
 		return origem;
 	}
 	

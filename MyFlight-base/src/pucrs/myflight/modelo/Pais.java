@@ -1,8 +1,13 @@
 package pucrs.myflight.modelo;
 
-public class Pais {
+import java.io.Serializable;
+
+public class Pais implements Serializable{
+		
+	private static final long serialVersionUID = 4902285437172393371L;
 	private String codigo;
 	private String nome;
+	
 	
 	public Pais(String codigo, String nome){
 		this.codigo = codigo;

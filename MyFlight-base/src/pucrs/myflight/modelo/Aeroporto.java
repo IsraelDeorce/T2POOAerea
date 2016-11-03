@@ -1,12 +1,16 @@
 package pucrs.myflight.modelo;
 
-public class Aeroporto {
+import java.io.Serializable;
+
+public class Aeroporto implements Serializable {
+	
+	private static final long serialVersionUID = -4664156660074006249L;
 	private String codigo;
 	private String nome;
 	private Geo loc;
-	private String pais;
+	private Pais pais;
 	
-	public Aeroporto(String codigo, String nome, Geo loc, String pais) {
+	public Aeroporto(String codigo, String nome, Geo loc, Pais pais) {
 		this.codigo = codigo;
 		this.nome = nome;
 		this.loc = loc;
@@ -25,7 +29,7 @@ public class Aeroporto {
 		return loc;
 	}
 	
-	public String getPais(){
+	public Pais getPais(){
 		return pais;
 	}
 

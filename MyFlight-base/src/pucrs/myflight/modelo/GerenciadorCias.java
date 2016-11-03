@@ -29,7 +29,6 @@ public class GerenciadorCias {
 		Path path2 = Paths.get("airlines.dat");
 		try (BufferedReader br = Files.newBufferedReader(path2, Charset.forName("utf8"))) {
 			String linha = br.readLine();
-			System.out.println("Cabeçalho: " + linha);
 			while ((linha = br.readLine()) != null) {
 				Scanner sc = new Scanner(linha).useDelimiter(";");
 				String codigo, nome;
@@ -42,41 +41,9 @@ public class GerenciadorCias {
 	}
 	
 	public void gravaSerial() throws IOException {
-		Path arq1 = Paths.get("airlines.ser");
-		try (ObjectOutputStream oarq = new ObjectOutputStream(Files.newOutputStream(arq1))) {
-		  oarq.writeObject(empresas);
+		Path arq = Paths.get("airlines.ser");
+		try (ObjectOutputStream outArq = new ObjectOutputStream(Files.newOutputStream(arq))) {
+		  outArq.writeObject(empresas);
 		}		
 	}
-	
-	public void carregaSerial() throws IOException, ClassNotFoundException {
-		Path arq1 = Paths.get("airlines.ser");
-		try (ObjectInputStream iarq = new ObjectInputStream(Files.newInputStream(arq1))) {
-		  empresas = (TreeMap<String, CiaAerea>) iarq.readObject();
-		}
-		System.out.println("Total empresas: " + empresas.size());
-	}
-	
-	public void gravaJSON() throws IOException {
-	    try (JsonWriter writer = new JsonWriter(new BufferedOutputStream(new FileOutputStream("airlines.json")))) {
-		  writer.write(empresas);		  
-	    }
-	}	
-	/*
-	public ArrayList<CiaAerea> listarTodas() {		
-		return new ArrayList<CiaAerea>(empresas);
-	}
-
-	public CiaAerea buscarCodigo(String codigo) {
-		
-	}
-	
-	public CiaAerea buscarNome(String nome) {
-		for (CiaAerea c : empresas) {
-			if (nome.equals(c.getNome()))
-				return c;
-		}
-		return null; // nÃ£o achamos!
-	}
-	
-	*/
 }
