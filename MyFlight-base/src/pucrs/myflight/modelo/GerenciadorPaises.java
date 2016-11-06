@@ -9,6 +9,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.TreeMap;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -17,7 +18,7 @@ public class GerenciadorPaises {
 	private Map<String,Pais> paises;
 	
 	public GerenciadorPaises(){
-		paises = new TreeMap<String,Pais>(); 
+		paises = new HashMap<String,Pais>(); 
 	}
 	
 	public void carregaDados() throws IOException {
@@ -37,13 +38,17 @@ public class GerenciadorPaises {
 	}
 	
 	public void gravaSerial() throws IOException {
-		Path arq1 = Paths.get("countries.ser");
-		try (ObjectOutputStream oarq = new ObjectOutputStream(Files.newOutputStream(arq1))) {
-		  oarq.writeObject(paises);
+		Path arq = Paths.get("countriesHM.ser");
+		try (ObjectOutputStream outArq = new ObjectOutputStream(Files.newOutputStream(arq))) {
+		  outArq.writeObject(paises);
 		}		
 	}
 	
 	public Pais getPais(String key){
 		return paises.get(key);
 	}
+	
+	
+
+
 }

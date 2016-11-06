@@ -7,18 +7,15 @@ import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
-import java.util.TreeMap;
 
 public class GerenciadorAeronaves {	
 	private Map<String, Aeronave> aeronaves;
 	
 	public GerenciadorAeronaves() {
-		aeronaves = new TreeMap<String, Aeronave>();
+		aeronaves = new HashMap<String, Aeronave>();
 	}
 	
 	public void carregaDados() throws IOException {
@@ -46,7 +43,7 @@ public class GerenciadorAeronaves {
 	
 	
 	public void gravaSerial() throws IOException {
-		Path arq = Paths.get("equipment.ser");
+		Path arq = Paths.get("equipmentHM.ser");
 		try (ObjectOutputStream outArq = new ObjectOutputStream(Files.newOutputStream(arq))) {
 		  outArq.writeObject(aeronaves);
 		}		

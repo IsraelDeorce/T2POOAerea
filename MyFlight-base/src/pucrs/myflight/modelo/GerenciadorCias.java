@@ -1,28 +1,21 @@
 package pucrs.myflight.modelo;
-
-import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
-import java.util.TreeMap;
 
-import com.cedarsoftware.util.io.JsonReader;
-import com.cedarsoftware.util.io.JsonWriter;
 
 public class GerenciadorCias {
 	private Map<String, CiaAerea> empresas;
 
 	public GerenciadorCias() {
-		empresas = new TreeMap<String, CiaAerea>();
+		empresas = new HashMap<String, CiaAerea>();
 	}
 
 	public void carregaDados() throws IOException {
@@ -41,7 +34,7 @@ public class GerenciadorCias {
 	}
 	
 	public void gravaSerial() throws IOException {
-		Path arq = Paths.get("airlines.ser");
+		Path arq = Paths.get("airlinesHM.ser");
 		try (ObjectOutputStream outArq = new ObjectOutputStream(Files.newOutputStream(arq))) {
 		  outArq.writeObject(empresas);
 		}		

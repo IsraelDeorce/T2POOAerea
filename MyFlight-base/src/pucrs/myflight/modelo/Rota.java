@@ -15,6 +15,12 @@ public class Rota implements Serializable {
 		this.origem = origem;
 		this.destino = destino;
 		this.aeronave = aeronave;		
+	}
+	
+	public Rota (CiaAerea cia, Aeroporto origem, Aeroporto destino){
+		this.cia = cia;
+		this.origem = origem;
+		this.destino = destino;		
 	}	
 	
 	@Override
