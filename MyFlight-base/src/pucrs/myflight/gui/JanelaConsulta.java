@@ -87,8 +87,8 @@ public class JanelaConsulta extends javax.swing.JFrame {
     	this.gerRotas = ger;
     }
 
-    private void consulta(ActionEvent evt) {
-    	
+    public void consulta(ActionEvent evt) {
+    
         // Para obter um ponto clicado no mapa, usar como segue:
     	GeoPosition pos = gerenciador.getPosicao();     
 
@@ -97,19 +97,21 @@ public class JanelaConsulta extends javax.swing.JFrame {
         
         // Exemplo de uso:
         
-        Aeroporto poa = gerAero.buscarPais("BR");
-        Aeroporto gru = gerAero.buscarPais("USA"); 
+        Aeroporto poa = gerAero.buscarCod("POA");
+        Aeroporto gru = gerAero.buscarCod("GRU"); 
         
         Geo locPoa = poa.getLocal();
         Geo locGru = gru.getLocal();
                        
-        lstPoints.add(new MyWaypoint(Color.BLUE, poa.getNome(), locPoa));
+        lstPoints.add(new MyWaypoint(Color.BLUE, poa.getNome(), pos));
         lstPoints.add(new MyWaypoint(Color.RED, gru.getNome(), locGru));
 
         // Informa o resultado para o gerenciador
         gerenciador.setPontos(lstPoints);
         
-        // Exemplo: criando um traçado
+    
+    
+        // Exemplo: criando um traçado       
         Tracado tr = new Tracado();
         // Adicionando as mesmas localizações de antes
         tr.addPonto(locPoa);
@@ -119,8 +121,8 @@ public class JanelaConsulta extends javax.swing.JFrame {
         gerenciador.addTracado(tr);
                
         this.repaint();
-
-    }
+        }
+    
     
     private class EventosMouse extends MouseAdapter
     {

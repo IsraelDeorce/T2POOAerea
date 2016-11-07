@@ -40,5 +40,6 @@ public class Geo extends GeoPosition implements Serializable {
 		d = 2 * 6371 * Math.asin(Math.sqrt(d));
 				
 		return d;	
-	}	
+	}
+	
 }

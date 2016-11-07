@@ -61,24 +61,24 @@ public class GerenciadorRotas {
 			Rota aux;
 			Scanner scan1 = new Scanner(linha).useDelimiter(";");
 			String cia = scan1.next();
-			System.out.println("CIA : " + cia);
+			//System.out.println("CIA : " + cia);
 			String origem = scan1.next();
-			System.out.println("OR: " + origem);
+			//System.out.println("OR: " + origem);
 			String destino = scan1.next();
-			System.out.println("DEST: " + destino);
+			//System.out.println("DEST: " + destino);
 			String codeshare = scan1.next();
-			System.out.println("COD: " + codeshare);
+			//System.out.println("COD: " + codeshare);
 			String paradas = scan1.next();
-			System.out.println("PAR: " + paradas);
+			//System.out.println("PAR: " + paradas);
 			if(scan1.hasNext()){
 				String equip = scan1.next();
-				System.out.println("EQUIP: " + equip);			 
+				//System.out.println("EQUIP: " + equip);			 
 				Scanner scan2 = new Scanner(equip);
 				equip = scan2.next();
-				aux = new Rota(empresas.get(cia), geraero.getAeroporto(origem), geraero.getAeroporto(destino), aeronaves.get(equip));
+				aux = new Rota(empresas.get(cia), geraero.buscarCod(origem), geraero.buscarCod(destino), aeronaves.get(equip));
 			}
 			else
-				aux = new Rota(empresas.get(cia), geraero.getAeroporto(origem), geraero.getAeroporto(destino));
+				aux = new Rota(empresas.get(cia), geraero.buscarCod(origem), geraero.buscarCod(destino));
 			rotas.add(aux);
 		}
 		}

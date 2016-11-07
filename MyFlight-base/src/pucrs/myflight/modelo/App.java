@@ -99,8 +99,7 @@ public class App {
 			System.out.println("Impossível gravar airlines.ser!");
 			System.out.println("Msg: "+e);
 			System.exit(1);			
-		}		
-		
+		}	
 		
 		GerenciadorRotas gerRoutes = new GerenciadorRotas();
 		try {
@@ -123,15 +122,18 @@ public class App {
 		
 		
 		
-		// Teste GUI: abre janela
-		/*
-		JanelaConsulta janela = new JanelaConsulta();
-		janela.setGerAeroportos(gerAero);
 		
-		janela.setGerRotas(gerRotas);
+		// Teste GUI: abre janela
+		
+		JanelaConsulta janela = new JanelaConsulta();
+		janela.setGerAeroportos(gerAirports);
+		
+		janela.setGerRotas(gerRoutes);
 		janela.setVisible(true);
 
-		*/	
+		//teste
+		//janela.consulta();
+		
 	}
 }
 	

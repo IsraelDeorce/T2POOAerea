@@ -45,8 +45,9 @@ public class GerenciadorAeroportos{
 		}
 		arq = Paths.get("airports.dat");		
 		try (BufferedReader br = Files.newBufferedReader(arq, Charset.forName("utf8"))) {
-			String linha = br.readLine();				
-			while ((linha = br.readLine()) != null){
+			String linha = br.readLine();
+			int i =0;
+			while ((linha = br.readLine()) != null && i <10000){
 				Scanner scan = new Scanner(linha).useDelimiter(";");				
 				String codigo, nome, codPais;
 				Double longitude=null, latitude = null; //Adicionado valor null para inicializar Aeroporto aux
@@ -63,7 +64,12 @@ public class GerenciadorAeroportos{
 				}
 				nome = scan.next();
 				codPais = scan.next();
-				aeroportosAL.add(new Aeroporto(codigo, nome, new Geo(latitude,longitude), paises.get(codPais)));				
+				Geo geo = new Geo(latitude,longitude);
+				Aeroporto aero = new Aeroporto(codigo, nome, geo, paises.get(codPais));
+				aeroportosAL.add(aero);
+				if(aeroportosAL.get(i)==null)
+					System.out.println(aeroportosAL.get(i));
+				i++;
 			}
 			for(Aeroporto a : aeroportosAL){
 				if(aeroportosHM.containsKey(a.getCodigo()))
@@ -83,8 +89,19 @@ public class GerenciadorAeroportos{
 		return aeroPais;		
 	}
 	
-	public Aeroporto getAeroporto(String cod){
+	public Aeroporto buscarCod(String cod){
 		return aeroportosHM.get(cod);
+	}
+	
+	public Aeroporto buscarProximo(Geo geo){
+		List<Aeroporto> aero = aeroportosAL.stream()
+				.filter(a -> Geo.distancia(a.getLocal(), geo) >=5)
+				.collect(Collectors.toList());
+		return aero.get(0);
+	}
+	
+	public Geo getGeo(String cod){
+		return aeroportosHM.get(cod).getLocal();
 	}
 		
 }			
