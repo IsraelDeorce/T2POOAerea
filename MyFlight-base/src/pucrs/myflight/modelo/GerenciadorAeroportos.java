@@ -89,10 +89,10 @@ public class GerenciadorAeroportos{
 	}
 	
 	public Aeroporto buscarProximo(Geo geo){
-		List<Aeroporto> aero = aeroportosAL.stream()
+		Aeroporto aero = aeroportosAL.stream()
 				.filter(a -> Geo.distancia(a.getLocal(), geo) >=5)
-				.collect(Collectors.toList());
-		return aero.get(0);
+				.findAny().get();
+		return aero;
 	}
 	
 	public Geo getGeo(String cod){
