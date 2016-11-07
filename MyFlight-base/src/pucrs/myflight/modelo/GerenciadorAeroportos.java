@@ -77,9 +77,9 @@ public class GerenciadorAeroportos {
 		}
 	}
 		
-	public List<Aeroporto> buscarPais(Pais pais) {
+	public List<Aeroporto> buscarPais(String pais) {
 		List<Aeroporto> aeroPais = aeroportos.stream()
-				  .filter(a -> a.getPais().getCodigo().equals(pais.getCodigo()))
+				  .filter(a -> a.getPais().getCodigo().equals(pais))
 				  .collect(Collectors.toList()); 
 		return aeroPais;		
 	}

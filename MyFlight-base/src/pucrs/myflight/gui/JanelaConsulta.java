@@ -97,7 +97,7 @@ public class JanelaConsulta extends javax.swing.JFrame {
         
         // Exemplo de uso:
         
-        Aeroporto poa = gerAero.buscarPais("BR");
+        ArrayList<Aeroporto> poa = gerAero.buscarPais("BR");
         Aeroporto gru = gerAero.buscarPais("USA"); 
         
         Geo locPoa = poa.getLocal();
