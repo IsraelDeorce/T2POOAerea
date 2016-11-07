@@ -23,6 +23,7 @@ public class App {
 	public static void main(String[] args) throws IOException, ClassNotFoundException {
 						
 		GerenciadorPaises gerCountries = new GerenciadorPaises();
+
 		try{ 
 			gerCountries.carregaDados();
 		}
@@ -119,10 +120,12 @@ public class App {
 			System.out.println("Msg: "+e);
 			System.exit(1);	
 		}
+				
 		
 		
-		
-		
+
+				
+
 		// Teste GUI: abre janela
 		
 		JanelaConsulta janela = new JanelaConsulta();
@@ -130,6 +133,7 @@ public class App {
 		
 		janela.setGerRotas(gerRoutes);
 		janela.setVisible(true);
+
 
 		//teste
 		//janela.consulta();
