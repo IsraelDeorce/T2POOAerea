@@ -23,7 +23,6 @@ public class GerenciadorAeroportos{
 	public GerenciadorAeroportos() {
 		aeroportosAL = new ArrayList<Aeroporto>();
 		aeroportosHM = new HashMap<String, Aeroporto>();
-		
 	}
 	
 	public void gravaSerial() throws IOException {
@@ -68,14 +67,11 @@ public class GerenciadorAeroportos{
 				aeroportosAL.add(aero);								
 			}
 			for(Aeroporto a : aeroportosAL){
-				if(aeroportosHM.containsKey(a.getCodigo()))
-					System.out.println("Chave duplicada: " + a.getCodigo());
-				else aeroportosHM.put(a.getCodigo(),a);
+				if(!(aeroportosHM.containsKey(a.getCodigo())))
+					aeroportosHM.put(a.getCodigo(),a);
 			}
 		}
-	}
-		
-		
+	}		
 
 	public List<Aeroporto> buscarPais(String pais) {
 		List<Aeroporto> aeroPais = aeroportosAL.stream()
@@ -89,15 +85,17 @@ public class GerenciadorAeroportos{
 	}
 	
 	public Aeroporto buscarProximo(Geo geo){
-		List<Aeroporto> aero = aeroportosAL.stream()
-				.filter(a -> Geo.distancia(a.getLocal(), geo) >=5)
-				.collect(Collectors.toList());
-		return aero.get(0);
+		Aeroporto aero = aeroportosAL.stream()
+				.filter(a -> Geo.distancia(a.getLocal(), geo)<=5)
+				.findAny().get();
+		return aero;
 	}
 	
 	public Geo getGeo(String cod){
 		return aeroportosHM.get(cod).getLocal();
 	}
+	
+	
 		
 }			
 			

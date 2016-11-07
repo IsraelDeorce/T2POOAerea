@@ -20,12 +20,12 @@ import pucrs.myflight.gui.GerenciadorMapa;
 public class GerenciadorRotas {
 
 	private List<Rota> rotas;
-	private GerenciadorAeroportos geraero;		
+	private GerenciadorAeroportos gerAero;
 	
 	public GerenciadorRotas() throws ClassNotFoundException, IOException{
 		rotas = new ArrayList<Rota>();
-		geraero = new GerenciadorAeroportos();
-		geraero.carregaDados();
+		gerAero = new GerenciadorAeroportos();
+		gerAero.carregaDados();
 	}
 	
 	public void gravaSerial() throws IOException{
@@ -55,6 +55,7 @@ public class GerenciadorRotas {
 		
 		arq = Paths.get("routes.dat");
 		try(BufferedReader br = Files.newBufferedReader(arq, Charset.forName("utf8"))){
+		GerenciadorAeroportos geraero;
 		String linha = br.readLine();
 		linha = br.readLine();		
 		while((linha = br.readLine())!=null){	
@@ -75,10 +76,10 @@ public class GerenciadorRotas {
 				//System.out.println("EQUIP: " + equip);			 
 				Scanner scan2 = new Scanner(equip);
 				equip = scan2.next();
-				aux = new Rota(empresas.get(cia), geraero.buscarCod(origem), geraero.buscarCod(destino), aeronaves.get(equip));
+				aux = new Rota(empresas.get(cia), gerAero.buscarCod(origem), gerAero.buscarCod(destino), aeronaves.get(equip));
 			}
 			else
-				aux = new Rota(empresas.get(cia), geraero.buscarCod(origem), geraero.buscarCod(destino));
+				aux = new Rota(empresas.get(cia), gerAero.buscarCod(origem), gerAero.buscarCod(destino));
 			rotas.add(aux);
 		}
 		}
