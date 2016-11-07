@@ -10,30 +10,22 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 import java.util.TreeMap;
 
+import pucrs.myflight.gui.GerenciadorMapa;
+
 public class GerenciadorRotas {
 
 	private List<Rota> rotas;
-	private TreeMap<String,CiaAerea> companhias;
-	//private List<Aeroporto> aeroportos;	
-	private TreeMap<String,Aeronave> aeronaves;
-		
+	private GerenciadorAeroportos geraero;		
 	
-	public GerenciadorRotas(){
+	public GerenciadorRotas() throws ClassNotFoundException, IOException{
 		rotas = new ArrayList<Rota>();
-		try{
-			carregaSerialCias();			
-			carregaSerialAeronaves();
-			//carregaSerialAeroportos();
-		}
-		catch (IOException | ClassNotFoundException e) {
-			System.out.println("Impossível ler arquivo!");
-			System.out.println("Msg: "+e);
-			System.exit(1);
-			}
+		geraero = new GerenciadorAeroportos();
+		geraero.carregaDados();
 	}
 	
 	public void gravaSerial() throws IOException{
@@ -41,63 +33,59 @@ public class GerenciadorRotas {
 		try (ObjectOutputStream outArq = new ObjectOutputStream(Files.newOutputStream(arq))) {
 		  outArq.writeObject(rotas);
 		}		
-	}
+	}		
 	
-	public void carregaSerialCias() throws IOException, ClassNotFoundException {
-			Path arq = Paths.get("airlines.ser");		
-			try (ObjectInputStream outArq = new ObjectInputStream(Files.newInputStream(arq))) {
-				companhias = (TreeMap<String, CiaAerea>) outArq.readObject();
+	public void carregaDados() throws IOException, ClassNotFoundException{
+		HashMap<String, CiaAerea> empresas;
+		Path arq = Paths.get("airlinesHM.ser");
+		try (ObjectInputStream outArq = new ObjectInputStream(Files.newInputStream(arq))){
+			empresas = (HashMap<String, CiaAerea>) outArq.readObject();
 		}
-	}
-	/*
-	public void carregaSerialAeroportos() throws IOException, ClassNotFoundException {
-		Path arq = Paths.get("airports.ser");		
-		try (ObjectInputStream outArq = new ObjectInputStream(Files.newInputStream(arq))) {
-			aeroportos = (ArrayList<Aeroporto>) outArq.readObject();
+		HashMap<String, Aeronave> aeronaves;
+		arq = Paths.get("equipmentHM.ser");
+		try (ObjectInputStream outArq = new ObjectInputStream(Files.newInputStream(arq))){
+			aeronaves = (HashMap<String, Aeronave>) outArq.readObject();
 		}
-	}
-	*/
-	
-	public void carregaSerialAeronaves() throws IOException, ClassNotFoundException {
-		Path arq = Paths.get("equipment.ser");		
-		try (ObjectInputStream outArq = new ObjectInputStream(Files.newInputStream(arq))) {
-			aeronaves = (TreeMap<String, Aeronave>) outArq.readObject();
+		/*HashMap<String, Aeroporto> aeroportos;		
+		arq = Paths.get("airportsHM.ser");
+		try (ObjectInputStream outArq = new ObjectInputStream(Files.newInputStream(arq))){
+			aeroportos = (HashMap<String, Aeroporto>) outArq.readObject();	
 		}
-	}	
-	
-	public void carregaDados(TreeMap<String,Aeroporto> aeroportos) throws IOException{
-		Path path = Paths.get("routes.dat");
-		try(BufferedReader br = Files.newBufferedReader(path, Charset.forName("utf8"))){
+		*/
+		
+		arq = Paths.get("routes.dat");
+		try(BufferedReader br = Files.newBufferedReader(arq, Charset.forName("utf8"))){
 		String linha = br.readLine();
-		String linha2 = br.readLine();		
-		while((linha = br.readLine())!=null){
+		linha = br.readLine();		
+		while((linha = br.readLine())!=null){	
+			Rota aux;
 			Scanner scan1 = new Scanner(linha).useDelimiter(";");
 			String cia = scan1.next();
+			//System.out.println("CIA : " + cia);
 			String origem = scan1.next();
-			String destino = scan1.next();			
+			//System.out.println("OR: " + origem);
+			String destino = scan1.next();
+			//System.out.println("DEST: " + destino);
+			String codeshare = scan1.next();
+			//System.out.println("COD: " + codeshare);
 			String paradas = scan1.next();
-			String equip = scan1.next();
-			ArrayList<String> avioes = new ArrayList<String>(); 
-			Scanner scan2 = new Scanner(equip);
-			while(scan2.hasNext())
-				avioes.add(scan2.next());
-			int i = 0;
-			for(String a : avioes){
-				rotas.add(new Rota(
-				companhias.get(cia), 
-				aeroportos.get(origem), 
-				aeroportos.get(destino), 
-				aeronaves.get(a)));			
-				System.out.println("Adicionei " + i);
-				i++;
+			//System.out.println("PAR: " + paradas);
+			if(scan1.hasNext()){
+				String equip = scan1.next();
+				//System.out.println("EQUIP: " + equip);			 
+				Scanner scan2 = new Scanner(equip);
+				equip = scan2.next();
+				aux = new Rota(empresas.get(cia), geraero.buscarCod(origem), geraero.buscarCod(destino), aeronaves.get(equip));
 			}
+			else
+				aux = new Rota(empresas.get(cia), geraero.buscarCod(origem), geraero.buscarCod(destino));
+			rotas.add(aux);
 		}
 		}
 	}
-			
 }
 		
-	
-
-	
-
+			
+			
+						
+			

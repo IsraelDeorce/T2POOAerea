@@ -37,6 +37,7 @@ public class GerenciadorMapa {
     
     private GeoPosition selCentro;
     
+    
     private ArrayList<Tracado> linhas;
    
     public enum FonteImagens {

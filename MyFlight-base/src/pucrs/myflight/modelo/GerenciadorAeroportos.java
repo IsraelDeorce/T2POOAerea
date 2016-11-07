@@ -9,47 +9,43 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
 
-public class GerenciadorAeroportos {
+public class GerenciadorAeroportos{
 
-	private List<Aeroporto> aeroportos;	
-	private TreeMap<String, Pais> paises;
+	private List<Aeroporto> aeroportosAL;
+	private HashMap<String, Aeroporto> aeroportosHM;
 	
 	public GerenciadorAeroportos() {
-		aeroportos = new ArrayList<Aeroporto>();		
-		try{
-			carregaSerial();			
-		}
-		catch (IOException | ClassNotFoundException e) {
-			System.out.println("Impossível ler countries.ser!");
-			System.out.println("Msg: "+e);
-			System.exit(1);
-		}
+		aeroportosAL = new ArrayList<Aeroporto>();
+		aeroportosHM = new HashMap<String, Aeroporto>();
 		
 	}
 	
 	public void gravaSerial() throws IOException {
-		Path arq = Paths.get("airports.ser");
+		Path arq = Paths.get("airportsAL.ser");
 		try (ObjectOutputStream outArq = new ObjectOutputStream(Files.newOutputStream(arq))) {
-		  outArq.writeObject(aeroportos);
-		}		
-	}
-	
-	public void carregaSerial() throws IOException, ClassNotFoundException {
-		Path arq = Paths.get("countries.ser");
-		try (ObjectInputStream outArq = new ObjectInputStream(Files.newInputStream(arq))) {
-		  paises = (TreeMap<String, Pais>) outArq.readObject();
+		  outArq.writeObject(aeroportosAL);
+		}
+		arq = Paths.get("airportsHM.ser");
+		try (ObjectOutputStream outArq = new ObjectOutputStream(Files.newOutputStream(arq))) {
+			  outArq.writeObject(aeroportosHM);
 		}
 	}
 	
-	public void carregaDados() throws IOException {
-		Path path = Paths.get("airports.dat");
-		try (BufferedReader br = Files.newBufferedReader(path, Charset.forName("utf8"))) {
-			String linha = br.readLine();				
+	public void carregaDados() throws IOException, ClassNotFoundException {
+		HashMap<String, Pais> paises;
+		Path arq = Paths.get("countriesHM.ser");
+		try (ObjectInputStream outArq = new ObjectInputStream(Files.newInputStream(arq))){
+			paises = (HashMap<String, Pais>) outArq.readObject();
+		}
+		arq = Paths.get("airports.dat");		
+		try (BufferedReader br = Files.newBufferedReader(arq, Charset.forName("utf8"))) {
+			String linha = br.readLine();			
 			while ((linha = br.readLine()) != null){
 				Scanner scan = new Scanner(linha).useDelimiter(";");				
 				String codigo, nome, codPais;
@@ -67,27 +63,43 @@ public class GerenciadorAeroportos {
 				}
 				nome = scan.next();
 				codPais = scan.next();
-				
-				Pais pais = paises.get(codPais);				
-				
-				aeroportos.add(new Aeroporto(codigo, nome, new Geo(latitude,longitude), pais));				
+				Geo geo = new Geo(latitude,longitude);
+				Aeroporto aero = new Aeroporto(codigo, nome, geo, paises.get(codPais));
+				aeroportosAL.add(aero);								
 			}
-			
-		System.out.println("Total de aeroporto: " + aeroportos.size());		
+			for(Aeroporto a : aeroportosAL){
+				if(aeroportosHM.containsKey(a.getCodigo()))
+					System.out.println("Chave duplicada: " + a.getCodigo());
+				else aeroportosHM.put(a.getCodigo(),a);
+			}
 		}
 	}
 		
+		
+
 	public List<Aeroporto> buscarPais(String pais) {
-		List<Aeroporto> aeroPais = aeroportos.stream()
+		List<Aeroporto> aeroPais = aeroportosAL.stream()
 				  .filter(a -> a.getPais().getCodigo().equals(pais))
 				  .collect(Collectors.toList()); 
 		return aeroPais;		
 	}
 	
-	public TreeMap<String,Aeroporto> mapaCodigos(){
-		TreeMap<String,Aeroporto> aux = new TreeMap<String, Aeroporto>();
-		for(Aeroporto a : aeroportos)
-			aux.put(a.getCodigo(),a);
-		return aux;
-	}	
-}
+	public Aeroporto buscarCod(String cod){
+		return aeroportosHM.get(cod);
+	}
+	
+	public Aeroporto buscarProximo(Geo geo){
+		List<Aeroporto> aero = aeroportosAL.stream()
+				.filter(a -> Geo.distancia(a.getLocal(), geo) >=5)
+				.collect(Collectors.toList());
+		return aero.get(0);
+	}
+	
+	public Geo getGeo(String cod){
+		return aeroportosHM.get(cod).getLocal();
+	}
+		
+}			
+			
+	
+

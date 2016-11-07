@@ -8,7 +8,7 @@ import org.jxmapviewer.viewer.GeoPosition;
 // pelo desenhador do mapa (não faz sentido recriar tudo novamente...)
 public class Geo extends GeoPosition implements Serializable {
 	
-	private static final long serialVersionUID = -5680180253430827547L;
+	private static final long serialVersionUID = 1L;
 
 	public Geo(double latitude, double longitude) {
 		super(latitude, longitude);		
@@ -40,5 +40,6 @@ public class Geo extends GeoPosition implements Serializable {
 		d = 2 * 6371 * Math.asin(Math.sqrt(d));
 				
 		return d;	
-	}	
+	}
+	
 }
