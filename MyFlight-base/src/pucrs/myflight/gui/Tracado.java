@@ -9,7 +9,7 @@ import pucrs.myflight.modelo.Geo;
 
 public class Tracado {
 	
-	private ArrayList<Geo> pontos;
+	private ArrayList<GeoPosition> pontos;
 	private Color cor;
 	
 	public Tracado() {
@@ -28,7 +28,7 @@ public class Tracado {
 		pontos.add(pos);
 	}
 	
-	public ArrayList<Geo> getPontos() {
+	public ArrayList<GeoPosition> getPontos() {
 		return pontos;
 	}
 	

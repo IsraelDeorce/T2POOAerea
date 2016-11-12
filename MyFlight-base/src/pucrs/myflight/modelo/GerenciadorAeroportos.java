@@ -2,8 +2,6 @@ package pucrs.myflight.modelo;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -12,8 +10,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
-import java.util.TreeMap;
 import java.util.stream.Collectors;
+
+import org.jxmapviewer.viewer.GeoPosition;
 
 public class GerenciadorAeroportos{
 
@@ -24,25 +23,9 @@ public class GerenciadorAeroportos{
 		aeroportosAL = new ArrayList<Aeroporto>();
 		aeroportosHM = new HashMap<String, Aeroporto>();
 	}
-	
-	public void gravaSerial() throws IOException {
-		Path arq = Paths.get("airportsAL.ser");
-		try (ObjectOutputStream outArq = new ObjectOutputStream(Files.newOutputStream(arq))) {
-		  outArq.writeObject(aeroportosAL);
-		}
-		arq = Paths.get("airportsHM.ser");
-		try (ObjectOutputStream outArq = new ObjectOutputStream(Files.newOutputStream(arq))) {
-			  outArq.writeObject(aeroportosHM);
-		}
-	}
-	
-	public void carregaDados() throws IOException, ClassNotFoundException {
-		HashMap<String, Pais> paises;
-		Path arq = Paths.get("countriesHM.ser");
-		try (ObjectInputStream outArq = new ObjectInputStream(Files.newInputStream(arq))){
-			paises = (HashMap<String, Pais>) outArq.readObject();
-		}
-		arq = Paths.get("airports.dat");		
+		
+	public void carregaDados(HashMap<String, Pais> paises) throws IOException, ClassNotFoundException {
+		Path arq = Paths.get("airports.dat");		
 		try (BufferedReader br = Files.newBufferedReader(arq, Charset.forName("utf8"))) {
 			String linha = br.readLine();			
 			while ((linha = br.readLine()) != null){
@@ -66,12 +49,18 @@ public class GerenciadorAeroportos{
 				Aeroporto aero = new Aeroporto(codigo, nome, geo, paises.get(codPais));
 				aeroportosAL.add(aero);								
 			}
-			for(Aeroporto a : aeroportosAL){
-				if(!(aeroportosHM.containsKey(a.getCodigo())))
-					aeroportosHM.put(a.getCodigo(),a);
+			for(Aeroporto a :aeroportosAL)
+				aeroportosHM.put(a.getCodigo(), a);
 			}
-		}
-	}		
+	}
+	
+	public HashMap<String, Aeroporto> enviaHM(){
+		return aeroportosHM;
+	}
+	
+	public List<Aeroporto> enviaAL(){
+		return aeroportosAL;
+	}
 
 	public List<Aeroporto> buscarPais(String pais) {
 		List<Aeroporto> aeroPais = aeroportosAL.stream()
@@ -83,20 +72,23 @@ public class GerenciadorAeroportos{
 	public Aeroporto buscarCod(String cod){
 		return aeroportosHM.get(cod);
 	}
-	
-	public Aeroporto buscarProximo(Geo geo){
+	 /*Método que localiza um aeroporto no raio de 5km de onde o usuário clicou no mapa
+	 	Paramêmtro é o Geo clicado
+	 	Retorno é o Aeroporto 	  
+	*/
+	public Aeroporto buscarProximo(GeoPosition pos){
 		Aeroporto aero = aeroportosAL.stream()
-				.filter(a -> Geo.distancia(a.getLocal(), geo)<=5)
-				.findAny().get();
+				.filter(a -> Geo.distancia(a.getLocal(), pos)<=500)
+				.findAny().get();		
 		return aero;
 	}
-	
-	public Geo getGeo(String cod){
+		
+	public GeoPosition getGeo(String cod){
 		return aeroportosHM.get(cod).getLocal();
 	}
 	
 	
-		
+	
 }			
 			
 	

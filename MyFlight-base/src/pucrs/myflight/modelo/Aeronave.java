@@ -1,10 +1,7 @@
 package pucrs.myflight.modelo;
 
-import java.io.Serializable;
-
-public class Aeronave implements Serializable {
+public class Aeronave{
 		
-	private static final long serialVersionUID = 7957040885809928366L;
 	private String codigo;
 	private String descricao;
 	private int capacidade;

@@ -1,22 +1,18 @@
 package pucrs.myflight.modelo;
 
-import java.io.Serializable;
-
 import org.jxmapviewer.viewer.GeoPosition;
 
 // Geo herda de GeoPosition, que é a classe usada internamente
 // pelo desenhador do mapa (não faz sentido recriar tudo novamente...)
-public class Geo extends GeoPosition implements Serializable {
+public class Geo extends GeoPosition{
 	
-	private static final long serialVersionUID = 1L;
-
 	public Geo(double latitude, double longitude) {
 		super(latitude, longitude);		
 	}
 	
 	// Metodo para calcular a distancia entre
 	// ESTA localizacao e o outra informada
-	public double distancia(Geo outra) {
+	public double distancia(GeoPosition outra) {
 		Geo obj = new Geo(getLatitude(), getLongitude());
 		return distancia(obj, outra);
 		//return distancia(this, outra);
@@ -24,11 +20,11 @@ public class Geo extends GeoPosition implements Serializable {
 	
 	// Metodo de classe (static) para calcular
 	// distancias entre dois objetos Geo informados
-	public static double distancia(Geo geo1, Geo geo2) {
-		double lat1 = Math.toRadians(geo1.getLatitude());
-		double lat2 = Math.toRadians(geo2.getLatitude());
-		double lon1 = Math.toRadians(geo1.getLongitude());
-		double lon2 = Math.toRadians(geo2.getLongitude());
+	public static double distancia(GeoPosition geoPosition, GeoPosition pos) {
+		double lat1 = Math.toRadians(geoPosition.getLatitude());
+		double lat2 = Math.toRadians(pos.getLatitude());
+		double lon1 = Math.toRadians(geoPosition.getLongitude());
+		double lon2 = Math.toRadians(pos.getLongitude());
 		
 		double diflat = (lat1-lat2)/2;
 		double diflon = (lon1-lon2)/2;

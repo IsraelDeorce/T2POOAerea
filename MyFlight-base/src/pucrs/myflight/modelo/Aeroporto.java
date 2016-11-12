@@ -1,13 +1,12 @@
 package pucrs.myflight.modelo;
 
-import java.io.Serializable;
+import org.jxmapviewer.viewer.GeoPosition;
 
-public class Aeroporto implements Serializable {	
+public class Aeroporto{	
 	
-	private static final long serialVersionUID = 1L;
 	private String codigo;
 	private String nome;
-	private Geo loc;
+	private GeoPosition loc;
 	private Pais pais;
 	
 	public Aeroporto(String codigo, String nome, Geo loc, Pais pais) {
@@ -25,7 +24,7 @@ public class Aeroporto implements Serializable {
 		return nome;
 	}
 	
-	public Geo getLocal() {
+	public GeoPosition getLocal() {
 		return loc;
 	}
 	

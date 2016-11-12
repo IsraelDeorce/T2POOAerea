@@ -13,18 +13,28 @@ import org.jxmapviewer.viewer.GeoPosition;
 public class MyWaypoint extends DefaultWaypoint
 {
 	private final Color color;
-	private final String label;
+	private String label = " ";
 
 	/**
 	 * @param color a cor
 	 * @param coord a localização
 	 */
-	public MyWaypoint(Color color, String label, GeoPosition coord)
+	public MyWaypoint(Color color, String codAero, GeoPosition coord)
 	{
 		super(coord);
 		this.color = color;
-		this.label = label;
+		this.label = codAero;
 	}
+	
+	
+	public MyWaypoint(Color color, GeoPosition coord)
+	{
+		super(coord);
+		this.color = color;		
+	}
+	
+	
+
 
 	/**
 	 * @returns a cor do waypoint

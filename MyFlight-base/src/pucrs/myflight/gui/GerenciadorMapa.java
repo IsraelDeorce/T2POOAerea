@@ -88,8 +88,11 @@ public class GerenciadorMapa {
                 
                 // Seta a cor do waypoint                
                 g.setColor(wp.getColor());
-                g.fill(new Ellipse2D.Float(x - 3, y - 3, 6, 6));
+                g.fill(new Ellipse2D.Float(x - 3, y - 3, 3, 3));
+                if(jXMapKit.getZoomSlider().getValue()<12){
                 g.drawString(wp.getLabel(), x+4, y+4);
+                }
+               
             }
         });
         
@@ -100,7 +103,7 @@ public class GerenciadorMapa {
 			public void paint(Graphics2D g, JXMapViewer map, int w, int h) {
 				
 				for(Tracado tr: linhas) {
-					ArrayList<Geo> pontos = tr.getPontos();
+					ArrayList<GeoPosition> pontos = tr.getPontos();
 					Color cor = tr.getCor();
 					int x[] = new int[pontos.size()];
 					int y[] = new int[pontos.size()];

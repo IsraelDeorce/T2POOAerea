@@ -1,21 +1,18 @@
 package pucrs.myflight.modelo;
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.ObjectOutputStream;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
-
 public class GerenciadorCias {
-	private Map<String, CiaAerea> empresas;
+	private HashMap<String, CiaAerea> empresasHM;
 
 	public GerenciadorCias() {
-		empresas = new HashMap<String, CiaAerea>();
+		empresasHM = new HashMap<String, CiaAerea>();
 	}
 
 	public void carregaDados() throws IOException {
@@ -28,15 +25,11 @@ public class GerenciadorCias {
 				codigo = sc.next();
 				nome = sc.next();
 				CiaAerea aux = new CiaAerea(codigo, nome);
-				empresas.put(aux.getCodigo(), aux);			}
-		}
-		System.out.println("Total empresas: " + empresas.size());
+				empresasHM.put(aux.getCodigo(), aux);			}
+		}		
 	}
 	
-	public void gravaSerial() throws IOException {
-		Path arq = Paths.get("airlinesHM.ser");
-		try (ObjectOutputStream outArq = new ObjectOutputStream(Files.newOutputStream(arq))) {
-		  outArq.writeObject(empresas);
-		}		
+	public HashMap<String, CiaAerea> enviaHM(){
+		return empresasHM;
 	}
 }
