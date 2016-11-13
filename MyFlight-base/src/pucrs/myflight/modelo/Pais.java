@@ -1,7 +1,5 @@
 package pucrs.myflight.modelo;
 
-import java.io.Serializable;
-
 public class Pais{
 	
 	private String codigo;

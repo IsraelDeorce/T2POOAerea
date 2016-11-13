@@ -2,8 +2,6 @@ package pucrs.myflight.modelo;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -26,7 +24,6 @@ public class GerenciadorRotas {
 			
 		Path arq = Paths.get("routes.dat");
 		try(BufferedReader br = Files.newBufferedReader(arq, Charset.forName("utf8"))){
-		GerenciadorAeroportos geraero;
 		String linha = br.readLine();
 		linha = br.readLine();		
 		while((linha = br.readLine())!=null){	

@@ -41,7 +41,7 @@ public class JanelaConsulta extends javax.swing.JFrame {
     private EventosMouse mouse;
     
     private JPanel painelMapa;
-    private JPanel painelLateral;
+    private JPanel painelLateral;   
 
     /**
      * Creates new form JanelaConsulta
@@ -49,8 +49,7 @@ public class JanelaConsulta extends javax.swing.JFrame {
     public JanelaConsulta() {
     	super();    	
         //initComponents();
-
-        GeoPosition poa = new GeoPosition(-30.05, -51.18);
+    	GeoPosition poa = new GeoPosition(-30.05, -51.18);
         gerenciador = new GerenciadorMapa(poa, GerenciadorMapa.FonteImagens.VirtualEarth);
         mouse = new EventosMouse();        		
         gerenciador.getMapKit().getMainMap().addMouseListener(mouse);
@@ -71,13 +70,21 @@ public class JanelaConsulta extends javax.swing.JFrame {
         		consulta(e);
         	}
         });
+        
+        JButton c1 = new JButton("Consulta 1");
+        c1.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {        		
+        		consulta1(e);
+        	}
+        });
+        
         painelLateral.add(btnNewButton);
+        painelLateral.add(c1);
+        
         
         this.setSize(800,600);
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
-    
-    // Um exemplo de como fazer a comunica√ß√£o do programa principal para c√°:
 
     public void setGerAeroportos(GerenciadorAeroportos ger) {
     	this.gerAero = ger;
@@ -85,17 +92,18 @@ public class JanelaConsulta extends javax.swing.JFrame {
     
     public void setGerRotas(GerenciadorRotas ger) {
     	this.gerRotas = ger;
-    }
-
-     
+    }    
     
-    public void consulta(ActionEvent evt) {
-    	
-        // Para obter um ponto clicado no mapa, usar como segue:
-    	//GeoPosition pos = gerenciador.getPosicao();
-    	
-    	
-    	
+    public void consulta1(ActionEvent evt){
+    	List<MyWaypoint> lstPoints = new ArrayList<>();
+    	List<Aeroporto> lista = gerAero.buscarPais(gerAero.buscarAeroProximo(gerenciador.getPosicao()).getPais().getCodigo());
+    	for(Aeroporto a: lista)
+    		lstPoints.add(new MyWaypoint(Color.BLUE, a.getNome(), a.getLocal()));
+    	gerenciador.setPontos(lstPoints);
+    	this.repaint();    	
+    }
+    
+    public void consulta(ActionEvent evt) {    	
 
         // Lista para armazenar o resultado da consulta
         List<MyWaypoint> lstPoints = new ArrayList<>();
@@ -123,13 +131,13 @@ public class JanelaConsulta extends javax.swing.JFrame {
         
         
     
-        // Exemplo: criando um tra√ßado       
+        // Exemplo: criando um traÁado       
         Tracado tr = new Tracado();
-        // Adicionando as mesmas localiza√ß√µes de antes
+        // Adicionando as mesmas localizaÁıes de antes
         tr.addPonto(locPoa);
         tr.addPonto(locGru);
         tr.setCor(Color.RED);
-        // E adicionando o tra√ßado...
+        // E adicionando o traÁado...
         gerenciador.addTracado(tr);
                
         this.repaint();
@@ -146,9 +154,9 @@ public class JanelaConsulta extends javax.swing.JFrame {
     	public void mousePressed(MouseEvent e) {
     		JXMapViewer mapa = gerenciador.getMapKit().getMainMap();
     		GeoPosition loc = mapa.convertPointToGeoPosition(e.getPoint());
-//    		System.out.println(loc.getLatitude()+", "+loc.getLongitude());
+    		System.out.println(loc.getLatitude()+", "+loc.getLongitude());
     		lastButton = e.getButton();
-    		// Bot√£o 3: seleciona localiza√ß√£o
+    		// Bot„o 3: seleciona localizaÁ„o
     		if(lastButton==MouseEvent.BUTTON3) {  			
     			gerenciador.setPosicao(loc);
     			//gerenciador.getMapKit().setCursor(Cursor.getPredefinedCursor(Cursor.CROSSHAIR_CURSOR));

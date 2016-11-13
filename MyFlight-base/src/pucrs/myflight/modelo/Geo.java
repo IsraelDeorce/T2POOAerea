@@ -13,7 +13,7 @@ public class Geo extends GeoPosition{
 	// Metodo para calcular a distancia entre
 	// ESTA localizacao e o outra informada
 	public double distancia(GeoPosition outra) {
-		Geo obj = new Geo(getLatitude(), getLongitude());
+		GeoPosition obj = new GeoPosition(getLatitude(), getLongitude());
 		return distancia(obj, outra);
 		//return distancia(this, outra);
 	}

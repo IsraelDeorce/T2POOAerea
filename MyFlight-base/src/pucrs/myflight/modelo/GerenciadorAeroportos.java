@@ -73,12 +73,12 @@ public class GerenciadorAeroportos{
 		return aeroportosHM.get(cod);
 	}
 	 /*Método que localiza um aeroporto no raio de 5km de onde o usuário clicou no mapa
-	 	Paramêmtro é o Geo clicado
+	 	Paramêtro é o Geo clicado
 	 	Retorno é o Aeroporto 	  
 	*/
-	public Aeroporto buscarProximo(GeoPosition pos){
+	public Aeroporto buscarAeroProximo(GeoPosition pos){
 		Aeroporto aero = aeroportosAL.stream()
-				.filter(a -> Geo.distancia(a.getLocal(), pos)<=500)
+				.filter(a -> Geo.distancia(a.getLocal(), pos)<=15)
 				.findAny().get();		
 		return aero;
 	}
