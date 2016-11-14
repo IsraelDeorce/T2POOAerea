@@ -11,11 +11,14 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.plaf.basic.BasicBorders.ToggleButtonBorder;
 
 import org.jxmapviewer.JXMapViewer;
 import org.jxmapviewer.viewer.GeoPosition;
@@ -35,7 +38,6 @@ import javax.swing.JComponent;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
 /**
  *
  * @author Marcelo Cohen
@@ -56,8 +58,7 @@ public class JanelaConsulta extends javax.swing.JFrame {
      * Creates new form JanelaConsulta
      */
     public JanelaConsulta() {
-    	super();    	
-        //initComponents();
+    	super();
     	GeoPosition poa = new GeoPosition(-30.05, -51.18);
         gerenciador = new GerenciadorMapa(poa, GerenciadorMapa.FonteImagens.VirtualEarth);
         mouse = new EventosMouse();        		
@@ -72,19 +73,26 @@ public class JanelaConsulta extends javax.swing.JFrame {
         
         painelLateral = new JPanel();
         getContentPane().add(painelLateral, BorderLayout.WEST);        
-        
-        JButton exibePaises = new JButton("Exibir todos os países");
-        exibePaises.addActionListener(new ActionListener() {
-        	@Override
-        	public void actionPerformed(ActionEvent e) {
-        		mostraPaises(e);
+          
+        //Checkbox exibePaises = new Checkbox("Exibir todos os países");
+        JButton exibeAeros = new JButton("Exibir todos aeroportos");
+        exibeAeros.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {        		
+        		exibeAeros();
         	}
-        });
+        });    
         
         JButton c1 = new JButton("Consulta 1");
         c1.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {        		
         		consulta1();
+        	}
+        });        
+        
+        JButton c3 = new JButton("Consulta 3");
+        c3.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {        		
+        		consulta3();
         	}
         });
         
@@ -100,8 +108,9 @@ public class JanelaConsulta extends javax.swing.JFrame {
         	}
         });
         
-        painelLateral.add(exibePaises);
+        painelLateral.add(exibeAeros);
         painelLateral.add(c1);
+        painelLateral.add(c3);
         painelLateral.add(c4);
         
         
@@ -131,7 +140,13 @@ public class JanelaConsulta extends javax.swing.JFrame {
     		lstPoints.add(new MyWaypoint(Color.BLUE, a.getNome(), a.getLocal()));
     	gerenciador.setPontos(lstPoints);
     	this.repaint();  	
-    }    
+    }
+    
+    /*Selecionar um aeroporto no mapa e mostrar todas as rotas que comecem por ele, considerando 1, 2 ou 3 ligações a
+	partir dele */
+    public void consulta3(){
+    	
+    }
     
     public void consulta4(String cia){
     	gerenciador.clear();
@@ -140,21 +155,21 @@ public class JanelaConsulta extends javax.swing.JFrame {
     	//List<MyWaypoint> lstPoints = new ArrayList<MyWaypoint>();
         for(Rota r : rotas){
         	/* Cria um MyWayPoint no Aeroporto de origem para mostrar a distância e a aeronave
-        	 * Solução que pode melhorar == Label? 
+        	  Solução que pode melhorar == Label? 
         	 String label = "Distância " + String.valueOf(Geo.distancia(r.getOrigem().getLocal(), r.getDestino().getLocal()))
         					+ "km " 
         					+ "Aeronave " + r.getAeronave().toString();
         	lstPoints.add(new MyWaypoint(Color.BLACK,label, r.getOrigem().getLocal()));
         	gerenciador.setPontos(lstPoints);*/
-        	Tracado tr = new Tracado();
+        	Tracado tr = new Tracado();        	
         	tr.addPonto(r.getOrigem().getLocal());
         	tr.addPonto(r.getDestino().getLocal());        	
-        	gerenciador.addTracado(tr);
+        	gerenciador.addTracado(tr);        	
         }
         this.repaint();
     }
     
-    public void mostraPaises(ActionEvent evt) {    	
+    public void exibeAeros() {    	
     	gerenciador.clear();
     	this.repaint();
     	List<MyWaypoint> lstPoints = new ArrayList<>();
@@ -164,21 +179,6 @@ public class JanelaConsulta extends javax.swing.JFrame {
        	gerenciador.setPontos(lstPoints);       	
        	this.repaint();
     }
-             
-        
-    /*
-        Exemplo: criando um traçado       
-        Tracado tr = new Tracado();
-        Adicionando as mesmas localizações de antes
-        tr.addPonto(locPoa);
-        tr.addPonto(locGru);
-        tr.setCor(Color.RED);
-        E adicionando o traçado...
-        gerenciador.addTracado(tr);
-               
-        this.repaint();
-    }
-    */
     
     private class EventosMouse extends MouseAdapter{
     	private int lastButton = -1;    	
@@ -229,8 +229,6 @@ public class JanelaConsulta extends javax.swing.JFrame {
 	        add(comboEmpresas, BorderLayout.PAGE_START);
 	        setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
 	        add(comboEmpresas, BorderLayout.CENTER);
-	        setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
-	        
 	    }
     }
     

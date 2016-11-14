@@ -39,11 +39,7 @@ public class GerenciadorRotas {
 				String equip = scan1.next();
 				Scanner scan2 = new Scanner(equip);
 				equip = scan2.next();
-				aux = new Rota(empresasHM.get(cia), aeroportosHM.get(origem), aeroportosHM.get(destino), aeronavesHM.get(equip));
-			/*}
-			else
-				System.out.println("Rota sem aeronave:" + cia + " " + origem + " " + destino);
-				aux = new Rota(empresasHM.get(cia), aeroportosHM.get(origem), aeroportosHM.get(destino));*/
+				aux = new Rota(empresasHM.get(cia), aeroportosHM.get(origem), aeroportosHM.get(destino), aeronavesHM.get(equip));			
 			rotasAL.add(aux);
 		}
 		}
@@ -52,10 +48,15 @@ public class GerenciadorRotas {
 	public ArrayList<Rota> buscarCia(String cia){
 		List<Rota> rotaCia = rotasAL.stream()
 			.filter(r -> r.getCia().getCodigo().equals(cia))
-			.collect(Collectors.toList());
-		for(Rota r: rotaCia)
-		System.out.println(r);
-			return (ArrayList)rotaCia;
+			.collect(Collectors.toList());		
+		return (ArrayList)rotaCia;
+	}
+	
+	public ArrayList<Rota> buscarOrigem(String aero){
+		List<Rota> rotaOrigem = rotasAL.stream()
+				.filter(r -> r.getOrigem().getCodigo().equals(aero))
+				.collect(Collectors.toList());
+		return (ArrayList)rotaOrigem;				
 	}
 	
 }

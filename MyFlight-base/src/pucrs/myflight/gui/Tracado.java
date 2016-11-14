@@ -2,19 +2,18 @@ package pucrs.myflight.gui;
 
 import java.awt.Color;
 import java.util.ArrayList;
-
 import org.jxmapviewer.viewer.GeoPosition;
-
-import pucrs.myflight.modelo.Aeronave;
 
 public class Tracado {
 	
 	private ArrayList<GeoPosition> pontos;
-	private Color cor;	
+	private Color cor;
+	
 	
 	public Tracado() {
 		pontos = new ArrayList<>();		
-		cor = Color.GREEN;		
+		cor = Color.GREEN;
+		
 	}
 	
 	public void clear() {
