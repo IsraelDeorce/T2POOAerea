@@ -9,6 +9,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,10 +23,14 @@ import pucrs.myflight.modelo.Aeroporto;
 import pucrs.myflight.modelo.CiaAerea;
 import pucrs.myflight.modelo.Geo;
 import pucrs.myflight.modelo.GerenciadorAeroportos;
+import pucrs.myflight.modelo.GerenciadorCias;
 import pucrs.myflight.modelo.GerenciadorRotas;
 import pucrs.myflight.modelo.Rota;
 
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JComponent;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -38,6 +43,7 @@ public class JanelaConsulta extends javax.swing.JFrame {
 
 	private GerenciadorAeroportos gerAero;
 	private GerenciadorRotas gerRotas;
+	private GerenciadorCias gerCias;
 	
     private GerenciadorMapa gerenciador;
     private EventosMouse mouse;
@@ -68,6 +74,7 @@ public class JanelaConsulta extends javax.swing.JFrame {
         
         JButton exibePaises = new JButton("Exibir todos os países");
         exibePaises.addActionListener(new ActionListener() {
+        	@Override
         	public void actionPerformed(ActionEvent e) {
         		mostraPaises(e);
         	}
@@ -83,7 +90,12 @@ public class JanelaConsulta extends javax.swing.JFrame {
         JButton c4 = new JButton("Consulta 4");
         c4.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {        		
-        		consulta4("4H");
+        		JFrame frame = new JFrame("Selecione a empresa");    	            	        
+    	        JComponent combo = new ComboBox();
+    	        combo.setOpaque(true);
+    	        frame.setContentPane(combo);    	        
+    	        frame.pack();
+    	        frame.setVisible(true);
         	}
         });
         
@@ -102,7 +114,12 @@ public class JanelaConsulta extends javax.swing.JFrame {
     
     public void setGerRotas(GerenciadorRotas ger) {
     	this.gerRotas = ger;
+    }
+    
+    public void setGerCias(GerenciadorCias ger) {
+    	this.gerCias = ger;
     }    
+    
     
     public void consulta1(){
     	gerenciador.clear();
@@ -162,8 +179,7 @@ public class JanelaConsulta extends javax.swing.JFrame {
     }
     */
     
-    private class EventosMouse extends MouseAdapter
-    {
+    private class EventosMouse extends MouseAdapter{
     	private int lastButton = -1;    	
     	
     	@Override
@@ -187,5 +203,40 @@ public class JanelaConsulta extends javax.swing.JFrame {
     		}
     		*/
     	}    
-    } 	
+    }
+    
+    private class ComboBox extends JPanel{
+	    
+
+	    public ComboBox() {
+	    
+	    	super(new BorderLayout());
+	    	String [] empresas = {"9K", "9M", "9N", "9R"};
+	    	
+	    	
+	    	//String[] empresas = new String[ize-1];	    	
+	        
+	    	/*
+	    	for(int i = 0;i<empresas.length;i++){
+	        	empresas[i] = gerCias.enviaAL().get(i).toString();
+	        }
+	        */	    	
+	        JComboBox comboEmpresas = new JComboBox(empresas);
+	        comboEmpresas.addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					JComboBox cb = (JComboBox)e.getSource();
+			        String empresa = (String)cb.getSelectedItem();
+			        
+			        consulta4(empresa);
+				}
+			});
+	        add(comboEmpresas, BorderLayout.PAGE_START);
+	        setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
+	        add(comboEmpresas, BorderLayout.CENTER);
+	        setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
+	        
+	    }
+    }
+    
 }
