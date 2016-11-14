@@ -53,6 +53,8 @@ public class GerenciadorRotas {
 		List<Rota> rotaCia = rotasAL.stream()
 			.filter(r -> r.getCia().getCodigo().equals(cia))
 			.collect(Collectors.toList());
+		for(Rota r: rotaCia)
+		System.out.println(r);
 			return (ArrayList)rotaCia;
 	}
 	

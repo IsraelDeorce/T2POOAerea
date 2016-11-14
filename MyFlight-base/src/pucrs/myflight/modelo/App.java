@@ -61,9 +61,9 @@ public class App {
 		// Teste GUI: abre janela
 		
 		JanelaConsulta janela = new JanelaConsulta();
-		janela.setGerAeroportos(gerAirports);
-		
+		janela.setGerAeroportos(gerAirports);		
 		janela.setGerRotas(gerRoutes);
+		janela.setGerCias(gerCias);
 		janela.setVisible(true);
 	}
 }

@@ -15,7 +15,7 @@ public class CiaAerea{
 	@Override
 	public String toString()
 	{
-		return nome + " ("+codigo+")";
+		return codigo + "-" + nome;
 	}
 	
 	public static int getTotalCias() {

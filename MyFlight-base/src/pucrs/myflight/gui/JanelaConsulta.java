@@ -12,6 +12,7 @@ import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -211,24 +212,18 @@ public class JanelaConsulta extends javax.swing.JFrame {
 	    public ComboBox() {
 	    
 	    	super(new BorderLayout());
-	    	String [] empresas = {"9K", "9M", "9N", "9R"};
-	    	
-	    	
-	    	//String[] empresas = new String[ize-1];	    	
-	        
-	    	/*
-	    	for(int i = 0;i<empresas.length;i++){
+	    	String[] empresas = new String[gerCias.enviaAL().size()];	    	
+	        for(int i =0;i<empresas.length;i++)
 	        	empresas[i] = gerCias.enviaAL().get(i).toString();
-	        }
-	        */	    	
 	        JComboBox comboEmpresas = new JComboBox(empresas);
 	        comboEmpresas.addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					JComboBox cb = (JComboBox)e.getSource();
-			        String empresa = (String)cb.getSelectedItem();
-			        
-			        consulta4(empresa);
+			        String selecao = (String)cb.getSelectedItem();
+			        Scanner scan = new Scanner(selecao).useDelimiter("-");
+			        String cia = scan.next();
+			        consulta4(cia);
 				}
 			});
 	        add(comboEmpresas, BorderLayout.PAGE_START);
