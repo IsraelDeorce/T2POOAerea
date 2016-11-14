@@ -65,11 +65,6 @@ public class App {
 		
 		janela.setGerRotas(gerRoutes);
 		janela.setVisible(true);
-		
-		
-		
-		System.out.println();
-		
 	}
 }
 	
