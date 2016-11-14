@@ -19,9 +19,11 @@ import org.jxmapviewer.JXMapViewer;
 import org.jxmapviewer.viewer.GeoPosition;
 
 import pucrs.myflight.modelo.Aeroporto;
+import pucrs.myflight.modelo.CiaAerea;
 import pucrs.myflight.modelo.Geo;
 import pucrs.myflight.modelo.GerenciadorAeroportos;
 import pucrs.myflight.modelo.GerenciadorRotas;
+import pucrs.myflight.modelo.Rota;
 
 import javax.swing.JButton;
 
@@ -41,7 +43,7 @@ public class JanelaConsulta extends javax.swing.JFrame {
     private EventosMouse mouse;
     
     private JPanel painelMapa;
-    private JPanel painelLateral;   
+    private JPanel painelLateral;    
 
     /**
      * Creates new form JanelaConsulta
@@ -62,24 +64,32 @@ public class JanelaConsulta extends javax.swing.JFrame {
         getContentPane().add(painelMapa, BorderLayout.CENTER);
         
         painelLateral = new JPanel();
-        getContentPane().add(painelLateral, BorderLayout.WEST);
+        getContentPane().add(painelLateral, BorderLayout.WEST);        
         
-        JButton btnNewButton = new JButton("Consulta");
-        btnNewButton.addActionListener(new ActionListener() {
+        JButton exibePaises = new JButton("Exibir todos os países");
+        exibePaises.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
-        		consulta(e);
+        		mostraPaises(e);
         	}
         });
         
         JButton c1 = new JButton("Consulta 1");
         c1.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {        		
-        		consulta1(e);
+        		consulta1();
         	}
         });
         
-        painelLateral.add(btnNewButton);
+        JButton c4 = new JButton("Consulta 4");
+        c4.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {        		
+        		consulta4("4H");
+        	}
+        });
+        
+        painelLateral.add(exibePaises);
         painelLateral.add(c1);
+        painelLateral.add(c4);
         
         
         this.setSize(800,600);
@@ -94,57 +104,63 @@ public class JanelaConsulta extends javax.swing.JFrame {
     	this.gerRotas = ger;
     }    
     
-    public void consulta1(ActionEvent evt){
-    	List<MyWaypoint> lstPoints = new ArrayList<>();
+    public void consulta1(){
+    	gerenciador.clear();
+    	this.repaint();
+    	List<MyWaypoint> lstPoints = new ArrayList<MyWaypoint>();
     	List<Aeroporto> lista = gerAero.buscarPais(gerAero.buscarAeroProximo(gerenciador.getPosicao()).getPais().getCodigo());
     	for(Aeroporto a: lista)
     		lstPoints.add(new MyWaypoint(Color.BLUE, a.getNome(), a.getLocal()));
     	gerenciador.setPontos(lstPoints);
-    	this.repaint();    	
+    	this.repaint();  	
+    }    
+    
+    public void consulta4(String cia){
+    	gerenciador.clear();
+    	this.repaint();
+    	ArrayList<Rota> rotas = gerRotas.buscarCia(cia);
+    	//List<MyWaypoint> lstPoints = new ArrayList<MyWaypoint>();
+        for(Rota r : rotas){
+        	/* Cria um MyWayPoint no Aeroporto de origem para mostrar a distância e a aeronave
+        	 * Solução que pode melhorar == Label? 
+        	 String label = "Distância " + String.valueOf(Geo.distancia(r.getOrigem().getLocal(), r.getDestino().getLocal()))
+        					+ "km " 
+        					+ "Aeronave " + r.getAeronave().toString();
+        	lstPoints.add(new MyWaypoint(Color.BLACK,label, r.getOrigem().getLocal()));
+        	gerenciador.setPontos(lstPoints);*/
+        	Tracado tr = new Tracado();
+        	tr.addPonto(r.getOrigem().getLocal());
+        	tr.addPonto(r.getDestino().getLocal());        	
+        	gerenciador.addTracado(tr);
+        }
+        this.repaint();
     }
     
-    public void consulta(ActionEvent evt) {    	
-
-        // Lista para armazenar o resultado da consulta
-        List<MyWaypoint> lstPoints = new ArrayList<>();
-        
-        // Exemplo de uso:        
-
+    public void mostraPaises(ActionEvent evt) {    	
+    	gerenciador.clear();
+    	this.repaint();
+    	List<MyWaypoint> lstPoints = new ArrayList<>();
         List<Aeroporto> aeroportos = gerAero.enviaAL();
-        
-        Tracado tr = new Tracado();
         for(Aeroporto a : aeroportos)
-        	lstPoints.add(new MyWaypoint(Color.RED,a.getNome(), a.getLocal()));  
-        	//lstPoints.add(new MyWaypoint(Color.BLUE, a.getNome(), a.getLocal()));      	
-        
-       	gerenciador.setPontos(lstPoints);
-       	
+        	lstPoints.add(new MyWaypoint(Color.RED,a.getNome(), a.getLocal()));
+       	gerenciador.setPontos(lstPoints);       	
        	this.repaint();
+    }
+             
         
-        /*	
-        lstPoints.add(new MyWaypoint(Color.BLUE, poa.getNome(), pos));
-        lstPoints.add(new MyWaypoint(Color.RED, gru.getNome(), locGru));
-        
-
-        // Informa o resultado para o gerenciador
-        gerenciador.setPontos(lstPoints);
-        
-        
-    
-        // Exemplo: criando um traçado       
+    /*
+        Exemplo: criando um traçado       
         Tracado tr = new Tracado();
-        // Adicionando as mesmas localizações de antes
+        Adicionando as mesmas localizações de antes
         tr.addPonto(locPoa);
         tr.addPonto(locGru);
         tr.setCor(Color.RED);
-        // E adicionando o traçado...
+        E adicionando o traçado...
         gerenciador.addTracado(tr);
                
         this.repaint();
-      
-    */
-    
     }
+    */
     
     private class EventosMouse extends MouseAdapter
     {
@@ -153,15 +169,23 @@ public class JanelaConsulta extends javax.swing.JFrame {
     	@Override
     	public void mousePressed(MouseEvent e) {
     		JXMapViewer mapa = gerenciador.getMapKit().getMainMap();
-    		GeoPosition loc = mapa.convertPointToGeoPosition(e.getPoint());
-    		System.out.println(loc.getLatitude()+", "+loc.getLongitude());
+    		GeoPosition loc = mapa.convertPointToGeoPosition(e.getPoint());    		
+    		//System.out.println(loc.getLatitude()+", "+loc.getLongitude());
     		lastButton = e.getButton();
-    		// Botão 3: seleciona localização
+    		// Botão 3: seleciona localização8
     		if(lastButton==MouseEvent.BUTTON3) {  			
     			gerenciador.setPosicao(loc);
     			//gerenciador.getMapKit().setCursor(Cursor.getPredefinedCursor(Cursor.CROSSHAIR_CURSOR));
-    			gerenciador.getMapKit().repaint();    			
+    			gerenciador.getMapKit().repaint();
     		}
+    		/*Captura a localização do clique com o botão esquerdo do mouse e dispara a consulta 1 automaticamente.
+    		 * Desabilitado. Consulta funcionando com seleção no botão direito e clique no botão "Consulta 1".
+    		  
+    		 else if(lastButton==MouseEvent.BUTTON1){
+    			gerenciador.setPosicao(loc);
+    			consulta1();
+    		}
+    		*/
     	}    
     } 	
 }
