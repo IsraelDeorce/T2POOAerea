@@ -10,14 +10,15 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class GerenciadorRotas {
 
-	private List<Rota> rotas;
+	private ArrayList<Rota> rotasAL;
 	
 	
 	public GerenciadorRotas() throws ClassNotFoundException, IOException{
-		rotas = new ArrayList<Rota>();		
+		rotasAL = new ArrayList<Rota>();		
 	}			
 	
 	public void carregaDados(HashMap<String, CiaAerea> empresasHM, HashMap<String, Aeroporto> aeroportosHM, HashMap<String, Aeronave> aeronavesHM) throws IOException, ClassNotFoundException{
@@ -34,18 +35,27 @@ public class GerenciadorRotas {
 			String destino = scan1.next();
 			String codeshare = scan1.next();
 			String paradas = scan1.next();
-			if(scan1.hasNext()){
+			//if(scan1.hasNext()){
 				String equip = scan1.next();
 				Scanner scan2 = new Scanner(equip);
 				equip = scan2.next();
 				aux = new Rota(empresasHM.get(cia), aeroportosHM.get(origem), aeroportosHM.get(destino), aeronavesHM.get(equip));
-			}
+			/*}
 			else
-				aux = new Rota(empresasHM.get(cia), aeroportosHM.get(origem), aeroportosHM.get(destino));
-			rotas.add(aux);
+				System.out.println("Rota sem aeronave:" + cia + " " + origem + " " + destino);
+				aux = new Rota(empresasHM.get(cia), aeroportosHM.get(origem), aeroportosHM.get(destino));*/
+			rotasAL.add(aux);
 		}
 		}
 	}
+	
+	public ArrayList<Rota> buscarCia(String cia){
+		List<Rota> rotaCia = rotasAL.stream()
+			.filter(r -> r.getCia().getCodigo().equals(cia))
+			.collect(Collectors.toList());
+			return (ArrayList)rotaCia;
+	}
+	
 }
 		
 			

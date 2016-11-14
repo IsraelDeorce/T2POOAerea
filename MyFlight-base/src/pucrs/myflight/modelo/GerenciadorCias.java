@@ -5,14 +5,18 @@ import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Scanner;
 
 public class GerenciadorCias {
 	private HashMap<String, CiaAerea> empresasHM;
+	private List<CiaAerea> empresasAL;
 
 	public GerenciadorCias() {
 		empresasHM = new HashMap<String, CiaAerea>();
+		empresasAL = new ArrayList<CiaAerea>();
 	}
 
 	public void carregaDados() throws IOException {
@@ -25,11 +29,17 @@ public class GerenciadorCias {
 				codigo = sc.next();
 				nome = sc.next();
 				CiaAerea aux = new CiaAerea(codigo, nome);
-				empresasHM.put(aux.getCodigo(), aux);			}
+				empresasHM.put(aux.getCodigo(), aux);
+				empresasAL.add(aux);
+				}
 		}		
 	}
 	
 	public HashMap<String, CiaAerea> enviaHM(){
 		return empresasHM;
+	}
+	
+	public List<CiaAerea> enviaAL(){
+		return empresasAL;
 	}
 }

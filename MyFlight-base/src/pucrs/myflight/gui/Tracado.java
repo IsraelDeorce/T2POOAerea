@@ -5,15 +5,16 @@ import java.util.ArrayList;
 
 import org.jxmapviewer.viewer.GeoPosition;
 
-import pucrs.myflight.modelo.Geo;
+import pucrs.myflight.modelo.Aeronave;
 
 public class Tracado {
 	
 	private ArrayList<GeoPosition> pontos;
-	private Color cor;
+	private Color cor;	
 	
 	public Tracado() {
-		pontos = new ArrayList<>();
+		pontos = new ArrayList<>();		
+		cor = Color.GREEN;		
 	}
 	
 	public void clear() {
@@ -24,7 +25,7 @@ public class Tracado {
 		return pontos.size();
 	}
 	
-	public void addPonto(Geo pos) {
+	public void addPonto(GeoPosition pos) {
 		pontos.add(pos);
 	}
 	

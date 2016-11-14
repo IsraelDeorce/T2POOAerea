@@ -20,11 +20,11 @@ public class Geo extends GeoPosition{
 	
 	// Metodo de classe (static) para calcular
 	// distancias entre dois objetos Geo informados
-	public static double distancia(GeoPosition geoPosition, GeoPosition pos) {
-		double lat1 = Math.toRadians(geoPosition.getLatitude());
-		double lat2 = Math.toRadians(pos.getLatitude());
-		double lon1 = Math.toRadians(geoPosition.getLongitude());
-		double lon2 = Math.toRadians(pos.getLongitude());
+	public static double distancia(GeoPosition pos1, GeoPosition pos2) {
+		double lat1 = Math.toRadians(pos1.getLatitude());
+		double lat2 = Math.toRadians(pos2.getLatitude());
+		double lon1 = Math.toRadians(pos1.getLongitude());
+		double lon2 = Math.toRadians(pos2.getLongitude());
 		
 		double diflat = (lat1-lat2)/2;
 		double diflon = (lon1-lon2)/2;
@@ -33,9 +33,9 @@ public class Geo extends GeoPosition{
 				   Math.pow(Math.sin(diflon),2)*
 				   Math.cos(lat1) * Math.cos(lat2);
 		
-		d = 2 * 6371 * Math.asin(Math.sqrt(d));
-				
-		return d;	
+		d = 2 * 6371 * Math.asin(Math.sqrt(d));	
+		
+		return Math.round(d);	
 	}
 	
 }
