@@ -2,71 +2,60 @@ package pucrs.myflight.gui;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.io.IOException;
+
 import javax.swing.*;
+
+import pucrs.myflight.modelo.GerenciadorCias;
 
 	
 public class ComboBox extends JPanel implements ActionListener {
 	    
 
-	    public ComboBox(ArrayList<CiaAerea> lista) {
+	    public ComboBox() {
 	    
 	    	super(new BorderLayout());
-
-	        String[] empresas;
-	        for()
-
+	    	GerenciadorCias cias = new GerenciadorCias();
+	    	try {
+				cias.carregaDados();
+			} 
+	    	catch (IOException e) {
+				System.out.println("Impossível ler airlines.dat!");
+				System.out.println("Msg: "+e);
+				System.exit(1);
+			}
+	        String[] empresas = new String[cias.enviaAL().size()];	        
+	        for(int i = 0;i<empresas.length;i++){
+	        	empresas[i] = cias.enviaAL().get(i).toString();
+	        }
+	    	
 	        //Create the combo box, select the item at index 4.
 	        //Indices start at 0, so 4 specifies the pig.
 	        JComboBox comboEmpresas = new JComboBox(empresas);
-	        //petList.setSelectedIndex(4);
-	        petList.addActionListener(this);
-
-	        //Set up the picture.
-	        picture = new JLabel();
-	        picture.setFont(picture.getFont().deriveFont(Font.ITALIC));
-	        picture.setHorizontalAlignment(JLabel.CENTER);
-	        updateLabel(petStrings[petList.getSelectedIndex()]);
-	        picture.setBorder(BorderFactory.createEmptyBorder(10,0,0,0));
-
-	        //The preferred size is hard-coded to be the width of the
-	        //widest image and the height of the tallest image + the border.
-	        //A real program would compute this.
-	        picture.setPreferredSize(new Dimension(177, 122+10));
+	        comboEmpresas.addActionListener(this);
+	        JButton botao = new JButton("Ok");
+	        botao.addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {					
+					comboEmpresas.hidePopup();
+				}
+			});
 
 	        //Lay out the demo.
-	        add(petList, BorderLayout.PAGE_START);
-	        add(picture, BorderLayout.PAGE_END);
+	        add(comboEmpresas, BorderLayout.PAGE_START);
 	        setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
+	        add(comboEmpresas, BorderLayout.CENTER);
+	        setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
+	        add(botao, BorderLayout.PAGE_END);
 	    }
 
 	    /** Listens to the combo box. */
 	    public void actionPerformed(ActionEvent e) {
 	        JComboBox cb = (JComboBox)e.getSource();
-	        String petName = (String)cb.getSelectedItem();
-	        updateLabel(petName);
+	        String empresa = (String)cb.getSelectedItem();	        
+	        
 	    }
-
-	    protected void updateLabel(String name) {
-	        ImageIcon icon = createImageIcon("images/" + name + ".gif");
-	        picture.setIcon(icon);
-	        picture.setToolTipText("A drawing of a " + name.toLowerCase());
-	        if (icon != null) {
-	            picture.setText(null);
-	        } else {
-	            picture.setText("Image not found");
-	        }
-	    }
-
-	    /** Returns an ImageIcon, or null if the path was invalid. */
-	    protected static ImageIcon createImageIcon(String path) {
-	        java.net.URL imgURL = ComboBoxDemo.class.getResource(path);
-	        if (imgURL != null) {
-	            return new ImageIcon(imgURL);
-	        } else {
-	            System.err.println("Couldn't find file: " + path);
-	            return null;
-	        }
-	    }
+	    
 
 	    /**
 	     * Create the GUI and show it.  For thread safety,
@@ -75,11 +64,11 @@ public class ComboBox extends JPanel implements ActionListener {
 	     */
 	    private static void createAndShowGUI() {
 	        //Create and set up the window.
-	        JFrame frame = new JFrame("ComboBoxDemo");
+	        JFrame frame = new JFrame("Selecione a empresa");
 	        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 	        //Create and set up the content pane.
-	        JComponent newContentPane = new ComboBoxDemo();
+	        JComponent newContentPane = new ComboBox();
 	        newContentPane.setOpaque(true); //content panes must be opaque
 	        frame.setContentPane(newContentPane);
 
@@ -97,6 +86,8 @@ public class ComboBox extends JPanel implements ActionListener {
 	            }
 	        });
 	    }
-	}
-
 }
+	    
+	
+
+
