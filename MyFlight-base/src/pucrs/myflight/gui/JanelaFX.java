@@ -45,6 +45,10 @@ public class JanelaFX extends Application {
 	private GerenciadorMapa gerenciador;
 
 	private EventosMouse mouse;
+	
+	public static void main(String[] args) {
+		Launch(args);			
+	}
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
@@ -229,8 +233,6 @@ public class JanelaFX extends Application {
 		}
 	}
 
-	public static void main(String[] args) {
-		launch(args);			
-	}
+	
 
 }
