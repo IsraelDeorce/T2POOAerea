@@ -79,7 +79,7 @@ public class JanelaFX extends Application {
 
     // Inicializando os dados aqui...
     private void setup() {
-
+/*
     	gerCias = new GerenciadorCias();		
 		try {
 			gerCias.carregaDados();
@@ -100,11 +100,11 @@ public class JanelaFX extends Application {
 		gerAero.adicionar(gru);
 		gerAero.adicionar(mia);
 		gerRotas = new GerenciadorRotas();
-		
+*/		
 	}
-    
+  
 	private void consulta() {
-		// TODO Auto-generated method stub
+/*		// TODO Auto-generated method stub
 		// Para obter um ponto clicado no mapa, usar como segue:
     	GeoPosition pos = gerenciador.getPosicao();     
 
@@ -134,7 +134,7 @@ public class JanelaFX extends Application {
         // E adicionando o traçado...
         gerenciador.addTracado(tr);
         gerenciador.getMapKit().repaint();
-	}
+*/	}
 
 	private void createSwingContent(final SwingNode swingNode) {
 		SwingUtilities.invokeLater(new Runnable() {
