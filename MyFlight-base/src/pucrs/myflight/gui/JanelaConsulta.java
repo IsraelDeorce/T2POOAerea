@@ -9,27 +9,24 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
+import java.util.function.Consumer;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.plaf.basic.BasicBorders.ToggleButtonBorder;
-
 import org.jxmapviewer.JXMapViewer;
 import org.jxmapviewer.viewer.GeoPosition;
 
 import pucrs.myflight.modelo.Aeroporto;
-import pucrs.myflight.modelo.CiaAerea;
-import pucrs.myflight.modelo.Geo;
 import pucrs.myflight.modelo.GerenciadorAeroportos;
 import pucrs.myflight.modelo.GerenciadorCias;
 import pucrs.myflight.modelo.GerenciadorRotas;
 import pucrs.myflight.modelo.Rota;
+import pucrs.myflight.modelo.TreeOfRotas;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -47,6 +44,8 @@ public class JanelaConsulta extends javax.swing.JFrame {
 	private GerenciadorAeroportos gerAero;
 	private GerenciadorRotas gerRotas;
 	private GerenciadorCias gerCias;
+	private TreeOfRotas arvoreRotas; 
+	
 	
     private GerenciadorMapa gerenciador;
     private EventosMouse mouse;
@@ -91,8 +90,11 @@ public class JanelaConsulta extends javax.swing.JFrame {
         
         JButton c3 = new JButton("Consulta 3");
         c3.addActionListener(new ActionListener() {
-        	public void actionPerformed(ActionEvent e) {        		
-        		consulta3();
+        	public void actionPerformed(ActionEvent e) {
+        		gerenciador.clear();
+        		Aeroporto origem = gerAero.buscarAeroProximo(gerenciador.getPosicao());
+        		arvoreRotas = new TreeOfRotas(origem);
+        		consulta3(origem, 0);        		
         	}
         });
         
@@ -135,7 +137,9 @@ public class JanelaConsulta extends javax.swing.JFrame {
     	gerenciador.clear();
     	this.repaint();
     	List<MyWaypoint> lstPoints = new ArrayList<MyWaypoint>();
-    	List<Aeroporto> lista = gerAero.buscarPais(gerAero.buscarAeroProximo(gerenciador.getPosicao()).getPais().getCodigo());
+    	Aeroporto aeroSelecionado = gerAero.buscarAeroProximo(gerenciador.getPosicao());
+    	String codPais = aeroSelecionado.getPais().getCodigo();
+    	List<Aeroporto> lista = gerAero.buscarPais(codPais);
     	for(Aeroporto a: lista)
     		lstPoints.add(new MyWaypoint(Color.BLUE, a.getNome(), a.getLocal()));
     	gerenciador.setPontos(lstPoints);
@@ -144,9 +148,48 @@ public class JanelaConsulta extends javax.swing.JFrame {
     
     /*Selecionar um aeroporto no mapa e mostrar todas as rotas que comecem por ele, considerando 1, 2 ou 3 ligações a
 	partir dele */
-    public void consulta3(){
-    	
+    public void consulta3(Aeroporto origem, int ligacao){	
+    	if(ligacao<3){
+    		Tracado tr = new Tracado();
+    		switch(ligacao){
+    		case 1:
+    			tr.setCor(Color.YELLOW);
+    		case 2:
+    			tr.setCor(Color.ORANGE);
+    		}
+    		String codAeroporto = origem.getCodigo();
+    		ArrayList<Rota> rotas = gerRotas.buscarOrigem(codAeroporto);
+    		/*List<Rota> semLoops = rotas.stream()
+    				.filter(r -> !(arvoreRotas.contains(r.getDestino())))
+    				.collect(Collectors.toList());
+    		for(Rota r: semLoops){
+    			tr.addPonto(r.getOrigem().getLocal());
+    			tr.addPonto(r.getDestino().getLocal());
+    			gerenciador.addTracado(tr);
+    			this.repaint();
+    		}    							   */
+    		
+    		rotas.stream()
+    		.filter(r -> !(arvoreRotas.contains(r.getDestino())))
+    		.forEach(r -> adicionaTR(r));
+    		for(int i = 0;i<rotas.size();i++)
+    			consulta3(rotas.get(i).getDestino(),ligacao+1);
+    		ligacao++;
+
+
+    	}
+    	else    	
+    		return;    		
     }
+    
+    private void adicionaTR(Rota r){
+    	Tracado tr = new Tracado();
+    	tr.addPonto(r.getOrigem().getLocal());
+		tr.addPonto(r.getDestino().getLocal());
+		gerenciador.addTracado(tr);
+		this.repaint();
+    }
+    
     
     public void consulta4(String cia){
     	gerenciador.clear();
