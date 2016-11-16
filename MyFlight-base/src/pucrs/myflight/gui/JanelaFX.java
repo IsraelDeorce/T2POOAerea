@@ -79,28 +79,57 @@ public class JanelaFX extends Application {
 
     // Inicializando os dados aqui...
     private void setup() {
-/*
-    	gerCias = new GerenciadorCias();		
-		try {
-			gerCias.carregaDados();
-		} catch (IOException e) {
-			System.out.println("ImpossÃ­vel ler airlines.dat!");
+
+    	GerenciadorPaises gerCountries = new GerenciadorPaises();
+
+		try{ 
+			gerCountries.carregaDados();
+		}
+		catch (IOException e) {
+		System.out.println("Impossível ler countries.dat!");
+		System.out.println("Msg: "+e);
+		System.exit(1);
+		}
+				
+		GerenciadorAeronaves gerAircrafts = new GerenciadorAeronaves();
+		try{
+			gerAircrafts.carregaDados();
+		}
+		catch (IOException e){
+			System.out.println("Impossível ler equipment.dat!");
 			System.out.println("Msg: "+e);
 			System.exit(1);
 		}
+						
+		GerenciadorAeroportos gerAirports = new GerenciadorAeroportos();
+		try{ 
+			gerAirports.carregaDados(gerCountries.enviaHM());
+		}
+		catch (IOException | ClassNotFoundException e) {
+		System.out.println("Impossível ler airports.dat!");
+		System.out.println("Msg: "+e);
+		System.exit(1);
+		}
 		
-		gerAero = new GerenciadorAeroportos();
-		Aeroporto poa = new Aeroporto("POA", "Salgado Filho Intl Apt",
-				new Geo(-29.9939, -51.1711));
-		Aeroporto gru = new Aeroporto("GRU", "SÃ£o Paulo Guarulhos Intl Apt",
-				new Geo(-23.4356, -46.4731));
-		Aeroporto mia = new Aeroporto("MIA", "Miami International Apt",
-				new Geo(25.7933,-80.2906));
-		gerAero.adicionar(poa);
-		gerAero.adicionar(gru);
-		gerAero.adicionar(mia);
-		gerRotas = new GerenciadorRotas();
-*/		
+		GerenciadorCias gerCias = new GerenciadorCias();
+		try {
+			gerCias.carregaDados();
+		} 
+		catch (IOException e) {
+			System.out.println("Impossível ler airlines.dat!");
+			System.out.println("Msg: "+e);
+			System.exit(1);
+		}		
+		
+		GerenciadorRotas gerRoutes = new GerenciadorRotas();
+		try {
+			gerRoutes.carregaDados(gerCias.enviaHM(), gerAirports.enviaHM(), gerAircrafts.enviaHM());
+		}
+		catch (IOException | ClassNotFoundException e) {
+			System.out.println("Impossível ler routes.dat!");
+			System.out.println("Msg: "+e);
+			System.exit(1);
+		}		
 	}
   
 	private void consulta() {
