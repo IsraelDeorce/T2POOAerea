@@ -2,9 +2,8 @@ package pucrs.myflight.modelo;
 
 import java.io.Serializable;
 
-public class Rota implements Serializable {
+public class Rota{
 	
-	private static final long serialVersionUID = 7686714783256478043L;
 	private CiaAerea cia;
 	private Aeroporto origem;
 	private Aeroporto destino;
