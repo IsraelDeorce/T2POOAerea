@@ -6,7 +6,7 @@ import pucrs.myflight.gui.JanelaConsulta;
 public class App {
 
 	public static void main(String[] args) throws IOException, ClassNotFoundException {
-						
+				
 		GerenciadorPaises gerCountries = new GerenciadorPaises();
 
 		try{ 
