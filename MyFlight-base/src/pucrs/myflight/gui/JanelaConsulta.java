@@ -18,10 +18,23 @@ import java.util.stream.Collectors;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
+
 import org.jxmapviewer.JXMapViewer;
 import org.jxmapviewer.viewer.GeoPosition;
 
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
+import javafx.scene.control.Slider;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.StackPane;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import pucrs.myflight.modelo.Aeroporto;
+import pucrs.myflight.modelo.Geo;
 import pucrs.myflight.modelo.GerenciadorAeroportos;
 import pucrs.myflight.modelo.GerenciadorCias;
 import pucrs.myflight.modelo.GerenciadorRotas;
@@ -86,7 +99,24 @@ public class JanelaConsulta extends javax.swing.JFrame {
         	public void actionPerformed(ActionEvent e) {        		
         		consulta1();
         	}
-        });        
+        });      
+        
+        JButton c2 = new JButton("Consulta 2");
+        c2.addActionListener(new ActionListener(){
+        		public void actionPerformed(ActionEvent e){
+        			Slider slider = new Slider();
+            		JFrame frame = new JFrame();  	            	        
+            		slider.setMin(0);
+        			slider.setMax(40.075);
+        			slider.setValue(0);
+        			slider.setShowTickLabels(true);
+        			slider.setShowTickMarks(true);
+        			slider.setMajorTickUnit(50);
+        			slider.setMinorTickCount(5);
+        			slider.setBlockIncrement(10);
+        			        			
+        		
+        }});
         
         JButton c3 = new JButton("Consulta 3");
         c3.addActionListener(new ActionListener() {
@@ -112,6 +142,7 @@ public class JanelaConsulta extends javax.swing.JFrame {
         
         painelLateral.add(exibeAeros);
         painelLateral.add(c1);
+        painelLateral.add(c2);
         painelLateral.add(c3);
         painelLateral.add(c4);
         
@@ -144,6 +175,25 @@ public class JanelaConsulta extends javax.swing.JFrame {
     		lstPoints.add(new MyWaypoint(Color.BLUE, a.getNome(), a.getLocal()));
     	gerenciador.setPontos(lstPoints);
     	this.repaint();  	
+    }
+
+    public void consulta2(double maxKm){
+    	gerenciador.clear();
+    	this.repaint();
+    	Tracado tr = new Tracado();
+    	Aeroporto aeroSelec = gerAero.buscarAeroProximo(gerenciador.getPosicao());
+    	ArrayList<Rota> rotas = gerRotas.buscarOrigem(aeroSelec.getCodigo());
+    	for(Rota r: rotas){
+    		if(Geo.distancia(aeroSelec.getLocal(), r.getDestino().getLocal())<=maxKm){
+            	tr.addPonto(r.getOrigem().getLocal());
+            	tr.addPonto(r.getDestino().getLocal()); 
+            	gerenciador.addTracado(tr);  
+    		}
+    		
+    		
+    	}
+    	 this.repaint();
+		
     }
     
     /*Selecionar um aeroporto no mapa e mostrar todas as rotas que comecem por ele, considerando 1, 2 ou 3 ligações a
@@ -190,6 +240,7 @@ public class JanelaConsulta extends javax.swing.JFrame {
 		this.repaint();
     }
     
+
     
     public void consulta4(String cia){
     	gerenciador.clear();
@@ -274,5 +325,7 @@ public class JanelaConsulta extends javax.swing.JFrame {
 	        add(comboEmpresas, BorderLayout.CENTER);
 	    }
     }
+    
+    
     
 }

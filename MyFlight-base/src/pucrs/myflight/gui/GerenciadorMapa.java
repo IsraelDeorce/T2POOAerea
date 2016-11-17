@@ -35,7 +35,8 @@ public class GerenciadorMapa {
     final JXMapKit jXMapKit;
     private WaypointPainter<MyWaypoint> pontosPainter;
     
-    private GeoPosition selCentro;    
+    private GeoPosition selCentro;
+    
     
     private ArrayList<Tracado> linhas;
    
@@ -77,62 +78,64 @@ public class GerenciadorMapa {
         // Criando um objeto para desenhar os pontos
         pontosPainter.setRenderer(new WaypointRenderer<MyWaypoint>() {
 
-        @Override
-    public void paintWaypoint(Graphics2D g, JXMapViewer viewer, MyWaypoint wp) {
+            @Override
+            public void paintWaypoint(Graphics2D g, JXMapViewer viewer, MyWaypoint wp) {
 
-        // Desenha cada waypoint como um pequeno círculo            	
-        Point2D point = viewer.getTileFactory().geoToPixel(wp.getPosition(), viewer.getZoom());
-        int x = (int) point.getX();
-        int y = (int) point.getY();
+                // Desenha cada waypoint como um pequeno círculo            	
+                Point2D point = viewer.getTileFactory().geoToPixel(wp.getPosition(), viewer.getZoom());
+                int x = (int) point.getX();
+                int y = (int) point.getY();
                 
-        // Seta a cor do waypoint                
-        g.setColor(wp.getColor());
-        g.fill(new Ellipse2D.Float(x - 3, y - 3, 3, 3));
-        if(jXMapKit.getZoomSlider().getValue()<12){
-        	g.drawString(wp.getLabel(), x+4, y+4);
-        }      
-        }
+                // Seta a cor do waypoint                
+                g.setColor(wp.getColor());
+                g.fill(new Ellipse2D.Float(x - 3, y - 3, 3, 3));
+                if(jXMapKit.getZoomSlider().getValue()<12){
+                g.drawString(wp.getLabel(), x+4, y+4);
+                }
+               
+            }
         });
         
         // Criando um objeto para desenhar o traçado das linhas
         Painter<JXMapViewer> linhasPainter = new Painter<JXMapViewer>() {
 
-	@Override
-	public void paint(Graphics2D g, JXMapViewer map, int w, int h) {
+			@Override
+			public void paint(Graphics2D g, JXMapViewer map, int w, int h) {
 				
-		for(Tracado tr: linhas) {
-			ArrayList<GeoPosition> pontos = tr.getPontos();
-			Color cor = tr.getCor();
-			int x[] = new int[pontos.size()];
-			int y[] = new int[pontos.size()];
-			for(int i=0; i<pontos.size(); i++) {
-				Point2D point = map.convertGeoPositionToPoint(pontos.get(i));
-				x[i] = (int) point.getX();
-				y[i] = (int) point.getY();
+				for(Tracado tr: linhas) {
+					ArrayList<GeoPosition> pontos = tr.getPontos();
+					Color cor = tr.getCor();
+					int x[] = new int[pontos.size()];
+					int y[] = new int[pontos.size()];
+					for(int i=0; i<pontos.size(); i++) {
+						Point2D point = map.convertGeoPositionToPoint(pontos.get(i));
+						x[i] = (int) point.getX();
+						y[i] = (int) point.getY();
+					}
+//					int xPoints[] = { 0, 20, 40, 100, 120 };
+//					int yPoints[] = { 0, 20, 40, 100, 120 };
+					g.setColor(cor);
+					g.setStroke(new BasicStroke(2));
+					g.drawPolyline(x, y, x.length);
+				}				
 			}
-			g.setColor(cor);
-			g.setStroke(new BasicStroke(2));
-			g.drawPolyline(x, y, x.length);			
-			}				
-		}
         	
-     };
+        };
 
-     // Criando um objeto para desenhar os elementos de interface
-     // (ponto selecionado, etc)
-     Painter<JXMapViewer> guiPainter = new Painter<JXMapViewer>() {
-    	 public void paint(Graphics2D g, JXMapViewer map, int w, int h) {            	
-           	if(selCentro == null)
-          		return;                	
-           	Point2D point = map.convertGeoPositionToPoint(selCentro);            	
-           	int x = (int) point.getX();
-            int y = (int) point.getY();                
-           	g.setColor(Color.RED);
-           	g.setStroke(new BasicStroke(2));            	            
-           	g.draw(new Rectangle2D.Float(x - 6, y - 6, 12, 12));                
+        // Criando um objeto para desenhar os elementos de interface
+        // (ponto selecionado, etc)
+        Painter<JXMapViewer> guiPainter = new Painter<JXMapViewer>() {
+            public void paint(Graphics2D g, JXMapViewer map, int w, int h) {            	
+            	if(selCentro == null)
+            		return;                	
+            	Point2D point = map.convertGeoPositionToPoint(selCentro);            	
+            	int x = (int) point.getX();
+                int y = (int) point.getY();                
+            	g.setColor(Color.RED);
+            	g.setStroke(new BasicStroke(2));            	            
+            	g.draw(new Rectangle2D.Float(x - 6, y - 6, 12, 12));                
             }
         };
-        
         
         // Um CompoundPainter permite combinar vários painters ao mesmo tempo...
         CompoundPainter cp = new CompoundPainter();
@@ -164,8 +167,10 @@ public class GerenciadorMapa {
      * Informa os pontos a serem desenhados (precisa ser chamado a cada vez que mudar)
      * @param lista lista de pontos (objetos MyWaypoint)
      */
-    public void setPontos(List<MyWaypoint> lista) {    
-        Set<MyWaypoint> pontos = new HashSet<MyWaypoint>(lista);        
+    public void setPontos(List<MyWaypoint> lista) {
+        // Criando um conjunto de pontos
+        Set<MyWaypoint> pontos = new HashSet<MyWaypoint>(lista);
+        // Informando o conjunto ao painter
         pontosPainter.setWaypoints(pontos);
     }
     
@@ -173,15 +178,14 @@ public class GerenciadorMapa {
      * Adiciona um novo traçado ao mapa (o traçado tem um conjunto de pontos e uma cor)
      */
     public void addTracado(Tracado tr) {
-    	linhas.add(tr);    	
+    	linhas.add(tr);
     }
     
     /*
      * Limpa os traçados atuais
      */
     public void clear() {
-    	linhas.clear();    	         
-        pontosPainter.setWaypoints(new HashSet<MyWaypoint>());        
+    	linhas.clear();
     }
     
     /*
