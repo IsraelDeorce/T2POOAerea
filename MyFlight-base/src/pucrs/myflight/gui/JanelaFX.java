@@ -30,6 +30,8 @@ import pucrs.myflight.modelo.GerenciadorAeroportos;
 import pucrs.myflight.modelo.GerenciadorCias;
 import pucrs.myflight.modelo.GerenciadorPaises;
 import pucrs.myflight.modelo.GerenciadorRotas;
+import pucrs.myflight.modelo.Rota;
+import pucrs.myflight.modelo.TreeOfRotas;
 
 public class JanelaFX extends Application {
 
@@ -40,6 +42,7 @@ public class JanelaFX extends Application {
 	private GerenciadorRotas gerRotas;
 	private GerenciadorPaises gerPaises;
 	private GerenciadorMapa gerenciador;
+	private TreeOfRotas arvoreRotas;
 	private EventosMouse mouse;
 
 	@Override
@@ -61,14 +64,24 @@ public class JanelaFX extends Application {
 		leftPane.setHgap(10);
 		leftPane.setVgap(10);
 		leftPane.setPadding(new Insets(10,10,10,10));
-		Button exibeAeros = new Button("Exibe todos os aeroportos");
+		Button exibeAeros = new Button("Mostrar todos\naeroportos ");
 		exibeAeros.setOnAction(e -> {gerenciador.clear(); exibeAeros();});
 		
+		Button aeroPais = new Button("Mostrar \naeroportos do país");
+		aeroPais.setOnAction(e -> {gerenciador.clear(); consulta1();});
+		
+		Button consulta2 = new Button("Consulta 2");
+		consulta2.setOnAction(e-> { gerenciador.clear(); consulta2(500);});
+		
+		Button rotasLigacoes = new Button("Mostrar \nligações");
+		rotasLigacoes.setOnAction(e -> {Aeroporto selecionado = gerAeroportos.buscarAeroProximo(gerenciador.getPosicao());
+										arvoreRotas = new TreeOfRotas(selecionado);
+			  						 	consulta3(selecionado, 1);});
 		
 		leftPane.add(exibeAeros, 0,0);
-		leftPane.add(new Button("BBBB"), 0,1);
-		leftPane.add(new Button("CCCC"), 0,2);
-		leftPane.add(new Button("DDDD"), 0,3);		
+		leftPane.add(aeroPais, 0,1);
+		leftPane.add(consulta2, 0,2);
+		leftPane.add(rotasLigacoes, 0,3);		
 		
 		pane.setCenter(mapkit);
 		pane.setLeft(leftPane);
@@ -87,7 +100,7 @@ public class JanelaFX extends Application {
 			lstPoints.add(new MyWaypoint(Color.RED,a.getNome(), a.getLocal()));
 		gerenciador.setPontos(lstPoints);
 	}
-
+		
     // Inicializando os dados aqui...
     private void setup() throws ClassNotFoundException, IOException {
 
@@ -143,10 +156,68 @@ public class JanelaFX extends Application {
 		}		
 	}
   
-	private void consulta() {
-		
-	}
-
+    public void consulta1(){    	    	
+    	List<MyWaypoint> lstPoints = new ArrayList<MyWaypoint>();
+    	Aeroporto aeroSelecionado = gerAeroportos.buscarAeroProximo(gerenciador.getPosicao());
+    	String codPais = aeroSelecionado.getPais().getCodigo();
+    	List<Aeroporto> lista = gerAeroportos.buscarPais(codPais);
+    	for(Aeroporto a: lista)
+    		lstPoints.add(new MyWaypoint(Color.BLUE, a.getNome(), a.getLocal()));
+    	gerenciador.setPontos(lstPoints);    	
+    }
+    
+    public void consulta2(double maxKm){
+    	Tracado tr = new Tracado();
+    	Aeroporto aeroSelec = gerAeroportos.buscarAeroProximo(gerenciador.getPosicao());
+    	ArrayList<Rota> rotas = gerRotas.buscarOrigem(aeroSelec.getCodigo());
+    	for(Rota r: rotas){
+    		if(Geo.distancia(aeroSelec.getLocal(), r.getDestino().getLocal())<=maxKm){
+            	tr.addPonto(r.getOrigem().getLocal());
+            	tr.addPonto(r.getDestino().getLocal()); 
+            	gerenciador.addTracado(tr);  
+    		}
+    	}
+    }
+    
+    public void consulta3(Aeroporto origem, int ligacao){	
+    	if(ligacao<3){
+    		Tracado tr = new Tracado();
+    		switch(ligacao){
+    		case 1:
+    			tr.setCor(Color.YELLOW);
+    		case 2:
+    			tr.setCor(Color.ORANGE);
+    		}
+    		String codAeroporto = origem.getCodigo();
+    		ArrayList<Rota> rotas = gerRotas.buscarOrigem(codAeroporto);
+    		/*List<Rota> semLoops = rotas.stream()
+    				.filter(r -> !(arvoreRotas.contains(r.getDestino())))
+    				.collect(Collectors.toList());
+    		for(Rota r: semLoops){
+    			tr.addPonto(r.getOrigem().getLocal());
+    			tr.addPonto(r.getDestino().getLocal());
+    			gerenciador.addTracado(tr);
+    			this.repaint();
+    		}    							   */
+    		
+    		rotas.stream()
+    		.filter(r -> !(arvoreRotas.contains(r.getDestino())))
+    		.forEach(r -> adicionaTR(r));
+    		for(int i = 0;i<rotas.size();i++)
+    			consulta3(rotas.get(i).getDestino(),ligacao+1);
+    		ligacao++;
+    	}
+    	else    	
+    		return;    		
+    }
+    
+    private void adicionaTR(Rota r){
+    	Tracado tr = new Tracado();
+    	tr.addPonto(r.getOrigem().getLocal());
+		tr.addPonto(r.getDestino().getLocal());
+		gerenciador.addTracado(tr);		
+    }
+    
 	private void createSwingContent(final SwingNode swingNode) {
 		SwingUtilities.invokeLater(new Runnable() {
 			@Override
