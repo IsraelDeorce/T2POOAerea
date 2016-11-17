@@ -1,6 +1,8 @@
 package pucrs.myflight.gui;
 
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
@@ -23,8 +25,10 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import pucrs.myflight.modelo.Aeroporto;
 import pucrs.myflight.modelo.Geo;
+import pucrs.myflight.modelo.GerenciadorAeronaves;
 import pucrs.myflight.modelo.GerenciadorAeroportos;
 import pucrs.myflight.modelo.GerenciadorCias;
+import pucrs.myflight.modelo.GerenciadorPaises;
 import pucrs.myflight.modelo.GerenciadorRotas;
 
 public class JanelaFX extends Application {
@@ -58,14 +62,14 @@ public class JanelaFX extends Application {
 		leftPane.setHgap(10);
 		leftPane.setVgap(10);
 		leftPane.setPadding(new Insets(10,10,10,10));
-		Button btnConsulta = new Button("AAAA");
-		leftPane.add(btnConsulta, 0,0);
+		Button exibeAeros = new Button("Exibe todos os aeroportos");
+		exibeAeros.setOnAction(e -> {gerenciador.clear(); exibeAeros();});
+		
+		
+		leftPane.add(exibeAeros, 0,0);
 		leftPane.add(new Button("BBBB"), 0,1);
 		leftPane.add(new Button("CCCC"), 0,2);
-		leftPane.add(new Button("DDDD"), 0,3);
-		btnConsulta.setOnAction(e -> {
-			consulta();
-		});
+		leftPane.add(new Button("DDDD"), 0,3);		
 		
 		pane.setCenter(mapkit);
 		pane.setLeft(leftPane);
@@ -76,9 +80,17 @@ public class JanelaFX extends Application {
 		primaryStage.show();
 
 	}
+	//Null pointer! Consertar bug
+	public void exibeAeros() {   	
+		List<MyWaypoint> lstPoints = new ArrayList<>();
+		List<Aeroporto> aeroportos = gerAero.enviaAL();
+		for(Aeroporto a : aeroportos)
+			lstPoints.add(new MyWaypoint(Color.RED,a.getNome(), a.getLocal()));
+		gerenciador.setPontos(lstPoints);
+	}
 
     // Inicializando os dados aqui...
-    private void setup() {
+    private void setup() throws ClassNotFoundException, IOException {
 
     	GerenciadorPaises gerCountries = new GerenciadorPaises();
 
@@ -133,37 +145,8 @@ public class JanelaFX extends Application {
 	}
   
 	private void consulta() {
-/*		// TODO Auto-generated method stub
-		// Para obter um ponto clicado no mapa, usar como segue:
-    	GeoPosition pos = gerenciador.getPosicao();     
-
-        // Lista para armazenar o resultado da consulta
-        List<MyWaypoint> lstPoints = new ArrayList<>();
-        
-        // Exemplo de uso:
-        
-        Aeroporto poa = gerAero.buscarCodigo("POA");
-        Aeroporto gru = gerAero.buscarCodigo("GRU"); 
-        
-        Geo locPoa = poa.getLocal();
-        Geo locGru = gru.getLocal();
-                       
-        lstPoints.add(new MyWaypoint(Color.BLUE, poa.getNome(), locPoa));
-        lstPoints.add(new MyWaypoint(Color.RED, gru.getNome(), locGru));
-
-        // Informa o resultado para o gerenciador
-        gerenciador.setPontos(lstPoints);
-        
-        // Exemplo: criando um traçado
-        Tracado tr = new Tracado();
-        // Adicionando as mesmas localizações de antes
-        tr.addPonto(locPoa);
-        tr.addPonto(locGru);
-        tr.setCor(Color.RED);
-        // E adicionando o traçado...
-        gerenciador.addTracado(tr);
-        gerenciador.getMapKit().repaint();
-*/	}
+		
+	}
 
 	private void createSwingContent(final SwingNode swingNode) {
 		SwingUtilities.invokeLater(new Runnable() {
