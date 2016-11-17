@@ -34,13 +34,12 @@ public class GerenciadorRotas {
 			String origem = scan1.next();
 			String destino = scan1.next();
 			String codeshare = scan1.next();
-			String paradas = scan1.next();
-			//if(scan1.hasNext()){
-				String equip = scan1.next();
-				Scanner scan2 = new Scanner(equip);
-				equip = scan2.next();
-				aux = new Rota(empresasHM.get(cia), aeroportosHM.get(origem), aeroportosHM.get(destino), aeronavesHM.get(equip));			
-			rotasAL.add(aux);
+			String paradas = scan1.next();			
+			String equip = scan1.next();
+			Scanner scan2 = new Scanner(equip);
+			equip = scan2.next();
+			aux = new Rota(empresasHM.get(cia), aeroportosHM.get(origem), aeroportosHM.get(destino), aeronavesHM.get(equip));			
+			rotasAL.add(aux);	
 		}
 		}
 	}
