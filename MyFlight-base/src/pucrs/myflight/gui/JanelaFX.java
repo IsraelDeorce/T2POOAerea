@@ -34,13 +34,12 @@ import pucrs.myflight.modelo.GerenciadorRotas;
 public class JanelaFX extends Application {
 
 	final SwingNode mapkit = new SwingNode();
-
 	private GerenciadorCias gerCias;
-	private GerenciadorAeroportos gerAero;
+	private GerenciadorAeroportos gerAeroportos;
+	private GerenciadorAeronaves gerAeronaves;
 	private GerenciadorRotas gerRotas;
-
+	private GerenciadorPaises gerPaises;
 	private GerenciadorMapa gerenciador;
-
 	private EventosMouse mouse;
 
 	@Override
@@ -83,7 +82,7 @@ public class JanelaFX extends Application {
 	//Null pointer! Consertar bug
 	public void exibeAeros() {   	
 		List<MyWaypoint> lstPoints = new ArrayList<>();
-		List<Aeroporto> aeroportos = gerAero.enviaAL();
+		List<Aeroporto> aeroportos = gerAeroportos.enviaAL();
 		for(Aeroporto a : aeroportos)
 			lstPoints.add(new MyWaypoint(Color.RED,a.getNome(), a.getLocal()));
 		gerenciador.setPontos(lstPoints);
@@ -92,10 +91,10 @@ public class JanelaFX extends Application {
     // Inicializando os dados aqui...
     private void setup() throws ClassNotFoundException, IOException {
 
-    	GerenciadorPaises gerCountries = new GerenciadorPaises();
+    	gerPaises = new GerenciadorPaises();
 
 		try{ 
-			gerCountries.carregaDados();
+			gerPaises.carregaDados();
 		}
 		catch (IOException e) {
 		System.out.println("Impossível ler countries.dat!");
@@ -103,9 +102,9 @@ public class JanelaFX extends Application {
 		System.exit(1);
 		}
 				
-		GerenciadorAeronaves gerAircrafts = new GerenciadorAeronaves();
+		gerAeronaves = new GerenciadorAeronaves();
 		try{
-			gerAircrafts.carregaDados();
+			gerAeronaves.carregaDados();
 		}
 		catch (IOException e){
 			System.out.println("Impossível ler equipment.dat!");
@@ -113,9 +112,9 @@ public class JanelaFX extends Application {
 			System.exit(1);
 		}
 						
-		GerenciadorAeroportos gerAirports = new GerenciadorAeroportos();
+		gerAeroportos = new GerenciadorAeroportos();
 		try{ 
-			gerAirports.carregaDados(gerCountries.enviaHM());
+			gerAeroportos.carregaDados(gerPaises.enviaHM());
 		}
 		catch (IOException | ClassNotFoundException e) {
 		System.out.println("Impossível ler airports.dat!");
@@ -123,7 +122,7 @@ public class JanelaFX extends Application {
 		System.exit(1);
 		}
 		
-		GerenciadorCias gerCias = new GerenciadorCias();
+		gerCias = new GerenciadorCias();
 		try {
 			gerCias.carregaDados();
 		} 
@@ -133,9 +132,9 @@ public class JanelaFX extends Application {
 			System.exit(1);
 		}		
 		
-		GerenciadorRotas gerRoutes = new GerenciadorRotas();
+		gerRotas = new GerenciadorRotas();
 		try {
-			gerRoutes.carregaDados(gerCias.enviaHM(), gerAirports.enviaHM(), gerAircrafts.enviaHM());
+			gerRotas.carregaDados(gerCias.enviaHM(), gerAeroportos.enviaHM(), gerAeronaves.enviaHM());
 		}
 		catch (IOException | ClassNotFoundException e) {
 			System.out.println("Impossível ler routes.dat!");
