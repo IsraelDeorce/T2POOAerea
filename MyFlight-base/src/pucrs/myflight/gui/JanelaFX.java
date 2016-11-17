@@ -74,16 +74,15 @@ public class JanelaFX extends Application {
 		Button consulta2 = new Button("Consulta 2");
 		consulta2.setOnAction(e-> { gerenciador.clear(); consulta2(500);});
 		
+		ComboBox ciaSelect = new ComboBox();
+		ciaSelect.getItems().addAll(gerCias.enviaAL());	
+		
 		Button rotasLigacoes = new Button("Mostrar ligações");
 		rotasLigacoes.setOnAction(e -> {Aeroporto selecionado = gerAeroportos.buscarAeroProximo(gerenciador.getPosicao());
 										arvoreRotas = new TreeOfRotas(selecionado);
 			  						 	consulta3(selecionado, 1);});
 		Button rotasCia = new Button("Mostrar rotas por Cia");
-		rotasCia.setOnAction(e-> {consulta4(" ");});
-		
-		final ComboBox ciaSelect = new ComboBox();
-		ciaSelect.getItems().addAll(gerCias.enviaAL());
-		// usar ciaSelect.getValue() para ca´pturar seleção do comboBox
+		rotasCia.setOnAction(e-> consulta4(ciaSelect));
 		
 		leftPane.add(exibeAeros, 0,0);
 		leftPane.add(aeroPais, 0,1);
@@ -221,8 +220,9 @@ public class JanelaFX extends Application {
     		return;    		
     }
     
-    public void consulta4(String cia){
-    	gerenciador.clear();    	
+    public void consulta4(ComboBox ciaSelect){
+    	String cia = (String) ciaSelect.getValue();
+    	
     	ArrayList<Rota> rotas = gerRotas.buscarCia(cia);    	
         for(Rota r : rotas){        
         	Tracado tr = new Tracado();        	
