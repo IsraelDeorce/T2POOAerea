@@ -20,6 +20,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
@@ -63,25 +64,34 @@ public class JanelaFX extends Application {
 		leftPane.setAlignment(Pos.CENTER);
 		leftPane.setHgap(10);
 		leftPane.setVgap(10);
-		leftPane.setPadding(new Insets(10,10,10,10));
-		Button exibeAeros = new Button("Mostrar todos\naeroportos ");
+		leftPane.setPadding(new Insets(10,5,10,5));
+		Button exibeAeros = new Button("Mostrar todos aeroportos ");
 		exibeAeros.setOnAction(e -> {gerenciador.clear(); exibeAeros();});
 		
-		Button aeroPais = new Button("Mostrar \naeroportos do país");
+		Button aeroPais = new Button("Mostrar aeroportos do país");
 		aeroPais.setOnAction(e -> {gerenciador.clear(); consulta1();});
 		
 		Button consulta2 = new Button("Consulta 2");
 		consulta2.setOnAction(e-> { gerenciador.clear(); consulta2(500);});
 		
-		Button rotasLigacoes = new Button("Mostrar \nligações");
+		Button rotasLigacoes = new Button("Mostrar ligações");
 		rotasLigacoes.setOnAction(e -> {Aeroporto selecionado = gerAeroportos.buscarAeroProximo(gerenciador.getPosicao());
 										arvoreRotas = new TreeOfRotas(selecionado);
 			  						 	consulta3(selecionado, 1);});
+		Button rotasCia = new Button("Mostrar rotas por Cia");
+		rotasCia.setOnAction(e-> {consulta4(" ");});
+		
+		final ComboBox ciaSelect = new ComboBox();
+		ciaSelect.getItems().addAll(gerCias.enviaAL());
+		// usar ciaSelect.getValue() para ca´pturar seleção do comboBox
 		
 		leftPane.add(exibeAeros, 0,0);
 		leftPane.add(aeroPais, 0,1);
 		leftPane.add(consulta2, 0,2);
-		leftPane.add(rotasLigacoes, 0,3);		
+		leftPane.add(rotasLigacoes, 0,3);
+		leftPane.add(rotasCia, 0,4);
+		leftPane.add(ciaSelect, 0,5);
+		
 		
 		pane.setCenter(mapkit);
 		pane.setLeft(leftPane);
@@ -209,6 +219,17 @@ public class JanelaFX extends Application {
     	}
     	else    	
     		return;    		
+    }
+    
+    public void consulta4(String cia){
+    	gerenciador.clear();    	
+    	ArrayList<Rota> rotas = gerRotas.buscarCia(cia);    	
+        for(Rota r : rotas){        
+        	Tracado tr = new Tracado();        	
+        	tr.addPonto(r.getOrigem().getLocal());
+        	tr.addPonto(r.getDestino().getLocal());        	
+        	gerenciador.addTracado(tr);        	
+        }        
     }
     
     private void adicionaTR(Rota r){
