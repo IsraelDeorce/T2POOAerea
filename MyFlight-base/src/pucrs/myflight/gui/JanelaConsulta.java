@@ -17,12 +17,17 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JSlider;
 import javax.swing.JTextField;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
 import org.jxmapviewer.JXMapViewer;
 import org.jxmapviewer.viewer.GeoPosition;
 
+import javafx.beans.value.ObservableValue;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -80,8 +85,32 @@ public class JanelaConsulta extends javax.swing.JFrame {
         painelMapa = new JPanel();
         painelMapa.setLayout(new BorderLayout());
         painelMapa.add(gerenciador.getMapKit(), BorderLayout.CENTER);
-                
-        getContentPane().add(painelMapa, BorderLayout.CENTER);
+        
+        
+        JLabel current = new JLabel();
+		JSlider slider = new JSlider();
+		slider.setMaximum(21000);
+		slider.setMinimum(0);
+		slider.setMajorTickSpacing(21000/4);
+		slider.setMinorTickSpacing(1000);
+		slider.setPaintTicks(true);
+		slider.setPaintLabels(true);
+        slider.addChangeListener(new ChangeListener() {
+
+            public void stateChanged(ChangeEvent e) {
+                current.setText(
+                        String.valueOf((int) slider.getValue()));
+
+            }
+
+		
+        });
+        
+	
+		
+
+		
+        getContentPane().add(painelMapa, BorderLayout.SOUTH);
         
         painelLateral = new JPanel();
         getContentPane().add(painelLateral, BorderLayout.WEST);        
@@ -104,16 +133,8 @@ public class JanelaConsulta extends javax.swing.JFrame {
         JButton c2 = new JButton("Consulta 2");
         c2.addActionListener(new ActionListener(){
         		public void actionPerformed(ActionEvent e){
-        			Slider slider = new Slider();
-            		JFrame frame = new JFrame();  	            	        
-            		slider.setMin(0);
-        			slider.setMax(40.075);
-        			slider.setValue(0);
-        			slider.setShowTickLabels(true);
-        			slider.setShowTickMarks(true);
-        			slider.setMajorTickUnit(50);
-        			slider.setMinorTickCount(5);
-        			slider.setBlockIncrement(10);
+        			double dist = slider.getValue();
+        			consulta2(dist);
         			        			
         		
         }});
@@ -145,7 +166,8 @@ public class JanelaConsulta extends javax.swing.JFrame {
         painelLateral.add(c2);
         painelLateral.add(c3);
         painelLateral.add(c4);
-        
+        painelLateral.add(slider);
+        painelLateral.add(current);
         
         this.setSize(800,600);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
