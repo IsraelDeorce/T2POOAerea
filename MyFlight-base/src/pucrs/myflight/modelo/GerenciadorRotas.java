@@ -56,6 +56,12 @@ public class GerenciadorRotas {
 				.filter(r -> r.getOrigem().getCodigo().equals(aero))
 				.collect(Collectors.toList());
 		return (ArrayList)rotaOrigem;				
+	}	
+	public ArrayList<Rota> buscarDestino(String aero){
+		List<Rota> rotaDestino = rotasAL.stream()
+				.filter(r -> r.getDestino().getCodigo().equals(aero))
+				.collect(Collectors.toList());
+		return (ArrayList)rotaDestino;				
 	}
 	
 }

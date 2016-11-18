@@ -69,14 +69,16 @@ public class JanelaConsulta extends javax.swing.JFrame {
     private EventosMouse mouse;
     
     private JPanel painelMapa;
-    private JPanel painelLateral;    
+    private JPanel painelLateral; 
+    private JLabel current;
+    private JSlider slider;
 
     /**
      * Creates new form JanelaConsulta
      */
     public JanelaConsulta() {
     	super();
-    	GeoPosition poa = new GeoPosition(-30.05, -51.18);
+    	GeoPosition poa = new GeoPosition(-30.05, -51.18);	
         gerenciador = new GerenciadorMapa(poa, GerenciadorMapa.FonteImagens.VirtualEarth);
         mouse = new EventosMouse();        		
         gerenciador.getMapKit().getMainMap().addMouseListener(mouse);
@@ -87,8 +89,8 @@ public class JanelaConsulta extends javax.swing.JFrame {
         painelMapa.add(gerenciador.getMapKit(), BorderLayout.CENTER);
         
         
-        JLabel current = new JLabel();
-		JSlider slider = new JSlider();
+        current = new JLabel();
+		slider = new JSlider();
 		slider.setMaximum(21000);
 		slider.setMinimum(0);
 		slider.setMajorTickSpacing(21000/4);
@@ -105,9 +107,7 @@ public class JanelaConsulta extends javax.swing.JFrame {
 
 		
         });
-        
-	
-		
+        	
 
 		
         getContentPane().add(painelMapa, BorderLayout.SOUTH);
@@ -217,7 +217,7 @@ public class JanelaConsulta extends javax.swing.JFrame {
     	 this.repaint();
 		
     }
-    
+   
     /*Selecionar um aeroporto no mapa e mostrar todas as rotas que comecem por ele, considerando 1, 2 ou 3 ligações a
 	partir dele */
     public void consulta3(Aeroporto origem, int ligacao){	
@@ -262,8 +262,8 @@ public class JanelaConsulta extends javax.swing.JFrame {
 		this.repaint();
     }
     
-
     
+
     public void consulta4(String cia){
     	gerenciador.clear();
     	this.repaint();
@@ -284,6 +284,23 @@ public class JanelaConsulta extends javax.swing.JFrame {
         }
         this.repaint();
     }
+    
+    /*
+    public void consulta5(Aeroporto origem, Aeroporto destino){	
+			ArrayList<Rota> rotas = gerRotas.buscarOrigem(origem.getCodigo());
+			ArrayList<Rota> rotas2;
+			Tracado tr = new Tracado();
+			for(Rota r: rotas){
+				rotas2 = gerRotas.buscarDestino(r.getDestino().getCodigo());
+				for(Rota v: rotas2){
+					if(r.getOrigem().getCodigo().equals(origem.getCodigo()) && v.getDestino().getCodigo().equals(destino.getCodigo())){
+						tr.addPonto(r.getOrigem().getLocal());
+						tr.addPonto(v.getOrigem().getLocal());
+						tr.addPonto(destino.getLocal());
+					}
+				}
+			}  }
+    */
     
     public void exibeAeros() {    	
     	gerenciador.clear();
