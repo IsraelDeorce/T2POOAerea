@@ -14,15 +14,23 @@ import org.jxmapviewer.JXMapViewer;
 import org.jxmapviewer.viewer.GeoPosition;
 
 import javafx.application.Application;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.embed.swing.SwingNode;
 import javafx.geometry.Insets;
+import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
+import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
+import javafx.scene.control.SplitPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import pucrs.myflight.modelo.Aeroporto;
 import pucrs.myflight.modelo.CiaAerea;
@@ -44,6 +52,15 @@ public class JanelaFX extends Application {
 	private GerenciadorPaises gerPaises;
 	private GerenciadorMapa gerenciador;	
 	private EventosMouse mouse;
+	
+	private GridPane grid(){
+		GridPane pane = new GridPane();
+		pane.setAlignment(Pos.CENTER_LEFT);
+		pane.setHgap(10);
+		pane.setVgap(10);
+		pane.setPadding(new Insets(10,5,10,5));				
+		return pane;
+	}
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
@@ -57,82 +74,79 @@ public class JanelaFX extends Application {
 		gerenciador.getMapKit().getMainMap().addMouseMotionListener(mouse);
 
 		createSwingContent(mapkit);
-
+		
 		BorderPane pane = new BorderPane();			
-		GridPane leftPane = new GridPane();
-		leftPane.setAlignment(Pos.CENTER);
-		leftPane.setHgap(10);
-		leftPane.setVgap(10);
-		leftPane.setPadding(new Insets(10,5,10,5));
+		GridPane leftPane = grid();		
 		
 		Button exibeAeros = new Button("Mostrar todos aeroportos ");
 		exibeAeros.setOnAction(e -> {
-									 gerenciador.clear(); 
-									 exibeAeros();
-									 gerenciador.getMapKit().repaint();
-									 });
+			 gerenciador.clear(); 
+			 exibeAeros();
+			 gerenciador.getMapKit().repaint();
+			 });
 		
 		Button aeroPais = new Button("Mostrar aeroportos do país");
 		aeroPais.setOnAction(e -> {
-								   gerenciador.clear(); 
-								   consulta1();
-								   gerenciador.getMapKit().repaint();
-								   });
+			   gerenciador.clear(); 
+			   consulta1();
+			   gerenciador.getMapKit().repaint();
+			   });
 		
+		Label distLab = new Label("Pesquisar rota por distância");
+		Label raio = new Label ("Distância selecionada: 0.0km");
+		Slider distSli = new Slider(0, 20_000, 0);
 		
-		Slider dist = new Slider(0, 20_000, 0);
-		dist.setShowTickMarks(true);
-		dist.setShowTickLabels(true);
-		dist.setMajorTickUnit(5_000);
-		dist.setMinorTickCount(2_500);
-		dist.setBlockIncrement(1_250);
-		
-		Button rotasDist = new Button("Mostrar rotas por distância");
+		distSli.setShowTickMarks(true);
+		distSli.setShowTickLabels(true);
+		distSli.setMajorTickUnit(5_000);		
+		distSli.setBlockIncrement(1_000);
+		distSli.setMinWidth(280);		
+		distSli.valueChangingProperty().addListener(new ChangeListener<Boolean>() {
+	    
+			@Override
+			public void changed(ObservableValue<? extends Boolean> observableValue, Boolean wasChanging, Boolean changing){
+				if (wasChanging || !changing) {	                    
+					raio.setText("Distância selecionada: " + String.valueOf(Math.round(distSli.getValue())) + "km");
+				}				
+			}
+		}
+		);
+				
+		Button rotasDist = new Button("Pesquisar");
 		rotasDist.setOnAction(e-> { 
-									gerenciador.clear(); 
-									consulta2(dist.getValue());
-									gerenciador.getMapKit().repaint();
-								  });
+			gerenciador.clear(); 
+			consulta2(distSli.getValue());
+			gerenciador.getMapKit().repaint();
+		  });
 		
 		Button rotasLigacoes = new Button("Mostrar ligações");
 		rotasLigacoes.setOnAction(e -> {
-										gerenciador.clear();										
-										Aeroporto selecionado = gerAeroportos.buscarAeroProximo(gerenciador.getPosicao());
-										Set<Aeroporto> origem = new HashSet<Aeroporto>();
-										origem.add(selecionado);
-										Set<Aeroporto> visitados = new HashSet<Aeroporto>();
-										visitados.add(selecionado);
-										consulta3(origem, visitados, 0);
-										gerenciador.getMapKit().repaint();
-										});	
-		
-		ComboBox ciaSelect = new ComboBox();
-		ciaSelect.getItems().addAll(gerCias.enviaAL());	
+			gerenciador.clear();										
+			Aeroporto selecionado = gerAeroportos.buscarAeroProximo(gerenciador.getPosicao());
+			Set<Aeroporto> origem = new HashSet<Aeroporto>();
+			origem.add(selecionado);
+			Set<Aeroporto> visitados = new HashSet<Aeroporto>();
+			visitados.add(selecionado);
+			consulta3(origem, visitados, 0);
+			gerenciador.getMapKit().repaint();
+			});
 		
 		Button rotasCia = new Button("Mostrar rotas por Cia");
+		ComboBox ciaSelect = new ComboBox();
+		ciaSelect.getItems().addAll(gerCias.enviaAL());
 		rotasCia.setOnAction(e-> {
-								  gerenciador.clear(); 
-								  consulta4(ciaSelect);
-								  gerenciador.getMapKit().repaint();
-								  });
+			gerenciador.clear(); 
+			consulta4(ciaSelect);
+			gerenciador.getMapKit().repaint();
+			});
 		
-		leftPane.add(exibeAeros, 0,0);
-		leftPane.add(aeroPais, 0,1);
-		leftPane.add(dist, 0,2);
-		leftPane.add(rotasDist, 0,3);
-		leftPane.add(rotasLigacoes, 0,4);
-		leftPane.add(rotasCia, 0,5);
-		leftPane.add(ciaSelect, 0,6);
-		
-		
-		pane.setCenter(mapkit);
+		pane.setCenter(mapkit);		
 		pane.setLeft(leftPane);
 
 		Scene scene = new Scene(pane, 500, 500);
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Mapas com JavaFX");
 		primaryStage.show();
-
 	}
 	
     // Inicializando os dados aqui...
@@ -278,9 +292,7 @@ public class JanelaFX extends Application {
         			   });        
 		gerenciador.setPontos(aeroportos);    			
 	}
-    
-
-    
+   
     private void createSwingContent(final SwingNode swingNode) {
 		SwingUtilities.invokeLater(new Runnable() {
 			@Override
