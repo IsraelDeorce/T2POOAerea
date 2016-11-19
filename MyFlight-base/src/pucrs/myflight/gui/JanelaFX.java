@@ -1,14 +1,13 @@
 package pucrs.myflight.gui;
 
 import java.awt.Color;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
-
+import java.util.Set;
 import javax.swing.SwingUtilities;
 
 import org.jxmapviewer.JXMapViewer;
@@ -33,7 +32,6 @@ import pucrs.myflight.modelo.GerenciadorCias;
 import pucrs.myflight.modelo.GerenciadorPaises;
 import pucrs.myflight.modelo.GerenciadorRotas;
 import pucrs.myflight.modelo.Rota;
-import pucrs.myflight.modelo.TreeOfRotas;
 
 public class JanelaFX extends Application {
 
@@ -43,8 +41,7 @@ public class JanelaFX extends Application {
 	private GerenciadorAeronaves gerAeronaves;
 	private GerenciadorRotas gerRotas;
 	private GerenciadorPaises gerPaises;
-	private GerenciadorMapa gerenciador;
-	private TreeOfRotas arvoreRotas;
+	private GerenciadorMapa gerenciador;	
 	private EventosMouse mouse;
 
 	@Override
@@ -68,10 +65,16 @@ public class JanelaFX extends Application {
 		leftPane.setPadding(new Insets(10,5,10,5));
 		
 		Button exibeAeros = new Button("Mostrar todos aeroportos ");
-		exibeAeros.setOnAction(e -> {gerenciador.clear(); exibeAeros();});
+		exibeAeros.setOnAction(e -> {
+									 gerenciador.clear(); 
+									 exibeAeros();
+									 });
 		
 		Button aeroPais = new Button("Mostrar aeroportos do país");
-		aeroPais.setOnAction(e -> {gerenciador.clear(); consulta1();});
+		aeroPais.setOnAction(e -> {
+								   gerenciador.clear(); 
+								   consulta1();
+								   });
 		
 		
 		Slider dist = new Slider(0, 20_000, 0);
@@ -85,14 +88,25 @@ public class JanelaFX extends Application {
 		rotasDist.setOnAction(e-> { gerenciador.clear(); consulta2(dist.getValue());});
 		
 		Button rotasLigacoes = new Button("Mostrar ligações");
-		rotasLigacoes.setOnAction(e -> {Aeroporto selecionado = gerAeroportos.buscarAeroProximo(gerenciador.getPosicao());
+		rotasLigacoes.setOnAction(e -> {
+										gerenciador.clear();										
+										Aeroporto selecionado = gerAeroportos.buscarAeroProximo(gerenciador.getPosicao());
+										ArrayList<Aeroporto> origem = new ArrayList<Aeroporto>();
+										origem.add(selecionado);
+										Set<Aeroporto> visitados = new HashSet<Aeroporto>();
+										visitados.add(selecionado);
+										consulta3(origem, visitados, 0);										
+										});
+		
+		/*rotasLigacoes.setOnAction(e -> {gerenciador.clear(); Aeroporto selecionado = );
 										arvoreRotas = new TreeOfRotas(selecionado);
 			  						 	consulta3(selecionado, 1);});
+		*/
 		ComboBox ciaSelect = new ComboBox();
 		ciaSelect.getItems().addAll(gerCias.enviaAL());	
 		
 		Button rotasCia = new Button("Mostrar rotas por Cia");
-		rotasCia.setOnAction(e-> consulta4(ciaSelect));
+		rotasCia.setOnAction(e-> {gerenciador.clear(); consulta4(ciaSelect);});
 		
 		leftPane.add(exibeAeros, 0,0);
 		leftPane.add(aeroPais, 0,1);
@@ -191,8 +205,7 @@ public class JanelaFX extends Application {
     }
     
     
-    public void consulta2(double maxKm){
-    	gerenciador.clear();
+    public void consulta2(double maxKm){    	
     	Tracado tr = new Tracado();
     	Aeroporto aeroSelec = gerAeroportos.buscarAeroProximo(gerenciador.getPosicao());
     	ArrayList<Rota> rotas = gerRotas.buscarOrigem(aeroSelec.getCodigo());
@@ -205,38 +218,40 @@ public class JanelaFX extends Application {
     	}
     }
     
-    public void consulta3(Aeroporto origem, int ligacao){	
-    	gerenciador.clear();
+    public void consulta3(ArrayList<Aeroporto> origens, Set<Aeroporto> visitados, int ligacao){	
+    	
     	if(ligacao<3){
+    		ArrayList<Rota> rotas;
+    		ArrayList<Aeroporto> destinos = new ArrayList<Aeroporto>();
     		Tracado tr = new Tracado();
-    		switch(ligacao){
-    		case 1:
-    			tr.setCor(Color.YELLOW);
-    		case 2:
+    		if(ligacao==1)
     			tr.setCor(Color.ORANGE);
-    		}
-    		String codAeroporto = origem.getCodigo();
-    		ArrayList<Rota> rotas = gerRotas.buscarOrigem(codAeroporto);
-    		/*List<Rota> semLoops = rotas.stream()
-    				.filter(r -> !(arvoreRotas.contains(r.getDestino())))
-    				.collect(Collectors.toList());
-    		for(Rota r: semLoops){
-    			tr.addPonto(r.getOrigem().getLocal());
-    			tr.addPonto(r.getDestino().getLocal());
-    			gerenciador.addTracado(tr);
-    			this.repaint();
-    		}    							   */
+    		if(ligacao==2)
+    			tr.setCor(Color.MAGENTA);
     		
-    		rotas.stream()
-    		.filter(r -> !(arvoreRotas.contains(r.getDestino())))
-    		.forEach(r -> adicionaTR(r));
-    		for(int i = 0;i<rotas.size();i++)
-    			consulta3(rotas.get(i).getDestino(),ligacao+1);
+    		for(Aeroporto a: origens){
+    			rotas = gerRotas.buscarOrigem(a.getCodigo());
+    			GeoPosition origem = a.getLocal();    			    	   	
+    			rotas.stream()
+    			.filter(r -> !visitados.contains(r.getDestino()))
+    			.forEach(r -> {
+    							tr.addPonto(origem); 
+    							tr.addPonto(r.getDestino().getLocal()); 
+    							gerenciador.addTracado(tr); 
+    							visitados.add(r.getDestino());
+    							destinos.add(r.getDestino());
+    							});     	   	
+    		}
     		ligacao++;
+    		consulta3(destinos, visitados, ligacao);
     	}
-    	else    	
-    		return;    		
-    }
+    	else{
+    		List<MyWaypoint> pontos = new ArrayList<MyWaypoint>();
+    		for(Aeroporto a : visitados)
+    			pontos.add(new MyWaypoint(a.getLocal()));
+    		gerenciador.setPontos(pontos);    			
+    	}
+    }   	
     
     public void consulta4(ComboBox ciaSelect){
     	gerenciador.clear();
@@ -251,14 +266,7 @@ public class JanelaFX extends Application {
         }        
     }
     
-    private void adicionaTR(Rota r){
-    	Tracado tr = new Tracado();
-    	tr.addPonto(r.getOrigem().getLocal());
-		tr.addPonto(r.getDestino().getLocal());
-		gerenciador.addTracado(tr);		
-    }
-    
-	private void createSwingContent(final SwingNode swingNode) {
+    private void createSwingContent(final SwingNode swingNode) {
 		SwingUtilities.invokeLater(new Runnable() {
 			@Override
 			public void run() {

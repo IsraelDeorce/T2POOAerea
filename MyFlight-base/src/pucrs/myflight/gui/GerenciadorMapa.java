@@ -35,8 +35,7 @@ public class GerenciadorMapa {
     final JXMapKit jXMapKit;
     private WaypointPainter<MyWaypoint> pontosPainter;
     
-    private GeoPosition selCentro;
-    
+    private GeoPosition selCentro;  
     
     private ArrayList<Tracado> linhas;
    
@@ -185,6 +184,7 @@ public class GerenciadorMapa {
      * Limpa os traçados atuais
      */
     public void clear() {
+    	pontosPainter.setWaypoints(new HashSet<MyWaypoint>());
     	linhas.clear();
     }
     

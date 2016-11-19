@@ -25,6 +25,11 @@ public class MyWaypoint extends DefaultWaypoint
 		this.label = label;
 	}
 	
+	public MyWaypoint(GeoPosition coord){
+		super(coord);
+		color = Color.BLACK;		
+	}
+	
 	/**
 	 * @returns a cor do waypoint
 	 */

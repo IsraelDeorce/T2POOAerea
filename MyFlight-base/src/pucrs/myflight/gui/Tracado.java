@@ -12,8 +12,7 @@ public class Tracado {
 	
 	public Tracado() {
 		pontos = new ArrayList<>();		
-		cor = Color.GREEN;
-		
+		cor = Color.GREEN;		
 	}
 	
 	public void clear() {
