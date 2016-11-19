@@ -21,6 +21,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Slider;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
@@ -65,31 +66,41 @@ public class JanelaFX extends Application {
 		leftPane.setHgap(10);
 		leftPane.setVgap(10);
 		leftPane.setPadding(new Insets(10,5,10,5));
+		
 		Button exibeAeros = new Button("Mostrar todos aeroportos ");
 		exibeAeros.setOnAction(e -> {gerenciador.clear(); exibeAeros();});
 		
 		Button aeroPais = new Button("Mostrar aeroportos do país");
 		aeroPais.setOnAction(e -> {gerenciador.clear(); consulta1();});
 		
-		Button consulta2 = new Button("Consulta 2");
-		consulta2.setOnAction(e-> { gerenciador.clear(); consulta2(500);});
 		
-		ComboBox ciaSelect = new ComboBox();
-		ciaSelect.getItems().addAll(gerCias.enviaAL());	
+		Slider dist = new Slider(0, 20_000, 0);
+		dist.setShowTickMarks(true);
+		dist.setShowTickLabels(true);
+		dist.setMajorTickUnit(5_000);
+		dist.setMinorTickCount(2_500);
+		dist.setBlockIncrement(1_250);
+		
+		Button rotasDist = new Button("Mostrar rotas por distância");
+		rotasDist.setOnAction(e-> { gerenciador.clear(); consulta2(dist.getValue());});
 		
 		Button rotasLigacoes = new Button("Mostrar ligações");
 		rotasLigacoes.setOnAction(e -> {Aeroporto selecionado = gerAeroportos.buscarAeroProximo(gerenciador.getPosicao());
 										arvoreRotas = new TreeOfRotas(selecionado);
 			  						 	consulta3(selecionado, 1);});
+		ComboBox ciaSelect = new ComboBox();
+		ciaSelect.getItems().addAll(gerCias.enviaAL());	
+		
 		Button rotasCia = new Button("Mostrar rotas por Cia");
 		rotasCia.setOnAction(e-> consulta4(ciaSelect));
 		
 		leftPane.add(exibeAeros, 0,0);
 		leftPane.add(aeroPais, 0,1);
-		leftPane.add(consulta2, 0,2);
-		leftPane.add(rotasLigacoes, 0,3);
-		leftPane.add(rotasCia, 0,4);
-		leftPane.add(ciaSelect, 0,5);
+		leftPane.add(dist, 0,2);
+		leftPane.add(rotasDist, 0,3);
+		leftPane.add(rotasLigacoes, 0,4);
+		leftPane.add(rotasCia, 0,5);
+		leftPane.add(ciaSelect, 0,6);
 		
 		
 		pane.setCenter(mapkit);
@@ -101,15 +112,7 @@ public class JanelaFX extends Application {
 		primaryStage.show();
 
 	}
-	//Null pointer! Consertar bug
-	public void exibeAeros() {   	
-		List<MyWaypoint> lstPoints = new ArrayList<>();
-		List<Aeroporto> aeroportos = gerAeroportos.enviaAL();
-		for(Aeroporto a : aeroportos)
-			lstPoints.add(new MyWaypoint(Color.RED,a.getNome(), a.getLocal()));
-		gerenciador.setPontos(lstPoints);
-	}
-		
+	
     // Inicializando os dados aqui...
     private void setup() throws ClassNotFoundException, IOException {
 
@@ -165,7 +168,19 @@ public class JanelaFX extends Application {
 		}		
 	}
   
-    public void consulta1(){    	    	
+    
+    public void exibeAeros() {   	
+		gerenciador.clear();
+		List<MyWaypoint> lstPoints = new ArrayList<>();
+		List<Aeroporto> aeroportos = gerAeroportos.enviaAL();
+		for(Aeroporto a : aeroportos)
+			lstPoints.add(new MyWaypoint(Color.RED,a.getNome(), a.getLocal()));
+		gerenciador.setPontos(lstPoints);
+	}
+    
+    
+    public void consulta1(){
+    	gerenciador.clear();
     	List<MyWaypoint> lstPoints = new ArrayList<MyWaypoint>();
     	Aeroporto aeroSelecionado = gerAeroportos.buscarAeroProximo(gerenciador.getPosicao());
     	String codPais = aeroSelecionado.getPais().getCodigo();
@@ -175,7 +190,9 @@ public class JanelaFX extends Application {
     	gerenciador.setPontos(lstPoints);    	
     }
     
+    
     public void consulta2(double maxKm){
+    	gerenciador.clear();
     	Tracado tr = new Tracado();
     	Aeroporto aeroSelec = gerAeroportos.buscarAeroProximo(gerenciador.getPosicao());
     	ArrayList<Rota> rotas = gerRotas.buscarOrigem(aeroSelec.getCodigo());
@@ -189,6 +206,7 @@ public class JanelaFX extends Application {
     }
     
     public void consulta3(Aeroporto origem, int ligacao){	
+    	gerenciador.clear();
     	if(ligacao<3){
     		Tracado tr = new Tracado();
     		switch(ligacao){
@@ -221,6 +239,7 @@ public class JanelaFX extends Application {
     }
     
     public void consulta4(ComboBox ciaSelect){
+    	gerenciador.clear();
     	String cia = (String) ciaSelect.getValue();
     	
     	ArrayList<Rota> rotas = gerRotas.buscarCia(cia);    	
