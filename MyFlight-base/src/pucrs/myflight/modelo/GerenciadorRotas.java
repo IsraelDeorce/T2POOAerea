@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class GerenciadorRotas {
@@ -44,24 +45,24 @@ public class GerenciadorRotas {
 		}
 	}
 	
-	public ArrayList<Rota> buscarCia(String cia){
-		List<Rota> rotaCia = rotasAL.stream()
+	public Set<Rota> buscarCia(String cia){
+		Set<Rota> rotaCia = rotasAL.stream()
 			.filter(r -> r.getCia().getCodigo().equals(cia))
-			.collect(Collectors.toList());		
-		return (ArrayList)rotaCia;
+			.collect(Collectors.toSet());		
+		return rotaCia;
 	}
 	
-	public ArrayList<Rota> buscarOrigem(String aero){
-		List<Rota> rotaOrigem = rotasAL.stream()
+	public Set<Rota> buscarOrigem(String aero){
+		Set<Rota> rotaOrigem = rotasAL.stream()
 				.filter(r -> r.getOrigem().getCodigo().equals(aero))
-				.collect(Collectors.toList());
-		return (ArrayList)rotaOrigem;				
+				.collect(Collectors.toSet());
+		return rotaOrigem;				
 	}	
-	public ArrayList<Rota> buscarDestino(String aero){
-		List<Rota> rotaDestino = rotasAL.stream()
+	public Set<Rota> buscarDestino(String aero){
+		Set<Rota> rotaDestino = rotasAL.stream()
 				.filter(r -> r.getDestino().getCodigo().equals(aero))
-				.collect(Collectors.toList());
-		return (ArrayList)rotaDestino;				
+				.collect(Collectors.toSet());
+		return rotaDestino;				
 	}
 	
 }

@@ -25,6 +25,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import pucrs.myflight.modelo.Aeroporto;
+import pucrs.myflight.modelo.CiaAerea;
 import pucrs.myflight.modelo.Geo;
 import pucrs.myflight.modelo.GerenciadorAeronaves;
 import pucrs.myflight.modelo.GerenciadorAeroportos;
@@ -68,12 +69,14 @@ public class JanelaFX extends Application {
 		exibeAeros.setOnAction(e -> {
 									 gerenciador.clear(); 
 									 exibeAeros();
+									 gerenciador.getMapKit().repaint();
 									 });
 		
 		Button aeroPais = new Button("Mostrar aeroportos do país");
 		aeroPais.setOnAction(e -> {
 								   gerenciador.clear(); 
 								   consulta1();
+								   gerenciador.getMapKit().repaint();
 								   });
 		
 		
@@ -85,28 +88,33 @@ public class JanelaFX extends Application {
 		dist.setBlockIncrement(1_250);
 		
 		Button rotasDist = new Button("Mostrar rotas por distância");
-		rotasDist.setOnAction(e-> { gerenciador.clear(); consulta2(dist.getValue());});
+		rotasDist.setOnAction(e-> { 
+									gerenciador.clear(); 
+									consulta2(dist.getValue());
+									gerenciador.getMapKit().repaint();
+								  });
 		
 		Button rotasLigacoes = new Button("Mostrar ligações");
 		rotasLigacoes.setOnAction(e -> {
 										gerenciador.clear();										
 										Aeroporto selecionado = gerAeroportos.buscarAeroProximo(gerenciador.getPosicao());
-										ArrayList<Aeroporto> origem = new ArrayList<Aeroporto>();
+										Set<Aeroporto> origem = new HashSet<Aeroporto>();
 										origem.add(selecionado);
 										Set<Aeroporto> visitados = new HashSet<Aeroporto>();
 										visitados.add(selecionado);
-										consulta3(origem, visitados, 0);										
-										});
+										consulta3(origem, visitados, 0);
+										gerenciador.getMapKit().repaint();
+										});	
 		
-		/*rotasLigacoes.setOnAction(e -> {gerenciador.clear(); Aeroporto selecionado = );
-										arvoreRotas = new TreeOfRotas(selecionado);
-			  						 	consulta3(selecionado, 1);});
-		*/
 		ComboBox ciaSelect = new ComboBox();
 		ciaSelect.getItems().addAll(gerCias.enviaAL());	
 		
 		Button rotasCia = new Button("Mostrar rotas por Cia");
-		rotasCia.setOnAction(e-> {gerenciador.clear(); consulta4(ciaSelect);});
+		rotasCia.setOnAction(e-> {
+								  gerenciador.clear(); 
+								  consulta4(ciaSelect);
+								  gerenciador.getMapKit().repaint();
+								  });
 		
 		leftPane.add(exibeAeros, 0,0);
 		leftPane.add(aeroPais, 0,1);
@@ -185,30 +193,30 @@ public class JanelaFX extends Application {
     
     public void exibeAeros() {   	
 		gerenciador.clear();
-		List<MyWaypoint> lstPoints = new ArrayList<>();
+		Set<MyWaypoint> pontos = new HashSet<>();
 		List<Aeroporto> aeroportos = gerAeroportos.enviaAL();
 		for(Aeroporto a : aeroportos)
-			lstPoints.add(new MyWaypoint(Color.RED,a.getNome(), a.getLocal()));
-		gerenciador.setPontos(lstPoints);
+			pontos.add(new MyWaypoint(Color.RED,a.getNome(), a.getLocal()));
+		gerenciador.setPontos(pontos);
 	}
     
     
     public void consulta1(){
     	gerenciador.clear();
-    	List<MyWaypoint> lstPoints = new ArrayList<MyWaypoint>();
+    	Set<MyWaypoint> pontos = new HashSet<MyWaypoint>();
     	Aeroporto aeroSelecionado = gerAeroportos.buscarAeroProximo(gerenciador.getPosicao());
     	String codPais = aeroSelecionado.getPais().getCodigo();
-    	List<Aeroporto> lista = gerAeroportos.buscarPais(codPais);
+    	Set<Aeroporto> lista = gerAeroportos.buscarPais(codPais);
     	for(Aeroporto a: lista)
-    		lstPoints.add(new MyWaypoint(Color.BLUE, a.getNome(), a.getLocal()));
-    	gerenciador.setPontos(lstPoints);    	
+    		pontos.add(new MyWaypoint(Color.BLUE, a.getNome(), a.getLocal()));
+    	gerenciador.setPontos(pontos);    	
     }
     
     
     public void consulta2(double maxKm){    	
     	Tracado tr = new Tracado();
     	Aeroporto aeroSelec = gerAeroportos.buscarAeroProximo(gerenciador.getPosicao());
-    	ArrayList<Rota> rotas = gerRotas.buscarOrigem(aeroSelec.getCodigo());
+    	Set<Rota> rotas = gerRotas.buscarOrigem(aeroSelec.getCodigo());
     	for(Rota r: rotas){
     		if(Geo.distancia(aeroSelec.getLocal(), r.getDestino().getLocal())<=maxKm){
             	tr.addPonto(r.getOrigem().getLocal());
@@ -218,11 +226,11 @@ public class JanelaFX extends Application {
     	}
     }
     
-    public void consulta3(ArrayList<Aeroporto> origens, Set<Aeroporto> visitados, int ligacao){	
+    public void consulta3(Set<Aeroporto> origens, Set<Aeroporto> visitados, int ligacao){	
     	
     	if(ligacao<3){
-    		ArrayList<Rota> rotas;
-    		ArrayList<Aeroporto> destinos = new ArrayList<Aeroporto>();
+    		Set<Rota> rotas;
+    		Set<Aeroporto> destinos = new HashSet<Aeroporto>();
     		Tracado tr = new Tracado();
     		if(ligacao==1)
     			tr.setCor(Color.ORANGE);
@@ -246,25 +254,32 @@ public class JanelaFX extends Application {
     		consulta3(destinos, visitados, ligacao);
     	}
     	else{
-    		List<MyWaypoint> pontos = new ArrayList<MyWaypoint>();
+    		Set<MyWaypoint> pontos = new HashSet<MyWaypoint>();
     		for(Aeroporto a : visitados)
     			pontos.add(new MyWaypoint(a.getLocal()));
     		gerenciador.setPontos(pontos);    			
     	}
     }   	
     
-    public void consulta4(ComboBox ciaSelect){
-    	gerenciador.clear();
-    	String cia = (String) ciaSelect.getValue();
-    	
-    	ArrayList<Rota> rotas = gerRotas.buscarCia(cia);    	
-        for(Rota r : rotas){        
-        	Tracado tr = new Tracado();        	
-        	tr.addPonto(r.getOrigem().getLocal());
-        	tr.addPonto(r.getDestino().getLocal());        	
-        	gerenciador.addTracado(tr);        	
-        }        
-    }
+    public void consulta4(ComboBox ciaSelect){    	
+    	Set<MyWaypoint> aeroportos = new HashSet<MyWaypoint>();
+    	Tracado tr = new Tracado();    	
+    	CiaAerea ciaSelecionada= (CiaAerea)ciaSelect.getValue();
+    	Set<Rota> rotas = gerRotas.buscarCia(ciaSelecionada.getCodigo());   	
+       	rotas.stream()
+        .forEach(r -> {             			
+        				GeoPosition origem = r.getOrigem().getLocal();
+        				GeoPosition destino = r.getDestino().getLocal();
+        				aeroportos.add(new MyWaypoint(origem));
+        				aeroportos.add(new MyWaypoint(destino));
+               			tr.addPonto(origem);
+               			tr.addPonto(destino);
+               			gerenciador.addTracado(tr);
+        			   });        
+		gerenciador.setPontos(aeroportos);    			
+	}
+    
+
     
     private void createSwingContent(final SwingNode swingNode) {
 		SwingUtilities.invokeLater(new Runnable() {

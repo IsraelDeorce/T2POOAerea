@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import org.jxmapviewer.viewer.GeoPosition;
@@ -62,10 +63,10 @@ public class GerenciadorAeroportos{
 		return aeroportosAL;
 	}
 
-	public List<Aeroporto> buscarPais(String pais) {
-		List<Aeroporto> aeroPais = aeroportosAL.stream()
+	public Set<Aeroporto> buscarPais(String pais) {
+		Set<Aeroporto> aeroPais = aeroportosAL.stream()
 				  .filter(a -> a.getPais().getCodigo().equals(pais))
-				  .collect(Collectors.toList()); 
+				  .collect(Collectors.toSet()); 
 		return aeroPais;		
 	}
 	

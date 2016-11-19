@@ -165,11 +165,9 @@ public class GerenciadorMapa {
     /*
      * Informa os pontos a serem desenhados (precisa ser chamado a cada vez que mudar)
      * @param lista lista de pontos (objetos MyWaypoint)
-     */
-    public void setPontos(List<MyWaypoint> lista) {
-        // Criando um conjunto de pontos
-        Set<MyWaypoint> pontos = new HashSet<MyWaypoint>(lista);
-        // Informando o conjunto ao painter
+     */   
+    
+    public void setPontos(Set<MyWaypoint> pontos) {        
         pontosPainter.setWaypoints(pontos);
     }
     
