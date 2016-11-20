@@ -8,12 +8,14 @@ public class Rota{
 	private Aeroporto origem;
 	private Aeroporto destino;
 	private Aeronave aeronave;
+	private Double distancia;
 	
 	public Rota (CiaAerea cia, Aeroporto origem, Aeroporto destino, Aeronave aeronave){
 		this.cia = cia;
 		this.origem = origem;
 		this.destino = destino;
-		this.aeronave = aeronave;		
+		this.aeronave = aeronave;
+		distancia = Geo.distancia(this.origem.getLocal(), this.destino.getLocal());
 	}
 	
 	public Rota (CiaAerea cia, Aeroporto origem, Aeroporto destino){
