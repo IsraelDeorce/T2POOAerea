@@ -150,8 +150,7 @@ public class JanelaFX extends Application {
 		leftPane.add(new Separator(), 0, 13);
 		leftPane.add(rotasCiaLB, 0, 14);		
 		leftPane.add(ciaSelect, 0, 15);
-		leftPane.add(rotasCiaBT, 0, 16);
-		
+		leftPane.add(rotasCiaBT, 0, 16);		
 		
 		pane.setCenter(mapkit);		
 		pane.setLeft(leftPane);
