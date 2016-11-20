@@ -171,19 +171,17 @@ public class JanelaFX extends Application {
 	private void tableRotas(Set<Rota> rotas, String cia){
 		
 		TableView<Rota> rotasCiaTB = new TableView<Rota>();
-		TableColumn rotaCol = new TableColumn("Rota");
 		TableColumn origemCol = new TableColumn("Origem");
         TableColumn destinoCol = new TableColumn("Destino");
-        TableColumn aeronaveCol = new TableColumn("Aeronave");
+        TableColumn aeronaveCol = new TableColumn("Aeronave");        
         TableColumn distanciaCol = new TableColumn("Distância (em km)");
         ObservableList<Rota> rotasCia = FXCollections.observableArrayList(rotas); 
 		origemCol.setCellValueFactory(new PropertyValueFactory<Rota,Aeroporto>("Origem"));
 		destinoCol.setCellValueFactory(new PropertyValueFactory<Rota,Aeroporto>("Destino"));
 		aeronaveCol.setCellValueFactory(new PropertyValueFactory<Rota,Aeronave>("Aeronave"));
-		distanciaCol.setCellValueFactory(new PropertyValueFactory<Rota,Double>("Distância (em km)"));
+		distanciaCol.setCellValueFactory(new PropertyValueFactory<Rota,Double>("Distancia"));
 		rotasCiaTB.setItems(rotasCia);
-		rotaCol.getColumns().addAll(origemCol,destinoCol);
-        rotasCiaTB.getColumns().addAll(rotaCol,aeronaveCol,distanciaCol);
+        rotasCiaTB.getColumns().addAll(origemCol,destinoCol,aeronaveCol,distanciaCol);
         
         ScrollPane scPane = new ScrollPane();
         scPane.setContent(rotasCiaTB);
@@ -344,6 +342,7 @@ public class JanelaFX extends Application {
                			tr.addPonto(origem);
                			tr.addPonto(destino);
                			gerenciador.addTracado(tr);
+               			System.out.println(r.getDistancia());
         			   });        
 		gerenciador.setPontos(aeroportos);
 		tableRotas(rotas, nomeCia);

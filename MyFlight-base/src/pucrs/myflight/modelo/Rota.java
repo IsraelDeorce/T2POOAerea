@@ -45,4 +45,8 @@ public class Rota{
 	public Aeronave getAeronave() {
 		return aeronave;
 	}
+
+	public Double getDistancia() {
+		return distancia;
+	}
 }
