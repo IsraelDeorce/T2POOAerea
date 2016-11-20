@@ -376,7 +376,8 @@ public class JanelaFX extends Application {
 			lastButton = e.getButton();
 			// Botão 3: seleciona localização
 			if (lastButton == MouseEvent.BUTTON3) {
-				gerenciador.setPosicao(loc);				
+				gerenciador.setPosicao(loc);
+				aeroSelecionado = aeroSelecionado();
 				gerenciador.getMapKit().repaint();
 			}
 		}
