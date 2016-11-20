@@ -73,7 +73,7 @@ public class GerenciadorAeroportos{
 	public Aeroporto buscarCod(String cod){
 		return aeroportosHM.get(cod);
 	}
-	 /*Método que localiza um aeroporto no raio de 5km de onde o usuário clicou no mapa
+	 /*Método que localiza um aeroporto no raio de 15km de onde o usuário clicou no mapa
 	 	Paramêtro é o Geo clicado
 	 	Retorno é o Aeroporto 	  
 	*/

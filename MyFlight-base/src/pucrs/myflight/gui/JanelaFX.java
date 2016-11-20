@@ -61,16 +61,8 @@ public class JanelaFX extends Application {
 	private GerenciadorPaises gerPaises;
 	private GerenciadorMapa gerenciador;	
 	private EventosMouse mouse;
+	private Aeroporto aeroSelecionado;
 	
-	private GridPane grid(){
-		GridPane pane = new GridPane();
-		pane.setAlignment(Pos.CENTER_LEFT);
-		pane.setHgap(10);
-		pane.setVgap(10);
-		pane.setPadding(new Insets(10,5,10,5));				
-		return pane;
-	}
-
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		
@@ -86,6 +78,13 @@ public class JanelaFX extends Application {
 		
 		BorderPane pane = new BorderPane();			
 		GridPane leftPane = grid();		
+		
+		Label clearLB = new Label("Limpar tela");
+		Button clearBT = new Button("Limpar");
+		clearBT.setOnAction(e -> {
+								  gerenciador.clear();
+								  gerenciador.getMapKit().repaint();
+							});
 		
 		Label exibeAerosLB = new Label("Exibir todos os aeroportos");
 		Button exibeAerosBT = new Button("Exibir");
@@ -104,13 +103,13 @@ public class JanelaFX extends Application {
 			   });
 		
 		Label distLB = new Label("Exibir rotas atÈ determinado raio");		
-		Slider distSli = new Slider(0, 30_000, 0);
+		Slider distSli = new Slider(0, 20_000, 0);
 		
 		distSli.setShowTickMarks(true);
 		distSli.setShowTickLabels(true);
 		distSli.setMajorTickUnit(5_000);		
 		distSli.setBlockIncrement(1_000);
-		distSli.setMinWidth(280);		
+		distSli.setMinWidth(50);		
 		
 		Button distBT = new Button("Exibir");
 		distBT.setOnAction(e-> { 
@@ -142,22 +141,29 @@ public class JanelaFX extends Application {
 			gerenciador.getMapKit().repaint();
 			});
 		
-		leftPane.add(exibeAerosLB, 0, 1);
-		leftPane.add(exibeAerosBT, 0, 2);
-		leftPane.add(new Separator(), 0, 3);
-		leftPane.add(aeroPaisLB, 0, 4);
-		leftPane.add(aeroPaisBT, 0, 5);
-		leftPane.add(new Separator(), 0, 6);
-		leftPane.add(distLB, 0, 7);
-		leftPane.add(distSli, 0, 8);		
-		leftPane.add(distBT, 0, 9);
-		leftPane.add(new Separator(), 0, 10);
-		leftPane.add(rotasLigacoesLB, 0, 11);
-		leftPane.add(rotasLigacoesBT, 0, 12);
-		leftPane.add(new Separator(), 0, 13);
-		leftPane.add(rotasCiaLB, 0, 14);		
-		leftPane.add(ciaSelect, 0, 15);
-		leftPane.add(rotasCiaBT, 0, 16);
+		GridPane geral = grid();
+		geral.setHgap(50);
+		geral.add(clearLB, 0, 0);
+		geral.add(clearBT, 0, 1);
+		geral.add(exibeAerosLB, 1, 0);
+		geral.add(exibeAerosBT, 1, 1);
+				
+		//leftPane.setGridLinesVisible(true);
+		leftPane.add(geral, 0, 0);
+		leftPane.add(new Separator(), 0, 1);
+		leftPane.add(aeroPaisLB, 0, 2);
+		leftPane.add(aeroPaisBT, 0, 3);
+		leftPane.add(new Separator(), 0, 4);
+		leftPane.add(distLB, 0, 5);
+		leftPane.add(distSli, 0, 6);		
+		leftPane.add(distBT, 0, 7);
+		leftPane.add(new Separator(), 0, 8);
+		leftPane.add(rotasLigacoesLB, 0, 9);
+		leftPane.add(rotasLigacoesBT, 0, 10);
+		leftPane.add(new Separator(), 0, 11);
+		leftPane.add(rotasCiaLB, 0, 12);		
+		leftPane.add(ciaSelect, 0, 13);
+		leftPane.add(rotasCiaBT, 0, 14);
 		
 		pane.setCenter(mapkit);		
 		pane.setLeft(leftPane);
@@ -168,34 +174,6 @@ public class JanelaFX extends Application {
 		primaryStage.show();
 	}
 	
-	private void tableRotas(Set<Rota> rotas, String cia){
-		
-		TableView<Rota> rotasCiaTB = new TableView<Rota>();
-		TableColumn origemCol = new TableColumn("Origem");
-        TableColumn destinoCol = new TableColumn("Destino");
-        TableColumn aeronaveCol = new TableColumn("Aeronave");        
-        TableColumn distanciaCol = new TableColumn("Dist‚ncia (em km)");
-        ObservableList<Rota> rotasCia = FXCollections.observableArrayList(rotas); 
-		origemCol.setCellValueFactory(new PropertyValueFactory<Rota,Aeroporto>("Origem"));
-		destinoCol.setCellValueFactory(new PropertyValueFactory<Rota,Aeroporto>("Destino"));
-		aeronaveCol.setCellValueFactory(new PropertyValueFactory<Rota,Aeronave>("Aeronave"));
-		distanciaCol.setCellValueFactory(new PropertyValueFactory<Rota,Double>("Distancia"));
-		rotasCiaTB.setItems(rotasCia);
-        rotasCiaTB.getColumns().addAll(origemCol,destinoCol,aeronaveCol,distanciaCol);
-        
-        ScrollPane scPane = new ScrollPane();
-        scPane.setContent(rotasCiaTB);
-        scPane.setFitToHeight(true);
-        scPane.setFitToWidth(true);
-        Scene scene = new Scene(scPane);
-        Stage janela = new Stage();
-        janela.setTitle("Rotas da companhia " + cia);
-        janela.setScene(scene);
-        janela.setResizable(true);
-        janela.show();        
-	}
-	
-    // Inicializando os dados aqui...
     private void setup() throws ClassNotFoundException, IOException {
 
     	gerPaises = new GerenciadorPaises();
@@ -249,7 +227,7 @@ public class JanelaFX extends Application {
 			System.exit(1);
 		}		
 	}
-  
+    
     
     public void exibeAeros() {   	
 		gerenciador.clear();
@@ -263,8 +241,7 @@ public class JanelaFX extends Application {
     
     public void consulta1(){
     	gerenciador.clear();
-    	Set<MyWaypoint> pontos = new HashSet<MyWaypoint>();
-    	Aeroporto aeroSelecionado = gerAeroportos.buscarAeroProximo(gerenciador.getPosicao());
+    	Set<MyWaypoint> pontos = new HashSet<MyWaypoint>();    	
     	String codPais = aeroSelecionado.getPais().getCodigo();
     	Set<Aeroporto> lista = gerAeroportos.buscarPais(codPais);
     	for(Aeroporto a: lista)
@@ -272,18 +249,16 @@ public class JanelaFX extends Application {
     	gerenciador.setPontos(pontos);    	
     }
     
-    
     public void consulta2(double maxKm){    	
-    	Tracado tr = new Tracado();
-    	Aeroporto aeroSelect = gerAeroportos.buscarAeroProximo(gerenciador.getPosicao());
-    	GeoPosition aeroSelectPos = aeroSelect.getLocal();
-    	Set<Rota> rotas = gerRotas.buscarOrigem(aeroSelect.getCodigo());
+    	Tracado tr = new Tracado();    	
+    	GeoPosition aeroSelecionadoPos = aeroSelecionado.getLocal();
+    	Set<Rota> rotas = gerRotas.buscarOrigem(aeroSelecionado.getCodigo());
     	Set<MyWaypoint> pontos = new HashSet<MyWaypoint>();
-    	pontos.add(new MyWaypoint(aeroSelectPos));
+    	pontos.add(new MyWaypoint(aeroSelecionadoPos));
     	for(Rota r: rotas){
-    		if(Geo.distancia(aeroSelectPos, r.getDestino().getLocal())<=maxKm){
+    		if(Geo.distancia(aeroSelecionadoPos, r.getDestino().getLocal())<=maxKm){
             	GeoPosition aeroDestinoPos = r.getDestino().getLocal(); 
-    			tr.addPonto(aeroSelectPos);
+    			tr.addPonto(aeroSelecionadoPos);
             	tr.addPonto(aeroDestinoPos); 
             	gerenciador.addTracado(tr);
             	pontos.add(new MyWaypoint(aeroDestinoPos));
@@ -291,6 +266,7 @@ public class JanelaFX extends Application {
     	}
     	gerenciador.setPontos(pontos);    		
     }
+    
     
     public void consulta3(Set<Aeroporto> origens, Set<Aeroporto> visitados, int ligacao){	
     	
@@ -327,7 +303,7 @@ public class JanelaFX extends Application {
     	}
     }   	
     
-    public void consulta4(ComboBox ciaSelect){    	
+    public void consulta4(ComboBox ciaSelect){
     	Set<MyWaypoint> aeroportos = new HashSet<MyWaypoint>();
     	Tracado tr = new Tracado();    	
     	CiaAerea ciaSelecionada= (CiaAerea)ciaSelect.getValue();
@@ -341,13 +317,45 @@ public class JanelaFX extends Application {
         				aeroportos.add(new MyWaypoint(destino));
                			tr.addPonto(origem);
                			tr.addPonto(destino);
-               			gerenciador.addTracado(tr);
-               			System.out.println(r.getDistancia());
+               			gerenciador.addTracado(tr);               			
         			   });        
 		gerenciador.setPontos(aeroportos);
 		tableRotas(rotas, nomeCia);
 	}
+    
+    
+    private void tableRotas(Set<Rota> rotas, String cia){
+		
+		TableView<Rota> rotasCiaTB = new TableView<Rota>();
+		TableColumn origemCol = new TableColumn("Origem");
+        TableColumn destinoCol = new TableColumn("Destino");
+        TableColumn aeronaveCol = new TableColumn("Aeronave");        
+        TableColumn distanciaCol = new TableColumn("Dist‚ncia (em km)");
+        ObservableList<Rota> rotasCia = FXCollections.observableArrayList(rotas); 
+		origemCol.setCellValueFactory(new PropertyValueFactory<Rota,Aeroporto>("Origem"));
+		destinoCol.setCellValueFactory(new PropertyValueFactory<Rota,Aeroporto>("Destino"));
+		aeronaveCol.setCellValueFactory(new PropertyValueFactory<Rota,Aeronave>("Aeronave"));
+		distanciaCol.setCellValueFactory(new PropertyValueFactory<Rota,Double>("Distancia"));
+		rotasCiaTB.setItems(rotasCia);
+        rotasCiaTB.getColumns().addAll(origemCol,destinoCol,aeronaveCol,distanciaCol);
+        
+        ScrollPane scPane = new ScrollPane();
+        scPane.setContent(rotasCiaTB);
+        scPane.setFitToHeight(true);
+        scPane.setFitToWidth(true);
+        Scene scene = new Scene(scPane);
+        Stage janela = new Stage();
+        janela.setTitle("Rotas da companhia " + cia);
+        janela.setScene(scene);
+        janela.setResizable(true);
+        janela.show();        
+	}
    
+    
+    private Aeroporto aeroSelecionado(){
+    	return aeroSelecionado = gerAeroportos.buscarAeroProximo(gerenciador.getPosicao());
+    }
+    
     private void createSwingContent(final SwingNode swingNode) {
 		SwingUtilities.invokeLater(new Runnable() {
 			@Override
@@ -356,6 +364,7 @@ public class JanelaFX extends Application {
 			}
 		});
 	}
+    
 
 	private class EventosMouse extends MouseAdapter {
 		private int lastButton = -1;
@@ -363,20 +372,26 @@ public class JanelaFX extends Application {
 		@Override
 		public void mousePressed(MouseEvent e) {
 			JXMapViewer mapa = gerenciador.getMapKit().getMainMap();
-			GeoPosition loc = mapa.convertPointToGeoPosition(e.getPoint());
-			// System.out.println(loc.getLatitude()+", "+loc.getLongitude());
+			GeoPosition loc = mapa.convertPointToGeoPosition(e.getPoint());			
 			lastButton = e.getButton();
 			// Bot√£o 3: seleciona localiza√ß√£o
 			if (lastButton == MouseEvent.BUTTON3) {
-				gerenciador.setPosicao(loc);
-				// gerenciador.getMapKit().setCursor(Cursor.getPredefinedCursor(Cursor.CROSSHAIR_CURSOR));
+				gerenciador.setPosicao(loc);				
 				gerenciador.getMapKit().repaint();
 			}
 		}
+	}
+	
+	private GridPane grid(){
+		GridPane pane = new GridPane();
+		pane.setAlignment(Pos.CENTER_LEFT);
+		pane.setHgap(10);
+		pane.setVgap(10);
+		pane.setPadding(new Insets(10,5,10,5));				
+		return pane;
 	}
 
 	public static void main(String[] args) {
 		launch(args);			
 	}
-
 }
