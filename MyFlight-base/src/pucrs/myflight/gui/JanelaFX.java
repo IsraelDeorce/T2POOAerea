@@ -127,7 +127,7 @@ public class JanelaFX extends Application {
 			origem.add(selecionado);
 			Set<Aeroporto> visitados = new HashSet<Aeroporto>();
 			visitados.add(selecionado);
-			consulta3(origem, visitados, 0);
+			consulta3(origem, visitados, 0, new HashSet<Rota>());
 			gerenciador.getMapKit().repaint();
 			});
 		
@@ -268,11 +268,16 @@ public class JanelaFX extends Application {
     }
     
     
-    public void consulta3(Set<Aeroporto> origens, Set<Aeroporto> visitados, int ligacao){	
+    public void consulta3(Set<Aeroporto> origens, Set<Aeroporto> visitados, int ligacao, Set<Rota> desenhadas){	
+    	
+    	Set<Rota> total = desenhadas;
     	
     	if(ligacao<3){
     		Set<Rota> rotas;
     		Set<Aeroporto> destinos = new HashSet<Aeroporto>();
+    		
+    		System.out.println("Rotas desenhadas no início da ligacao " + ligacao + ": " + total.size());
+    		
     		Tracado tr = new Tracado();
     		if(ligacao==1)
     			tr.setCor(Color.ORANGE);
@@ -287,21 +292,36 @@ public class JanelaFX extends Application {
     			.forEach(r -> {
     							tr.addPonto(origem); 
     							tr.addPonto(r.getDestino().getLocal()); 
-    							gerenciador.addTracado(tr); 
-    							visitados.add(r.getDestino());
-    							destinos.add(r.getDestino());
+    							gerenciador.addTracado(tr);
+    							total.add(r);
+    							//visitados.add(r.getDestino());
+    							destinos.add(r.getDestino());    							
     							});     	   	
     		}
+    		visitados.addAll(destinos);
+    		System.out.println("Rotas desenhadas no fim da ligacao " + ligacao + ": " + total.size());
     		ligacao++;
-    		consulta3(destinos, visitados, ligacao);
+    		consulta3(destinos, visitados, ligacao, total);
     	}
     	else{
     		Set<MyWaypoint> pontos = new HashSet<MyWaypoint>();
     		for(Aeroporto a : visitados)
     			pontos.add(new MyWaypoint(a.getLocal()));
-    		gerenciador.setPontos(pontos);    			
+    		gerenciador.setPontos(pontos); 
+    		System.out.println("Rotas desenhadas no total: " + total.size());
     	}
-    }   	
+    }
+    
+    public void consulta5(Set<Aeroporto> origens, Aeroporto destino){
+    	ArrayList<ArrayList<Rota>> caminhos = new ArrayList<ArrayList<Rota>>();
+    	Set<Rota> rotas;
+    	for(Aeroporto a: origens){
+    		rotas = gerRotas.buscarOrigem(a.getCodigo());
+    		
+    	}
+    	
+    	
+    }
     
     public void consulta4(ComboBox ciaSelect){
     	Set<MyWaypoint> aeroportos = new HashSet<MyWaypoint>();
