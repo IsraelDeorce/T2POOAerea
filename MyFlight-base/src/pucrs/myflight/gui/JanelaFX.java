@@ -16,6 +16,8 @@ import org.jxmapviewer.viewer.GeoPosition;
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.embed.swing.SwingNode;
 import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
@@ -27,14 +29,19 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.Separator;
 import javafx.scene.control.Slider;
 import javafx.scene.control.SplitPane;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import pucrs.myflight.modelo.Aeroporto;
+import pucrs.myflight.modelo.Aeronave;
 import pucrs.myflight.modelo.CiaAerea;
 import pucrs.myflight.modelo.Geo;
 import pucrs.myflight.modelo.GerenciadorAeronaves;
@@ -130,8 +137,8 @@ public class JanelaFX extends Application {
 		ComboBox ciaSelect = new ComboBox();
 		ciaSelect.getItems().addAll(gerCias.enviaAL());
 		rotasCiaBT.setOnAction(e-> {
-			gerenciador.clear(); 
-			consulta4(ciaSelect);
+			gerenciador.clear();			
+			consulta4(ciaSelect);			
 			gerenciador.getMapKit().repaint();
 			});
 		
@@ -150,7 +157,7 @@ public class JanelaFX extends Application {
 		leftPane.add(new Separator(), 0, 13);
 		leftPane.add(rotasCiaLB, 0, 14);		
 		leftPane.add(ciaSelect, 0, 15);
-		leftPane.add(rotasCiaBT, 0, 16);		
+		leftPane.add(rotasCiaBT, 0, 16);
 		
 		pane.setCenter(mapkit);		
 		pane.setLeft(leftPane);
@@ -159,6 +166,35 @@ public class JanelaFX extends Application {
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Mapas com JavaFX");
 		primaryStage.show();
+	}
+	
+	private void tableRotas(Set<Rota> rotas, String cia){
+		
+		TableView<Rota> rotasCiaTB = new TableView<Rota>();
+		TableColumn rotaCol = new TableColumn("Rota");
+		TableColumn origemCol = new TableColumn("Origem");
+        TableColumn destinoCol = new TableColumn("Destino");
+        TableColumn aeronaveCol = new TableColumn("Aeronave");
+        TableColumn distanciaCol = new TableColumn("Distância (em km)");
+        ObservableList<Rota> rotasCia = FXCollections.observableArrayList(rotas); 
+		origemCol.setCellValueFactory(new PropertyValueFactory<Rota,Aeroporto>("Origem"));
+		destinoCol.setCellValueFactory(new PropertyValueFactory<Rota,Aeroporto>("Destino"));
+		aeronaveCol.setCellValueFactory(new PropertyValueFactory<Rota,Aeronave>("Aeronave"));
+		distanciaCol.setCellValueFactory(new PropertyValueFactory<Rota,Double>("Distância (em km)"));
+		rotasCiaTB.setItems(rotasCia);
+		rotaCol.getColumns().addAll(origemCol,destinoCol);
+        rotasCiaTB.getColumns().addAll(rotaCol,aeronaveCol,distanciaCol);
+        
+        ScrollPane scPane = new ScrollPane();
+        scPane.setContent(rotasCiaTB);
+        scPane.setFitToHeight(true);
+        scPane.setFitToWidth(true);
+        Scene scene = new Scene(scPane);
+        Stage janela = new Stage();
+        janela.setTitle("Rotas da companhia " + cia);
+        janela.setScene(scene);
+        janela.setResizable(true);
+        janela.show();        
 	}
 	
     // Inicializando os dados aqui...
@@ -297,6 +333,7 @@ public class JanelaFX extends Application {
     	Set<MyWaypoint> aeroportos = new HashSet<MyWaypoint>();
     	Tracado tr = new Tracado();    	
     	CiaAerea ciaSelecionada= (CiaAerea)ciaSelect.getValue();
+    	String nomeCia = ciaSelecionada.getNome();
     	Set<Rota> rotas = gerRotas.buscarCia(ciaSelecionada.getCodigo());   	
        	rotas.stream()
         .forEach(r -> {             			
@@ -308,7 +345,8 @@ public class JanelaFX extends Application {
                			tr.addPonto(destino);
                			gerenciador.addTracado(tr);
         			   });        
-		gerenciador.setPontos(aeroportos);    			
+		gerenciador.setPontos(aeroportos);
+		tableRotas(rotas, nomeCia);
 	}
    
     private void createSwingContent(final SwingNode swingNode) {
