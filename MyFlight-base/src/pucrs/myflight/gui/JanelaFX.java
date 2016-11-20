@@ -20,12 +20,14 @@ import javafx.embed.swing.SwingNode;
 import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
+import javafx.geometry.VPos;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.Separator;
 import javafx.scene.control.Slider;
 import javafx.scene.control.SplitPane;
 import javafx.scene.layout.BorderPane;
@@ -135,16 +137,21 @@ public class JanelaFX extends Application {
 		
 		leftPane.add(exibeAerosLB, 0, 1);
 		leftPane.add(exibeAerosBT, 0, 2);
-		leftPane.add(aeroPaisLB, 0, 3);
-		leftPane.add(aeroPaisBT, 0, 4);
-		leftPane.add(distLB, 0, 5);
-		leftPane.add(distSli, 0, 6);		
-		leftPane.add(distBT, 0, 7);
-		leftPane.add(rotasLigacoesLB, 0, 8);
-		leftPane.add(rotasLigacoesBT, 0, 9);
-		leftPane.add(rotasCiaLB, 0, 10);
-		leftPane.add(ciaSelect, 0, 11);
-		leftPane.add(rotasCiaBT, 0, 12);
+		leftPane.add(new Separator(), 0, 3);
+		leftPane.add(aeroPaisLB, 0, 4);
+		leftPane.add(aeroPaisBT, 0, 5);
+		leftPane.add(new Separator(), 0, 6);
+		leftPane.add(distLB, 0, 7);
+		leftPane.add(distSli, 0, 8);		
+		leftPane.add(distBT, 0, 9);
+		leftPane.add(new Separator(), 0, 10);
+		leftPane.add(rotasLigacoesLB, 0, 11);
+		leftPane.add(rotasLigacoesBT, 0, 12);
+		leftPane.add(new Separator(), 0, 13);
+		leftPane.add(rotasCiaLB, 0, 14);		
+		leftPane.add(ciaSelect, 0, 15);
+		leftPane.add(rotasCiaBT, 0, 16);
+		
 		
 		pane.setCenter(mapkit);		
 		pane.setLeft(leftPane);
