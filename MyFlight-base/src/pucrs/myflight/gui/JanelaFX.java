@@ -78,49 +78,41 @@ public class JanelaFX extends Application {
 		BorderPane pane = new BorderPane();			
 		GridPane leftPane = grid();		
 		
-		Button exibeAeros = new Button("Mostrar todos aeroportos ");
-		exibeAeros.setOnAction(e -> {
+		Label exibeAerosLB = new Label("Exibir todos os aeroportos");
+		Button exibeAerosBT = new Button("Exibir");
+		exibeAerosBT.setOnAction(e -> {
 			 gerenciador.clear(); 
 			 exibeAeros();
 			 gerenciador.getMapKit().repaint();
 			 });
 		
-		Button aeroPais = new Button("Mostrar aeroportos do país");
-		aeroPais.setOnAction(e -> {
+		Label aeroPaisLB = new Label("Exibir aeroportos do país");
+		Button aeroPaisBT = new Button("Exibir");
+		aeroPaisBT.setOnAction(e -> {
 			   gerenciador.clear(); 
 			   consulta1();
 			   gerenciador.getMapKit().repaint();
 			   });
 		
-		Label distLab = new Label("Pesquisar rota por distância");
-		Label raio = new Label ("Distância selecionada: 0.0km");
-		Slider distSli = new Slider(0, 20_000, 0);
+		Label distLB = new Label("Exibir rotas até determinado raio");		
+		Slider distSli = new Slider(0, 30_000, 0);
 		
 		distSli.setShowTickMarks(true);
 		distSli.setShowTickLabels(true);
 		distSli.setMajorTickUnit(5_000);		
 		distSli.setBlockIncrement(1_000);
 		distSli.setMinWidth(280);		
-		distSli.valueChangingProperty().addListener(new ChangeListener<Boolean>() {
-	    
-			@Override
-			public void changed(ObservableValue<? extends Boolean> observableValue, Boolean wasChanging, Boolean changing){
-				if (wasChanging || !changing) {	                    
-					raio.setText("Distância selecionada: " + String.valueOf(Math.round(distSli.getValue())) + "km");
-				}				
-			}
-		}
-		);
-				
-		Button rotasDist = new Button("Pesquisar");
-		rotasDist.setOnAction(e-> { 
+		
+		Button distBT = new Button("Exibir");
+		distBT.setOnAction(e-> { 
 			gerenciador.clear(); 
 			consulta2(distSli.getValue());
 			gerenciador.getMapKit().repaint();
 		  });
 		
-		Button rotasLigacoes = new Button("Mostrar ligações");
-		rotasLigacoes.setOnAction(e -> {
+		Label rotasLigacoesLB = new Label("Exibir 3 ligações a partir de um aeroporto de origem");
+		Button rotasLigacoesBT = new Button("Exibir");
+		rotasLigacoesBT.setOnAction(e -> {
 			gerenciador.clear();										
 			Aeroporto selecionado = gerAeroportos.buscarAeroProximo(gerenciador.getPosicao());
 			Set<Aeroporto> origem = new HashSet<Aeroporto>();
@@ -131,14 +123,28 @@ public class JanelaFX extends Application {
 			gerenciador.getMapKit().repaint();
 			});
 		
-		Button rotasCia = new Button("Mostrar rotas por Cia");
+		Label rotasCiaLB = new Label("Exibir todos as rotas de uma Cia");
+		Button rotasCiaBT = new Button("Exibir");
 		ComboBox ciaSelect = new ComboBox();
 		ciaSelect.getItems().addAll(gerCias.enviaAL());
-		rotasCia.setOnAction(e-> {
+		rotasCiaBT.setOnAction(e-> {
 			gerenciador.clear(); 
 			consulta4(ciaSelect);
 			gerenciador.getMapKit().repaint();
 			});
+		
+		leftPane.add(exibeAerosLB, 0, 1);
+		leftPane.add(exibeAerosBT, 0, 2);
+		leftPane.add(aeroPaisLB, 0, 3);
+		leftPane.add(aeroPaisBT, 0, 4);
+		leftPane.add(distLB, 0, 5);
+		leftPane.add(distSli, 0, 6);		
+		leftPane.add(distBT, 0, 7);
+		leftPane.add(rotasLigacoesLB, 0, 8);
+		leftPane.add(rotasLigacoesBT, 0, 9);
+		leftPane.add(rotasCiaLB, 0, 10);
+		leftPane.add(ciaSelect, 0, 11);
+		leftPane.add(rotasCiaBT, 0, 12);
 		
 		pane.setCenter(mapkit);		
 		pane.setLeft(leftPane);
@@ -229,15 +235,21 @@ public class JanelaFX extends Application {
     
     public void consulta2(double maxKm){    	
     	Tracado tr = new Tracado();
-    	Aeroporto aeroSelec = gerAeroportos.buscarAeroProximo(gerenciador.getPosicao());
-    	Set<Rota> rotas = gerRotas.buscarOrigem(aeroSelec.getCodigo());
+    	Aeroporto aeroSelect = gerAeroportos.buscarAeroProximo(gerenciador.getPosicao());
+    	GeoPosition aeroSelectPos = aeroSelect.getLocal();
+    	Set<Rota> rotas = gerRotas.buscarOrigem(aeroSelect.getCodigo());
+    	Set<MyWaypoint> pontos = new HashSet<MyWaypoint>();
+    	pontos.add(new MyWaypoint(aeroSelectPos));
     	for(Rota r: rotas){
-    		if(Geo.distancia(aeroSelec.getLocal(), r.getDestino().getLocal())<=maxKm){
-            	tr.addPonto(r.getOrigem().getLocal());
-            	tr.addPonto(r.getDestino().getLocal()); 
-            	gerenciador.addTracado(tr);  
+    		if(Geo.distancia(aeroSelectPos, r.getDestino().getLocal())<=maxKm){
+            	GeoPosition aeroDestinoPos = r.getDestino().getLocal(); 
+    			tr.addPonto(aeroSelectPos);
+            	tr.addPonto(aeroDestinoPos); 
+            	gerenciador.addTracado(tr);
+            	pontos.add(new MyWaypoint(aeroDestinoPos));
     		}
     	}
+    	gerenciador.setPontos(pontos);    		
     }
     
     public void consulta3(Set<Aeroporto> origens, Set<Aeroporto> visitados, int ligacao){	
