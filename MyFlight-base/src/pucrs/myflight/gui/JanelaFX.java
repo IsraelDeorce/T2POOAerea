@@ -50,6 +50,7 @@ import pucrs.myflight.modelo.GerenciadorCias;
 import pucrs.myflight.modelo.GerenciadorPaises;
 import pucrs.myflight.modelo.GerenciadorRotas;
 import pucrs.myflight.modelo.Rota;
+import pucrs.myflight.modelo.TreeOfRotas;
 
 public class JanelaFX extends Application {
 
@@ -127,7 +128,7 @@ public class JanelaFX extends Application {
 			origem.add(selecionado);
 			Set<Aeroporto> visitados = new HashSet<Aeroporto>();
 			visitados.add(selecionado);
-			consulta3(origem, visitados, 0, new HashSet<Rota>());
+			consulta3(origem, visitados, 0);
 			gerenciador.getMapKit().repaint();
 			});
 		
@@ -138,6 +139,19 @@ public class JanelaFX extends Application {
 		rotasCiaBT.setOnAction(e-> {
 			gerenciador.clear();			
 			consulta4(ciaSelect);			
+			gerenciador.getMapKit().repaint();
+			});
+		
+		Label caminhoLB = new Label("Buscar caminho entre 2 aeroportos");
+		Button caminhoBT = new Button("Buscar");
+		caminhoBT.setOnAction(e -> {
+			gerenciador.clear();
+			Set<Aeroporto> origem = new HashSet<Aeroporto>();
+			origem.add(aeroSelecionado);
+			Set<Aeroporto> visitados = new HashSet<Aeroporto>();
+			visitados.add(aeroSelecionado);
+			TreeOfRotas arvore = new TreeOfRotas(aeroSelecionado);
+			consulta5(aeroSelecionado, gerAeroportos.buscarCod("POA"), origem, arvore);
 			gerenciador.getMapKit().repaint();
 			});
 		
@@ -164,6 +178,9 @@ public class JanelaFX extends Application {
 		leftPane.add(rotasCiaLB, 0, 12);		
 		leftPane.add(ciaSelect, 0, 13);
 		leftPane.add(rotasCiaBT, 0, 14);
+		leftPane.add(new Separator(), 0, 15);
+		leftPane.add(caminhoLB, 0, 16);
+		leftPane.add(caminhoBT, 0, 17);
 		
 		pane.setCenter(mapkit);		
 		pane.setLeft(leftPane);
@@ -268,17 +285,15 @@ public class JanelaFX extends Application {
     }
     
     
-    public void consulta3(Set<Aeroporto> origens, Set<Aeroporto> visitados, int ligacao, Set<Rota> desenhadas){	
-    	
-    	Set<Rota> total = desenhadas;
+    public void consulta3(Set<Aeroporto> origens, Set<Aeroporto> visitados, int ligacao){	
     	
     	if(ligacao<3){
+    		
     		Set<Rota> rotas;
     		Set<Aeroporto> destinos = new HashSet<Aeroporto>();
     		
-    		System.out.println("Rotas desenhadas no início da ligacao " + ligacao + ": " + total.size());
-    		
     		Tracado tr = new Tracado();
+    		
     		if(ligacao==1)
     			tr.setCor(Color.ORANGE);
     		if(ligacao==2)
@@ -292,36 +307,68 @@ public class JanelaFX extends Application {
     			.forEach(r -> {
     							tr.addPonto(origem); 
     							tr.addPonto(r.getDestino().getLocal()); 
-    							gerenciador.addTracado(tr);
-    							total.add(r);
-    							//visitados.add(r.getDestino());
+    							gerenciador.addTracado(tr);    		
     							destinos.add(r.getDestino());    							
     							});     	   	
     		}
     		visitados.addAll(destinos);
-    		System.out.println("Rotas desenhadas no fim da ligacao " + ligacao + ": " + total.size());
     		ligacao++;
-    		consulta3(destinos, visitados, ligacao, total);
+    		consulta3(destinos, visitados, ligacao);
     	}
     	else{
     		Set<MyWaypoint> pontos = new HashSet<MyWaypoint>();
     		for(Aeroporto a : visitados)
     			pontos.add(new MyWaypoint(a.getLocal()));
     		gerenciador.setPontos(pontos); 
-    		System.out.println("Rotas desenhadas no total: " + total.size());
-    	}
+     	}
     }
     
-    public void consulta5(Set<Aeroporto> origens, Aeroporto destino){
-    	ArrayList<ArrayList<Rota>> caminhos = new ArrayList<ArrayList<Rota>>();
-    	Set<Rota> rotas;
-    	for(Aeroporto a: origens){
-    		rotas = gerRotas.buscarOrigem(a.getCodigo());
+    public void consulta5(Aeroporto origem, Aeroporto destino, Set<Aeroporto> origens, TreeOfRotas arvore){
+    	
+    	
+    	if(origens.size()>0){
     		
+    		Set<Rota> rotas;
+    		Set<Aeroporto> destinos = new HashSet<Aeroporto>();
+    	
+    		for(Aeroporto a: origens){    			
+    			rotas = gerRotas.buscarOrigem(a.getCodigo());			
+    			rotas.stream()
+    			.filter(r -> !arvore.contains(r.getDestino()))
+    			.forEach(r -> {
+    							arvore.add(r.getDestino(), r.getOrigem());
+    							destinos.add(r.getDestino());    							
+    						  });
+    		}
+    		consulta5(origem, destino, destinos, arvore);
     	}
-    	
-    	
+    		
+    	else{
+    		if(arvore.contains(destino)){    			
+    			TreeOfRotas.Node aux = arvore.searchNodeRef(destino, arvore.getRoot());
+    			ArrayList<Aeroporto> longWay = new ArrayList<Aeroporto>();
+    			areWeThereYet(aux, longWay);
+    		}
+    	}
     }
+	
+    private void areWeThereYet(TreeOfRotas.Node aux, ArrayList<Aeroporto> way){
+    	
+    	way.add(aux.getElement());    	
+    	if(aux.father!=null){
+    		aux=aux.father;
+    		areWeThereYet(aux,way);
+    	}    	
+    }
+			
+    	
+		
+    	
+    	
+    	
+    	
+    	
+    
     
     public void consulta4(ComboBox ciaSelect){
     	Set<MyWaypoint> aeroportos = new HashSet<MyWaypoint>();

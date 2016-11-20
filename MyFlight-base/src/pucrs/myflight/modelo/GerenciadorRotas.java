@@ -57,12 +57,20 @@ public class GerenciadorRotas {
 				.filter(r -> r.getOrigem().getCodigo().equals(aero))
 				.collect(Collectors.toSet());
 		return rotaOrigem;				
-	}	
+	}
+	
 	public Set<Rota> buscarDestino(String aero){
 		Set<Rota> rotaDestino = rotasAL.stream()
 				.filter(r -> r.getDestino().getCodigo().equals(aero))
 				.collect(Collectors.toSet());
 		return rotaDestino;				
+	}
+	
+	public Rota buscarOrigemDestino(String origem, String destino){
+		 ArrayList<Rota> aux = rotasAL.stream()
+				.filter(r -> (r.getOrigem().getCodigo().equals(origem) && r.getDestino().getCodigo().equals(destino)))
+				.collect(Collectors.toList(aux));
+		 return	aux.get(0);	
 	}
 	
 }

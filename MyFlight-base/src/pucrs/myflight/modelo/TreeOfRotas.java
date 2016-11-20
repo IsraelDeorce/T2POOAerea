@@ -8,15 +8,15 @@ public class TreeOfRotas {
 	private Node root;
 	private int count;	
 	
-	private class Node{
+	public class Node{
 		
 		public Node father;
-		public Aeroporto inicial;
+		public Aeroporto aeroporto;
 		public LinkedList<Node> ligacoes;
 		
-		public Node(Aeroporto inicial){			
+		public Node(Aeroporto aeroporto){			
 			father = null;
-			this.inicial = inicial;
+			this.aeroporto = aeroporto;
 			ligacoes = new LinkedList<Node>();
 		}
 		
@@ -35,18 +35,21 @@ public class TreeOfRotas {
 			return ligacoes.size();
 		}
 		
+		public Aeroporto getElement(){
+			return aeroporto;
+		}
+		
 	}
-	
 	public TreeOfRotas(Aeroporto inicial){
 		root = new Node(inicial);
 		count++;
 	}
 	
 	//Retorna referencia de um nodo que possua determinado elemento a partir de uma arvore/subarvore
-	private Node searchNodeRef(Aeroporto element, Node target){
+	public Node searchNodeRef(Aeroporto element, Node target){
 		Node n = null;
 		if(target != null){
-			if(element.equals(target.inicial))
+			if(element.equals(target.aeroporto))
 				n = target;
 			else{
 				int i=0;
@@ -88,7 +91,7 @@ public class TreeOfRotas {
 		Node n = searchNodeRef(r, root);
 		if(n==null)
 			throw new RuntimeException("Elemento não encontrado!");
-		return n.father.inicial;
+		return n.father.aeroporto;
 	}
 			
 	//retorna true se a árvore contém o	elemento
@@ -97,7 +100,7 @@ public class TreeOfRotas {
 			return true;
 		return false;
 	}
-		
+	
 	//retorna o número de elementos armazenados na árvore
 	public int size(){
 		return count;
@@ -107,6 +110,10 @@ public class TreeOfRotas {
 	public void clear(){
 		root = null;
 		count = 0;
+	}
+	
+	public Node getRoot(){
+		return root;
 	}
 	
 	/*
