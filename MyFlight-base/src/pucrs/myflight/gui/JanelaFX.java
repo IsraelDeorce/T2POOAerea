@@ -238,6 +238,7 @@ public class JanelaFX extends Application {
 
 		Scene scene = new Scene(pane, 500, 500);
 		primaryStage.setScene(scene);
+		primaryStage.setMaximized(true);
 		primaryStage.setTitle("Mapas com JavaFX");
 		primaryStage.show();
 	}
@@ -332,6 +333,7 @@ public class JanelaFX extends Application {
             	pontos.add(new MyWaypoint(aeroDestinoPos));
     		}
     	}
+    	tableRotas(rotas);
     	gerenciador.setPontos(pontos);    		
     }
     
@@ -439,6 +441,8 @@ public class JanelaFX extends Application {
     	Scene scene = new Scene(scPane);
     	Stage janela = new Stage();
     	janela.setTitle("Rotas entre " + longWay.get(longWay.size()-1) + " e " + longWay.get(0));
+    	janela.setMinHeight(500);
+    	janela.setMinWidth(950);
     	janela.setScene(scene);
     	janela.setResizable(true);
     	janela.show();            
@@ -497,11 +501,41 @@ public class JanelaFX extends Application {
     	Scene scene = new Scene(scPane);
     	Stage janela = new Stage();
     	janela.setTitle("Rotas da companhia " + cia);
+    	janela.setMinHeight(500);
+    	janela.setMinWidth(950);
     	janela.setScene(scene);
     	janela.setResizable(true);
     	janela.show();        
     }
     
+    private void tableRotas(Set<Rota> rotas){
+
+    	TableView<Rota> rotasCiaTB = new TableView<Rota>();
+    	TableColumn origemCol = new TableColumn("Origem");
+    	TableColumn destinoCol = new TableColumn("Destino");
+    	TableColumn aeronaveCol = new TableColumn("Aeronave");        
+    	TableColumn distanciaCol = new TableColumn("Distância (em km)");
+    	ObservableList<Rota> rotasCia = FXCollections.observableArrayList(rotas); 
+    	origemCol.setCellValueFactory(new PropertyValueFactory<Rota,Aeroporto>("Origem"));
+    	destinoCol.setCellValueFactory(new PropertyValueFactory<Rota,Aeroporto>("Destino"));
+    	aeronaveCol.setCellValueFactory(new PropertyValueFactory<Rota,Aeronave>("Aeronave"));
+    	distanciaCol.setCellValueFactory(new PropertyValueFactory<Rota,Double>("Distancia"));
+    	rotasCiaTB.setItems(rotasCia);
+    	rotasCiaTB.getColumns().addAll(origemCol,destinoCol,aeronaveCol,distanciaCol);
+
+    	ScrollPane scPane = new ScrollPane();
+    	scPane.setContent(rotasCiaTB);
+    	scPane.setFitToHeight(true);
+    	scPane.setFitToWidth(true);
+    	Scene scene = new Scene(scPane);
+    	Stage janela = new Stage();
+    	janela.setMinHeight(500);
+    	janela.setMinWidth(950);
+    	janela.setTitle("Rotas possíveis");
+    	janela.setScene(scene);
+    	janela.setResizable(true);
+    	janela.show();        
+    }
     private Aeroporto aeroSelecionado(){
     	return aeroSelecionado = gerAeroportos.buscarAeroProximo(gerenciador.getPosicao());
     }
