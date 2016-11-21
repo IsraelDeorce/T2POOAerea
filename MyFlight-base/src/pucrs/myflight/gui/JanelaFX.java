@@ -158,41 +158,37 @@ public class JanelaFX extends Application {
 		Button caminhoBT = new Button("Buscar");
 		Button clearCodBT = new Button("Limpar campos");
 		
-		
-			
-		
-		
 		caminhoBT.setOnAction(new EventHandler<ActionEvent>() {
-										@Override
-										public void handle(ActionEvent e) {
-											gerenciador.clear();
-											Set<Aeroporto> origens = new HashSet<Aeroporto>();
-											ArrayList<Aeroporto> origem = new ArrayList<Aeroporto>();
-											ArrayList<Aeroporto> destino = new ArrayList<Aeroporto>();
-											if((gerAeroportos.validaCodigo(origemTF.getText()) && gerAeroportos.validaCodigo(destinoTF.getText()))){ 
-												origem.add(gerAeroportos.buscarCod(origemTF.getText()));
-												destino.add(gerAeroportos.buscarCod(destinoTF.getText()));
-												invalido.setVisible(false);
-												origens.addAll(origem);
-												TreeOfRotas arvore = new TreeOfRotas(origem.get(0));
-												consulta5(origem.get(0), destino.get(0), origens, arvore);
-												gerenciador.getMapKit().repaint();
-										}
-										else
-											invalido.setVisible(true);
-										}
+			@Override
+			public void handle(ActionEvent e) {
+				gerenciador.clear();
+				Set<Aeroporto> origens = new HashSet<Aeroporto>();
+				ArrayList<Aeroporto> origem = new ArrayList<Aeroporto>();
+				ArrayList<Aeroporto> destino = new ArrayList<Aeroporto>();
+				if((gerAeroportos.validaCodigo(origemTF.getText()) && gerAeroportos.validaCodigo(destinoTF.getText()))){ 
+					origem.add(gerAeroportos.buscarCod(origemTF.getText()));
+					destino.add(gerAeroportos.buscarCod(destinoTF.getText()));
+					invalido.setVisible(false);
+					origens.addAll(origem);
+					TreeOfRotas arvore = new TreeOfRotas(origem.get(0));
+					consulta5(origem.get(0), destino.get(0), origens, arvore);
+					gerenciador.getMapKit().repaint();
+				}
+				else
+					invalido.setVisible(true);
+			}
 		});
 		
 		clearCodBT.setOnAction(new EventHandler<ActionEvent>() {
 
-				@Override
-				    public void handle(ActionEvent e) {
-						origemTF.clear();
-				        destinoTF.clear();
-				        invalido.setVisible(false);
-				        }
-				});
-		
+			@Override
+			public void handle(ActionEvent e) {
+				origemTF.clear();
+				destinoTF.clear();
+				invalido.setVisible(false);
+			}
+		});
+
 		GridPane geral = grid();
 		geral.setHgap(50);
 		geral.add(clearLB, 0, 0);
@@ -351,18 +347,18 @@ public class JanelaFX extends Application {
     			rotas = gerRotas.buscarOrigem(a.getCodigo());
     			Tracado tr = new Tracado();
     			if(ligacao==1)
-        			tr.setCor(Color.ORANGE);
-        		if(ligacao==2)
-        			tr.setCor(Color.MAGENTA);
+    				tr.setCor(Color.ORANGE);
+    			if(ligacao==2)
+    				tr.setCor(Color.MAGENTA);
     			GeoPosition origem = a.getLocal();    			    	   	
     			rotas.stream()
     			.filter(r -> !visitados.contains(r.getDestino()))
     			.forEach(r -> {
-    							tr.addPonto(origem); 
-    							tr.addPonto(r.getDestino().getLocal()); 
-    							gerenciador.addTracado(tr);    		
-    							destinos.add(r.getDestino());    							
-    							});     	   	
+    				tr.addPonto(origem); 
+    				tr.addPonto(r.getDestino().getLocal()); 
+    				gerenciador.addTracado(tr);    		
+    				destinos.add(r.getDestino());    							
+    			});     	   	
     		}
     		visitados.addAll(destinos);
     		ligacao++;
@@ -377,21 +373,21 @@ public class JanelaFX extends Application {
     }
     
     public void consulta5(Aeroporto origem, Aeroporto destino, Set<Aeroporto> origens, TreeOfRotas arvore){
-    	
-    	
+
+
     	if(origens.size()>0){
-    		
+
     		Set<Rota> rotas;
     		Set<Aeroporto> destinos = new HashSet<Aeroporto>();
-    	//formando a árvore
+    		//formando a árvore
     		for(Aeroporto a: origens){    			
     			rotas = gerRotas.buscarOrigem(a.getCodigo());			
     			rotas.stream()
     			.filter(r -> !arvore.contains(r.getDestino()))
     			.forEach(r -> {
-    							arvore.add(r.getDestino(), r.getOrigem());
-    							destinos.add(r.getDestino());    							
-    						  });
+    				arvore.add(r.getDestino(), r.getOrigem());
+    				destinos.add(r.getDestino());    							
+    			});
     		}
     		consulta5(origem, destino, destinos, arvore);
     	}
@@ -401,55 +397,55 @@ public class JanelaFX extends Application {
     			TreeOfRotas.Node aux = arvore.searchNodeRef(destino, arvore.getRoot());
     			ArrayList<Aeroporto> longWay = new ArrayList<Aeroporto>();
     			longWay = areWeThereYet(aux, longWay); //formando o caminho
-    			
+
     			Set<Rota> rotas = new HashSet<Rota>();
     			for(int i=0,j=i+1;j<longWay.size();i++,j++){
     				rotas.add(gerRotas.buscarOrigemDestino(longWay.get(i).getCodigo(), longWay.get(j).getCodigo()));    				
     			}    			
-    			
+
     			Set<MyWaypoint> pontos = new HashSet<MyWaypoint>();    			    	
     			rotas.stream()
-    	        .forEach(r -> {             			
-    	        				Tracado tr = new Tracado();
-    	        				GeoPosition inicio = r.getOrigem().getLocal();
-    	        				GeoPosition fim = r.getDestino().getLocal();
-    	        				pontos.add(new MyWaypoint(inicio));
-    	        				pontos.add(new MyWaypoint(fim));
-    	               			tr.addPonto(inicio);
-    	               			tr.addPonto(fim);
-    	               			gerenciador.setPontos(pontos);
-    	               			gerenciador.addTracado(tr);
-    	        			   });
-    			
+    			.forEach(r -> {             			
+    				Tracado tr = new Tracado();
+    				GeoPosition inicio = r.getOrigem().getLocal();
+    				GeoPosition fim = r.getDestino().getLocal();
+    				pontos.add(new MyWaypoint(inicio));
+    				pontos.add(new MyWaypoint(fim));
+    				tr.addPonto(inicio);
+    				tr.addPonto(fim);
+    				gerenciador.setPontos(pontos);
+    				gerenciador.addTracado(tr);
+    			});
+
     			tableCaminho(longWay);    			
     		}
     	}
     }
     		    		
     private void tableCaminho(ArrayList<Aeroporto> longWay){
-    		
-    		TableView<Aeroporto> caminhosTB = new TableView<Aeroporto>();
-    		TableColumn nomeCol = new TableColumn("Nome");
-    		TableColumn codigoCol = new TableColumn("Código");
-            ObservableList<Aeroporto> caminhos = FXCollections.observableArrayList(longWay); 
-            nomeCol.setCellValueFactory(new PropertyValueFactory<Rota,String>("nome"));
-            codigoCol.setCellValueFactory(new PropertyValueFactory<Rota,String>("codigo"));
-    		caminhosTB.setItems(caminhos);
-            caminhosTB.getColumns().addAll(nomeCol, codigoCol);    		
-            ScrollPane scPane = new ScrollPane();
-            scPane.setContent(caminhosTB);
-            scPane.setFitToHeight(true);
-            scPane.setFitToWidth(true);
-            Scene scene = new Scene(scPane);
-            Stage janela = new Stage();
-            janela.setTitle("Rotas entre " + longWay.get(longWay.size()-1) + " e " + longWay.get(0));
-            janela.setScene(scene);
-            janela.setResizable(true);
-            janela.show();            
+
+    	TableView<Aeroporto> caminhosTB = new TableView<Aeroporto>();
+    	TableColumn nomeCol = new TableColumn("Nome");
+    	TableColumn codigoCol = new TableColumn("Código");
+    	ObservableList<Aeroporto> caminhos = FXCollections.observableArrayList(longWay); 
+    	nomeCol.setCellValueFactory(new PropertyValueFactory<Rota,String>("nome"));
+    	codigoCol.setCellValueFactory(new PropertyValueFactory<Rota,String>("codigo"));
+    	caminhosTB.setItems(caminhos);
+    	caminhosTB.getColumns().addAll(nomeCol, codigoCol);    		
+    	ScrollPane scPane = new ScrollPane();
+    	scPane.setContent(caminhosTB);
+    	scPane.setFitToHeight(true);
+    	scPane.setFitToWidth(true);
+    	Scene scene = new Scene(scPane);
+    	Stage janela = new Stage();
+    	janela.setTitle("Rotas entre " + longWay.get(longWay.size()-1) + " e " + longWay.get(0));
+    	janela.setScene(scene);
+    	janela.setResizable(true);
+    	janela.show();            
     }
 	
     private ArrayList<Aeroporto> areWeThereYet(TreeOfRotas.Node aux, ArrayList<Aeroporto> way){
-    	
+
     	way.add(aux.getElement());    	
     	if(aux.father!=null){
     		aux=aux.father;
@@ -464,47 +460,47 @@ public class JanelaFX extends Application {
     	CiaAerea ciaSelecionada= (CiaAerea)ciaSelect.getValue();
     	String nomeCia = ciaSelecionada.getNome();
     	Set<Rota> rotas = gerRotas.buscarCia(ciaSelecionada.getCodigo());   	
-       	rotas.stream()
-        .forEach(r -> {             			
-        				GeoPosition origem = r.getOrigem().getLocal();
-        				GeoPosition destino = r.getDestino().getLocal();
-        				aeroportos.add(new MyWaypoint(origem));
-        				aeroportos.add(new MyWaypoint(destino));
-        				Tracado tr = new Tracado();    	
-               			tr.addPonto(origem);
-               			tr.addPonto(destino);
-               			gerenciador.addTracado(tr);               			
-        			   });        
-		gerenciador.setPontos(aeroportos);
-		tableRotas(rotas, nomeCia);
-	}
+    	rotas.stream()
+    	.forEach(r -> {             			
+    		GeoPosition origem = r.getOrigem().getLocal();
+    		GeoPosition destino = r.getDestino().getLocal();
+    		aeroportos.add(new MyWaypoint(origem));
+    		aeroportos.add(new MyWaypoint(destino));
+    		Tracado tr = new Tracado();    	
+    		tr.addPonto(origem);
+    		tr.addPonto(destino);
+    		gerenciador.addTracado(tr);               			
+    	});        
+    	gerenciador.setPontos(aeroportos);
+    	tableRotas(rotas, nomeCia);
+    }
     
     private void tableRotas(Set<Rota> rotas, String cia){
-		
-		TableView<Rota> rotasCiaTB = new TableView<Rota>();
-		TableColumn origemCol = new TableColumn("Origem");
-        TableColumn destinoCol = new TableColumn("Destino");
-        TableColumn aeronaveCol = new TableColumn("Aeronave");        
-        TableColumn distanciaCol = new TableColumn("Distância (em km)");
-        ObservableList<Rota> rotasCia = FXCollections.observableArrayList(rotas); 
-		origemCol.setCellValueFactory(new PropertyValueFactory<Rota,Aeroporto>("Origem"));
-		destinoCol.setCellValueFactory(new PropertyValueFactory<Rota,Aeroporto>("Destino"));
-		aeronaveCol.setCellValueFactory(new PropertyValueFactory<Rota,Aeronave>("Aeronave"));
-		distanciaCol.setCellValueFactory(new PropertyValueFactory<Rota,Double>("Distancia"));
-		rotasCiaTB.setItems(rotasCia);
-        rotasCiaTB.getColumns().addAll(origemCol,destinoCol,aeronaveCol,distanciaCol);
-        
-        ScrollPane scPane = new ScrollPane();
-        scPane.setContent(rotasCiaTB);
-        scPane.setFitToHeight(true);
-        scPane.setFitToWidth(true);
-        Scene scene = new Scene(scPane);
-        Stage janela = new Stage();
-        janela.setTitle("Rotas da companhia " + cia);
-        janela.setScene(scene);
-        janela.setResizable(true);
-        janela.show();        
-	}
+
+    	TableView<Rota> rotasCiaTB = new TableView<Rota>();
+    	TableColumn origemCol = new TableColumn("Origem");
+    	TableColumn destinoCol = new TableColumn("Destino");
+    	TableColumn aeronaveCol = new TableColumn("Aeronave");        
+    	TableColumn distanciaCol = new TableColumn("Distância (em km)");
+    	ObservableList<Rota> rotasCia = FXCollections.observableArrayList(rotas); 
+    	origemCol.setCellValueFactory(new PropertyValueFactory<Rota,Aeroporto>("Origem"));
+    	destinoCol.setCellValueFactory(new PropertyValueFactory<Rota,Aeroporto>("Destino"));
+    	aeronaveCol.setCellValueFactory(new PropertyValueFactory<Rota,Aeronave>("Aeronave"));
+    	distanciaCol.setCellValueFactory(new PropertyValueFactory<Rota,Double>("Distancia"));
+    	rotasCiaTB.setItems(rotasCia);
+    	rotasCiaTB.getColumns().addAll(origemCol,destinoCol,aeronaveCol,distanciaCol);
+
+    	ScrollPane scPane = new ScrollPane();
+    	scPane.setContent(rotasCiaTB);
+    	scPane.setFitToHeight(true);
+    	scPane.setFitToWidth(true);
+    	Scene scene = new Scene(scPane);
+    	Stage janela = new Stage();
+    	janela.setTitle("Rotas da companhia " + cia);
+    	janela.setScene(scene);
+    	janela.setResizable(true);
+    	janela.show();        
+    }
     
     private Aeroporto aeroSelecionado(){
     	return aeroSelecionado = gerAeroportos.buscarAeroProximo(gerenciador.getPosicao());
