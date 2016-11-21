@@ -377,7 +377,7 @@ public class JanelaFX extends Application {
     public void consulta5(Aeroporto origem, Aeroporto destino, Set<Aeroporto> origens, TreeOfRotas arvore){
 
 
-    	if(origens.size()>0){
+    	if(origens.size()>0 && !arvore.contains(destino)){
 
     		Set<Rota> rotas;
     		Set<Aeroporto> destinos = new HashSet<Aeroporto>();
@@ -399,7 +399,6 @@ public class JanelaFX extends Application {
     			TreeOfRotas.Node aux = arvore.searchNodeRef(destino, arvore.getRoot());
     			ArrayList<Aeroporto> longWay = new ArrayList<Aeroporto>();
     			longWay = areWeThereYet(aux, longWay); //formando o caminho
-
     			Set<Rota> rotas = new HashSet<Rota>();
     			for(int i=0,j=i+1;j<longWay.size();i++,j++){
     				rotas.add(gerRotas.buscarOrigemDestino(longWay.get(i).getCodigo(), longWay.get(j).getCodigo()));    				
