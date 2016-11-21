@@ -38,7 +38,7 @@ public class GerenciadorPaises {
 	}
 	
 	public Pais getPais(String key){
-		return paisesHM.get(key);
+		return paisesHM.get(key.toUpperCase());
 	}
 	
 	

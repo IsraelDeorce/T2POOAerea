@@ -65,17 +65,17 @@ public class GerenciadorAeroportos{
 
 	public Set<Aeroporto> buscarPais(String pais) {
 		Set<Aeroporto> aeroPais = aeroportosAL.stream()
-				  .filter(a -> a.getPais().getCodigo().equals(pais))
+				  .filter(a -> a.getPais().getCodigo().toUpperCase().equals(pais))
 				  .collect(Collectors.toSet()); 
 		return aeroPais;		
 	}
 	
 	public Aeroporto buscarCod(String cod){		
-		return aeroportosHM.get(cod);
+		return aeroportosHM.get(cod.toUpperCase());
 	}
 	
-	public boolean validaCodigo(String cod){
-		return aeroportosHM.containsKey(cod);
+	public boolean validaCodigo(String cod){		
+		return aeroportosHM.containsKey(cod.toUpperCase());		
 	}
 	
 	 /*Método que localiza um aeroporto no raio de 15km de onde o usuário clicou no mapa
@@ -90,11 +90,8 @@ public class GerenciadorAeroportos{
 	}
 		
 	public GeoPosition getGeo(String cod){
-		return aeroportosHM.get(cod).getLocal();
+		return aeroportosHM.get(cod.toUpperCase()).getLocal();
 	}
-	
-	
-	
 }			
 			
 	

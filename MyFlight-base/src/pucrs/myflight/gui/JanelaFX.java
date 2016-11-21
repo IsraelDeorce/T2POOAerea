@@ -123,7 +123,7 @@ public class JanelaFX extends Application {
 			gerenciador.getMapKit().repaint();
 		  });
 		
-		Label rotasLigacoesLB = new Label("Exibir 3 ligações a partir\n de um aeroporto de origem");
+		Label rotasLigacoesLB = new Label("Exibir 3 ligações a partir de um aeroporto de origem");
 		Button rotasLigacoesBT = new Button("Exibir");
 		rotasLigacoesBT.setOnAction(e -> {
 			gerenciador.clear();										
@@ -158,13 +158,14 @@ public class JanelaFX extends Application {
 		Button caminhoBT = new Button("Buscar");
 		Button clearCodBT = new Button("Limpar campos");
 		
-		//consulta5(origem.get(0), destino.get(0), origens, arvore);
-		//gerenciador.getMapKit().repaint();	
+		
+			
 		
 		
 		caminhoBT.setOnAction(new EventHandler<ActionEvent>() {
 										@Override
 										public void handle(ActionEvent e) {
+											gerenciador.clear();
 											Set<Aeroporto> origens = new HashSet<Aeroporto>();
 											ArrayList<Aeroporto> origem = new ArrayList<Aeroporto>();
 											ArrayList<Aeroporto> destino = new ArrayList<Aeroporto>();
@@ -175,6 +176,7 @@ public class JanelaFX extends Application {
 												origens.addAll(origem);
 												TreeOfRotas arvore = new TreeOfRotas(origem.get(0));
 												consulta5(origem.get(0), destino.get(0), origens, arvore);
+												gerenciador.getMapKit().repaint();
 										}
 										else
 											invalido.setVisible(true);
@@ -242,10 +244,6 @@ public class JanelaFX extends Application {
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Mapas com JavaFX");
 		primaryStage.show();
-	}
-	
-	public void teste(){
-		System.out.println("WORKED");
 	}
 	
     private void setup() throws ClassNotFoundException, IOException {
@@ -324,14 +322,14 @@ public class JanelaFX extends Application {
     }
     
     public void consulta2(double maxKm){    	
-    	Tracado tr = new Tracado();    	
     	GeoPosition aeroSelecionadoPos = aeroSelecionado.getLocal();
     	Set<Rota> rotas = gerRotas.buscarOrigem(aeroSelecionado.getCodigo());
     	Set<MyWaypoint> pontos = new HashSet<MyWaypoint>();
     	pontos.add(new MyWaypoint(aeroSelecionadoPos));
     	for(Rota r: rotas){
     		if(Geo.distancia(aeroSelecionadoPos, r.getDestino().getLocal())<=maxKm){
-            	GeoPosition aeroDestinoPos = r.getDestino().getLocal(); 
+    			Tracado tr = new Tracado();  
+    			GeoPosition aeroDestinoPos = r.getDestino().getLocal(); 
     			tr.addPonto(aeroSelecionadoPos);
             	tr.addPonto(aeroDestinoPos); 
             	gerenciador.addTracado(tr);
@@ -349,15 +347,13 @@ public class JanelaFX extends Application {
     		Set<Rota> rotas;
     		Set<Aeroporto> destinos = new HashSet<Aeroporto>();
     		
-    		Tracado tr = new Tracado();
-    		
-    		if(ligacao==1)
-    			tr.setCor(Color.ORANGE);
-    		if(ligacao==2)
-    			tr.setCor(Color.MAGENTA);
-    		
     		for(Aeroporto a: origens){
     			rotas = gerRotas.buscarOrigem(a.getCodigo());
+    			Tracado tr = new Tracado();
+    			if(ligacao==1)
+        			tr.setCor(Color.ORANGE);
+        		if(ligacao==2)
+        			tr.setCor(Color.MAGENTA);
     			GeoPosition origem = a.getLocal();    			    	   	
     			rotas.stream()
     			.filter(r -> !visitados.contains(r.getDestino()))
@@ -405,16 +401,32 @@ public class JanelaFX extends Application {
     			TreeOfRotas.Node aux = arvore.searchNodeRef(destino, arvore.getRoot());
     			ArrayList<Aeroporto> longWay = new ArrayList<Aeroporto>();
     			longWay = areWeThereYet(aux, longWay); //formando o caminho
-    			for(Aeroporto a: longWay)
-    				System.out.println(a);
-    			tableCaminho(longWay);
+    			
+    			Set<Rota> rotas = new HashSet<Rota>();
+    			for(int i=0,j=i+1;j<longWay.size();i++,j++){
+    				rotas.add(gerRotas.buscarOrigemDestino(longWay.get(i).getCodigo(), longWay.get(j).getCodigo()));    				
+    			}    			
+    			
+    			Set<MyWaypoint> pontos = new HashSet<MyWaypoint>();    			    	
+    			rotas.stream()
+    	        .forEach(r -> {             			
+    	        				Tracado tr = new Tracado();
+    	        				GeoPosition inicio = r.getOrigem().getLocal();
+    	        				GeoPosition fim = r.getDestino().getLocal();
+    	        				pontos.add(new MyWaypoint(inicio));
+    	        				pontos.add(new MyWaypoint(fim));
+    	               			tr.addPonto(inicio);
+    	               			tr.addPonto(fim);
+    	               			gerenciador.setPontos(pontos);
+    	               			gerenciador.addTracado(tr);
+    	        			   });
+    			
+    			tableCaminho(longWay);    			
     		}
     	}
     }
     		    		
     private void tableCaminho(ArrayList<Aeroporto> longWay){
-    		
-    		Collections.reverse(longWay);
     		
     		TableView<Aeroporto> caminhosTB = new TableView<Aeroporto>();
     		TableColumn nomeCol = new TableColumn("Nome");
@@ -443,12 +455,12 @@ public class JanelaFX extends Application {
     		aux=aux.father;
     		areWeThereYet(aux,way);
     	}
+    	Collections.reverse(way);
     	return way;
     }
     
     public void consulta4(ComboBox ciaSelect){
-    	Set<MyWaypoint> aeroportos = new HashSet<MyWaypoint>();
-    	Tracado tr = new Tracado();    	
+    	Set<MyWaypoint> aeroportos = new HashSet<MyWaypoint>();    	
     	CiaAerea ciaSelecionada= (CiaAerea)ciaSelect.getValue();
     	String nomeCia = ciaSelecionada.getNome();
     	Set<Rota> rotas = gerRotas.buscarCia(ciaSelecionada.getCodigo());   	
@@ -458,6 +470,7 @@ public class JanelaFX extends Application {
         				GeoPosition destino = r.getDestino().getLocal();
         				aeroportos.add(new MyWaypoint(origem));
         				aeroportos.add(new MyWaypoint(destino));
+        				Tracado tr = new Tracado();    	
                			tr.addPonto(origem);
                			tr.addPonto(destino);
                			gerenciador.addTracado(tr);               			

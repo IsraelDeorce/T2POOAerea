@@ -47,28 +47,28 @@ public class GerenciadorRotas {
 	
 	public Set<Rota> buscarCia(String cia){
 		Set<Rota> rotaCia = rotasAL.stream()
-			.filter(r -> r.getCia().getCodigo().equals(cia))
+			.filter(r -> r.getCia().getCodigo().equals(cia.toUpperCase()))
 			.collect(Collectors.toSet());		
 		return rotaCia;
 	}
 	
 	public Set<Rota> buscarOrigem(String aero){
 		Set<Rota> rotaOrigem = rotasAL.stream()
-				.filter(r -> r.getOrigem().getCodigo().equals(aero))
+				.filter(r -> r.getOrigem().getCodigo().equals(aero.toUpperCase()))
 				.collect(Collectors.toSet());
 		return rotaOrigem;				
 	}
 	
 	public Set<Rota> buscarDestino(String aero){
 		Set<Rota> rotaDestino = rotasAL.stream()
-				.filter(r -> r.getDestino().getCodigo().equals(aero))
+				.filter(r -> r.getDestino().getCodigo().equals(aero.toUpperCase()))
 				.collect(Collectors.toSet());
 		return rotaDestino;				
 	}
 	
 	public Rota buscarOrigemDestino(String origem, String destino){
 		 List<Rota> aux = rotasAL.stream()
-				.filter(r -> (r.getOrigem().getCodigo().equals(origem) && r.getDestino().getCodigo().equals(destino)))
+				.filter(r -> (r.getOrigem().getCodigo().equals(origem.toUpperCase()) && r.getDestino().getCodigo().equals(destino.toUpperCase())))
 				.collect(Collectors.toList());
 		 return	aux.get(0);	
 	}
