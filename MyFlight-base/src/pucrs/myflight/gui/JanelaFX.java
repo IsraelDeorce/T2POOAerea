@@ -5,6 +5,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -19,6 +20,8 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.embed.swing.SwingNode;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
@@ -35,6 +38,7 @@ import javafx.scene.control.Slider;
 import javafx.scene.control.SplitPane;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
@@ -119,7 +123,7 @@ public class JanelaFX extends Application {
 			gerenciador.getMapKit().repaint();
 		  });
 		
-		Label rotasLigacoesLB = new Label("Exibir 3 ligações a partir de um aeroporto de origem");
+		Label rotasLigacoesLB = new Label("Exibir 3 ligações a partir\n de um aeroporto de origem");
 		Button rotasLigacoesBT = new Button("Exibir");
 		rotasLigacoesBT.setOnAction(e -> {
 			gerenciador.clear();										
@@ -143,17 +147,49 @@ public class JanelaFX extends Application {
 			});
 		
 		Label caminhoLB = new Label("Buscar caminho entre 2 aeroportos");
+		Label origemLB = new Label("Origem");
+		TextField origemTF = new TextField();
+		origemTF.setPromptText("Código da origem");
+		Label destinoLB = new Label("Destino");
+		TextField destinoTF = new TextField();
+		destinoTF.setPromptText("Código do destino");
+		Label invalido = new Label("Códigos informados inválidos!");
+		invalido.setVisible(false);
 		Button caminhoBT = new Button("Buscar");
-		caminhoBT.setOnAction(e -> {
-			gerenciador.clear();
-			Set<Aeroporto> origem = new HashSet<Aeroporto>();
-			origem.add(aeroSelecionado);
-			Set<Aeroporto> visitados = new HashSet<Aeroporto>();
-			visitados.add(aeroSelecionado);
-			TreeOfRotas arvore = new TreeOfRotas(aeroSelecionado);
-			consulta5(aeroSelecionado, gerAeroportos.buscarCod("POA"), origem, arvore);
-			gerenciador.getMapKit().repaint();
-			});
+		Button clearCodBT = new Button("Limpar campos");
+		
+		//consulta5(origem.get(0), destino.get(0), origens, arvore);
+		//gerenciador.getMapKit().repaint();	
+		
+		
+		caminhoBT.setOnAction(new EventHandler<ActionEvent>() {
+										@Override
+										public void handle(ActionEvent e) {
+											Set<Aeroporto> origens = new HashSet<Aeroporto>();
+											ArrayList<Aeroporto> origem = new ArrayList<Aeroporto>();
+											ArrayList<Aeroporto> destino = new ArrayList<Aeroporto>();
+											if((gerAeroportos.validaCodigo(origemTF.getText()) && gerAeroportos.validaCodigo(destinoTF.getText()))){ 
+												origem.add(gerAeroportos.buscarCod(origemTF.getText()));
+												destino.add(gerAeroportos.buscarCod(destinoTF.getText()));
+												invalido.setVisible(false);
+												origens.addAll(origem);
+												TreeOfRotas arvore = new TreeOfRotas(origem.get(0));
+												consulta5(origem.get(0), destino.get(0), origens, arvore);
+										}
+										else
+											invalido.setVisible(true);
+										}
+		});
+		
+		clearCodBT.setOnAction(new EventHandler<ActionEvent>() {
+
+				@Override
+				    public void handle(ActionEvent e) {
+						origemTF.clear();
+				        destinoTF.clear();
+				        invalido.setVisible(false);
+				        }
+				});
 		
 		GridPane geral = grid();
 		geral.setHgap(50);
@@ -161,6 +197,20 @@ public class JanelaFX extends Application {
 		geral.add(clearBT, 0, 1);
 		geral.add(exibeAerosLB, 1, 0);
 		geral.add(exibeAerosBT, 1, 1);
+		
+		HBox origemHB = new HBox();
+		origemHB.getChildren().addAll(origemLB, origemTF);
+		origemHB.setSpacing(10);
+		
+		HBox destinoHB = new HBox();
+		destinoHB.getChildren().addAll(destinoLB, destinoTF);
+		destinoHB.setSpacing(10);
+		
+		GridPane cons5 = grid();
+		cons5.setHgap(50);
+		cons5.add(caminhoBT, 0, 0);
+		cons5.add(clearCodBT, 0, 1);
+		
 				
 		//leftPane.setGridLinesVisible(true);
 		leftPane.add(geral, 0, 0);
@@ -180,7 +230,10 @@ public class JanelaFX extends Application {
 		leftPane.add(rotasCiaBT, 0, 14);
 		leftPane.add(new Separator(), 0, 15);
 		leftPane.add(caminhoLB, 0, 16);
-		leftPane.add(caminhoBT, 0, 17);
+		leftPane.add(origemHB, 0, 17);
+		leftPane.add(destinoHB, 0, 18);
+		leftPane.add(invalido, 0, 19);
+		leftPane.add(cons5, 0, 20);
 		
 		pane.setCenter(mapkit);		
 		pane.setLeft(leftPane);
@@ -189,6 +242,10 @@ public class JanelaFX extends Application {
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Mapas com JavaFX");
 		primaryStage.show();
+	}
+	
+	public void teste(){
+		System.out.println("WORKED");
 	}
 	
     private void setup() throws ClassNotFoundException, IOException {
@@ -330,7 +387,7 @@ public class JanelaFX extends Application {
     		
     		Set<Rota> rotas;
     		Set<Aeroporto> destinos = new HashSet<Aeroporto>();
-    	
+    	//formando a árvore
     		for(Aeroporto a: origens){    			
     			rotas = gerRotas.buscarOrigem(a.getCodigo());			
     			rotas.stream()
@@ -344,31 +401,50 @@ public class JanelaFX extends Application {
     	}
     		
     	else{
-    		if(arvore.contains(destino)){    			
+    		if(arvore.contains(destino)){ //verificando se o destino está na árvore    			
     			TreeOfRotas.Node aux = arvore.searchNodeRef(destino, arvore.getRoot());
     			ArrayList<Aeroporto> longWay = new ArrayList<Aeroporto>();
-    			areWeThereYet(aux, longWay);
+    			longWay = areWeThereYet(aux, longWay); //formando o caminho
+    			for(Aeroporto a: longWay)
+    				System.out.println(a);
+    			tableCaminho(longWay);
     		}
     	}
     }
+    		    		
+    private void tableCaminho(ArrayList<Aeroporto> longWay){
+    		
+    		Collections.reverse(longWay);
+    		
+    		TableView<Aeroporto> caminhosTB = new TableView<Aeroporto>();
+    		TableColumn nomeCol = new TableColumn("Nome");
+    		TableColumn codigoCol = new TableColumn("Código");
+            ObservableList<Aeroporto> caminhos = FXCollections.observableArrayList(longWay); 
+            nomeCol.setCellValueFactory(new PropertyValueFactory<Rota,String>("nome"));
+            codigoCol.setCellValueFactory(new PropertyValueFactory<Rota,String>("codigo"));
+    		caminhosTB.setItems(caminhos);
+            caminhosTB.getColumns().addAll(nomeCol, codigoCol);    		
+            ScrollPane scPane = new ScrollPane();
+            scPane.setContent(caminhosTB);
+            scPane.setFitToHeight(true);
+            scPane.setFitToWidth(true);
+            Scene scene = new Scene(scPane);
+            Stage janela = new Stage();
+            janela.setTitle("Rotas entre " + longWay.get(longWay.size()-1) + " e " + longWay.get(0));
+            janela.setScene(scene);
+            janela.setResizable(true);
+            janela.show();            
+    }
 	
-    private void areWeThereYet(TreeOfRotas.Node aux, ArrayList<Aeroporto> way){
+    private ArrayList<Aeroporto> areWeThereYet(TreeOfRotas.Node aux, ArrayList<Aeroporto> way){
     	
     	way.add(aux.getElement());    	
     	if(aux.father!=null){
     		aux=aux.father;
     		areWeThereYet(aux,way);
-    	}    	
+    	}
+    	return way;
     }
-			
-    	
-		
-    	
-    	
-    	
-    	
-    	
-    
     
     public void consulta4(ComboBox ciaSelect){
     	Set<MyWaypoint> aeroportos = new HashSet<MyWaypoint>();
@@ -389,7 +465,6 @@ public class JanelaFX extends Application {
 		gerenciador.setPontos(aeroportos);
 		tableRotas(rotas, nomeCia);
 	}
-    
     
     private void tableRotas(Set<Rota> rotas, String cia){
 		
@@ -417,7 +492,6 @@ public class JanelaFX extends Application {
         janela.setResizable(true);
         janela.show();        
 	}
-   
     
     private Aeroporto aeroSelecionado(){
     	return aeroSelecionado = gerAeroportos.buscarAeroProximo(gerenciador.getPosicao());

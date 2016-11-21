@@ -70,9 +70,14 @@ public class GerenciadorAeroportos{
 		return aeroPais;		
 	}
 	
-	public Aeroporto buscarCod(String cod){
+	public Aeroporto buscarCod(String cod){		
 		return aeroportosHM.get(cod);
 	}
+	
+	public boolean validaCodigo(String cod){
+		return aeroportosHM.containsKey(cod);
+	}
+	
 	 /*Método que localiza um aeroporto no raio de 15km de onde o usuário clicou no mapa
 	 	Paramêtro é o Geo clicado
 	 	Retorno é o Aeroporto 	  

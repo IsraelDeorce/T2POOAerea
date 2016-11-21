@@ -67,9 +67,9 @@ public class GerenciadorRotas {
 	}
 	
 	public Rota buscarOrigemDestino(String origem, String destino){
-		 ArrayList<Rota> aux = rotasAL.stream()
+		 List<Rota> aux = rotasAL.stream()
 				.filter(r -> (r.getOrigem().getCodigo().equals(origem) && r.getDestino().getCodigo().equals(destino)))
-				.collect(Collectors.toList(aux));
+				.collect(Collectors.toList());
 		 return	aux.get(0);	
 	}
 	
